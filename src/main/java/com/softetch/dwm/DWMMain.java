@@ -1,0 +1,45 @@
+package com.softetch.dwm;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+/**
+ * The main class for the DWM
+ */
+@Mod(DWMMain.MODID)
+public class DWMMain {
+    public static final String MODID = "dwm";
+    public static final Logger LOGGER = LogManager.getLogger();
+    public static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
+
+    /**
+     * Create a new instance of the mod, set up listeners and event bus.
+     */
+    public DWMMain() {
+        // Register the methods for modloading
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setupClientSide);
+    }
+
+    /**
+     * Set up all things that should be done pre-initialisation (e.g. block registry)
+     * @param event the forge common setup event.
+     */
+    private void setup(final FMLCommonSetupEvent event) {
+
+    }
+
+    /**
+     * Set up things that should only be run on the client side.
+     * @param event the forge client setup event
+     */
+    private void setupClientSide(final FMLClientSetupEvent event) {
+
+    }
+}
