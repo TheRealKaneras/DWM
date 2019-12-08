@@ -23,8 +23,8 @@ public class ModelDalekBase extends EntityModel<BaseDalekEntity> implements IHas
      * Set up all parts of the dalek as renderable boxes
      */
     public ModelDalekBase() {
-        textureWidth = 256;
-        textureHeight = 256;
+        textureWidth = 128;
+        textureHeight = 128;
 
         body = new RendererModel(this);
         body.setRotationPoint(0.0F, 23.5F, 0.0F);
@@ -74,11 +74,11 @@ public class ModelDalekBase extends EntityModel<BaseDalekEntity> implements IHas
     @Override
     public void render(BaseDalekEntity dalekEntity, float originX, float originY, float originZ, float entityYaw, float entityPitch, float scale) {
         super.render(dalekEntity, originX, originY, originZ, entityYaw, entityPitch, scale);
-        body.render(0.0625f);
-        weaponsBelt.render(0.0625f);
-        neck.render(0.0625f);
-        head.render(0.0625f);
-        eyestalk.render(0.0625f);
+        body.render(scale);
+        weaponsBelt.render(scale);
+        neck.render(scale);
+        head.render(scale);
+        eyestalk.render(scale);
     }
 
     /**
