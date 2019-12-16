@@ -12,9 +12,9 @@ import org.apache.logging.log4j.Logger;
 /**
  * The main class for the DWM
  */
-@Mod(DWMMain.MODID)
+@Mod(DWMMain.MOD_ID)
 public class DWMMain {
-    public static final String MODID = "dwm";
+    public static final String MOD_ID = "dwm";
     public static final Logger LOGGER = LogManager.getLogger();
     public static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 

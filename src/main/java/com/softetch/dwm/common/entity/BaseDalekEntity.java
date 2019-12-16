@@ -14,7 +14,7 @@ public class BaseDalekEntity extends MonsterEntity {
      * @param type of entity
      * @param world that the entity is in
      */
-    public BaseDalekEntity(EntityType type, World world) {
+    public BaseDalekEntity(EntityType<BaseDalekEntity> type, World world) {
         super(type, world);
     }
 

@@ -5,18 +5,22 @@ import com.softetch.dwm.common.entity.BaseDalekEntity;
 import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.client.renderer.entity.LivingRenderer;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 import javax.annotation.Nullable;
 
 /**
  * Render class for the base dalek entity.
  */
+@OnlyIn(Dist.CLIENT)
 public class RenderBaseDalek extends LivingRenderer<BaseDalekEntity, ModelDalekBase> {
     private ResourceLocation entityTexture;
 
     /**
      * Set up the properties required to render the entity
-     * @param entityRendererManager
+     * @param entityRendererManager - the manager class for entity rendering
+     * @param entityTexture - the main texture of the entity to be rendered
      */
     public RenderBaseDalek(EntityRendererManager entityRendererManager, ResourceLocation entityTexture) {
         super(entityRendererManager, new ModelDalekBase(), 1.0f);

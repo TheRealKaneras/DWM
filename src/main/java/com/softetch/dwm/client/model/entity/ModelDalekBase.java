@@ -8,10 +8,13 @@ import net.minecraft.client.renderer.entity.model.IHasHead;
 import net.minecraft.client.renderer.entity.model.RendererModel;
 import net.minecraft.client.renderer.model.Model;
 import net.minecraft.client.renderer.model.ModelBox;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 /**
  * The base model for all daleks
  */
+@OnlyIn(Dist.CLIENT)
 public class ModelDalekBase extends EntityModel<BaseDalekEntity> implements IHasHead {
     private final RendererModel body;
     private final RendererModel weaponsBelt;

@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * A class to register entities for the mod
  */
-@Mod.EventBusSubscriber(modid = DWMMain.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@Mod.EventBusSubscriber(modid = DWMMain.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class DWMEntities {
     private static final List<EntityType> TYPES = new ArrayList<>();
     public static final EntityType<BaseDalekEntity> DALEK;
@@ -39,7 +39,7 @@ public class DWMEntities {
      * @return The built entity type
      */
     private static <T extends Entity> EntityType<T> build(final String name, final EntityType.Builder<T> builder) {
-        final ResourceLocation registryName = new ResourceLocation(DWMMain.MODID, name);
+        final ResourceLocation registryName = new ResourceLocation(DWMMain.MOD_ID, name);
         final EntityType<T> entityType = builder.build(registryName.toString());
         entityType.setRegistryName(registryName);
         TYPES.add(entityType);

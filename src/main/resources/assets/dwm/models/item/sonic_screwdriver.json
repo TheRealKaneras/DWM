@@ -1,0 +1,35 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "dwm:item/sonic_screwdriver",
+		"particle": "dwm:item/sonic_screwdriver"
+	},
+	"elements": [
+		{
+			"name": "shaft",
+			"from": [7.25, 0, 7.25],
+			"to": [8.75, 9, 8.75],
+			"faces": {
+				"north": {"uv": [0, 1, 0.75, 5.5], "texture": "#0"},
+				"east": {"uv": [0, 1, 0.75, 5.5], "texture": "#0"},
+				"south": {"uv": [0, 1, 0.75, 5.5], "texture": "#0"},
+				"west": {"uv": [0, 2, 0.75, 6.5], "texture": "#0"},
+				"up": {"uv": [0, 1, 0.75, 1.75], "texture": "#0"},
+				"down": {"uv": [0, 2, 0.75, 2.75], "texture": "#0"}
+			}
+		},
+		{
+			"name": "nib",
+			"from": [7.5, 8.25, 7.5],
+			"to": [8.5, 9.25, 8.5],
+			"faces": {
+				"north": {"uv": [0, 0, 0.5, 0.5], "texture": "#0"},
+				"east": {"uv": [0, 0, 0.5, 0.5], "texture": "#0"},
+				"south": {"uv": [0, 0, 0.5, 0.5], "texture": "#0"},
+				"west": {"uv": [6, 0, 6.5, 0.5], "texture": "#0"},
+				"up": {"uv": [0, 0, 0.5, 0.5], "texture": "#0"},
+				"down": {"uv": [0, 0, 0.5, 0.5], "texture": "#0"}
+			}
+		}
+	]
+}
