@@ -1,0 +1,6 @@
+{
+  "sonic_screwdriver": {
+    "category": "block",
+    "sounds": [ "dwm:sonic_screwdriver" ]
+  }
+}

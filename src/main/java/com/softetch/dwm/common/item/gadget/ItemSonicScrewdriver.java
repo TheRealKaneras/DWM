@@ -1,5 +1,6 @@
 package com.softetch.dwm.common.item.gadget;
 
+import com.softetch.dwm.DWMSounds;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.DoorBlock;
@@ -9,10 +10,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUseContext;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Direction;
-import net.minecraft.util.Hand;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceContext;
 import net.minecraft.util.math.RayTraceResult;
@@ -41,8 +39,7 @@ public class ItemSonicScrewdriver extends Item {
      */
     private void handleBlockInteraction(World world, PlayerEntity playerEntity, BlockState blockState, BlockPos blockPos) {
         if (blockState.getBlock() == Blocks.IRON_DOOR) {
-            BlockState newBlockState = blockState.with(DoorBlock.OPEN, !blockState.get(DoorBlock.OPEN));
-            world.setBlockState(blockPos, newBlockState);
+            ((DoorBlock) blockState.getBlock()).toggleDoor(world, blockPos, !blockState.get(DoorBlock.OPEN));
         }
         if (blockState.getBlock() == Blocks.TNT) {
             ((TNTBlock)blockState.getBlock()).catchFire(blockState, world, blockPos, Direction.UP, playerEntity);
@@ -55,6 +52,7 @@ public class ItemSonicScrewdriver extends Item {
         World world = context.getWorld();
         BlockPos blockPos = context.getPos();
         BlockState blockState = world.getBlockState(blockPos);
+        world.playSound(blockPos.getX(), blockPos.getY(), blockPos.getZ(), DWMSounds.sonicScrewdriver, SoundCategory.BLOCKS, 1.0f, 1.0f,false);
         if (!world.isRemote && blockState != null) {
             PlayerEntity playerEntity = context.getPlayer();
             handleBlockInteraction(world, playerEntity, blockState, blockPos);
