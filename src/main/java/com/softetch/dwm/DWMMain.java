@@ -2,6 +2,8 @@ package com.softetch.dwm;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.softetch.dwm.client.event.DWMRenderEvent;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -32,6 +34,7 @@ public class DWMMain {
      * @param event the forge common setup event.
      */
     private void setup(final FMLCommonSetupEvent event) {
+        MinecraftForge.EVENT_BUS.register(new DWMRenderEvent());
 
     }
 

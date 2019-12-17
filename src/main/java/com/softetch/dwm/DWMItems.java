@@ -1,6 +1,7 @@
 package com.softetch.dwm;
 
 import com.softetch.dwm.common.item.gadget.ItemSonicScrewdriver;
+import com.softetch.dwm.common.item.gadget.ItemTwoDis;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
@@ -23,7 +24,8 @@ public class DWMItems {
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
         event.getRegistry().registerAll(
-                new ItemSonicScrewdriver().setRegistryName(new ResourceLocation(DWMMain.MOD_ID, "sonic_screwdriver"))
+                new ItemSonicScrewdriver().setRegistryName(new ResourceLocation(DWMMain.MOD_ID, "sonic_screwdriver")),
+                new ItemTwoDis().setRegistryName(new ResourceLocation(DWMMain.MOD_ID, "two_dis"))
         );
     }
 
