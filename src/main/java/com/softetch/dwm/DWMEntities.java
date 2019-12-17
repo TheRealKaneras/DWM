@@ -1,5 +1,6 @@
 package com.softetch.dwm;
 
+import com.softetch.dwm.common.entity.AdiposeEntity;
 import com.softetch.dwm.common.entity.BaseDalekEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityClassification;
@@ -19,6 +20,7 @@ import java.util.List;
 public class DWMEntities {
     private static final List<EntityType> TYPES = new ArrayList<>();
     public static final EntityType<BaseDalekEntity> DALEK;
+    public static final EntityType<AdiposeEntity> ADIPOSE;
 
     /**
      * Register the {@link net.minecraft.entity.Entity} types
@@ -51,6 +53,7 @@ public class DWMEntities {
      */
     static {
         DALEK = build("dalek", EntityType.Builder.<BaseDalekEntity>create(BaseDalekEntity::new, EntityClassification.MONSTER).size(0.9f, 1.8f));
+        ADIPOSE = build("adipose", EntityType.Builder.<AdiposeEntity>create(AdiposeEntity::new, EntityClassification.CREATURE).size(0.3f, 0.4f));
     }
 
 }

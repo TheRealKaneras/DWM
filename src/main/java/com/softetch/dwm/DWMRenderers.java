@@ -1,6 +1,8 @@
 package com.softetch.dwm;
 
+import com.softetch.dwm.client.render.entity.RenderAdipose;
 import com.softetch.dwm.client.render.entity.RenderBaseDalek;
+import com.softetch.dwm.common.entity.AdiposeEntity;
 import com.softetch.dwm.common.entity.BaseDalekEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
@@ -24,5 +26,7 @@ public class DWMRenderers {
     @SubscribeEvent
     public static void register(final FMLClientSetupEvent event) {
         RenderingRegistry.registerEntityRenderingHandler(BaseDalekEntity.class, entityRendererManager -> new RenderBaseDalek(entityRendererManager, new ResourceLocation(DWMMain.MOD_ID, "textures/entity/dalek.png")));
+        RenderingRegistry.registerEntityRenderingHandler(AdiposeEntity.class, entityRendererManager -> new RenderAdipose(entityRendererManager, new ResourceLocation(DWMMain.MOD_ID, "textures/entity/adipose.png")));
+
     }
 }

@@ -1,12 +1,9 @@
-//Made with Blockbench
-//Paste this code into your mod.
 package com.softetch.dwm.client.model.entity;
 
 import com.softetch.dwm.common.entity.BaseDalekEntity;
 import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.entity.model.IHasHead;
 import net.minecraft.client.renderer.entity.model.RendererModel;
-import net.minecraft.client.renderer.model.Model;
 import net.minecraft.client.renderer.model.ModelBox;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
