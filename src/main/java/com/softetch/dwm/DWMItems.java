@@ -1,15 +1,15 @@
 package com.softetch.dwm;
 
+import com.softetch.dwm.common.block.RoundelBlock;
 import com.softetch.dwm.common.item.gadget.ItemSonicScrewdriver;
 import com.softetch.dwm.common.item.gadget.ItemTwoDis;
 import net.minecraft.block.Block;
-import net.minecraft.block.SandBlock;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
-import net.minecraft.block.material.MaterialColor;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ObjectHolder;
@@ -22,27 +22,31 @@ import net.minecraftforge.registries.ObjectHolder;
 @Mod.EventBusSubscriber(modid = DWMMain.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 @ObjectHolder(DWMMain.MOD_ID)
 public class DWMItems {
-    public static Item sonicScrewdriver;
-    public static Item twoDis;
+    public static final RoundelBlock CLASSIC_ROUNDEL = null;
 
-    public static Block ironOxideDust;
+    /**
+     * The actual event handler that registers the custom blocks
+     * @param event The event this event handler handles
+     */
+    @SubscribeEvent(priority = EventPriority.HIGH)
+    public static void registerBlocks(RegistryEvent.Register<Block> event){
+        event.getRegistry().registerAll(
+                new RoundelBlock().setRegistryName(DWMMain.MOD_ID, "classic_roundel")
+        );
+    }
 
     /**
      * The actual event handler that registers the custom items
      * @param event The event this event handler handles
      */
-    @SubscribeEvent
+    @SubscribeEvent(priority = EventPriority.NORMAL)
     public static void registerItems(RegistryEvent.Register<Item> event) {
         event.getRegistry().registerAll(
-                sonicScrewdriver = new ItemSonicScrewdriver().setRegistryName(new ResourceLocation(DWMMain.MOD_ID, "sonic_screwdriver")),
-                twoDis = new ItemTwoDis().setRegistryName(new ResourceLocation(DWMMain.MOD_ID, "two_dis"))
+                new ItemSonicScrewdriver().setRegistryName(new ResourceLocation(DWMMain.MOD_ID, "sonic_screwdriver")),
+                new ItemTwoDis().setRegistryName(new ResourceLocation(DWMMain.MOD_ID, "two_dis")),
+                new BlockItem(CLASSIC_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "classic_roundel")
         );
     }
 
-    public static void registerBlocks(RegistryEvent.Register<Block> event){
-        event.getRegistry().registerAll(
-                ironOxideDust = new SandBlock(11098145, Block.Properties.create(Material.SAND, MaterialColor.SAND).hardnessAndResistance(0.5F).sound(SoundType.SAND)).setRegistryName(DWMMain.MOD_ID, "iron_oxide_dust")
-        );
-    }
 
 }

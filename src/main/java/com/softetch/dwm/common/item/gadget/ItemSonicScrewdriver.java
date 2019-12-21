@@ -75,6 +75,7 @@ public class ItemSonicScrewdriver extends Item {
      * @param hand the hand that the item is being held in
      * @return if the item can be used to interact with the target entity
      */
+    @SuppressWarnings("deprecation")
     @Override
     public boolean itemInteractionForEntity(ItemStack stack, PlayerEntity playerEntity, LivingEntity target, Hand hand) {
         if (playerEntity.world.isRemote)

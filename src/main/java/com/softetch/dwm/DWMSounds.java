@@ -1,7 +1,5 @@
 package com.softetch.dwm;
 
-import com.softetch.dwm.common.item.gadget.ItemSonicScrewdriver;
-import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraftforge.event.RegistryEvent;
@@ -17,9 +15,13 @@ import net.minecraftforge.registries.ObjectHolder;
 @Mod.EventBusSubscriber(modid = DWMMain.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 @ObjectHolder(DWMMain.MOD_ID)
 public class DWMSounds {
-
     public static SoundEvent sonicScrewdriver;
 
+    /**
+     * Set up the SoundEvent based on a resource location.
+     * @param resourceLocation
+     * @return
+     */
     private static SoundEvent buildSound(ResourceLocation resourceLocation) {
         SoundEvent soundEvent = new SoundEvent(resourceLocation);
         soundEvent.setRegistryName(resourceLocation);
