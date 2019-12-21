@@ -1,9 +1,7 @@
 package com.softetch.dwm.client.render.entity;
 
 import com.softetch.dwm.client.model.entity.ModelAdipose;
-import com.softetch.dwm.client.model.entity.ModelDalekBase;
 import com.softetch.dwm.common.entity.AdiposeEntity;
-import com.softetch.dwm.common.entity.BaseDalekEntity;
 import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.client.renderer.entity.LivingRenderer;
 import net.minecraft.util.ResourceLocation;

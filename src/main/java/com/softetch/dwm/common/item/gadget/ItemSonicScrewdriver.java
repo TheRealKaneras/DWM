@@ -7,7 +7,6 @@ import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.monster.SlimeEntity;
-import net.minecraft.entity.passive.SheepEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.Item;
@@ -16,11 +15,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUseContext;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.RayTraceContext;
-import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
-import net.minecraft.world.chunk.IBlockStatePalette;
-import net.minecraft.world.gen.feature.structure.StrongholdPieces;
 import net.minecraftforge.common.IShearable;
 
 import java.util.List;
@@ -62,8 +57,13 @@ public class ItemSonicScrewdriver extends Item {
         }
         // Ignite TNT
         if (blockState.getBlock() == Blocks.TNT) {
-            ((TNTBlock)blockState.getBlock()).catchFire(blockState, world, blockPos, Direction.UP, playerEntity);
+            blockState.getBlock().catchFire(blockState, world, blockPos, Direction.UP, playerEntity);
             world.setBlockState(blockPos, Blocks.AIR.getDefaultState());
+        }
+        // Toggle redstone lamp being lit
+        if (blockState.getBlock() == Blocks.REDSTONE_LAMP) {
+            BlockState newBlockState = blockState.cycle(RedstoneLampBlock.LIT);
+            world.setBlockState(blockPos, newBlockState, 2);
         }
     }
 
@@ -89,7 +89,7 @@ public class ItemSonicScrewdriver extends Item {
                 Random rand = new Random();
                 drops.forEach(d -> {
                     ItemEntity ent = target.entityDropItem(d, 1.0F);
-                    ent.setMotion(ent.getMotion().add((double)((rand.nextFloat() - rand.nextFloat()) * 0.1F), (double)(rand.nextFloat() * 0.05F), (double)((rand.nextFloat() - rand.nextFloat()) * 0.1F)));
+                    ent.setMotion(ent.getMotion().add((rand.nextFloat() - rand.nextFloat()) * 0.1F, rand.nextFloat() * 0.05F, (rand.nextFloat() - rand.nextFloat()) * 0.1F));
                 });
                 stack.damageItem(1, target, e -> e.sendBreakAnimation(hand));
             }

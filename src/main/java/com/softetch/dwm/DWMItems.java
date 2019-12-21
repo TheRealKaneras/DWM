@@ -2,6 +2,11 @@ package com.softetch.dwm;
 
 import com.softetch.dwm.common.item.gadget.ItemSonicScrewdriver;
 import com.softetch.dwm.common.item.gadget.ItemTwoDis;
+import net.minecraft.block.Block;
+import net.minecraft.block.SandBlock;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
+import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
@@ -17,6 +22,11 @@ import net.minecraftforge.registries.ObjectHolder;
 @Mod.EventBusSubscriber(modid = DWMMain.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 @ObjectHolder(DWMMain.MOD_ID)
 public class DWMItems {
+    public static Item sonicScrewdriver;
+    public static Item twoDis;
+
+    public static Block ironOxideDust;
+
     /**
      * The actual event handler that registers the custom items
      * @param event The event this event handler handles
@@ -24,8 +34,14 @@ public class DWMItems {
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
         event.getRegistry().registerAll(
-                new ItemSonicScrewdriver().setRegistryName(new ResourceLocation(DWMMain.MOD_ID, "sonic_screwdriver")),
-                new ItemTwoDis().setRegistryName(new ResourceLocation(DWMMain.MOD_ID, "two_dis"))
+                sonicScrewdriver = new ItemSonicScrewdriver().setRegistryName(new ResourceLocation(DWMMain.MOD_ID, "sonic_screwdriver")),
+                twoDis = new ItemTwoDis().setRegistryName(new ResourceLocation(DWMMain.MOD_ID, "two_dis"))
+        );
+    }
+
+    public static void registerBlocks(RegistryEvent.Register<Block> event){
+        event.getRegistry().registerAll(
+                ironOxideDust = new SandBlock(11098145, Block.Properties.create(Material.SAND, MaterialColor.SAND).hardnessAndResistance(0.5F).sound(SoundType.SAND)).setRegistryName(DWMMain.MOD_ID, "iron_oxide_dust")
         );
     }
 
