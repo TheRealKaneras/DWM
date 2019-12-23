@@ -13,3 +13,4 @@ List of current features:
   - Causes chickens to lay eggs
 - 2Dis (Flattens entities)
 - Colourful roundels
+- Red Fez
