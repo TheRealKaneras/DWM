@@ -1,5 +1,6 @@
 package com.softetch.dwm.common.item.gadget;
 
+import com.google.common.collect.Maps;
 import com.softetch.dwm.DWMSounds;
 import net.minecraft.block.*;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -7,24 +8,29 @@ import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.monster.SlimeEntity;
+import net.minecraft.entity.passive.ChickenEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.Fluids;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemUseContext;
+import net.minecraft.inventory.Inventory;
+import net.minecraft.inventory.InventoryHelper;
+import net.minecraft.item.*;
+import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IShearable;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 /**
  * A class containing all the properties and methods required for a sonic screwdriver
  */
 public class ItemSonicScrewdriver extends Item {
+    private final Map<Block, Item> smeltingResults = Maps.newHashMap();
+    private static final Random RANDOM = new Random();
 
     /**
      * Creates a new sonic screwdriver
@@ -58,13 +64,41 @@ public class ItemSonicScrewdriver extends Item {
         // Ignite TNT
         if (blockState.getBlock() == Blocks.TNT) {
             blockState.getBlock().catchFire(blockState, world, blockPos, Direction.UP, playerEntity);
-            world.setBlockState(blockPos, Blocks.AIR.getDefaultState());
+            world.destroyBlock(blockPos, false);
         }
         // Toggle redstone lamp being lit
         if (blockState.getBlock() == Blocks.REDSTONE_LAMP) {
             BlockState newBlockState = blockState.cycle(RedstoneLampBlock.LIT);
             world.setBlockState(blockPos, newBlockState, 2);
         }
+        // Smelt ores
+        if (blockState.getBlock() instanceof OreBlock) {
+            Item item = getSmeltingResult(world, blockState.getBlock());
+            if (item != null) {
+                InventoryHelper.spawnItemStack(world, blockPos.getX(), blockPos.getY(), blockPos.getZ(), new ItemStack(item));
+                world.destroyBlock(blockPos, false);
+            }
+        }
+    }
+
+    /**
+     * Get the resulting 'ingot' from smelting the block
+     * @param world world the smelting in performed in
+     * @param block block being smelted
+     * @return the resulting smelted ingot (can be null if there is no result)
+     */
+    public Item getSmeltingResult(World world, Block block) {
+        if (smeltingResults.containsKey(block)) {
+            return smeltingResults.get(block);
+        }
+        ItemStack stack = new ItemStack(block.asItem());
+        IRecipe<?> recipe = world.getRecipeManager().getRecipe(IRecipeType.SMELTING, new Inventory(stack), world).orElse(null);
+        if (recipe != null) {
+            Item item = recipe.getRecipeOutput().getItem();
+            smeltingResults.put(block, item);
+            return item;
+        }
+        return null;
     }
 
     /**
@@ -87,10 +121,9 @@ public class ItemSonicScrewdriver extends Item {
             BlockPos pos = new BlockPos(target.posX, target.posY, target.posZ);
             if (shearableEntity.isShearable(stack, target.world, pos)) {
                 List<ItemStack> drops = shearableEntity.onSheared(stack, target.world, pos, EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, stack));
-                Random rand = new Random();
                 drops.forEach(d -> {
                     ItemEntity ent = target.entityDropItem(d, 1.0F);
-                    ent.setMotion(ent.getMotion().add((rand.nextFloat() - rand.nextFloat()) * 0.1F, rand.nextFloat() * 0.05F, (rand.nextFloat() - rand.nextFloat()) * 0.1F));
+                    ent.setMotion(ent.getMotion().add((RANDOM.nextFloat() - RANDOM.nextFloat()) * 0.1F, RANDOM.nextFloat() * 0.05F, (RANDOM.nextFloat() - RANDOM.nextFloat()) * 0.1F));
                 });
                 stack.damageItem(1, target, e -> e.sendBreakAnimation(hand));
             }
@@ -101,6 +134,11 @@ public class ItemSonicScrewdriver extends Item {
             target.attackEntityFrom(DamageSource.GENERIC, 4.0f);
             target.performHurtAnimation();
             return true;
+        }
+        // Get the chicken to drop an egg
+        if (target instanceof ChickenEntity) {
+            target.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (RANDOM.nextFloat() - RANDOM.nextFloat()) * 0.2F + 1.0F);
+            target.entityDropItem(Items.EGG);
         }
         return false;
     }
@@ -113,10 +151,12 @@ public class ItemSonicScrewdriver extends Item {
     @Override
     public ActionResultType onItemUse(ItemUseContext context) {
         World world = context.getWorld();
+        if (world.isRemote)
+            return super.onItemUse(context);
         BlockPos blockPos = context.getPos();
         BlockState blockState = world.getBlockState(blockPos);
         world.playSound(blockPos.getX(), blockPos.getY(), blockPos.getZ(), DWMSounds.sonicScrewdriver, SoundCategory.BLOCKS, 1.0f, 1.0f,false);
-        if (!world.isRemote && blockState != null) {
+        if (blockState != null) {
             PlayerEntity playerEntity = context.getPlayer();
             handleBlockInteraction(world, playerEntity, blockState, blockPos);
             return ActionResultType.SUCCESS;
