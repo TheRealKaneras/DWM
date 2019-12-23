@@ -1,74 +1,100 @@
 package com.softetch.dwm.client.model.entity;
 
+import com.mojang.blaze3d.platform.GlStateManager;
 import com.softetch.dwm.common.entity.AdiposeEntity;
 import net.minecraft.client.renderer.entity.model.EntityModel;
-import net.minecraft.client.renderer.entity.model.IHasArm;
 import net.minecraft.client.renderer.entity.model.RendererModel;
 import net.minecraft.client.renderer.model.ModelBox;
-import net.minecraft.util.HandSide;
 import net.minecraft.util.math.MathHelper;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 
-/**
- * The model for adipose
- */
-@OnlyIn(Dist.CLIENT)
 public class ModelAdipose extends EntityModel<AdiposeEntity> {
-	private final RendererModel body;
-	private final RendererModel leftArm;
-	private final RendererModel rightLeg;
-	private final RendererModel leftLeg;
-	private final RendererModel rightArm;
+	public RendererModel bipedBody;
+	public RendererModel bipedRightArm;
+	public RendererModel bipedLeftArm;
+	public RendererModel bipedRightLeg;
+	public RendererModel bipedLeftLeg;
 
-	/**
-	 * Set up all parts of the adipose as renderable boxes
-	 */
 	public ModelAdipose() {
 		textureWidth = 64;
 		textureHeight = 64;
 
-		body = new RendererModel(this);
-		body.setRotationPoint(0.0F, 24.0F, 0.0F);
-		body.cubeList.add(new ModelBox(body, 0, 0, -2.5F, -6.0F, -0.5F, 4, 5, 2, 0.0F, false));
-		body.cubeList.add(new ModelBox(body, 0, 8, -2.0F, -5.0F, -0.55F, 1, 1, 1, 0.0F, false));
-		body.cubeList.add(new ModelBox(body, 5, 8, 0.0F, -5.0F, -0.55F, 1, 1, 1, 0.0F, false));
+		bipedBody = new RendererModel(this);
+		bipedBody.setRotationPoint(0.0F, 24.0F, 0.0F);
+		bipedBody.cubeList.add(new ModelBox(bipedBody, 0, 0, -2.5F, -6.0F, -0.5F, 4, 5, 2, 0.0F, false));
+		bipedBody.cubeList.add(new ModelBox(bipedBody, 0, 8, -2.0F, -5.0F, -0.55F, 1, 1, 1, 0.0F, false));
+		bipedBody.cubeList.add(new ModelBox(bipedBody, 5, 8, 0.0F, -5.0F, -0.55F, 1, 1, 1, 0.0F, false));
 
-		leftArm = new RendererModel(this);
-		leftArm.setRotationPoint(0.0F, 24.0F, 0.0F);
-		leftArm.cubeList.add(new ModelBox(leftArm, 14, 4, -3.0F, -4.5F, 0.0F, 1, 2, 1, 0.0F, false));
+		bipedLeftArm = new RendererModel(this);
+		bipedLeftArm.setRotationPoint(-2.0F, 20.0F, 0.5F);
+		bipedLeftArm.cubeList.add(new ModelBox(bipedLeftArm, 14, 4, -1.0F, -0.5F, -0.5F, 1, 2, 1, 0.0F, false));
 
-		rightLeg = new RendererModel(this);
-		rightLeg.setRotationPoint(0.0F, 24.0F, 0.0F);
-		rightLeg.cubeList.add(new ModelBox(rightLeg, 19, 0, 0.0F, -1.0F, 0.0F, 1, 1, 1, 0.0F, false));
+		bipedRightLeg = new RendererModel(this);
+		bipedRightLeg.setRotationPoint(0.5F, 23.0F, 0.0F);
+		bipedRightLeg.cubeList.add(new ModelBox(bipedRightLeg, 19, 0, -0.5F, 0.0F, 0.0F, 1, 1, 1, 0.0F, false));
 
-		leftLeg = new RendererModel(this);
-		leftLeg.setRotationPoint(0.0F, 24.0F, 0.0F);
-		leftLeg.cubeList.add(new ModelBox(leftLeg, 14, 0, -2.0F, -1.0F, 0.0F, 1, 1, 1, 0.0F, false));
+		bipedLeftLeg = new RendererModel(this);
+		bipedLeftLeg.setRotationPoint(-1.5F, 23.0F, 0.0F);
+		bipedLeftLeg.cubeList.add(new ModelBox(bipedLeftLeg, 14, 0, -0.5F, 0.0F, 0.0F, 1, 1, 1, 0.0F, false));
 
-		rightArm = new RendererModel(this);
-		rightArm.setRotationPoint(0.0F, 24.0F, 0.0F);
-		rightArm.cubeList.add(new ModelBox(rightArm, 19, 4, 1.0F, -4.5F, 0.0F, 1, 2, 1, 0.0F, false));
+		bipedRightArm = new RendererModel(this);
+		bipedRightArm.setRotationPoint(1.5F, 20.0F, 0.5F);
+		bipedRightArm.cubeList.add(new ModelBox(bipedRightArm, 19, 4, -0.5F, -0.5F, -0.5F, 1, 2, 1, 0.0F, false));
 	}
 
-	/**
-	 * Render the adipose model
-	 *
-	 * @param entity      - the entity being rendered
-	 * @param originX     - where the entity is being rendered on the x axis, relative to the player
-	 * @param originY     - where the entity is being rendered on the y axis, relative to the player
-	 * @param originZ     - where the entity is being rendered on the z axis, relative to the player
-	 * @param entityYaw   - where the entity is looking on the horizontal axis
-	 * @param entityPitch - where the entity is looking on the vertical axis
-	 * @param scale       - the relative scale of the entity
-	 */
-	@Override
-	public void render(AdiposeEntity entity, float originX, float originY, float originZ, float entityYaw, float entityPitch, float scale) {
-		body.render(scale);
-		leftArm.render(scale);
-		rightLeg.render(scale);
-		leftLeg.render(scale);
-		rightArm.render(scale);
+
+	public void render(AdiposeEntity entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scale) {
+		this.setRotationAngles(entityIn, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
+		GlStateManager.pushMatrix();
+		this.bipedBody.render(scale);
+		this.bipedRightArm.render(scale);
+		this.bipedLeftArm.render(scale);
+		this.bipedRightLeg.render(scale);
+		this.bipedLeftLeg.render(scale);
+		GlStateManager.popMatrix();
+	}
+
+	public void setRotationAngles(AdiposeEntity entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scaleFactor) {
+
+		this.bipedBody.rotateAngleY = 0.0F;
+//		this.bipedRightArm.rotationPointZ = 0.0F;
+//		this.bipedRightArm.rotationPointX = -5.0F;
+//		this.bipedLeftArm.rotationPointZ = 0.0F;
+//		this.bipedLeftArm.rotationPointX = 5.0F;
+
+		this.bipedRightArm.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F + (float)Math.PI) * 2.0F * limbSwingAmount * 0.5F;
+		this.bipedLeftArm.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * 2.0F * limbSwingAmount * 0.5F;
+		this.bipedRightArm.rotateAngleZ = 0.0F;
+		this.bipedLeftArm.rotateAngleZ = 0.0F;
+		this.bipedRightLeg.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount;
+		this.bipedLeftLeg.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F + (float)Math.PI) * 1.4F * limbSwingAmount;
+		this.bipedRightLeg.rotateAngleY = 0.0F;
+		this.bipedLeftLeg.rotateAngleY = 0.0F;
+		this.bipedRightLeg.rotateAngleZ = 0.0F;
+		this.bipedLeftLeg.rotateAngleZ = 0.0F;
+
+		this.bipedRightArm.rotateAngleY = 0.0F;
+		this.bipedRightArm.rotateAngleZ = 0.0F;
+
+		if (this.swingProgress > 0.0F) {
+			float f1 = this.swingProgress;
+			this.bipedBody.rotateAngleY = MathHelper.sin(MathHelper.sqrt(f1) * ((float)Math.PI * 2F)) * 0.2F;
+
+			this.bipedRightArm.rotationPointZ = MathHelper.sin(this.bipedBody.rotateAngleY) * 5.0F;
+			this.bipedRightArm.rotationPointX = -MathHelper.cos(this.bipedBody.rotateAngleY) * 5.0F;
+			this.bipedLeftArm.rotationPointZ = -MathHelper.sin(this.bipedBody.rotateAngleY) * 5.0F;
+			this.bipedLeftArm.rotationPointX = MathHelper.cos(this.bipedBody.rotateAngleY) * 5.0F;
+			this.bipedRightArm.rotateAngleY += this.bipedBody.rotateAngleY;
+			this.bipedLeftArm.rotateAngleY += this.bipedBody.rotateAngleY;
+			this.bipedLeftArm.rotateAngleX += this.bipedBody.rotateAngleY;
+		}
+
+		this.bipedBody.rotateAngleX = 0.0F;
+
+		this.bipedRightArm.rotateAngleZ += MathHelper.cos(ageInTicks * 0.09F) * 0.05F + 0.05F;
+		this.bipedLeftArm.rotateAngleZ -= MathHelper.cos(ageInTicks * 0.09F) * 0.05F + 0.05F;
+		this.bipedRightArm.rotateAngleX += MathHelper.sin(ageInTicks * 0.067F) * 0.05F;
+		this.bipedLeftArm.rotateAngleX -= MathHelper.sin(ageInTicks * 0.067F) * 0.05F;
+
 	}
 
 }
