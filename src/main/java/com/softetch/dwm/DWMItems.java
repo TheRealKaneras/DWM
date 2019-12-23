@@ -7,7 +7,6 @@ import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -73,8 +72,9 @@ public class DWMItems {
     @SubscribeEvent(priority = EventPriority.NORMAL)
     public static void registerItems(RegistryEvent.Register<Item> event) {
         event.getRegistry().registerAll(
-                new ItemSonicScrewdriver().setRegistryName(new ResourceLocation(DWMMain.MOD_ID, "sonic_screwdriver")),
-                new ItemTwoDis().setRegistryName(new ResourceLocation(DWMMain.MOD_ID, "two_dis")),
+                new ItemSonicScrewdriver().setRegistryName(DWMMain.MOD_ID, "sonic_screwdriver"),
+                new ItemSonicScrewdriver().setRegistryName(DWMMain.MOD_ID, "sonic_lipstick"),
+                new ItemTwoDis().setRegistryName(DWMMain.MOD_ID, "two_dis"),
                 new BlockItem(BLACK_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "black_roundel"),
                 new BlockItem(BLUE_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "blue_roundel"),
                 new BlockItem(BROWN_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "brown_roundel"),
@@ -93,6 +93,5 @@ public class DWMItems {
                 new BlockItem(YELLOW_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "yellow_roundel")
         );
     }
-
 
 }

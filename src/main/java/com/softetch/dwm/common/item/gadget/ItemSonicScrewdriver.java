@@ -23,14 +23,12 @@ import net.minecraftforge.common.IShearable;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Random;
 
 /**
  * A class containing all the properties and methods required for a sonic screwdriver
  */
 public class ItemSonicScrewdriver extends Item {
     private final Map<Block, Item> smeltingResults = Maps.newHashMap();
-    private static final Random RANDOM = new Random();
 
     /**
      * Creates a new sonic screwdriver
@@ -123,7 +121,7 @@ public class ItemSonicScrewdriver extends Item {
                 List<ItemStack> drops = shearableEntity.onSheared(stack, target.world, pos, EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, stack));
                 drops.forEach(d -> {
                     ItemEntity ent = target.entityDropItem(d, 1.0F);
-                    ent.setMotion(ent.getMotion().add((RANDOM.nextFloat() - RANDOM.nextFloat()) * 0.1F, RANDOM.nextFloat() * 0.05F, (RANDOM.nextFloat() - RANDOM.nextFloat()) * 0.1F));
+                    ent.setMotion(ent.getMotion().add((random.nextFloat() - random.nextFloat()) * 0.1F, random.nextFloat() * 0.05F, (random.nextFloat() - random.nextFloat()) * 0.1F));
                 });
                 stack.damageItem(1, target, e -> e.sendBreakAnimation(hand));
             }
@@ -137,7 +135,7 @@ public class ItemSonicScrewdriver extends Item {
         }
         // Get the chicken to drop an egg
         if (target instanceof ChickenEntity) {
-            target.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (RANDOM.nextFloat() - RANDOM.nextFloat()) * 0.2F + 1.0F);
+            target.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (random.nextFloat() - random.nextFloat()) * 0.2F + 1.0F);
             target.entityDropItem(Items.EGG);
         }
         return false;
