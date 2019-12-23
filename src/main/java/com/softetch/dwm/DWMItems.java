@@ -1,6 +1,7 @@
 package com.softetch.dwm;
 
 import com.softetch.dwm.common.block.RoundelBlock;
+import com.softetch.dwm.common.item.clothing.HatItem;
 import com.softetch.dwm.common.item.gadget.ItemSonicScrewdriver;
 import com.softetch.dwm.common.item.gadget.ItemTwoDis;
 import net.minecraft.block.Block;
@@ -76,6 +77,7 @@ public class DWMItems {
                 new ItemSonicScrewdriver().setRegistryName(DWMMain.MOD_ID, "sonic_screwdriver_ten"),
                 new ItemSonicScrewdriver().setRegistryName(DWMMain.MOD_ID, "sonic_lipstick"),
                 new ItemTwoDis().setRegistryName(DWMMain.MOD_ID, "two_dis"),
+                new HatItem().setRegistryName(DWMMain.MOD_ID, "red_fez"),
                 new BlockItem(BLACK_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "black_roundel"),
                 new BlockItem(BLUE_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "blue_roundel"),
                 new BlockItem(BROWN_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "brown_roundel"),
