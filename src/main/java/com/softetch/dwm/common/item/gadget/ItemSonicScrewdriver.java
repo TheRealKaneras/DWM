@@ -110,9 +110,9 @@ public class ItemSonicScrewdriver extends Item {
     @SuppressWarnings("deprecation")
     @Override
     public boolean itemInteractionForEntity(ItemStack stack, PlayerEntity playerEntity, LivingEntity target, Hand hand) {
+        target.world.playSound(target.posX, target.posY, target.posZ, DWMSounds.sonicScrewdriver, SoundCategory.AMBIENT, 1.0f, 1.0f,false);
         if (playerEntity.world.isRemote)
             return false;
-        playerEntity.world.playSound(target.posX, target.posY, target.posZ, DWMSounds.sonicScrewdriver, SoundCategory.BLOCKS, 1.0f, 1.0f,false);
         // Allow for abilities such as shearing sheep
         if (target instanceof IShearable) {
             IShearable shearableEntity = (IShearable)target;
@@ -149,11 +149,11 @@ public class ItemSonicScrewdriver extends Item {
     @Override
     public ActionResultType onItemUse(ItemUseContext context) {
         World world = context.getWorld();
+        BlockPos blockPos = context.getPos();
+        world.playSound(context.getPlayer(), blockPos, DWMSounds.sonicScrewdriver, SoundCategory.AMBIENT, 1.0f, 1.0f);
         if (world.isRemote)
             return super.onItemUse(context);
-        BlockPos blockPos = context.getPos();
         BlockState blockState = world.getBlockState(blockPos);
-        world.playSound(blockPos.getX(), blockPos.getY(), blockPos.getZ(), DWMSounds.sonicScrewdriver, SoundCategory.BLOCKS, 1.0f, 1.0f,false);
         if (blockState != null) {
             PlayerEntity playerEntity = context.getPlayer();
             handleBlockInteraction(world, playerEntity, blockState, blockPos);
