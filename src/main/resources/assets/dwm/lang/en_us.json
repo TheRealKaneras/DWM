@@ -1,5 +1,6 @@
 {
   "item.dwm.sonic_screwdriver": "Sonic Screwdriver",
+  "item.dwm.sonic_lipstick": "Sonic Lipstick",
   "item.dwm.two_dis": "2Dis",
   "block.dwm.black_roundel": "Black Roundel",
   "block.dwm.blue_roundel": "Blue Roundel",
@@ -13,6 +14,7 @@
   "block.dwm.magenta_roundel": "Magenta Roundel",
   "block.dwm.orange_roundel": "Orange Roundel",
   "block.dwm.pink_roundel": "Pink Roundel",
+  "block.dwm.purple_roundel": "Purple Roundel",
   "block.dwm.red_roundel": "Red Roundel",
   "block.dwm.white_roundel": "White Roundel",
   "block.dwm.yellow_roundel": "Yellow Roundel",
