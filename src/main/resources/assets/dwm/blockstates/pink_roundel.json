@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=south": { "model": "dwm:block/pink_roundel" },
+    "facing=east": { "model": "dwm:block/pink_roundel", "y": 270 },
+    "facing=west": { "model": "dwm:block/pink_roundel", "y": 90 },
+    "facing=north": { "model": "dwm:block/pink_roundel", "y": 180 }
+  }
+}

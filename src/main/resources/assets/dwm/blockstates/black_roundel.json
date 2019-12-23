@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "inventory": { "model": "dwm:block/black_roundel" },
+    "facing=south": { "model": "dwm:block/black_roundel" },
+    "facing=east": { "model": "dwm:block/black_roundel", "y": 270 },
+    "facing=west": { "model": "dwm:block/black_roundel", "y": 90 },
+    "facing=north": { "model": "dwm:block/black_roundel", "y": 180 }
+  }
+}

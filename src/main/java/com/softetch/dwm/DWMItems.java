@@ -22,7 +22,22 @@ import net.minecraftforge.registries.ObjectHolder;
 @Mod.EventBusSubscriber(modid = DWMMain.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 @ObjectHolder(DWMMain.MOD_ID)
 public class DWMItems {
-    public static final RoundelBlock CLASSIC_ROUNDEL = null;
+    public static final RoundelBlock BLACK_ROUNDEL = null;
+    public static final RoundelBlock BLUE_ROUNDEL = null;
+    public static final RoundelBlock BROWN_ROUNDEL = null;
+    public static final RoundelBlock CYAN_ROUNDEL = null;
+    public static final RoundelBlock GREEN_ROUNDEL = null;
+    public static final RoundelBlock GREY_ROUNDEL = null;
+    public static final RoundelBlock LIGHT_BLUE_ROUNDEL = null;
+    public static final RoundelBlock LIGHT_GREY_ROUNDEL = null;
+    public static final RoundelBlock LIME_ROUNDEL = null;
+    public static final RoundelBlock MAGENTA_ROUNDEL = null;
+    public static final RoundelBlock ORANGE_ROUNDEL = null;
+    public static final RoundelBlock PINK_ROUNDEL = null;
+    public static final RoundelBlock PURPLE_ROUNDEL = null;
+    public static final RoundelBlock RED_ROUNDEL = null;
+    public static final RoundelBlock WHITE_ROUNDEL = null;
+    public static final RoundelBlock YELLOW_ROUNDEL = null;
 
     /**
      * The actual event handler that registers the custom blocks
@@ -31,7 +46,23 @@ public class DWMItems {
     @SubscribeEvent(priority = EventPriority.HIGH)
     public static void registerBlocks(RegistryEvent.Register<Block> event){
         event.getRegistry().registerAll(
-                new RoundelBlock().setRegistryName(DWMMain.MOD_ID, "classic_roundel")
+                new RoundelBlock().setRegistryName(DWMMain.MOD_ID, "black_roundel"),
+                new RoundelBlock().setRegistryName(DWMMain.MOD_ID, "blue_roundel"),
+                new RoundelBlock().setRegistryName(DWMMain.MOD_ID, "brown_roundel"),
+                new RoundelBlock().setRegistryName(DWMMain.MOD_ID, "cyan_roundel"),
+                new RoundelBlock().setRegistryName(DWMMain.MOD_ID, "green_roundel"),
+                new RoundelBlock().setRegistryName(DWMMain.MOD_ID, "grey_roundel"),
+                new RoundelBlock().setRegistryName(DWMMain.MOD_ID, "light_blue_roundel"),
+                new RoundelBlock().setRegistryName(DWMMain.MOD_ID, "light_grey_roundel"),
+                new RoundelBlock().setRegistryName(DWMMain.MOD_ID, "lime_roundel"),
+                new RoundelBlock().setRegistryName(DWMMain.MOD_ID, "magenta_roundel"),
+                new RoundelBlock().setRegistryName(DWMMain.MOD_ID, "orange_roundel"),
+                new RoundelBlock().setRegistryName(DWMMain.MOD_ID, "pink_roundel"),
+                new RoundelBlock().setRegistryName(DWMMain.MOD_ID, "purple_roundel"),
+                new RoundelBlock().setRegistryName(DWMMain.MOD_ID, "red_roundel"),
+                new RoundelBlock().setRegistryName(DWMMain.MOD_ID, "white_roundel"),
+                new RoundelBlock().setRegistryName(DWMMain.MOD_ID, "yellow_roundel")
+
         );
     }
 
@@ -44,7 +75,22 @@ public class DWMItems {
         event.getRegistry().registerAll(
                 new ItemSonicScrewdriver().setRegistryName(new ResourceLocation(DWMMain.MOD_ID, "sonic_screwdriver")),
                 new ItemTwoDis().setRegistryName(new ResourceLocation(DWMMain.MOD_ID, "two_dis")),
-                new BlockItem(CLASSIC_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "classic_roundel")
+                new BlockItem(BLACK_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "black_roundel"),
+                new BlockItem(BLUE_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "blue_roundel"),
+                new BlockItem(BROWN_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "brown_roundel"),
+                new BlockItem(CYAN_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "cyan_roundel"),
+                new BlockItem(GREEN_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "green_roundel"),
+                new BlockItem(GREY_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "grey_roundel"),
+                new BlockItem(LIGHT_BLUE_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "light_blue_roundel"),
+                new BlockItem(LIGHT_GREY_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "light_grey_roundel"),
+                new BlockItem(LIME_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "lime_roundel"),
+                new BlockItem(MAGENTA_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "magenta_roundel"),
+                new BlockItem(ORANGE_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "orange_roundel"),
+                new BlockItem(PINK_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "pink_roundel"),
+                new BlockItem(PURPLE_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "purple_roundel"),
+                new BlockItem(RED_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "red_roundel"),
+                new BlockItem(WHITE_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "white_roundel"),
+                new BlockItem(YELLOW_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "yellow_roundel")
         );
     }
 

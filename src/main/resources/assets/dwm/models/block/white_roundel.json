@@ -1,9 +1,23 @@
 {
 	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"display": {
+		"gui": {
+			"rotation": [ 30, 135, 0 ],
+			"translation": [ 0, 0, 0],
+			"scale":[ 0.625, 0.625, 0.625 ]
+		},
+		"fixed": {
+			"rotation": [ 0, 90, 0 ],
+			"translation": [ 0, 0, 0 ],
+			"scale": [ 0.5, 0.5, 0.5 ]
+		}
+	},
+	"ambientocclusion": false,
 	"texture_size": [64, 64],
 	"textures": {
 		"0": "dwm:block/white",
-		"1": "dwm:block/black",
+		"1": "dwm:block/white",
 		"2": "dwm:block/grey",
 		"particle": "dwm:block/white"
 	},

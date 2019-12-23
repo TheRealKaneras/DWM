@@ -1,7 +1,21 @@
 {
   "item.dwm.sonic_screwdriver": "Sonic Screwdriver",
   "item.dwm.two_dis": "2Dis",
-  "block.dwm.classic_roundel": "Classic Roundel",
+  "block.dwm.black_roundel": "Black Roundel",
+  "block.dwm.blue_roundel": "Blue Roundel",
+  "block.dwm.brown_roundel": "Brown Roundel",
+  "block.dwm.cyan_roundel": "Cyan Roundel",
+  "block.dwm.green_roundel": "Green Roundel",
+  "block.dwm.grey_roundel": "Gray Roundel",
+  "block.dwm.light_blue_roundel": "Light Blue Roundel",
+  "block.dwm.light_grey_roundel": "Light Gray Roundel",
+  "block.dwm.lime_roundel": "Lime Roundel",
+  "block.dwm.magenta_roundel": "Magenta Roundel",
+  "block.dwm.orange_roundel": "Orange Roundel",
+  "block.dwm.pink_roundel": "Pink Roundel",
+  "block.dwm.red_roundel": "Red Roundel",
+  "block.dwm.white_roundel": "White Roundel",
+  "block.dwm.yellow_roundel": "Yellow Roundel",
   "entity.dwm.dalek": "Dalek",
   "entity.dwm.adipose": "Adipose"
 }
