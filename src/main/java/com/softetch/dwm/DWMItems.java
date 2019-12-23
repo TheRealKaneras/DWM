@@ -73,6 +73,7 @@ public class DWMItems {
     public static void registerItems(RegistryEvent.Register<Item> event) {
         event.getRegistry().registerAll(
                 new ItemSonicScrewdriver().setRegistryName(DWMMain.MOD_ID, "sonic_screwdriver"),
+                new ItemSonicScrewdriver().setRegistryName(DWMMain.MOD_ID, "sonic_screwdriver_ten"),
                 new ItemSonicScrewdriver().setRegistryName(DWMMain.MOD_ID, "sonic_lipstick"),
                 new ItemTwoDis().setRegistryName(DWMMain.MOD_ID, "two_dis"),
                 new BlockItem(BLACK_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "black_roundel"),
