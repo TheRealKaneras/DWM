@@ -17,6 +17,8 @@ import net.minecraftforge.registries.ObjectHolder;
 public class DWMSounds {
     public static SoundEvent sonicScrewdriver;
 
+    private DWMSounds() {}
+
     /**
      * Set up the SoundEvent based on a resource location.
      * @param resourceLocation

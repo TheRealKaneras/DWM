@@ -5,9 +5,7 @@ import com.softetch.dwm.common.item.clothing.HatItem;
 import com.softetch.dwm.common.item.gadget.ItemSonicScrewdriver;
 import com.softetch.dwm.common.item.gadget.ItemTwoDis;
 import net.minecraft.block.Block;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
+import net.minecraft.item.*;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -39,6 +37,8 @@ public class DWMItems {
     public static final RoundelBlock WHITE_ROUNDEL = null;
     public static final RoundelBlock YELLOW_ROUNDEL = null;
     public static final Item ADIPOSE_PILL = null;
+
+    private DWMItems() {}
 
     /**
      * The actual event handler that registers the custom blocks
@@ -75,6 +75,7 @@ public class DWMItems {
     public static void registerItems(RegistryEvent.Register<Item> event) {
         event.getRegistry().registerAll(
                 new Item(new Item.Properties().group(ItemGroup.BREWING).food(DWMFoods.PILL)).setRegistryName(DWMMain.MOD_ID, "adipose_pill"),
+                new SwordItem(ItemTier.WOOD, 2, -2.4f, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(DWMMain.MOD_ID, "cricket_bat"),
                 new ItemTwoDis().setRegistryName(DWMMain.MOD_ID, "two_dis"),
                 new ItemSonicScrewdriver().setRegistryName(DWMMain.MOD_ID, "sonic_screwdriver"),
                 new ItemSonicScrewdriver().setRegistryName(DWMMain.MOD_ID, "sonic_screwdriver_third"),

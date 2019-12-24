@@ -22,6 +22,8 @@ public class DWMEntities {
     public static final EntityType<BaseDalekEntity> DALEK;
     public static final EntityType<AdiposeEntity> ADIPOSE;
 
+    private DWMEntities() {}
+
     /**
      * Register the {@link net.minecraft.entity.Entity} types
      * @param event - The event
@@ -52,8 +54,8 @@ public class DWMEntities {
      * Build all the entity types
      */
     static {
-        DALEK = build("dalek", EntityType.Builder.<BaseDalekEntity>create(BaseDalekEntity::new, EntityClassification.MONSTER).size(0.9f, 1.8f));
-        ADIPOSE = build("adipose", EntityType.Builder.<AdiposeEntity>create(AdiposeEntity::new, EntityClassification.CREATURE).size(0.3f, 0.4f));
+        DALEK = build("dalek", EntityType.Builder.create(BaseDalekEntity::new, EntityClassification.MONSTER).size(0.9f, 1.8f));
+        ADIPOSE = build("adipose", EntityType.Builder.create(AdiposeEntity::new, EntityClassification.CREATURE).size(0.3f, 0.4f));
     }
 
 }

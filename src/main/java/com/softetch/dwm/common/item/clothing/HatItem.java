@@ -1,9 +1,6 @@
 package com.softetch.dwm.common.item.clothing;
 
 import net.minecraft.block.DispenserBlock;
-import net.minecraft.dispenser.DefaultDispenseItemBehavior;
-import net.minecraft.dispenser.IBlockSource;
-import net.minecraft.dispenser.IDispenseItemBehavior;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
@@ -19,22 +16,13 @@ import net.minecraft.world.World;
  * Class to contain properties and methods required for hats
  */
 public class HatItem extends Item {
-    public static final IDispenseItemBehavior DISPENSER_BEHAVIOR = new DefaultDispenseItemBehavior() {
-        /**
-         * Dispense the specified stack, play the dispense sound and spawn particles.
-         */
-        protected ItemStack dispenseStack(IBlockSource source, ItemStack stack) {
-            ItemStack itemstack = ArmorItem.dispenseArmor(source, stack);
-            return itemstack.isEmpty() ? super.dispenseStack(source, stack) : itemstack;
-        }
-    };
 
     /**
      * Create a new hat item
      */
     public HatItem() {
         super(new Item.Properties().group(ItemGroup.MISC));
-        DispenserBlock.registerDispenseBehavior(this, DISPENSER_BEHAVIOR);
+        DispenserBlock.registerDispenseBehavior(this, ArmorItem.DISPENSER_BEHAVIOR);
     }
 
     /**

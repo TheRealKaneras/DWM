@@ -19,6 +19,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 @OnlyIn(Dist.CLIENT)
 public class DWMRenderers {
 
+    private DWMRenderers() {}
+
     /**
      * Register all renderers when the client is being set up
      * @param event - the event called when the client is being set up.
