@@ -38,6 +38,7 @@ public class DWMItems {
     public static final RoundelBlock RED_ROUNDEL = null;
     public static final RoundelBlock WHITE_ROUNDEL = null;
     public static final RoundelBlock YELLOW_ROUNDEL = null;
+    public static final Item ADIPOSE_PILL = null;
 
     /**
      * The actual event handler that registers the custom blocks
@@ -73,11 +74,12 @@ public class DWMItems {
     @SubscribeEvent(priority = EventPriority.NORMAL)
     public static void registerItems(RegistryEvent.Register<Item> event) {
         event.getRegistry().registerAll(
+                new Item(new Item.Properties().group(ItemGroup.BREWING).food(DWMFoods.PILL)).setRegistryName(DWMMain.MOD_ID, "adipose_pill"),
+                new ItemTwoDis().setRegistryName(DWMMain.MOD_ID, "two_dis"),
                 new ItemSonicScrewdriver().setRegistryName(DWMMain.MOD_ID, "sonic_screwdriver"),
                 new ItemSonicScrewdriver().setRegistryName(DWMMain.MOD_ID, "sonic_screwdriver_third"),
                 new ItemSonicScrewdriver().setRegistryName(DWMMain.MOD_ID, "sonic_screwdriver_ten"),
                 new ItemSonicScrewdriver().setRegistryName(DWMMain.MOD_ID, "sonic_lipstick"),
-                new ItemTwoDis().setRegistryName(DWMMain.MOD_ID, "two_dis"),
                 new HatItem().setRegistryName(DWMMain.MOD_ID, "black_fez"),
                 new HatItem().setRegistryName(DWMMain.MOD_ID, "blue_fez"),
                 new HatItem().setRegistryName(DWMMain.MOD_ID, "brown_fez"),

@@ -7,13 +7,19 @@ import net.minecraft.client.renderer.entity.model.RendererModel;
 import net.minecraft.client.renderer.model.ModelBox;
 import net.minecraft.util.math.MathHelper;
 
+/**
+ * The model for adipose
+ */
 public class ModelAdipose extends EntityModel<AdiposeEntity> {
-	public RendererModel bipedBody;
-	public RendererModel bipedRightArm;
-	public RendererModel bipedLeftArm;
-	public RendererModel bipedRightLeg;
-	public RendererModel bipedLeftLeg;
+	private RendererModel bipedBody;
+	private RendererModel bipedRightArm;
+	private RendererModel bipedLeftArm;
+	private RendererModel bipedRightLeg;
+	private RendererModel bipedLeftLeg;
 
+	/**
+	 * Set up all the parts of the model as renderable boxes
+	 */
 	public ModelAdipose() {
 		textureWidth = 64;
 		textureHeight = 64;
@@ -41,7 +47,16 @@ public class ModelAdipose extends EntityModel<AdiposeEntity> {
 		bipedRightArm.cubeList.add(new ModelBox(bipedRightArm, 19, 4, -0.5F, -0.5F, -0.5F, 1, 2, 1, 0.0F, false));
 	}
 
-
+	/**
+	 * Render each part of the model
+	 * @param entityIn Entity being rendered by this model
+	 * @param limbSwing A value to determine the limb swing
+	 * @param limbSwingAmount the amount limbs should be swung
+	 * @param ageInTicks how old the entity is in ticks (20 ticks per second)
+	 * @param netHeadYaw horizontal rotation of the head
+	 * @param headPitch vertical rotation of the head
+	 * @param scale The relative scale of the entity
+	 */
 	public void render(AdiposeEntity entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scale) {
 		this.setRotationAngles(entityIn, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
 		GlStateManager.pushMatrix();
@@ -53,13 +68,19 @@ public class ModelAdipose extends EntityModel<AdiposeEntity> {
 		GlStateManager.popMatrix();
 	}
 
+	/**
+	 * update rotation values on the model.
+	 * @param entityIn Entity being rendered by this model
+	 * @param limbSwing A value to determine the limb swing
+	 * @param limbSwingAmount the amount limbs should be swung
+	 * @param ageInTicks how old the entity is in ticks (20 ticks per second)
+	 * @param netHeadYaw horizontal rotation of the head
+	 * @param headPitch vertical rotation of the head
+	 * @param scaleFactor The relative scale of the entity
+	 */
 	public void setRotationAngles(AdiposeEntity entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scaleFactor) {
 
 		this.bipedBody.rotateAngleY = 0.0F;
-//		this.bipedRightArm.rotationPointZ = 0.0F;
-//		this.bipedRightArm.rotationPointX = -5.0F;
-//		this.bipedLeftArm.rotationPointZ = 0.0F;
-//		this.bipedLeftArm.rotationPointX = 5.0F;
 
 		this.bipedRightArm.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F + (float)Math.PI) * 2.0F * limbSwingAmount * 0.5F;
 		this.bipedLeftArm.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * 2.0F * limbSwingAmount * 0.5F;
