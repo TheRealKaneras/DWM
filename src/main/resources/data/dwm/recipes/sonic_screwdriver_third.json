@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PRP",
+    " D ",
+    " I "
+  ],
+  "key": {
+    "P": {
+      "item": "minecraft:glass_pane",
+      "data": 14
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "I": {
+      "item": "minecraft:iron"
+    }
+  },
+  "result": {
+    "item": "dwm:sonic_screwdriver_third"
+  }
+}
