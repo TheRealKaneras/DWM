@@ -21,7 +21,7 @@ logoFile="dwm.png"
 # A text field displayed in the mod UI
 authors="Kaneras, Honeyluck" #optional
 # The description text for the mod (multi line!) (#mandatory)
-description='''The Doctor Who Mod for Minecraft brings creatures, planets and travel from the British Sci-Fi TV Show "Doctor Who" to Minecraft'''
+description='''The Doctor Who Mod for Minecraft brings creatures, planets and travel from the British Sci-Fi TV Show "Doctor Who" to Minecraft.'''
 # Here's another dependency
 [[dependencies.dwm]]
     modId="minecraft"
