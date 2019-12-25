@@ -85,7 +85,7 @@ public class ItemSonicScrewdriver extends Item {
      * @param block block being smelted
      * @return the resulting smelted ingot (can be null if there is no result)
      */
-    public Item getSmeltingResult(World world, Block block) {
+    private Item getSmeltingResult(World world, Block block) {
         if (smeltingResults.containsKey(block)) {
             return smeltingResults.get(block);
         }
@@ -115,13 +115,14 @@ public class ItemSonicScrewdriver extends Item {
             return false;
         // Allow for abilities such as shearing sheep
         if (target instanceof IShearable) {
-            IShearable shearableEntity = (IShearable)target;
+            IShearable shearableEntity = (IShearable) target;
             BlockPos pos = new BlockPos(target.posX, target.posY, target.posZ);
             if (shearableEntity.isShearable(stack, target.world, pos)) {
                 List<ItemStack> drops = shearableEntity.onSheared(stack, target.world, pos, EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, stack));
                 drops.forEach(d -> {
                     ItemEntity ent = target.entityDropItem(d, 1.0F);
-                    ent.setMotion(ent.getMotion().add((random.nextFloat() - random.nextFloat()) * 0.1F, random.nextFloat() * 0.05F, (random.nextFloat() - random.nextFloat()) * 0.1F));
+                    if (ent != null)
+                        ent.setMotion(ent.getMotion().add((random.nextFloat() - random.nextFloat()) * 0.1F, random.nextFloat() * 0.05F, (random.nextFloat() - random.nextFloat()) * 0.1F));
                 });
                 stack.damageItem(1, target, e -> e.sendBreakAnimation(hand));
             }
@@ -153,8 +154,8 @@ public class ItemSonicScrewdriver extends Item {
         world.playSound(context.getPlayer(), blockPos, DWMSounds.sonicScrewdriver, SoundCategory.AMBIENT, 1.0f, 1.0f);
         if (world.isRemote)
             return super.onItemUse(context);
-        BlockState blockState = world.getBlockState(blockPos);
-        if (blockState != null) {
+        if (!world.isAirBlock(blockPos)) {
+            BlockState blockState = world.getBlockState(blockPos);
             PlayerEntity playerEntity = context.getPlayer();
             handleBlockInteraction(world, playerEntity, blockState, blockPos);
             return ActionResultType.SUCCESS;
