@@ -20,7 +20,7 @@ public class RenderAdipose extends LivingRenderer<AdiposeEntity, ModelAdipose> {
      * @param entityTexture - the main texture of the entity to be rendered
      */
     public RenderAdipose(EntityRendererManager entityRendererManager, ResourceLocation entityTexture) {
-        super(entityRendererManager, new ModelAdipose(), 1.0f);
+        super(entityRendererManager, new ModelAdipose(), 0.4f);
         this.entityTexture = entityTexture;
     }
     /**

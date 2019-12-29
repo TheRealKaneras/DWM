@@ -77,6 +77,14 @@ public class ItemSonicScrewdriver extends Item {
                 world.destroyBlock(blockPos, false);
             }
         }
+        // Ignite netherrack
+        if (blockState.getBlock() == Blocks.NETHERRACK) {
+            blockState.getBlock().catchFire(blockState, world, blockPos, Direction.UP, playerEntity);
+        }
+        // Destroy snow
+        if (blockState.getBlock() == Blocks.SNOW || blockState.getBlock() == Blocks.SNOW_BLOCK) {
+            world.destroyBlock(blockPos, true);
+        }
     }
 
     /**

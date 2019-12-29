@@ -1,6 +1,7 @@
 package com.softetch.dwm;
 
 import com.softetch.dwm.common.block.RoundelBlock;
+import com.softetch.dwm.common.item.DWMSpawnerItem;
 import com.softetch.dwm.common.item.clothing.HatItem;
 import com.softetch.dwm.common.item.gadget.ItemSonicScrewdriver;
 import com.softetch.dwm.common.item.gadget.ItemTwoDis;
@@ -97,6 +98,7 @@ public class DWMItems {
                 new HatItem().setRegistryName(DWMMain.MOD_ID, "red_fez"),
                 new HatItem().setRegistryName(DWMMain.MOD_ID, "white_fez"),
                 new HatItem().setRegistryName(DWMMain.MOD_ID, "yellow_fez"),
+                new DWMSpawnerItem(DWMEntities.ADIPOSE).setRegistryName(DWMMain.MOD_ID, "adipose_spawner"),
                 new BlockItem(BLACK_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "black_roundel"),
                 new BlockItem(BLUE_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "blue_roundel"),
                 new BlockItem(BROWN_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "brown_roundel"),
