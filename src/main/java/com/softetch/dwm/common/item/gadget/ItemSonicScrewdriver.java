@@ -118,7 +118,7 @@ public class ItemSonicScrewdriver extends Item {
     @SuppressWarnings("deprecation")
     @Override
     public boolean itemInteractionForEntity(ItemStack stack, PlayerEntity playerEntity, LivingEntity target, Hand hand) {
-        target.world.playSound(target.posX, target.posY, target.posZ, DWMSounds.sonicScrewdriver, SoundCategory.AMBIENT, 1.0f, 1.0f,false);
+        target.world.playSound(target.posX, target.posY, target.posZ, DWMSounds.SONIC_SCREWDRIVER, SoundCategory.AMBIENT, 1.0f, 1.0f,false);
         if (playerEntity.world.isRemote)
             return false;
         // Allow for abilities such as shearing sheep
@@ -159,7 +159,7 @@ public class ItemSonicScrewdriver extends Item {
     public ActionResultType onItemUse(ItemUseContext context) {
         World world = context.getWorld();
         BlockPos blockPos = context.getPos();
-        world.playSound(context.getPlayer(), blockPos, DWMSounds.sonicScrewdriver, SoundCategory.AMBIENT, 1.0f, 1.0f);
+        world.playSound(context.getPlayer(), blockPos, DWMSounds.SONIC_SCREWDRIVER, SoundCategory.AMBIENT, 1.0f, 1.0f);
         if (world.isRemote)
             return super.onItemUse(context);
         if (!world.isAirBlock(blockPos)) {

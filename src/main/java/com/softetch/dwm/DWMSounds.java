@@ -15,7 +15,10 @@ import net.minecraftforge.registries.ObjectHolder;
 @Mod.EventBusSubscriber(modid = DWMMain.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 @ObjectHolder(DWMMain.MOD_ID)
 public class DWMSounds {
-    public static SoundEvent sonicScrewdriver;
+    public static final SoundEvent SONIC_SCREWDRIVER = null;
+    public static final SoundEvent EXTERMINATE = null;
+    public static final SoundEvent DALEK_SCREAM = null;
+    public static final SoundEvent DALEK_GUN = null;
 
     private DWMSounds() {}
 
@@ -37,7 +40,10 @@ public class DWMSounds {
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<SoundEvent> event) {
         event.getRegistry().registerAll(
-                sonicScrewdriver = buildSound(new ResourceLocation(DWMMain.MOD_ID, "sonic_screwdriver"))
+                buildSound(new ResourceLocation(DWMMain.MOD_ID, "sonic_screwdriver")),
+                buildSound(new ResourceLocation(DWMMain.MOD_ID, "exterminate")),
+                buildSound(new ResourceLocation(DWMMain.MOD_ID, "dalek_scream")),
+                buildSound(new ResourceLocation(DWMMain.MOD_ID, "dalek_gun"))
         );
     }
 }

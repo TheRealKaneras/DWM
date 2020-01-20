@@ -2,5 +2,17 @@
   "sonic_screwdriver": {
     "category": "block",
     "sounds": [ "dwm:sonic_screwdriver" ]
+  },
+  "exterminate": {
+    "category": "hostile",
+    "sounds": [ "dwm:exterminate" ]
+  },
+  "dalek_scream": {
+    "category": "hostile",
+    "sounds": [ "dwm:dalek_scream" ]
+  },
+  "dalek_gun": {
+    "category": "hostile",
+    "sounds": [ "dwm:dalek_gun" ]
   }
 }

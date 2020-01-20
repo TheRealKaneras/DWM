@@ -1,5 +1,6 @@
 package com.softetch.dwm.common.entity;
 
+import com.softetch.dwm.DWMSounds;
 import com.softetch.dwm.common.entity.projectile.LaserEntity;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.goal.LookAtGoal;
@@ -12,6 +13,8 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
@@ -81,6 +84,15 @@ public class DalekEntity extends MonsterEntity implements IRangedAttackMob {
         this.dataManager.register(ATTACKING, false);
     }
 
+    @Override
+    protected SoundEvent getHurtSound(DamageSource damageSourceIn) {
+        return SoundEvents.ENTITY_IRON_GOLEM_HURT;
+    }
+
+    @Override
+    protected SoundEvent getDeathSound() {
+        return DWMSounds.DALEK_SCREAM;
+    }
 
     /**
      * Attack the specified entity using a ranged attack.
@@ -90,7 +102,6 @@ public class DalekEntity extends MonsterEntity implements IRangedAttackMob {
      */
     @Override
     public void attackEntityWithRangedAttack(LivingEntity target, float distanceFactor) {
-        System.out.println("range attack on " + target.getName());
         LaserEntity laserEntity = new LaserEntity(world, this);
         laserEntity.setPosition(this.posX,this.posY,this.posZ);
         double d0 = target.posX - this.posX;
@@ -98,7 +109,10 @@ public class DalekEntity extends MonsterEntity implements IRangedAttackMob {
         double d2 = target.posZ - this.posZ;
         double d3 = MathHelper.sqrt(d0 * d0 + d2 * d2);
         laserEntity.shoot(d0, d1 + d3 * (double)0.2F, d2, 1.6F, (float)(14 - this.world.getDifficulty().getId() * 4));
-        this.playSound(SoundEvents.ENTITY_SKELETON_SHOOT, 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
+        if (this.rand.nextInt(2) == 1) {
+            this.playSound(DWMSounds.EXTERMINATE, 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
+        }
+        this.playSound(DWMSounds.DALEK_GUN, 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
         this.world.addEntity(laserEntity);
     }
 }
