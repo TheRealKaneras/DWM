@@ -1,7 +1,9 @@
 package com.softetch.dwm;
 
 import com.softetch.dwm.common.entity.AdiposeEntity;
-import com.softetch.dwm.common.entity.BaseDalekEntity;
+import com.softetch.dwm.common.entity.SixtiesDalekEntity;
+import com.softetch.dwm.common.entity.TimeWarDalekEntity;
+import com.softetch.dwm.common.entity.projectile.LaserEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
@@ -19,8 +21,10 @@ import java.util.List;
 @Mod.EventBusSubscriber(modid = DWMMain.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class DWMEntities {
     private static final List<EntityType> TYPES = new ArrayList<>();
-    public static final EntityType<BaseDalekEntity> DALEK;
+    public static final EntityType<TimeWarDalekEntity> TIME_WAR_DALEK;
+    public static final EntityType<SixtiesDalekEntity> SIXTIES_DALEK;
     public static final EntityType<AdiposeEntity> ADIPOSE;
+    public static final EntityType<LaserEntity> LASER;
 
     private DWMEntities() {}
 
@@ -54,8 +58,10 @@ public class DWMEntities {
      * Build all the entity types
      */
     static {
-        DALEK = build("dalek", EntityType.Builder.create(BaseDalekEntity::new, EntityClassification.MONSTER).size(0.9f, 1.8f));
+        TIME_WAR_DALEK = build("time_war_dalek", EntityType.Builder.create(TimeWarDalekEntity::new, EntityClassification.MONSTER).size(0.9f, 1.8f));
+        SIXTIES_DALEK = build("sixties_dalek", EntityType.Builder.create(SixtiesDalekEntity::new, EntityClassification.MONSTER).size(0.9f, 1.8f));
         ADIPOSE = build("adipose", EntityType.Builder.create(AdiposeEntity::new, EntityClassification.CREATURE).size(0.3f, 0.4f));
+        LASER = build("laser", EntityType.Builder.<LaserEntity>create(LaserEntity::new, EntityClassification.MISC).size(0.5f, 0.5f));
     }
 
 }

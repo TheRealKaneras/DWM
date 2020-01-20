@@ -1,5 +1,6 @@
 package com.softetch.dwm.common.item;
 
+import com.softetch.dwm.DWMMain;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.item.Item;
@@ -23,6 +24,7 @@ public class DWMSpawnerItem extends Item {
     public DWMSpawnerItem(EntityType<?> type) {
         super(new Item.Properties().group(ItemGroup.MISC));
         this.type = type;
+        this.setRegistryName(DWMMain.MOD_ID, this.type.getRegistryName().getPath() + "_spawner");
     }
 
     /**

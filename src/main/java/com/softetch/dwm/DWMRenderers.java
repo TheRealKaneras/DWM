@@ -1,10 +1,13 @@
 package com.softetch.dwm;
 
-import com.softetch.dwm.client.render.entity.RenderAdipose;
-import com.softetch.dwm.client.render.entity.RenderBaseDalek;
+import com.softetch.dwm.client.render.entity.AdiposeRenderer;
+import com.softetch.dwm.client.render.entity.SixtiesDalekRenderer;
+import com.softetch.dwm.client.render.entity.TimeWarDalekRenderer;
+import com.softetch.dwm.client.render.entity.projectile.LaserRenderer;
 import com.softetch.dwm.common.entity.AdiposeEntity;
-import com.softetch.dwm.common.entity.BaseDalekEntity;
-import net.minecraft.util.ResourceLocation;
+import com.softetch.dwm.common.entity.SixtiesDalekEntity;
+import com.softetch.dwm.common.entity.TimeWarDalekEntity;
+import com.softetch.dwm.common.entity.projectile.LaserEntity;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -27,8 +30,10 @@ public class DWMRenderers {
      */
     @SubscribeEvent
     public static void register(final FMLClientSetupEvent event) {
-        RenderingRegistry.registerEntityRenderingHandler(BaseDalekEntity.class, entityRendererManager -> new RenderBaseDalek(entityRendererManager, new ResourceLocation(DWMMain.MOD_ID, "textures/entity/dalek.png")));
-        RenderingRegistry.registerEntityRenderingHandler(AdiposeEntity.class, entityRendererManager -> new RenderAdipose(entityRendererManager, new ResourceLocation(DWMMain.MOD_ID, "textures/entity/adipose.png")));
+        RenderingRegistry.registerEntityRenderingHandler(TimeWarDalekEntity.class, TimeWarDalekRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(SixtiesDalekEntity.class, SixtiesDalekRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(AdiposeEntity.class, AdiposeRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(LaserEntity.class, LaserRenderer::new);
 
     }
 }

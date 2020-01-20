@@ -38,6 +38,7 @@ public class DWMItems {
     public static final RoundelBlock WHITE_ROUNDEL = null;
     public static final RoundelBlock YELLOW_ROUNDEL = null;
     public static final Item ADIPOSE_PILL = null;
+    public static final Item LASER = null;
 
     private DWMItems() {}
 
@@ -98,7 +99,10 @@ public class DWMItems {
                 new HatItem().setRegistryName(DWMMain.MOD_ID, "red_fez"),
                 new HatItem().setRegistryName(DWMMain.MOD_ID, "white_fez"),
                 new HatItem().setRegistryName(DWMMain.MOD_ID, "yellow_fez"),
-                new DWMSpawnerItem(DWMEntities.ADIPOSE).setRegistryName(DWMMain.MOD_ID, "adipose_spawner"),
+                new Item(new Item.Properties()).setRegistryName(DWMMain.MOD_ID, "laser"),
+                new DWMSpawnerItem(DWMEntities.ADIPOSE),
+                new DWMSpawnerItem(DWMEntities.TIME_WAR_DALEK),
+                new DWMSpawnerItem(DWMEntities.SIXTIES_DALEK),
                 new BlockItem(BLACK_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "black_roundel"),
                 new BlockItem(BLUE_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "blue_roundel"),
                 new BlockItem(BROWN_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "brown_roundel"),

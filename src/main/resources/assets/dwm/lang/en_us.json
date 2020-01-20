@@ -24,6 +24,8 @@
   "item.dwm.white_fez": "White Fez",
   "item.dwm.yellow_fez": "Yellow Fez",
   "item.dwm.adipose_spawner": "Spawn Adipose",
+  "item.dwm.time_war_dalek_spawner": "Spawn Time War Dalek",
+  "item.dwm.sixties_dalek_spawner": "Spawn 60s Dalek",
   "block.dwm.black_roundel": "Black Roundel",
   "block.dwm.blue_roundel": "Blue Roundel",
   "block.dwm.brown_roundel": "Brown Roundel",
@@ -40,6 +42,7 @@
   "block.dwm.red_roundel": "Red Roundel",
   "block.dwm.white_roundel": "White Roundel",
   "block.dwm.yellow_roundel": "Yellow Roundel",
-  "entity.dwm.dalek": "Dalek",
+  "entity.dwm.time_war_dalek": "Time War Dalek",
+  "entity.dwm.sixties_dalek": "60s Dalek",
   "entity.dwm.adipose": "Adipose"
 }
