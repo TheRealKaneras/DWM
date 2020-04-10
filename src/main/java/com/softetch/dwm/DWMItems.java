@@ -39,9 +39,8 @@ public class DWMItems {
     public static final RoundelBlock DARK_RED_ROUNDEL = null;
     public static final RoundelBlock HARTNELL_ROUNDEL = null;
     public static final RoundelBlock HARTNELL_ROUNDEL_SPLIT = null;
-    public static final Block CLASSIC_ROUNDEL = null;
     public static final Item ADIPOSE_PILL = null;
-    public static final Item LASER = null;
+    public static final Item SCOOBY_SNACK = null;
 
     private DWMItems() {}
 
@@ -81,6 +80,7 @@ public class DWMItems {
     public static void registerItems(RegistryEvent.Register<Item> event) {
         event.getRegistry().registerAll(
                 new Item(new Item.Properties().group(ItemGroup.BREWING).food(DWMFoods.PILL)).setRegistryName(DWMMain.MOD_ID, "adipose_pill"),
+                new Item(new Item.Properties().group(ItemGroup.FOOD).food(DWMFoods.SCOOBY_SNACK)).setRegistryName(DWMMain.MOD_ID, "scooby_snack"),
                 new SwordItem(ItemTier.WOOD, 2, -2.4f, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(DWMMain.MOD_ID, "cricket_bat"),
                 new ItemTwoDis().setRegistryName(DWMMain.MOD_ID, "two_dis"),
                 new ItemSonicScrewdriver().setRegistryName(DWMMain.MOD_ID, "sonic_screwdriver"),
