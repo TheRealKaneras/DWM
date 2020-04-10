@@ -1,12 +1,16 @@
 package com.softetch.dwm;
 
 import com.softetch.dwm.client.render.entity.AdiposeRenderer;
-import com.softetch.dwm.client.render.entity.SixtiesDalekRenderer;
-import com.softetch.dwm.client.render.entity.TimeWarDalekRenderer;
+import com.softetch.dwm.client.render.entity.dalek.GuardDalekRenderer;
+import com.softetch.dwm.client.render.entity.dalek.InvasionDalekRenderer;
+import com.softetch.dwm.client.render.entity.dalek.SkaroDalekRenderer;
+import com.softetch.dwm.client.render.entity.dalek.TimeWarDalekRenderer;
 import com.softetch.dwm.client.render.entity.projectile.LaserRenderer;
 import com.softetch.dwm.common.entity.AdiposeEntity;
-import com.softetch.dwm.common.entity.SixtiesDalekEntity;
 import com.softetch.dwm.common.entity.TimeWarDalekEntity;
+import com.softetch.dwm.common.entity.dalek.GuardDalekEntity;
+import com.softetch.dwm.common.entity.dalek.InvasionDalekEntity;
+import com.softetch.dwm.common.entity.dalek.SkaroDalekEntity;
 import com.softetch.dwm.common.entity.projectile.LaserEntity;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -31,9 +35,10 @@ public class DWMRenderers {
     @SubscribeEvent
     public static void register(final FMLClientSetupEvent event) {
         RenderingRegistry.registerEntityRenderingHandler(TimeWarDalekEntity.class, TimeWarDalekRenderer::new);
-        RenderingRegistry.registerEntityRenderingHandler(SixtiesDalekEntity.class, SixtiesDalekRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(SkaroDalekEntity.class, SkaroDalekRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(InvasionDalekEntity.class, InvasionDalekRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(GuardDalekEntity.class, GuardDalekRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(AdiposeEntity.class, AdiposeRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(LaserEntity.class, LaserRenderer::new);
-
     }
 }

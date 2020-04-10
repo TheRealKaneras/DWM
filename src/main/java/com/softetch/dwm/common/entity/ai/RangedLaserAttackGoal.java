@@ -1,6 +1,7 @@
 package com.softetch.dwm.common.entity.ai;
 
-import com.softetch.dwm.common.entity.DalekEntity;
+import com.softetch.dwm.DWMEntities;
+import com.softetch.dwm.common.entity.dalek.DalekEntity;
 import com.softetch.dwm.common.entity.projectile.LaserEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.Goal;
@@ -56,7 +57,7 @@ public class RangedLaserAttackGoal<T extends DalekEntity> extends Goal {
                 double accelX = targetEntity.posX - (parentEntity.posX + lookVector.x * 4.0D);
                 double accelY = targetEntity.getBoundingBox().minY + (double) (targetEntity.getHeight() / 2.0F) - (0.5D + parentEntity.posY + (double)(parentEntity.getHeight() / 2.0f));
                 double accelZ = targetEntity.posZ - (parentEntity.posZ + lookVector.z * 4.0D);
-                LaserEntity laser = new LaserEntity(world, parentEntity);
+                LaserEntity laser = new LaserEntity(DWMEntities.LASER, parentEntity, world);
 
                 laser.posX = parentEntity.posX + lookVector.x * 4.0D;
                 laser.posY = parentEntity.posY + (double)(parentEntity.getHeight() / 2.0f) + 0.5D;

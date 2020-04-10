@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.softetch.dwm.client.event.DWMRenderEvent;
 import com.softetch.dwm.common.event.DWMItemUseEvent;
+import net.minecraftforge.client.model.obj.OBJLoader;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -44,7 +45,7 @@ public class DWMMain {
      * @param event the forge client setup event
      */
     private void setupClientSide(final FMLClientSetupEvent event) {
-
+        OBJLoader.INSTANCE.addDomain(MOD_ID);
     }
 
 }

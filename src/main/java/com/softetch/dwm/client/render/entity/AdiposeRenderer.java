@@ -1,7 +1,7 @@
 package com.softetch.dwm.client.render.entity;
 
 import com.softetch.dwm.DWMMain;
-import com.softetch.dwm.client.model.entity.ModelAdipose;
+import com.softetch.dwm.client.model.entity.AdiposeModel;
 import com.softetch.dwm.common.entity.AdiposeEntity;
 import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.client.renderer.entity.LivingRenderer;
@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 /**
  * Holds all the render properties for adipose
  */
-public class AdiposeRenderer extends LivingRenderer<AdiposeEntity, ModelAdipose> {
+public class AdiposeRenderer extends LivingRenderer<AdiposeEntity, AdiposeModel> {
 
     /**
      * Set up the properties required to render the entity
      * @param entityRendererManager - the manager class for entity rendering
      */
     public AdiposeRenderer(EntityRendererManager entityRendererManager) {
-        super(entityRendererManager, new ModelAdipose(), 0.4f);
+        super(entityRendererManager, new AdiposeModel(), 0.4f);
     }
     /**
      * Getter for the entity's texture

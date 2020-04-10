@@ -6,7 +6,6 @@ import net.minecraft.block.HorizontalBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.BlockItemUseContext;
-import net.minecraft.state.DirectionProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.util.Direction;
 
@@ -16,14 +15,13 @@ import javax.annotation.Nullable;
  * Class containing properties and methods required specifically for a roundel block.
  */
 public class RoundelBlock extends HorizontalBlock {
-    public static final DirectionProperty FACING = HorizontalBlock.HORIZONTAL_FACING;
 
     /**
      * Set up the roundel block with a default FACING state to NORTH.
      */
     public RoundelBlock() {
         super(Block.Properties.create(Material.WOOD, MaterialColor.BLACK).hardnessAndResistance(1.5f));
-        this.setDefaultState(this.stateContainer.getBaseState().with(FACING, Direction.NORTH));
+        this.setDefaultState(this.stateContainer.getBaseState().with(HORIZONTAL_FACING, Direction.NORTH));
     }
 
     /**
@@ -34,7 +32,7 @@ public class RoundelBlock extends HorizontalBlock {
     @Nullable
     @Override
     public BlockState getStateForPlacement(BlockItemUseContext context) {
-        return this.getDefaultState().with(FACING, context.getPlacementHorizontalFacing());
+        return this.getDefaultState().with(HORIZONTAL_FACING, context.getPlacementHorizontalFacing());
     }
 
     /**
@@ -43,7 +41,7 @@ public class RoundelBlock extends HorizontalBlock {
      */
     @Override
     protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
-        builder.add(FACING);
+        builder.add(HORIZONTAL_FACING);
     }
 
 }

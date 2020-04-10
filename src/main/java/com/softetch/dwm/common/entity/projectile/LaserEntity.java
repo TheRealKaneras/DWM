@@ -1,82 +1,75 @@
 package com.softetch.dwm.common.entity.projectile;
 
 import com.softetch.dwm.DWMDamageSource;
-import com.softetch.dwm.DWMEntities;
-import com.softetch.dwm.common.entity.DalekEntity;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.IProjectile;
-import net.minecraft.entity.projectile.DamagingProjectileEntity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.projectile.ThrowableEntity;
 import net.minecraft.network.IPacket;
-import net.minecraft.network.play.server.SSpawnObjectPacket;
 import net.minecraft.util.Direction;
-import net.minecraft.util.math.*;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.EntityRayTraceResult;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.network.NetworkHooks;
 
+public class LaserEntity extends ThrowableEntity {
+    private static final float DAMAGE_AMOUNT = 3.0f;
 
-public class LaserEntity extends DamagingProjectileEntity implements IProjectile {
-    private DalekEntity shootingEntity;
-
-    public LaserEntity(EntityType<LaserEntity> type, World worldIn) {
+    public LaserEntity(EntityType<? extends ThrowableEntity> type, World worldIn) {
         super(type, worldIn);
-        this.shootingEntity = null;
+        setNoGravity(true);
     }
 
-    public LaserEntity(World world, DalekEntity shooter){
-        this(DWMEntities.LASER, world);
-        this.shootingEntity = shooter;
+    public LaserEntity(EntityType<? extends ThrowableEntity> type, double x, double y, double z, World worldIn) {
+        super(type, x, y, z, worldIn);
+        setNoGravity(true);
+    }
+
+    public LaserEntity(EntityType<? extends ThrowableEntity> type, LivingEntity livingEntityIn, World worldIn) {
+        super(type, livingEntityIn, worldIn);
+        setNoGravity(true);
+    }
+
+    @Override
+    public void tick() {
+        if (ticksExisted > 5 * 20)
+            remove();
+        super.tick();
     }
 
     /**
-     * Called when this Entity hits a block or entity.
+     * Called when this EntityThrowable hits a block or entity.
      *
      * @param result
      */
+    @Override
     protected void onImpact(RayTraceResult result) {
-        if (!world.isRemote) {
-            if (result.getType() == RayTraceResult.Type.ENTITY) {
-                Entity entity = ((EntityRayTraceResult)result).getEntity();
-                entity.attackEntityFrom(DWMDamageSource.DALEK_LASER, 3.0f);
-            } else if (result.getType() == RayTraceResult.Type.BLOCK) {
-                BlockPos blockPos = ((BlockRayTraceResult)result).getPos();
-                Direction direction = ((BlockRayTraceResult)result).getFace();
-                BlockState blockState = world.getBlockState(blockPos);
-                Block block = blockState.getBlock();
-                block.catchFire(blockState, world, blockPos, direction, this.shootingEntity);
-            }
+        if (result == null || !isAlive())
+            return;
+        if (result.getType() == RayTraceResult.Type.ENTITY) {
+            Entity entity = ((EntityRayTraceResult) result).getEntity();
+            entity.attackEntityFrom(DWMDamageSource.DALEK_LASER, DAMAGE_AMOUNT);
+            remove();
+        } else if (result.getType() == RayTraceResult.Type.BLOCK) {
+            BlockRayTraceResult blockResult = (BlockRayTraceResult) result;
+            BlockPos pos = blockResult.getPos();
+            Direction direction = blockResult.getFace();
+            BlockState blockState = world.getBlockState(pos);
+            blockState.catchFire(world, pos, direction, getThrower());
+            remove();
         }
-
-    }
-
-    public DalekEntity getShootingEntity() {
-        return shootingEntity;
     }
 
     @Override
     public IPacket<?> createSpawnPacket() {
-        Entity entity = this.getShootingEntity();
-        return new SSpawnObjectPacket(this, entity == null ? 0 : entity.getEntityId());
+        return NetworkHooks.getEntitySpawningPacket(this);
     }
 
-    /**
-     * Similar to setArrowHeading, it's point the throwable entity to a x, y, z direction.
-     *
-     * @param x
-     * @param y
-     * @param z
-     * @param velocity
-     * @param inaccuracy
-     */
     @Override
-    public void shoot(double x, double y, double z, float velocity, float inaccuracy) {
-        Vec3d vec3d = (new Vec3d(x, y, z)).normalize().add(this.rand.nextGaussian() * (double)0.0075F * (double)inaccuracy, this.rand.nextGaussian() * (double)0.0075F * (double)inaccuracy, this.rand.nextGaussian() * (double)0.0075F * (double)inaccuracy).scale(velocity);
-        this.setMotion(vec3d);
-        double f = MathHelper.sqrt(func_213296_b(vec3d));
-        this.rotationYaw = (float)(MathHelper.atan2(vec3d.x, vec3d.z) * (180D / Math.PI));
-        this.rotationPitch = (float)(MathHelper.atan2(vec3d.y, f) * (180D / Math.PI));
-        this.prevRotationYaw = this.rotationYaw;
-        this.prevRotationPitch = this.rotationPitch;
+    protected void registerData() {
     }
+
 }

@@ -1,5 +1,6 @@
 package com.softetch.dwm.common.entity;
 
+import com.softetch.dwm.common.entity.dalek.DalekEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.world.World;
 

@@ -1,7 +1,7 @@
 package com.softetch.dwm.client.model.entity;
 
 import com.mojang.blaze3d.platform.GlStateManager;
-import com.softetch.dwm.common.entity.DalekEntity;
+import com.softetch.dwm.common.entity.dalek.DalekEntity;
 import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.entity.model.RendererModel;
 import net.minecraft.client.renderer.model.ModelBox;
