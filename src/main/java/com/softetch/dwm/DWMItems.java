@@ -1,6 +1,7 @@
 package com.softetch.dwm;
 
 import com.softetch.dwm.common.block.RoundelBlock;
+import com.softetch.dwm.common.block.TardisBlock;
 import com.softetch.dwm.common.item.DWMSpawnerItem;
 import com.softetch.dwm.common.item.clothing.HatItem;
 import com.softetch.dwm.common.item.gadget.ItemSonicScrewdriver;
@@ -39,6 +40,7 @@ public class DWMItems {
     public static final RoundelBlock DARK_RED_ROUNDEL = null;
     public static final RoundelBlock HARTNELL_ROUNDEL = null;
     public static final RoundelBlock HARTNELL_ROUNDEL_SPLIT = null;
+    public static final TardisBlock TARDIS = null;
     public static final Item ADIPOSE_PILL = null;
     public static final Item SCOOBY_SNACK = null;
 
@@ -68,7 +70,8 @@ public class DWMItems {
                 new RoundelBlock(false).setRegistryName(DWMMain.MOD_ID, "red_roundel"),
                 new RoundelBlock(false).setRegistryName(DWMMain.MOD_ID, "dark_red_roundel"),
                 new RoundelBlock(false).setRegistryName(DWMMain.MOD_ID, "hartnell_roundel"),
-                new RoundelBlock(true).setRegistryName(DWMMain.MOD_ID, "hartnell_roundel_split")
+                new RoundelBlock(true).setRegistryName(DWMMain.MOD_ID, "hartnell_roundel_split"),
+                new TardisBlock().setRegistryName(DWMMain.MOD_ID, "tardis")
         );
     }
 
@@ -105,7 +108,6 @@ public class DWMItems {
                 new HatItem().setRegistryName(DWMMain.MOD_ID, "yellow_fez"),
                 new Item(new Item.Properties()).setRegistryName(DWMMain.MOD_ID, "laser"),
                 new DWMSpawnerItem(DWMEntities.ADIPOSE),
-                new DWMSpawnerItem(DWMEntities.TIME_WAR_DALEK),
                 new BlockItem(BLACK_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "black_roundel"),
                 new BlockItem(DARK_GRAY_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "dark_gray_roundel"),
                 new BlockItem(GRAY_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "gray_roundel"),
@@ -123,7 +125,8 @@ public class DWMItems {
                 new BlockItem(RED_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "red_roundel"),
                 new BlockItem(DARK_RED_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "dark_red_roundel"),
                 new BlockItem(HARTNELL_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "hartnell_roundel"),
-                new BlockItem(HARTNELL_ROUNDEL_SPLIT, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "hartnell_roundel_split")
+                new BlockItem(HARTNELL_ROUNDEL_SPLIT, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "hartnell_roundel_split"),
+                new BlockItem(TARDIS, new Item.Properties().group(ItemGroup.TRANSPORTATION)).setRegistryName(DWMMain.MOD_ID, "tardis")
         );
     }
 

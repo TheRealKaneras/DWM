@@ -19,6 +19,8 @@ public class DWMSounds {
     public static final SoundEvent EXTERMINATE = null;
     public static final SoundEvent DALEK_SCREAM = null;
     public static final SoundEvent DALEK_GUN = null;
+    public static final SoundEvent TARDIS_OPEN = null;
+    public static final SoundEvent TARDIS_CLOSE = null;
 
     private DWMSounds() {}
 
@@ -43,7 +45,9 @@ public class DWMSounds {
                 buildSound(new ResourceLocation(DWMMain.MOD_ID, "sonic_screwdriver")),
                 buildSound(new ResourceLocation(DWMMain.MOD_ID, "exterminate")),
                 buildSound(new ResourceLocation(DWMMain.MOD_ID, "dalek_scream")),
-                buildSound(new ResourceLocation(DWMMain.MOD_ID, "dalek_gun"))
+                buildSound(new ResourceLocation(DWMMain.MOD_ID, "dalek_gun")),
+                buildSound(new ResourceLocation(DWMMain.MOD_ID, "tardis_open")),
+                buildSound(new ResourceLocation(DWMMain.MOD_ID, "tardis_close"))
         );
     }
 }

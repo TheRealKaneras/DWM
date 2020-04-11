@@ -6,15 +6,18 @@ import com.softetch.dwm.client.render.entity.dalek.InvasionDalekRenderer;
 import com.softetch.dwm.client.render.entity.dalek.SkaroDalekRenderer;
 import com.softetch.dwm.client.render.entity.dalek.TimeWarDalekRenderer;
 import com.softetch.dwm.client.render.entity.projectile.LaserRenderer;
+import com.softetch.dwm.client.render.tileentity.TardisExteriorRenderer;
 import com.softetch.dwm.common.entity.AdiposeEntity;
 import com.softetch.dwm.common.entity.TimeWarDalekEntity;
 import com.softetch.dwm.common.entity.dalek.GuardDalekEntity;
 import com.softetch.dwm.common.entity.dalek.InvasionDalekEntity;
 import com.softetch.dwm.common.entity.dalek.SkaroDalekEntity;
 import com.softetch.dwm.common.entity.projectile.LaserEntity;
+import com.softetch.dwm.common.tileentity.TardisTileEntity;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -40,5 +43,7 @@ public class DWMRenderers {
         RenderingRegistry.registerEntityRenderingHandler(GuardDalekEntity.class, GuardDalekRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(AdiposeEntity.class, AdiposeRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(LaserEntity.class, LaserRenderer::new);
+
+        ClientRegistry.bindTileEntitySpecialRenderer(TardisTileEntity.class, new TardisExteriorRenderer());
     }
 }

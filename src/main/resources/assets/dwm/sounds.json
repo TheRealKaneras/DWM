@@ -14,5 +14,13 @@
   "dalek_gun": {
     "category": "hostile",
     "sounds": [ "dwm:dalek_gun" ]
+  },
+  "tardis_open": {
+    "category": "block",
+    "sounds": [ "dwm:tardis_open" ]
+  },
+  "tardis_close": {
+    "category": "block",
+    "sounds": [ "dwm:tardis_close" ]
   }
 }
