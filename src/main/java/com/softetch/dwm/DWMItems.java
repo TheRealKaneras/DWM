@@ -1,5 +1,6 @@
 package com.softetch.dwm;
 
+import com.softetch.dwm.client.tardis.EnumChameleonData;
 import com.softetch.dwm.common.block.RoundelBlock;
 import com.softetch.dwm.common.block.TardisBlock;
 import com.softetch.dwm.common.item.DWMSpawnerItem;
@@ -13,6 +14,9 @@ import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ObjectHolder;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This class has the register event handler for all custom items
@@ -40,9 +44,9 @@ public class DWMItems {
     public static final RoundelBlock DARK_RED_ROUNDEL = null;
     public static final RoundelBlock HARTNELL_ROUNDEL = null;
     public static final RoundelBlock HARTNELL_ROUNDEL_SPLIT = null;
-    public static final TardisBlock TARDIS = null;
     public static final Item ADIPOSE_PILL = null;
-    public static final Item SCOOBY_SNACK = null;
+
+    public static List<Block> tardises = new ArrayList<Block>();
 
     private DWMItems() {}
 
@@ -52,6 +56,9 @@ public class DWMItems {
      */
     @SubscribeEvent(priority = EventPriority.HIGH)
     public static void registerBlocks(RegistryEvent.Register<Block> event){
+        for (EnumChameleonData tardis : EnumChameleonData.values()) {
+            tardises.add(new TardisBlock(tardis.getId()).setRegistryName(DWMMain.MOD_ID, "tardis_" + tardis.getName()));
+        }
         event.getRegistry().registerAll(
                 new RoundelBlock(false).setRegistryName(DWMMain.MOD_ID, "black_roundel"),
                 new RoundelBlock(false).setRegistryName(DWMMain.MOD_ID, "dark_gray_roundel"),
@@ -70,9 +77,9 @@ public class DWMItems {
                 new RoundelBlock(false).setRegistryName(DWMMain.MOD_ID, "red_roundel"),
                 new RoundelBlock(false).setRegistryName(DWMMain.MOD_ID, "dark_red_roundel"),
                 new RoundelBlock(false).setRegistryName(DWMMain.MOD_ID, "hartnell_roundel"),
-                new RoundelBlock(true).setRegistryName(DWMMain.MOD_ID, "hartnell_roundel_split"),
-                new TardisBlock().setRegistryName(DWMMain.MOD_ID, "tardis")
+                new RoundelBlock(true).setRegistryName(DWMMain.MOD_ID, "hartnell_roundel_split")
         );
+        event.getRegistry().registerAll(tardises.toArray(new Block[tardises.size()]));
     }
 
     /**
@@ -125,9 +132,11 @@ public class DWMItems {
                 new BlockItem(RED_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "red_roundel"),
                 new BlockItem(DARK_RED_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "dark_red_roundel"),
                 new BlockItem(HARTNELL_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "hartnell_roundel"),
-                new BlockItem(HARTNELL_ROUNDEL_SPLIT, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "hartnell_roundel_split"),
-                new BlockItem(TARDIS, new Item.Properties().group(ItemGroup.TRANSPORTATION)).setRegistryName(DWMMain.MOD_ID, "tardis")
+                new BlockItem(HARTNELL_ROUNDEL_SPLIT, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "hartnell_roundel_split")
         );
+        for (Block tardis : tardises) {
+            event.getRegistry().register(new BlockItem(tardis, new Item.Properties().group(ItemGroup.TRANSPORTATION)).setRegistryName(tardis.getRegistryName()));
+        }
     }
 
 }

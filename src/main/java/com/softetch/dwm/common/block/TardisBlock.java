@@ -4,14 +4,32 @@ import com.softetch.dwm.common.tileentity.TardisTileEntity;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.material.Material;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
 public class TardisBlock extends DWMTileEntityBlock {
-    public TardisBlock() {
+    private int exteriorId = 0;
+    public TardisBlock(int exteriorId) {
         super(Block.Properties.create(Material.WOOD));
+        this.exteriorId = exteriorId;
+    }
+
+    /**
+     * Called by ItemBlocks after a block is set in the world, to allow post-place logic
+     */
+    @Override
+    public void onBlockPlacedBy(World worldIn, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
+        super.onBlockPlacedBy(worldIn, pos, state, placer, stack);
+        TardisTileEntity tileEntity = (TardisTileEntity) worldIn.getTileEntity(pos);
+        if (tileEntity != null) {
+            tileEntity.setChameleon(exteriorId);
+        }
     }
 
     /**

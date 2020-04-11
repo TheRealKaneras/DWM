@@ -45,9 +45,18 @@
   "block.dwm.dark_red_roundel": "Dark Red Roundel",
   "block.dwm.hartnell_roundel": "Hartnell Roundel",
   "block.dwm.hartnell_roundel_split": "Hartnell Roundel",
+  "block.dwm.tardis_brachacki_box_a": "TARDIS: Brachacki Box (1963)",
+  "block.dwm.tardis_brachacki_box_b": "TARDIS: Brachacki Box (1966)",
+  "block.dwm.tardis_brachacki_box_c": "TARDIS: Brachacki Box (1973)",
+  "block.dwm.tardis_brachacki_box_d": "TARDIS: Brachacki Box (1976)",
   "entity.dwm.time_war_dalek": "Time War Dalek",
   "entity.dwm.skaro_dalek": "Skaro Dalek",
   "entity.dwm.invasion_dalek": "Invasion Dalek",
   "entity.dwm.guard_dalek": "Guard Dalek",
-  "entity.dwm.adipose": "Adipose"
+  "entity.dwm.adipose": "Adipose",
+  "tardisgroup.brachacki_box.name": "Brachacki Box",
+  "tardis.brachacki_box_a.name": "Brachacki Box (1963)",
+  "tardis.brachacki_box_b.name": "Brachacki Box (1966)",
+  "tardis.brachacki_box_c.name": "Brachacki Box (1973)",
+  "tardis.brachacki_box_d.name": "Brachacki Box (1976)"
 }

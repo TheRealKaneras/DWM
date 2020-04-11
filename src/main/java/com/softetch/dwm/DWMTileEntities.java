@@ -29,7 +29,7 @@ public class DWMTileEntities {
     @SubscribeEvent
     public static void onTileEntityRegistration(final RegistryEvent.Register<TileEntityType<?>> event) {
         event.getRegistry().registerAll(
-            createTileEntity(TardisTileEntity::new, new ResourceLocation(DWMMain.MOD_ID, "tardis"), DWMItems.TARDIS)
+            createTileEntity(TardisTileEntity::new, new ResourceLocation(DWMMain.MOD_ID, "tardis"), DWMItems.tardises.toArray(new Block[DWMItems.tardises.size()]))
         );
     }
 }

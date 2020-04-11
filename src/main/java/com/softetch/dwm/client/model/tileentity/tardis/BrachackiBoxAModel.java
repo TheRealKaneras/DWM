@@ -1,11 +1,10 @@
 package com.softetch.dwm.client.model.tileentity.tardis;
 
-import com.softetch.dwm.client.model.tileentity.TileEntityModel;
 import com.softetch.dwm.common.tileentity.TardisTileEntity;
 import net.minecraft.client.renderer.entity.model.RendererModel;
 import net.minecraft.client.renderer.model.ModelBox;
 
-public class BrachackiBoxModel extends TileEntityModel {
+public class BrachackiBoxAModel extends AbstractTardisExteriorModel {
 	private final RendererModel box;
 	private final RendererModel lamp;
 	private final RendererModel bone2;
@@ -58,7 +57,7 @@ public class BrachackiBoxModel extends TileEntityModel {
 	private final RendererModel bone47;
 	private final RendererModel bone48;
 
-	public BrachackiBoxModel() {
+	public BrachackiBoxAModel() {
 		textureWidth = 512;
 		textureHeight = 512;
 
@@ -547,7 +546,8 @@ public class BrachackiBoxModel extends TileEntityModel {
 		leftDoor.render(scale);
 	}
 
-	public void doorRotation(float progression, TardisTileEntity.DoorState doorState) {
+	@Override
+	public void doorRotation(TardisTileEntity.DoorState doorState, float progression) {
 		float angle = progression * 1.35f;
 		if (doorState == TardisTileEntity.DoorState.SINGLE) {
 			this.leftDoor.rotateAngleY = angle;

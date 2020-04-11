@@ -1,8 +1,10 @@
 package com.softetch.dwm.common.tileentity;
 
+import com.softetch.dwm.DWMNBTTags;
 import com.softetch.dwm.DWMSounds;
 import com.softetch.dwm.DWMTileEntities;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.SoundCategory;
@@ -13,6 +15,7 @@ import java.util.List;
 public class TardisTileEntity extends TileEntity implements ITickableTileEntity {
     private DoorState doorState = DoorState.CLOSED;
     private float doorProgression = 0.0f;
+    private int chameleon = 0;
 
     public TardisTileEntity() {
         super(DWMTileEntities.TARDIS);
@@ -62,7 +65,47 @@ public class TardisTileEntity extends TileEntity implements ITickableTileEntity 
         return doorProgression;
     }
 
+    public void setChameleon(int chameleon) {
+        this.chameleon = chameleon;
+    }
+
+    public int getChameleon() {
+        return chameleon;
+    }
+
+    @Override
+    public CompoundNBT write(CompoundNBT compound) {
+        compound.putInt(DWMNBTTags.CHAMELEON.getTag(), chameleon);
+        compound.putInt(DWMNBTTags.DOOR_STATE.getTag(), doorState.getId());
+        return super.write(compound);
+    }
+
+    @Override
+    public void read(CompoundNBT compound) {
+        super.read(compound);
+        this.chameleon = compound.getInt(DWMNBTTags.CHAMELEON.getTag());
+        this.doorState = DoorState.fromId(compound.getInt(DWMNBTTags.DOOR_STATE.getTag()));
+    }
+
     public enum DoorState {
-        BOTH, SINGLE, CLOSED
+        CLOSED(0), SINGLE(1), BOTH(2);
+
+        private final int id;
+
+        DoorState(int id) {
+            this.id = id;
+        }
+
+        public int getId() {
+            return id;
+        }
+
+        public static DoorState fromId(int id) {
+            for (DoorState state : DoorState.values()) {
+                if (state.getId() == id)
+                    return state;
+            }
+            return DoorState.CLOSED;
+        }
     }
 }

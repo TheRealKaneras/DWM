@@ -8,8 +8,8 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 
 public class DWMTileEntityRenderer<T extends TileEntity> extends TileEntityRenderer<T> {
-    private final TileEntityModel model;
-    private final ResourceLocation texture;
+    private TileEntityModel model;
+    private ResourceLocation texture;
 
     public DWMTileEntityRenderer(TileEntityModel model, ResourceLocation texture) {
         this.model = model;
@@ -25,6 +25,14 @@ public class DWMTileEntityRenderer<T extends TileEntity> extends TileEntityRende
         bindTexture(texture);
         model.render(0.0625f);
         GlStateManager.popMatrix();
+    }
+
+    public void setModel(TileEntityModel model) {
+        this.model = model;
+    }
+
+    public void setTexture(ResourceLocation texture) {
+        this.texture = texture;
     }
 
     public TileEntityModel getModel() {
