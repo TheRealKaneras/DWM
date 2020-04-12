@@ -68,7 +68,7 @@ public class BrachackiBoxBModel extends AbstractTardisExteriorModel {
 
 		box = new RendererModel(this);
 		box.setRotationPoint(0.0F, 24.0F, 0.0F);
-		box.cubeList.add(new ModelBox(box, 332, 257, -10.0F, -1.0F, -10.0F, 20, 1, 20, 0.0F, false));
+		box.cubeList.add(new ModelBox(box, 332, 257, -10.0F, -0.05F, -10.0F, 20, 0, 20, 0.0F, false));
 		box.cubeList.add(new ModelBox(box, 0, 1, -8.5F, -37.0F, -8.5F, 17, 1, 17, 0.0F, false));
 		box.cubeList.add(new ModelBox(box, 148, 293, -7.5F, -36.1F, -7.5F, 15, 3, 15, 0.0F, false));
 		box.cubeList.add(new ModelBox(box, 321, 334, -7.0F, -37.15F, -7.0F, 14, 3, 14, 0.0F, false));
@@ -526,12 +526,6 @@ public class BrachackiBoxBModel extends AbstractTardisExteriorModel {
 		bone48.cubeList.add(new ModelBox(bone48, 24, 312, 0.5F, 0.7071F, -0.7071F, 6, 1, 1, 0.0F, true));
 	}
 
-	public void setRotationAngle(RendererModel rendererModel, float x, float y, float z) {
-		rendererModel.rotateAngleX = x;
-		rendererModel.rotateAngleY = y;
-		rendererModel.rotateAngleZ = z;
-	}
-
 	@Override
 	public void doorRotation(TardisTileEntity.DoorState doorState, float progression) {
 		float angle = progression * 1.35f;
@@ -562,5 +556,11 @@ public class BrachackiBoxBModel extends AbstractTardisExteriorModel {
 		box.render(scale);
 		rightDoor.render(scale);
 		leftDoor.render(scale);
+	}
+
+	public void setRotationAngle(RendererModel modelRenderer, float x, float y, float z) {
+		modelRenderer.rotateAngleX = x;
+		modelRenderer.rotateAngleY = y;
+		modelRenderer.rotateAngleZ = z;
 	}
 }

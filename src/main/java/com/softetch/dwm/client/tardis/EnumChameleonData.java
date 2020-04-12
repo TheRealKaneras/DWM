@@ -8,7 +8,10 @@ public enum EnumChameleonData {
     BRACHACKI_BOX_A(0, "brachacki_box_a", new BrachackiBoxAModel(), new ResourceLocation(DWMMain.MOD_ID, "textures/tileentity/tardis/brachacki_box_a.png")),
     BRACHACKI_BOX_B(1, "brachacki_box_b", new BrachackiBoxBModel(), new ResourceLocation(DWMMain.MOD_ID, "textures/tileentity/tardis/brachacki_box_b.png")),
     BRACHACKI_BOX_C(2, "brachacki_box_c", new BrachackiBoxCModel(), new ResourceLocation(DWMMain.MOD_ID, "textures/tileentity/tardis/brachacki_box_c.png")),
-    BRACHACKI_BOX_D(3, "brachacki_box_d", new BrachackiBoxDModel(), new ResourceLocation(DWMMain.MOD_ID, "textures/tileentity/tardis/brachacki_box_d.png"));
+    BRACHACKI_BOX_D(3, "brachacki_box_d", new BrachackiBoxDModel(), new ResourceLocation(DWMMain.MOD_ID, "textures/tileentity/tardis/brachacki_box_d.png")),
+    NEWBERY_BOX_A(4, "newbery_box_a", new NewberyBoxAModel(), new ResourceLocation(DWMMain.MOD_ID, "textures/tileentity/tardis/newbery_box_a.png")),
+    NEWBERY_BOX_B(5, "newbery_box_b", new NewberyBoxBModel(), new ResourceLocation(DWMMain.MOD_ID, "textures/tileentity/tardis/newbery_box_b.png"));
+
     private final int id;
     private final String name;
     private final AbstractTardisExteriorModel model;

@@ -55,8 +55,11 @@
   "entity.dwm.guard_dalek": "Guard Dalek",
   "entity.dwm.adipose": "Adipose",
   "tardisgroup.brachacki_box.name": "Brachacki Box",
+  "tardisgroup.newbery_box.name": "Newbery Box",
   "tardis.brachacki_box_a.name": "Brachacki Box (1963)",
   "tardis.brachacki_box_b.name": "Brachacki Box (1966)",
   "tardis.brachacki_box_c.name": "Brachacki Box (1973)",
-  "tardis.brachacki_box_d.name": "Brachacki Box (1976)"
+  "tardis.brachacki_box_d.name": "Brachacki Box (1976)",
+  "tardis.newbery_box_a.name": "Newbery Box (1979)",
+  "tardis.newbery_box_b.name": "Newbery Box (1976)"
 }

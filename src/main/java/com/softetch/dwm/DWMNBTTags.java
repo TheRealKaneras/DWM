@@ -9,7 +9,7 @@ public enum DWMNBTTags {
     private final String tag;
 
     DWMNBTTags(String tag) {
-        this.tag = tag;
+        this.tag = DWMMain.MOD_ID + "_" + tag;
     }
 
     public String getTag() {

@@ -22,9 +22,9 @@ public class DWMRenderEvent {
     @OnlyIn(Dist.CLIENT)
     public void onRenderLivingPre(RenderLivingEvent.Pre event) {
         LivingEntity entity = event.getEntity();
-        if (entity.getPersistentData().contains(String.valueOf(DWMNBTTags.SCALE_2D))) {
+        if (entity.getPersistentData().contains(DWMNBTTags.SCALE_2D.getTag())) {
             GlStateManager.pushMatrix();
-            GlStateManager.scalef(entity.getPersistentData().getFloat(String.valueOf(DWMNBTTags.SCALE_2D)), 1.0f, 1.0f);
+            GlStateManager.scalef(entity.getPersistentData().getFloat(DWMNBTTags.SCALE_2D.getTag()), 1.0f, 1.0f);
         }
     }
 
@@ -36,7 +36,7 @@ public class DWMRenderEvent {
     @OnlyIn(Dist.CLIENT)
     public void onRenderLivingPost(RenderLivingEvent.Post event) {
         LivingEntity entity = event.getEntity();
-        if (entity.getPersistentData().contains(String.valueOf(DWMNBTTags.SCALE_2D))) {
+        if (entity.getPersistentData().contains(DWMNBTTags.SCALE_2D.getTag())) {
             GlStateManager.popMatrix();
         }
     }

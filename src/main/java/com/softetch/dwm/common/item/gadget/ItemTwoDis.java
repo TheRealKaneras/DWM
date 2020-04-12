@@ -31,14 +31,14 @@ public class ItemTwoDis extends Item {
      */
     @Override
     public boolean itemInteractionForEntity(ItemStack stack, PlayerEntity player, LivingEntity target, Hand hand) {
-        if (target.getPersistentData().contains(String.valueOf(DWMNBTTags.SCALE_2D))) {
-            if (target.getPersistentData().getFloat(String.valueOf(DWMNBTTags.SCALE_2D)) <= 0.05f) {
-                target.getPersistentData().putFloat(String.valueOf(DWMNBTTags.SCALE_2D), 1.0f);
+        if (target.getPersistentData().contains(DWMNBTTags.SCALE_2D.getTag())) {
+            if (target.getPersistentData().getFloat(DWMNBTTags.SCALE_2D.getTag()) <= 0.05f) {
+                target.getPersistentData().putFloat(DWMNBTTags.SCALE_2D.getTag(), 1.0f);
             } else {
-                target.getPersistentData().putFloat(String.valueOf(DWMNBTTags.SCALE_2D), target.getPersistentData().getFloat(String.valueOf(DWMNBTTags.SCALE_2D)) - 0.05f);
+                target.getPersistentData().putFloat(DWMNBTTags.SCALE_2D.getTag(), target.getPersistentData().getFloat(DWMNBTTags.SCALE_2D.getTag()) - 0.05f);
             }
         } else {
-            target.getPersistentData().putFloat(String.valueOf(DWMNBTTags.SCALE_2D), 0.95f);
+            target.getPersistentData().putFloat(DWMNBTTags.SCALE_2D.getTag(), 0.95f);
         }
         return true;
     }
