@@ -4,9 +4,10 @@ import com.softetch.dwm.client.tardis.EnumChameleonData;
 import com.softetch.dwm.common.block.RoundelBlock;
 import com.softetch.dwm.common.block.TardisBlock;
 import com.softetch.dwm.common.item.DWMSpawnerItem;
+import com.softetch.dwm.common.item.TardisKeyItem;
 import com.softetch.dwm.common.item.clothing.HatItem;
-import com.softetch.dwm.common.item.gadget.ItemSonicScrewdriver;
-import com.softetch.dwm.common.item.gadget.ItemTwoDis;
+import com.softetch.dwm.common.item.gadget.SonicScrewdriverItem;
+import com.softetch.dwm.common.item.gadget.TwoDisItem;
 import net.minecraft.block.Block;
 import net.minecraft.item.*;
 import net.minecraftforge.event.RegistryEvent;
@@ -92,11 +93,11 @@ public class DWMItems {
                 new Item(new Item.Properties().group(ItemGroup.BREWING).food(DWMFoods.PILL)).setRegistryName(DWMMain.MOD_ID, "adipose_pill"),
                 new Item(new Item.Properties().group(ItemGroup.FOOD).food(DWMFoods.SCOOBY_SNACK)).setRegistryName(DWMMain.MOD_ID, "scooby_snack"),
                 new SwordItem(ItemTier.WOOD, 2, -2.4f, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(DWMMain.MOD_ID, "cricket_bat"),
-                new ItemTwoDis().setRegistryName(DWMMain.MOD_ID, "two_dis"),
-                new ItemSonicScrewdriver().setRegistryName(DWMMain.MOD_ID, "sonic_screwdriver"),
-                new ItemSonicScrewdriver().setRegistryName(DWMMain.MOD_ID, "sonic_screwdriver_third"),
-                new ItemSonicScrewdriver().setRegistryName(DWMMain.MOD_ID, "sonic_screwdriver_ten"),
-                new ItemSonicScrewdriver().setRegistryName(DWMMain.MOD_ID, "sonic_lipstick"),
+                new TwoDisItem().setRegistryName(DWMMain.MOD_ID, "two_dis"),
+                new SonicScrewdriverItem().setRegistryName(DWMMain.MOD_ID, "sonic_screwdriver"),
+                new SonicScrewdriverItem().setRegistryName(DWMMain.MOD_ID, "sonic_screwdriver_third"),
+                new SonicScrewdriverItem().setRegistryName(DWMMain.MOD_ID, "sonic_screwdriver_ten"),
+                new SonicScrewdriverItem().setRegistryName(DWMMain.MOD_ID, "sonic_lipstick"),
                 new HatItem().setRegistryName(DWMMain.MOD_ID, "black_fez"),
                 new HatItem().setRegistryName(DWMMain.MOD_ID, "blue_fez"),
                 new HatItem().setRegistryName(DWMMain.MOD_ID, "brown_fez"),
@@ -113,6 +114,7 @@ public class DWMItems {
                 new HatItem().setRegistryName(DWMMain.MOD_ID, "red_fez"),
                 new HatItem().setRegistryName(DWMMain.MOD_ID, "white_fez"),
                 new HatItem().setRegistryName(DWMMain.MOD_ID, "yellow_fez"),
+                new TardisKeyItem().setRegistryName(DWMMain.MOD_ID, "tardis_gold_key"),
                 new Item(new Item.Properties()).setRegistryName(DWMMain.MOD_ID, "laser"),
                 new DWMSpawnerItem(DWMEntities.ADIPOSE),
                 new BlockItem(BLACK_ROUNDEL, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "black_roundel"),
@@ -135,7 +137,7 @@ public class DWMItems {
                 new BlockItem(HARTNELL_ROUNDEL_SPLIT, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(DWMMain.MOD_ID, "hartnell_roundel_split")
         );
         for (Block tardis : tardises) {
-            event.getRegistry().register(new BlockItem(tardis, new Item.Properties().group(ItemGroup.TRANSPORTATION)).setRegistryName(tardis.getRegistryName()));
+            event.getRegistry().register(new BlockItem(tardis, new Item.Properties().group(ItemGroup.TRANSPORTATION).maxStackSize(1)).setRegistryName(tardis.getRegistryName()));
         }
     }
 

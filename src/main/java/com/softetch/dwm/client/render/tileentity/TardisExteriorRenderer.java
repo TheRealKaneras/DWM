@@ -12,7 +12,7 @@ public class TardisExteriorRenderer extends DWMTileEntityRenderer<TardisTileEnti
 
     @Override
     public void render(TardisTileEntity tileEntity, double x, double y, double z, float partialTicks, int destroyStage) {
-        if (tileEntity.getData() != null && chameleonData.getId() != tileEntity.getChameleon()) {
+        if (chameleonData.getId() != tileEntity.getChameleon()) {
             chameleonData = EnumChameleonData.fromId(tileEntity.getChameleon());
             setModel(chameleonData.getModel());
             setTexture(chameleonData.getTexture());

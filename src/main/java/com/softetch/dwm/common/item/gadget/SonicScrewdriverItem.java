@@ -27,13 +27,13 @@ import java.util.Map;
 /**
  * A class containing all the properties and methods required for a sonic screwdriver
  */
-public class ItemSonicScrewdriver extends Item {
+public class SonicScrewdriverItem extends Item {
     private final Map<Block, Item> smeltingResults = Maps.newHashMap();
 
     /**
      * Creates a new sonic screwdriver
      */
-    public ItemSonicScrewdriver() {
+    public SonicScrewdriverItem() {
         super(new Item.Properties().group(ItemGroup.TOOLS));
     }
 

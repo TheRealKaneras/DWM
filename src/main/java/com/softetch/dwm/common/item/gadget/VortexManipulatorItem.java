@@ -8,8 +8,8 @@ import net.minecraft.item.ItemUseContext;
 import net.minecraft.util.ActionResultType;
 import net.minecraftforge.fml.network.NetworkHooks;
 
-public class ItemVortexManipulator extends Item {
-    public ItemVortexManipulator(Properties properties) {
+public class VortexManipulatorItem extends Item {
+    public VortexManipulatorItem(Properties properties) {
         super(new Item.Properties().group(ItemGroup.TOOLS));
     }
 

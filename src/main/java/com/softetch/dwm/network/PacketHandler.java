@@ -1,7 +1,6 @@
 package com.softetch.dwm.network;
 
 import com.softetch.dwm.DWMMain;
-import com.softetch.dwm.network.packets.PacketChameleonData;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.network.NetworkRegistry;
 import net.minecraftforge.fml.network.simple.SimpleChannel;
@@ -19,7 +18,6 @@ public class PacketHandler {
     public static void register() {
         int i = 0;
 
-        HANDLER.registerMessage(i++, PacketChameleonData.class, PacketChameleonData::encode, PacketChameleonData::decode, PacketChameleonData::handle);
     }
 
 }

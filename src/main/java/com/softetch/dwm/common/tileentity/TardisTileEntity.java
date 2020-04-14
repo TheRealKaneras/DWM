@@ -3,22 +3,20 @@ package com.softetch.dwm.common.tileentity;
 import com.softetch.dwm.DWMNBTTags;
 import com.softetch.dwm.DWMSounds;
 import com.softetch.dwm.DWMTileEntities;
-import com.softetch.dwm.common.tardis.TardisData;
-import com.softetch.dwm.network.PacketHandler;
-import com.softetch.dwm.network.packets.PacketChameleonData;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.SoundCategory;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 
 import java.util.List;
 
 public class TardisTileEntity extends TileEntity implements ITickableTileEntity {
-    private DoorState doorState = DoorState.CLOSED;
-    private float doorProgression = 0.0f;
-    private TardisData data;
+    private CompoundNBT compoundNBT;
 
     public TardisTileEntity() {
         super(DWMTileEntities.TARDIS);
@@ -26,35 +24,85 @@ public class TardisTileEntity extends TileEntity implements ITickableTileEntity 
 
     @Override
     public void tick() {
-        if (data == null)
-            return;
-        if (isOwnerNearby() && !isOpen()) {
-            setDoorState(DoorState.BOTH);
-        } else if (!isOwnerNearby() && isOpen()) {
-            setDoorState(DoorState.CLOSED);
-        }
-        if (isOpen() && doorProgression < 1.0f) {
-            doorProgression += 0.05f;
-        } else if (!isOpen() && doorProgression > 0.0f) {
-            doorProgression -= 0.05f;
-        }
-        if (doorProgression > 1.0f) {
-            doorProgression = 1.0f;
-        } else if (doorProgression < 0.0f) {
-            doorProgression = 0.0f;
+        if (!world.isRemote()) {
+            if (isOwnerNearby() && !isOpen() && !isLocked()) {
+                setDoorState(DoorState.BOTH, false);
+            } else if (!isOwnerNearby() && isOpen() || isLocked()) {
+                setDoorState(DoorState.CLOSED, false);
+            }
+
+            if (isOpen() && getDoorProgression() < 1.0f) {
+                updateDoorProgression(getDoorProgression() + 0.05f);
+            } else if (!isOpen() && getDoorProgression() > 0.0f) {
+                updateDoorProgression(getDoorProgression() - 0.05f);
+            }
+            if (getDoorProgression() > 1.0f) {
+                updateDoorProgression(1.0f);
+            } else if (getDoorProgression() < 0.0f) {
+                updateDoorProgression(0.0f);
+            }
         }
     }
 
-    public TardisData getData() {
-        return data;
+    public void updateDoorProgression(float doorProgression) {
+        createCompoundNBT();
+        compoundNBT.putFloat(DWMNBTTags.DOOR_PROGRESSION.getTag(), doorProgression);
+        markDirty();
+        updateClient();
     }
 
-    public void setData(TardisData data) {
-        this.data = data;
+    public float getDoorProgression() {
+        return compoundNBT != null ? compoundNBT.getFloat(DWMNBTTags.DOOR_PROGRESSION.getTag()) : 0.0f;
+    }
+
+    private void createCompoundNBT() {
+        if (compoundNBT == null)
+            compoundNBT = new CompoundNBT();
+    }
+
+    public boolean isLocked() {
+        return compoundNBT != null && compoundNBT.getBoolean(DWMNBTTags.LOCKED.getTag());
+    }
+
+    public void setLocked(boolean locked) {
+        createCompoundNBT();
+        compoundNBT.putBoolean(DWMNBTTags.LOCKED.getTag(), locked);
+    }
+
+    public void forceOpen(boolean open) {
+        setDoorState(open ? DoorState.BOTH : DoorState.CLOSED, true);
+        updateDoorProgression(open ? 1.0f : 0.0f);
+    }
+
+    private void playSound(SoundEvent soundEvent, SoundCategory soundCategory) {
+        getWorld().playSound(null, getPos().getX(), getPos().getY(), getPos().getZ(), soundEvent, soundCategory, 1.0f, 1.0f);
+    }
+
+    public void cycleLock() {
+        setLocked(!isLocked());
+        if (isLocked()) {
+            forceOpen(false);
+            playSound(DWMSounds.TARDIS_LOCK, SoundCategory.BLOCKS);
+        } else {
+            playSound(DWMSounds.TARDIS_UNLOCK, SoundCategory.BLOCKS);
+        }
+        markDirty();
+        updateClient();
+    }
+
+    public String getOwnerUuid() {
+        return compoundNBT != null ? compoundNBT.getString(DWMNBTTags.TARDIS_OWNER.getTag()) : null;
+    }
+
+    public void setOwnerUuid(String ownerUuid) {
+        createCompoundNBT();
+        compoundNBT.putString(DWMNBTTags.TARDIS_OWNER.getTag(), ownerUuid);
+        markDirty();
+        world.notifyBlockUpdate(getPos(), getWorld().getBlockState(getPos()), getWorld().getBlockState(getPos()), 3);
     }
 
     public boolean isOwner(PlayerEntity player) {
-        return player.getUniqueID().toString().equals(getData().getOwnerUuid());
+        return compoundNBT != null && player.getUniqueID().toString().equals(getOwnerUuid());
     }
 
     public boolean isOwnerNearby() {
@@ -67,52 +115,69 @@ public class TardisTileEntity extends TileEntity implements ITickableTileEntity 
     }
 
     public boolean isOpen() {
-        return doorState != DoorState.CLOSED;
+        return getDoorState() != DoorState.CLOSED;
     }
 
-    public void setDoorState(DoorState doorState) {
-        if (doorState != this.doorState && getWorld() != null && !getWorld().isRemote) {
-            if (doorState == DoorState.CLOSED) {
-                getWorld().playSound(getPos().getX(), getPos().getY(), getPos().getZ(), DWMSounds.TARDIS_CLOSE, SoundCategory.BLOCKS, 1.0f, 1.0f, false);
-            } else {
-                getWorld().playSound(getPos().getX(), getPos().getY(), getPos().getZ(), DWMSounds.TARDIS_OPEN, SoundCategory.BLOCKS, 1.0f, 1.0f, false);
+    public void setDoorState(DoorState doorState, boolean isFast) {
+            if (getDoorState() != doorState) {
+                if (doorState == DoorState.CLOSED) {
+                    playSound(isFast ? DWMSounds.TARDIS_FAST_CLOSE : DWMSounds.TARDIS_CLOSE, SoundCategory.BLOCKS);
+                } else {
+                    playSound(isFast ? DWMSounds.TARDIS_FAST_OPEN : DWMSounds.TARDIS_OPEN, SoundCategory.BLOCKS);
+                }
             }
-        }
-        this.doorState = doorState;
-        markDirty();
+            createCompoundNBT();
+            compoundNBT.putInt(DWMNBTTags.DOOR_STATE.getTag(), doorState.getId());
+            markDirty();
+            updateClient();
     }
 
     public DoorState getDoorState() {
-        return doorState;
+        return compoundNBT != null ? DoorState.fromId(compoundNBT.getInt(DWMNBTTags.DOOR_STATE.getTag())) : DoorState.CLOSED;
     }
 
-    public float getDoorProgression() {
-        return doorProgression;
-    }
-
-    public void setChameleon(int chameleon, boolean sendPacketUpdate) {
-        getData().setChameleonId(chameleon);
+    public void setChameleon(int chameleon) {
+        createCompoundNBT();
+        compoundNBT.putInt(DWMNBTTags.CHAMELEON.getTag(), chameleon);
         markDirty();
-        if (sendPacketUpdate) {
-            PacketHandler.HANDLER.sendToServer(new PacketChameleonData(getPos(), getChameleon()));
-        }
+        updateClient();
     }
 
     public int getChameleon() {
-        return getData().getChameleonId();
+        return compoundNBT != null ? compoundNBT.getInt(DWMNBTTags.CHAMELEON.getTag()) : 0;
     }
 
     @Override
     public CompoundNBT write(CompoundNBT compound) {
         super.write(compound);
-        compound.putInt(DWMNBTTags.DOOR_STATE.getTag(), getDoorState().getId());
+        compound.put(DWMNBTTags.TARDIS_DATA.getTag(), compoundNBT);
         return compound;
     }
 
     @Override
     public void read(CompoundNBT compound) {
         super.read(compound);
-        setDoorState(DoorState.fromId(compound.getInt(DWMNBTTags.DOOR_STATE.getTag())));
+        compoundNBT = (CompoundNBT) compound.get(DWMNBTTags.TARDIS_DATA.getTag());
+    }
+
+    @Override
+    public CompoundNBT getUpdateTag() {
+        return write(new CompoundNBT());
+    }
+
+    @Override
+    public SUpdateTileEntityPacket getUpdatePacket() {
+        return new SUpdateTileEntityPacket(this.getPos(), 0, write(new CompoundNBT()));
+    }
+
+    @Override
+    public void onDataPacket(NetworkManager net, SUpdateTileEntityPacket pkt) {
+        read(pkt.getNbtCompound());
+    }
+
+    private void updateClient() {
+        if (!world.isRemote)
+            world.notifyBlockUpdate(getPos(), getWorld().getBlockState(getPos()), getWorld().getBlockState(getPos()), 3);
     }
 
     public enum DoorState {

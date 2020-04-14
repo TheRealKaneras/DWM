@@ -11,12 +11,12 @@ import net.minecraft.util.Hand;
 /**
  * Contains all the methods and properties required for a 2dis
  */
-public class ItemTwoDis extends Item {
+public class TwoDisItem extends Item {
 
     /**
      * Creates a new 2dis
      */
-    public ItemTwoDis() {
+    public TwoDisItem() {
         super(new Item.Properties().group(ItemGroup.TOOLS));
     }
 

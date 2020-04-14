@@ -22,5 +22,25 @@
   "tardis_close": {
     "category": "block",
     "sounds": [ "dwm:tardis_close" ]
+  },
+  "tardis_fast_open": {
+    "category": "block",
+    "sounds": [ "dwm:tardis_fast_open" ]
+  },
+  "tardis_fast_close": {
+    "category": "block",
+    "sounds": [ "dwm:tardis_fast_close" ]
+  },
+  "tardis_deadlock": {
+    "category": "block",
+    "sounds": [ "dwm:tardis_deadlock" ]
+  },
+  "tardis_lock": {
+    "category": "block",
+    "sounds": [ "dwm:tardis_lock" ]
+  },
+  "tardis_unlock": {
+    "category": "block",
+    "sounds": [ "dwm:tardis_unlock" ]
   }
 }
