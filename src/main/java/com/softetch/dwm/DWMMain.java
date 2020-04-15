@@ -5,10 +5,8 @@ import com.google.gson.GsonBuilder;
 import com.softetch.dwm.client.event.DWMRenderEvent;
 import com.softetch.dwm.common.event.DWMItemUseEvent;
 import com.softetch.dwm.network.PacketHandler;
-import net.minecraftforge.client.model.obj.OBJLoader;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
@@ -29,7 +27,6 @@ public class DWMMain {
     public DWMMain() {
         // Register the methods for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setupClientSide);
     }
 
     /**
@@ -40,14 +37,6 @@ public class DWMMain {
         MinecraftForge.EVENT_BUS.register(new DWMRenderEvent());
         MinecraftForge.EVENT_BUS.register(new DWMItemUseEvent());
         PacketHandler.register();
-    }
-
-    /**
-     * Set up things that should only be run on the client side.
-     * @param event the forge client setup event
-     */
-    private void setupClientSide(final FMLClientSetupEvent event) {
-        OBJLoader.INSTANCE.addDomain(MOD_ID);
     }
 
 }

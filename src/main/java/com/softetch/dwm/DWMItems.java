@@ -5,7 +5,7 @@ import com.softetch.dwm.common.block.RoundelBlock;
 import com.softetch.dwm.common.block.TardisBlock;
 import com.softetch.dwm.common.item.DWMSpawnerItem;
 import com.softetch.dwm.common.item.TardisKeyItem;
-import com.softetch.dwm.common.item.clothing.HatItem;
+import com.softetch.dwm.common.item.clothing.FezItem;
 import com.softetch.dwm.common.item.gadget.SonicScrewdriverItem;
 import com.softetch.dwm.common.item.gadget.TwoDisItem;
 import net.minecraft.block.Block;
@@ -16,6 +16,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ObjectHolder;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,7 +48,7 @@ public class DWMItems {
     public static final RoundelBlock HARTNELL_ROUNDEL_SPLIT = null;
     public static final Item ADIPOSE_PILL = null;
 
-    public static List<Block> tardises = new ArrayList<Block>();
+    public static List<Block> tardises = new ArrayList<>();
 
     private DWMItems() {}
 
@@ -98,22 +99,22 @@ public class DWMItems {
                 new SonicScrewdriverItem().setRegistryName(DWMMain.MOD_ID, "sonic_screwdriver_third"),
                 new SonicScrewdriverItem().setRegistryName(DWMMain.MOD_ID, "sonic_screwdriver_ten"),
                 new SonicScrewdriverItem().setRegistryName(DWMMain.MOD_ID, "sonic_lipstick"),
-                new HatItem().setRegistryName(DWMMain.MOD_ID, "black_fez"),
-                new HatItem().setRegistryName(DWMMain.MOD_ID, "blue_fez"),
-                new HatItem().setRegistryName(DWMMain.MOD_ID, "brown_fez"),
-                new HatItem().setRegistryName(DWMMain.MOD_ID, "cyan_fez"),
-                new HatItem().setRegistryName(DWMMain.MOD_ID, "green_fez"),
-                new HatItem().setRegistryName(DWMMain.MOD_ID, "grey_fez"),
-                new HatItem().setRegistryName(DWMMain.MOD_ID, "light_blue_fez"),
-                new HatItem().setRegistryName(DWMMain.MOD_ID, "light_grey_fez"),
-                new HatItem().setRegistryName(DWMMain.MOD_ID, "lime_fez"),
-                new HatItem().setRegistryName(DWMMain.MOD_ID, "magenta_fez"),
-                new HatItem().setRegistryName(DWMMain.MOD_ID, "orange_fez"),
-                new HatItem().setRegistryName(DWMMain.MOD_ID, "pink_fez"),
-                new HatItem().setRegistryName(DWMMain.MOD_ID, "purple_fez"),
-                new HatItem().setRegistryName(DWMMain.MOD_ID, "red_fez"),
-                new HatItem().setRegistryName(DWMMain.MOD_ID, "white_fez"),
-                new HatItem().setRegistryName(DWMMain.MOD_ID, "yellow_fez"),
+                new FezItem(Color.decode("#141519")).setRegistryName(DWMMain.MOD_ID, "black_fez"),
+                new FezItem(Color.decode("#35399D")).setRegistryName(DWMMain.MOD_ID, "blue_fez"),
+                new FezItem(Color.decode("#724728")).setRegistryName(DWMMain.MOD_ID, "brown_fez"),
+                new FezItem(Color.decode("#158991")).setRegistryName(DWMMain.MOD_ID, "cyan_fez"),
+                new FezItem(Color.decode("#546D1B")).setRegistryName(DWMMain.MOD_ID, "green_fez"),
+                new FezItem(Color.decode("#3E4447")).setRegistryName(DWMMain.MOD_ID, "grey_fez"),
+                new FezItem(Color.decode("#3AAFD9")).setRegistryName(DWMMain.MOD_ID, "light_blue_fez"),
+                new FezItem(Color.decode("#8E8E86")).setRegistryName(DWMMain.MOD_ID, "light_grey_fez"),
+                new FezItem(Color.decode("#70B919")).setRegistryName(DWMMain.MOD_ID, "lime_fez"),
+                new FezItem(Color.decode("#BD44B3")).setRegistryName(DWMMain.MOD_ID, "magenta_fez"),
+                new FezItem(Color.decode("#F07613")).setRegistryName(DWMMain.MOD_ID, "orange_fez"),
+                new FezItem(Color.decode("#BD44B3")).setRegistryName(DWMMain.MOD_ID, "pink_fez"),
+                new FezItem(Color.decode("#7E3DB5")).setRegistryName(DWMMain.MOD_ID, "purple_fez"),
+                new FezItem(Color.decode("#A12722")).setRegistryName(DWMMain.MOD_ID, "red_fez"),
+                new FezItem(Color.decode("#E9ECEC")).setRegistryName(DWMMain.MOD_ID, "white_fez"),
+                new FezItem(Color.decode("#F8C627")).setRegistryName(DWMMain.MOD_ID, "yellow_fez"),
                 new TardisKeyItem().setRegistryName(DWMMain.MOD_ID, "tardis_gold_key"),
                 new Item(new Item.Properties()).setRegistryName(DWMMain.MOD_ID, "laser"),
                 new DWMSpawnerItem(DWMEntities.ADIPOSE),
