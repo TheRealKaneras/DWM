@@ -1,6 +1,7 @@
 package com.softetch.dwm;
 
-import com.softetch.dwm.client.tardis.EnumChameleonData;
+import com.softetch.dwm.client.tardis.ChameleonRegistry;
+import com.softetch.dwm.client.tardis.chameleon.AbstractChameleonData;
 import com.softetch.dwm.common.block.RoundelBlock;
 import com.softetch.dwm.common.block.TardisBlock;
 import com.softetch.dwm.common.item.DWMSpawnerItem;
@@ -58,8 +59,8 @@ public class DWMItems {
      */
     @SubscribeEvent(priority = EventPriority.HIGH)
     public static void registerBlocks(RegistryEvent.Register<Block> event){
-        for (EnumChameleonData tardis : EnumChameleonData.values()) {
-            tardises.add(new TardisBlock(tardis.getId()).setRegistryName(DWMMain.MOD_ID, "tardis_" + tardis.getName()));
+        for (AbstractChameleonData tardis : ChameleonRegistry.TARDIS_SKINS.values()) {
+            tardises.add(new TardisBlock(tardis.getName()).setRegistryName(DWMMain.MOD_ID, "tardis_" + tardis.getName()));
         }
         event.getRegistry().registerAll(
                 new RoundelBlock(false).setRegistryName(DWMMain.MOD_ID, "black_roundel"),

@@ -1,8 +1,10 @@
 package com.softetch.dwm.common.tileentity;
 
+import com.softetch.dwm.DWMMain;
 import com.softetch.dwm.DWMNBTTags;
-import com.softetch.dwm.DWMSounds;
 import com.softetch.dwm.DWMTileEntities;
+import com.softetch.dwm.client.tardis.ChameleonRegistry;
+import com.softetch.dwm.client.tardis.chameleon.AbstractChameleonData;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.NetworkManager;
@@ -75,16 +77,17 @@ public class TardisTileEntity extends TileEntity implements ITickableTileEntity 
     }
 
     private void playSound(SoundEvent soundEvent, SoundCategory soundCategory) {
-        getWorld().playSound(null, getPos().getX(), getPos().getY(), getPos().getZ(), soundEvent, soundCategory, 1.0f, 1.0f);
+        if (soundEvent != null)
+            getWorld().playSound(null, getPos().getX(), getPos().getY(), getPos().getZ(), soundEvent, soundCategory, 1.0f, 1.0f);
     }
 
     public void cycleLock() {
         setLocked(!isLocked());
         if (isLocked()) {
             forceOpen(false);
-            playSound(DWMSounds.TARDIS_LOCK, SoundCategory.BLOCKS);
+            playSound(getChameleonData().getLockDoorSound(), SoundCategory.BLOCKS);
         } else {
-            playSound(DWMSounds.TARDIS_UNLOCK, SoundCategory.BLOCKS);
+            playSound(getChameleonData().getUnlockDoorSound(), SoundCategory.BLOCKS);
         }
         markDirty();
         updateClient();
@@ -118,12 +121,12 @@ public class TardisTileEntity extends TileEntity implements ITickableTileEntity 
         return getDoorState() != DoorState.CLOSED;
     }
 
-    public void setDoorState(DoorState doorState, boolean isFast) {
+    public void setDoorState(DoorState doorState, boolean slam) {
             if (getDoorState() != doorState) {
                 if (doorState == DoorState.CLOSED) {
-                    playSound(isFast ? DWMSounds.TARDIS_FAST_CLOSE : DWMSounds.TARDIS_CLOSE, SoundCategory.BLOCKS);
+                    playSound(slam ? getChameleonData().getDoorSlamSound() : getChameleonData().getCloseDoorSound(), SoundCategory.BLOCKS);
                 } else {
-                    playSound(isFast ? DWMSounds.TARDIS_FAST_OPEN : DWMSounds.TARDIS_OPEN, SoundCategory.BLOCKS);
+                    playSound(getChameleonData().getOpenDoorSound(), SoundCategory.BLOCKS);
                 }
             }
             createCompoundNBT();
@@ -136,15 +139,19 @@ public class TardisTileEntity extends TileEntity implements ITickableTileEntity 
         return compoundNBT != null ? DoorState.fromId(compoundNBT.getInt(DWMNBTTags.DOOR_STATE.getTag())) : DoorState.CLOSED;
     }
 
-    public void setChameleon(int chameleon) {
+    public void setChameleon(String chameleon) {
         createCompoundNBT();
-        compoundNBT.putInt(DWMNBTTags.CHAMELEON.getTag(), chameleon);
+        compoundNBT.putString(DWMNBTTags.CHAMELEON.getTag(), chameleon);
         markDirty();
         updateClient();
     }
 
-    public int getChameleon() {
-        return compoundNBT != null ? compoundNBT.getInt(DWMNBTTags.CHAMELEON.getTag()) : 0;
+    public String getChameleon() {
+        return compoundNBT != null ? compoundNBT.getString(DWMNBTTags.CHAMELEON.getTag()) : DWMMain.chameleonRegistry.getDefaultSkin().getName();
+    }
+
+    public AbstractChameleonData getChameleonData() {
+        return ChameleonRegistry.TARDIS_SKINS.get(getChameleon());
     }
 
     @Override

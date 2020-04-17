@@ -1,19 +1,20 @@
 package com.softetch.dwm.client.render.tileentity;
 
-import com.softetch.dwm.client.tardis.EnumChameleonData;
+import com.softetch.dwm.DWMMain;
+import com.softetch.dwm.client.tardis.chameleon.AbstractChameleonData;
 import com.softetch.dwm.common.tileentity.TardisTileEntity;
 
 public class TardisExteriorRenderer extends DWMTileEntityRenderer<TardisTileEntity> {
-    private EnumChameleonData chameleonData = EnumChameleonData.BRACHACKI_BOX_A;
+    private AbstractChameleonData chameleonData = DWMMain.chameleonRegistry.getDefaultSkin();
 
     public TardisExteriorRenderer() {
-        super(EnumChameleonData.BRACHACKI_BOX_A.getModel(), EnumChameleonData.BRACHACKI_BOX_A.getTexture());
+        super(DWMMain.chameleonRegistry.getDefaultSkin().getModel(), DWMMain.chameleonRegistry.getDefaultSkin().getTexture());
     }
 
     @Override
     public void render(TardisTileEntity tileEntity, double x, double y, double z, float partialTicks, int destroyStage) {
-        if (chameleonData.getId() != tileEntity.getChameleon()) {
-            chameleonData = EnumChameleonData.fromId(tileEntity.getChameleon());
+        if (!chameleonData.getName().equals(tileEntity.getChameleon())) {
+            chameleonData = tileEntity.getChameleonData();
             setModel(chameleonData.getModel());
             setTexture(chameleonData.getTexture());
         }

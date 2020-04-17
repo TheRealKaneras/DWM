@@ -14,10 +14,10 @@ import net.minecraft.world.World;
 import javax.annotation.Nullable;
 
 public class TardisBlock extends DWMTileEntityBlock {
-    private final int exteriorId;
-    public TardisBlock(int exteriorId) {
+    private final String exteriorName;
+    public TardisBlock(String exteriorName) {
         super(Block.Properties.create(Material.WOOD));
-        this.exteriorId = exteriorId;
+        this.exteriorName = exteriorName;
     }
 
     /**
@@ -30,7 +30,7 @@ public class TardisBlock extends DWMTileEntityBlock {
             TardisTileEntity tileEntity = (TardisTileEntity) worldIn.getTileEntity(pos);
             if (tileEntity != null) {
                 tileEntity.setOwnerUuid(placer.getUniqueID().toString());
-                tileEntity.setChameleon(exteriorId);
+                tileEntity.setChameleon(exteriorName);
             }
         }
     }

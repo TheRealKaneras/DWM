@@ -52,6 +52,9 @@
   "block.dwm.tardis_brachacki_box_d": "TARDIS: Brachacki Box (1976)",
   "block.dwm.tardis_newbery_box_a": "TARDIS: Newbery Box (1979)",
   "block.dwm.tardis_newbery_box_b": "TARDIS: Newbery Box (1976)",
+  "block.dwm.tardis_newbery_box_c": "TARDIS: Newbery Box (1980)",
+  "block.dwm.tardis_chest": "TARDIS: Chest",
+  "block.dwm.tardis_ender_chest": "TARDIS: Ender Chest",
   "entity.dwm.time_war_dalek": "Time War Dalek",
   "entity.dwm.skaro_dalek": "Skaro Dalek",
   "entity.dwm.invasion_dalek": "Invasion Dalek",
@@ -59,10 +62,14 @@
   "entity.dwm.adipose": "Adipose",
   "tardisgroup.brachacki_box.name": "Brachacki Box",
   "tardisgroup.newbery_box.name": "Newbery Box",
+  "tardisgroup.minecraft.name": "Minecraft",
   "tardis.brachacki_box_a.name": "Brachacki Box (1963)",
   "tardis.brachacki_box_b.name": "Brachacki Box (1966)",
   "tardis.brachacki_box_c.name": "Brachacki Box (1973)",
   "tardis.brachacki_box_d.name": "Brachacki Box (1976)",
   "tardis.newbery_box_a.name": "Newbery Box (1979)",
-  "tardis.newbery_box_b.name": "Newbery Box (1976)"
+  "tardis.newbery_box_b.name": "Newbery Box (1976)",
+  "tardis.newbery_box_c.name": "Newbery Box (1980)",
+  "tardis.chest.name": "Chest",
+  "tardis.ender_chest.name": "Ender Chest"
 }
