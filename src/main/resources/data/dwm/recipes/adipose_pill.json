@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GGG",
+    "GAG",
+    "GGG"
+  ],
+  "key": {
+    "G": {
+      "item": "dwm:gelatine"
+    },
+    "A": {
+      "item": "dwm:adipose_material"
+    }
+  },
+  "result": {
+    "item": "dwm:adipose_pill"
+  }
+}

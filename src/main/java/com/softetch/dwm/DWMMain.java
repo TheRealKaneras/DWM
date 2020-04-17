@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.softetch.dwm.client.event.DWMRenderEvent;
 import com.softetch.dwm.client.tardis.ChameleonRegistry;
+import com.softetch.dwm.common.event.DWMEntityEvent;
 import com.softetch.dwm.common.event.DWMItemUseEvent;
 import com.softetch.dwm.network.PacketHandler;
 import net.minecraftforge.common.MinecraftForge;
@@ -38,6 +39,7 @@ public class DWMMain {
     private void setup(final FMLCommonSetupEvent event) {
         MinecraftForge.EVENT_BUS.register(new DWMRenderEvent());
         MinecraftForge.EVENT_BUS.register(new DWMItemUseEvent());
+        MinecraftForge.EVENT_BUS.register(new DWMEntityEvent());
         PacketHandler.register();
     }
 
