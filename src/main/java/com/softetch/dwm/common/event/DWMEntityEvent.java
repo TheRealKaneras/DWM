@@ -14,7 +14,7 @@ public class DWMEntityEvent {
     @SubscribeEvent
     public void onLivingDeathEvent(LivingDeathEvent event) {
         if (event.getEntityLiving() instanceof AnimalEntity) {
-            event.getEntityLiving().entityDropItem(new ItemStack(DWMItems.GELATINE, random.nextInt(3)));
+            event.getEntityLiving().entityDropItem(new ItemStack(DWMItems.GELATIN, random.nextInt(3)));
             event.getEntityLiving().entityDropItem(new ItemStack(DWMItems.ADIPOSE_MATERIAL, random.nextInt(2)));
         }
     }

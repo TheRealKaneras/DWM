@@ -1,7 +1,7 @@
 {
   "item.dwm.adipose_pill": "Adipose Pill",
   "item.dwm.scooby_snack": "Scooby Snack",
-  "item.dwm.gelatin": "Gelatin",
+  "item.dwm.gelatin": "Gelatine",
   "item.dwm.adipose_material": "Adipose Material",
 
   "item.dwm.cricket_bat": "Cricket Bat",
@@ -19,9 +19,9 @@
   "item.dwm.brown_fez": "Brown Fez",
   "item.dwm.cyan_fez": "Cyan Fez",
   "item.dwm.green_fez": "Green Fez",
-  "item.dwm.grey_fez": "Gray Fez",
+  "item.dwm.grey_fez": "Grey Fez",
   "item.dwm.light_blue_fez": "Light Blue Fez",
-  "item.dwm.light_grey_fez": "Light Gray Fez",
+  "item.dwm.light_grey_fez": "Light Grey Fez",
   "item.dwm.lime_fez": "Lime Fez",
   "item.dwm.magenta_fez": "Magenta Fez",
   "item.dwm.orange_fez": "Orange Fez",
@@ -36,8 +36,8 @@
   "item.dwm.sixties_dalek_spawner": "Spawn 60s Dalek",
 
   "block.dwm.black_roundel": "Black Roundel",
-  "block.dwm.dark_gray_roundel": "Dark Gray Roundel",
-  "block.dwm.gray_roundel": "Gray Roundel",
+  "block.dwm.dark_gray_roundel": "Dark Grey Roundel",
+  "block.dwm.gray_roundel": "Grey Roundel",
   "block.dwm.white_roundel": "White Roundel",
   "block.dwm.dark_purple_roundel": "Dark Purple Roundel",
   "block.dwm.light_purple_roundel": "Light Purple Roundel",

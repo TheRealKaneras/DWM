@@ -48,7 +48,7 @@ public class DWMItems {
     public static final RoundelBlock HARTNELL_ROUNDEL = null;
     public static final RoundelBlock HARTNELL_ROUNDEL_SPLIT = null;
     public static final Item ADIPOSE_PILL = null;
-    public static final Item GELATINE = null;
+    public static final Item GELATIN = null;
     public static final Item ADIPOSE_MATERIAL = null;
 
     public static List<Block> tardises = new ArrayList<>();
@@ -97,7 +97,7 @@ public class DWMItems {
                 new Item(new Item.Properties().group(ItemGroup.BREWING).food(DWMFoods.PILL)).setRegistryName(DWMMain.MOD_ID, "adipose_pill"),
                 new Item(new Item.Properties().group(ItemGroup.FOOD).food(DWMFoods.SCOOBY_SNACK)).setRegistryName(DWMMain.MOD_ID, "scooby_snack"),
                 new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(DWMMain.MOD_ID, "adipose_material"),
-                new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(DWMMain.MOD_ID, "gelatine"),
+                new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(DWMMain.MOD_ID, "gelatin"),
                 new SwordItem(ItemTier.WOOD, 2, -2.4f, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(DWMMain.MOD_ID, "cricket_bat"),
                 new TwoDisItem().setRegistryName(DWMMain.MOD_ID, "two_dis"),
                 new SonicScrewdriverItem().setRegistryName(DWMMain.MOD_ID, "sonic_screwdriver"),
