@@ -9,6 +9,7 @@ import com.softetch.dwm.common.item.TardisKeyItem;
 import com.softetch.dwm.common.item.clothing.FezItem;
 import com.softetch.dwm.common.item.gadget.SonicScrewdriverItem;
 import com.softetch.dwm.common.item.gadget.TwoDisItem;
+import com.softetch.dwm.common.item.gadget.VortexManipulatorItem;
 import net.minecraft.block.Block;
 import net.minecraft.item.*;
 import net.minecraftforge.event.RegistryEvent;
@@ -100,6 +101,7 @@ public class DWMItems {
                 new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(DWMMain.MOD_ID, "gelatin"),
                 new SwordItem(ItemTier.WOOD, 2, -2.4f, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(DWMMain.MOD_ID, "cricket_bat"),
                 new TwoDisItem().setRegistryName(DWMMain.MOD_ID, "two_dis"),
+                new VortexManipulatorItem().setRegistryName(DWMMain.MOD_ID, "vortex_manipulator"),
                 new SonicScrewdriverItem().setRegistryName(DWMMain.MOD_ID, "sonic_screwdriver"),
                 new SonicScrewdriverItem().setRegistryName(DWMMain.MOD_ID, "sonic_screwdriver_third"),
                 new SonicScrewdriverItem().setRegistryName(DWMMain.MOD_ID, "sonic_screwdriver_ten"),

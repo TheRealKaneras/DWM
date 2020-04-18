@@ -11,10 +11,6 @@ public class StarElement extends AbstractElement {
             0xCDFFCDFF, 0xE5FFE5FF, 0xF4FFF4FF, // Green
             0xD1D1FFFF, 0xE0E0FFFF, 0xF9F9FFFF // Dark Blue/Purple
     };
-    private int x;
-    private int y;
-    private int width;
-    private int height;
     private int colour;
 
     public StarElement(int x, int y, int width, int height) {
@@ -31,7 +27,7 @@ public class StarElement extends AbstractElement {
     }
 
     public void render() {
-        GuiUtils.drawGradientRect(0, x, y, x + width, y + height, getColour(), getColour());
+        GuiUtils.drawGradientRect(2, (int) x, (int) y, (int) x + width, (int) y + height, getColour(), getColour());
     }
 
 }

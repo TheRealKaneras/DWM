@@ -3,8 +3,8 @@ package com.softetch.dwm.client.gui.element;
 import java.util.Random;
 
 public abstract class AbstractElement {
-    protected int x;
-    protected int y;
+    protected float x;
+    protected float y;
     protected int width;
     protected int height;
     protected static final Random RANDOM = new Random();
@@ -17,18 +17,18 @@ public abstract class AbstractElement {
         this.height = height;
     }
 
-    public void move(int x, int y) {
+    public void move(float x, float y) {
         this.x += x;
         this.y += y;
     }
 
-    public void setPosition(int x, int y) {
+    public void setPosition(float x, float y) {
         this.x = x;
         this.y = y;
     }
 
-    public int[] getPosition() {
-        return new int[] {x,y};
+    public float[] getPosition() {
+        return new float[] {x,y};
     }
 
     public void grow(int width, int height) {

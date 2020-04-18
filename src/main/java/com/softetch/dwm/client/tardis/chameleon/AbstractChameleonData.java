@@ -7,10 +7,18 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 
 public abstract class AbstractChameleonData {
+    protected AbstractTardisExteriorModel model;
+
+    public AbstractChameleonData(AbstractTardisExteriorModel model) {
+        this.model = model;
+    }
 
     public abstract String getName();
-    public abstract AbstractTardisExteriorModel getModel();
     public abstract ChameleonType getType();
+
+    public AbstractTardisExteriorModel getModel() {
+        return model;
+    }
 
     public ResourceLocation getTexture() {
         return getTardisResourceLocation(getName());
