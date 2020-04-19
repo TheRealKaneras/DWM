@@ -26,6 +26,7 @@ public class DWMSounds {
     public static final SoundEvent TARDIS_DEADLOCK = null;
     public static final SoundEvent TARDIS_LOCK = null;
     public static final SoundEvent TARDIS_UNLOCK = null;
+    public static final SoundEvent TOYOTA_HUM = null;
 
     private DWMSounds() {}
 
@@ -57,7 +58,8 @@ public class DWMSounds {
                 buildSound(new ResourceLocation(DWMMain.MOD_ID, "tardis_fast_close")),
                 buildSound(new ResourceLocation(DWMMain.MOD_ID, "tardis_deadlock")),
                 buildSound(new ResourceLocation(DWMMain.MOD_ID, "tardis_lock")),
-                buildSound(new ResourceLocation(DWMMain.MOD_ID, "tardis_unlock"))
+                buildSound(new ResourceLocation(DWMMain.MOD_ID, "tardis_unlock")),
+                buildSound(new ResourceLocation(DWMMain.MOD_ID, "toyota_hum"))
         );
     }
 }

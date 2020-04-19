@@ -42,5 +42,9 @@
   "tardis_unlock": {
     "category": "block",
     "sounds": [ "dwm:tardis_unlock" ]
+  },
+  "toyota_hum": {
+    "category": "ambient",
+    "sounds": [ "dwm:toyota_hum" ]
   }
 }

@@ -27,6 +27,9 @@ public class TardisTileEntity extends TileEntity implements ITickableTileEntity 
     @Override
     public void tick() {
         if (!world.isRemote()) {
+            if (world.getGameTime() % getChameleonData().getAmbientSound().getLength() == 0) {
+                playSound(getChameleonData().getAmbientSound().getSound(), SoundCategory.AMBIENT, getChameleonData().getAmbientVolume());
+            }
             if (isOwnerNearby() && !isOpen() && !isLocked()) {
                 setDoorState(DoorState.BOTH, false);
             } else if (!isOwnerNearby() && isOpen() || isLocked()) {
@@ -34,9 +37,9 @@ public class TardisTileEntity extends TileEntity implements ITickableTileEntity 
             }
 
             if (isOpen() && getDoorProgression() < 1.0f) {
-                updateDoorProgression(getDoorProgression() + 0.05f);
+                updateDoorProgression(getDoorProgression() + getChameleonData().getOpenSpeed());
             } else if (!isOpen() && getDoorProgression() > 0.0f) {
-                updateDoorProgression(getDoorProgression() - 0.05f);
+                updateDoorProgression(getDoorProgression() - getChameleonData().getCloseSpeed());
             }
             if (getDoorProgression() > 1.0f) {
                 updateDoorProgression(1.0f);
@@ -76,18 +79,18 @@ public class TardisTileEntity extends TileEntity implements ITickableTileEntity 
         updateDoorProgression(open ? 1.0f : 0.0f);
     }
 
-    private void playSound(SoundEvent soundEvent, SoundCategory soundCategory) {
+    private void playSound(SoundEvent soundEvent, SoundCategory soundCategory, float volume) {
         if (soundEvent != null)
-            getWorld().playSound(null, getPos().getX(), getPos().getY(), getPos().getZ(), soundEvent, soundCategory, 1.0f, 1.0f);
+            getWorld().playSound(null, getPos().getX(), getPos().getY(), getPos().getZ(), soundEvent, soundCategory, volume, 1.0f);
     }
 
     public void cycleLock() {
         setLocked(!isLocked());
         if (isLocked()) {
             forceOpen(false);
-            playSound(getChameleonData().getLockDoorSound(), SoundCategory.BLOCKS);
+            playSound(getChameleonData().getLockDoorSound(), SoundCategory.BLOCKS, 1.0f);
         } else {
-            playSound(getChameleonData().getUnlockDoorSound(), SoundCategory.BLOCKS);
+            playSound(getChameleonData().getUnlockDoorSound(), SoundCategory.BLOCKS, 1.0f);
         }
         markDirty();
         updateClient();
@@ -124,9 +127,9 @@ public class TardisTileEntity extends TileEntity implements ITickableTileEntity 
     public void setDoorState(DoorState doorState, boolean slam) {
             if (getDoorState() != doorState) {
                 if (doorState == DoorState.CLOSED) {
-                    playSound(slam ? getChameleonData().getDoorSlamSound() : getChameleonData().getCloseDoorSound(), SoundCategory.BLOCKS);
+                    playSound(slam ? getChameleonData().getDoorSlamSound() : getChameleonData().getCloseDoorSound(), SoundCategory.BLOCKS, 0.6f);
                 } else {
-                    playSound(getChameleonData().getOpenDoorSound(), SoundCategory.BLOCKS);
+                    playSound(getChameleonData().getOpenDoorSound(), SoundCategory.BLOCKS, 0.6f);
                 }
             }
             createCompoundNBT();
@@ -147,7 +150,7 @@ public class TardisTileEntity extends TileEntity implements ITickableTileEntity 
     }
 
     public String getChameleon() {
-        return compoundNBT != null ? compoundNBT.getString(DWMNBTTags.CHAMELEON.getTag()) : DWMMain.chameleonRegistry.getDefaultSkin().getName();
+        return compoundNBT != null ? compoundNBT.getString(DWMNBTTags.CHAMELEON.getTag()) : DWMMain.CHAMELEON_REGISTRY.getDefaultSkin().getName();
     }
 
     public AbstractChameleonData getChameleonData() {

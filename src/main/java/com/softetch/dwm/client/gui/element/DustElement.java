@@ -26,7 +26,7 @@ public class DustElement extends AbstractElement {
     }
 
     public void render() {
-        GuiUtils.drawGradientRect(2, x, y, x + width, y + height, getColour(), getColour());
+        GuiUtils.drawGradientRect(2, (int) x, (int) y, (int) x + width, (int) y + height, getColour(), getColour());
     }
 
 }

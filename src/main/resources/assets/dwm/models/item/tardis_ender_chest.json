@@ -1,3 +1,6 @@
 {
-  "parent": "item/ender_chest"
+  "parent": "dwm:item/tardis_chest",
+  "textures": {
+    "0": "dwm:tileentity/tardis/ender_chest"
+  }
 }

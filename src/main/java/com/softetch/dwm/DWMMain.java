@@ -22,7 +22,7 @@ public class DWMMain {
     public static final String MOD_ID = "dwm";
     public static final Logger LOGGER = LogManager.getLogger();
     public static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
-    public static ChameleonRegistry chameleonRegistry = new ChameleonRegistry();
+    public static final ChameleonRegistry CHAMELEON_REGISTRY = new ChameleonRegistry();
 
     /**
      * Create a new instance of the mod, set up listeners and event bus.

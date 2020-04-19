@@ -3,6 +3,7 @@ package com.softetch.dwm.client.tardis.chameleon;
 import com.softetch.dwm.DWMMain;
 import com.softetch.dwm.DWMSounds;
 import com.softetch.dwm.client.model.tileentity.tardis.AbstractTardisExteriorModel;
+import com.softetch.dwm.client.tardis.InteriorHumSound;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 
@@ -52,8 +53,24 @@ public abstract class AbstractChameleonData {
         return DWMSounds.TARDIS_DEADLOCK;
     }
 
+    public InteriorHumSound getAmbientSound() {
+        return InteriorHumSound.TOYOTA;
+    }
+
+    public float getAmbientVolume() {
+        return 0.4f;
+    }
+
     public boolean shouldDoorLockFast() {
         return true;
+    }
+
+    public float getOpenSpeed() {
+        return 0.05f;
+    }
+
+    public float getCloseSpeed() {
+        return 0.05f;
     }
 
     protected ResourceLocation getTardisResourceLocation(String textureName) {

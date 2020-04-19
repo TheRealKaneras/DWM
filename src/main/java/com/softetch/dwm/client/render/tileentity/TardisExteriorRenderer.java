@@ -5,10 +5,10 @@ import com.softetch.dwm.client.tardis.chameleon.AbstractChameleonData;
 import com.softetch.dwm.common.tileentity.TardisTileEntity;
 
 public class TardisExteriorRenderer extends DWMTileEntityRenderer<TardisTileEntity> {
-    private AbstractChameleonData chameleonData = DWMMain.chameleonRegistry.getDefaultSkin();
+    private AbstractChameleonData chameleonData = DWMMain.CHAMELEON_REGISTRY.getDefaultSkin();
 
     public TardisExteriorRenderer() {
-        super(DWMMain.chameleonRegistry.getDefaultSkin().getModel(), DWMMain.chameleonRegistry.getDefaultSkin().getTexture());
+        super(DWMMain.CHAMELEON_REGISTRY.getDefaultSkin().getModel(), DWMMain.CHAMELEON_REGISTRY.getDefaultSkin().getTexture());
     }
 
     @Override
