@@ -58,7 +58,7 @@ public abstract class AbstractChameleonData {
     }
 
     public float getAmbientVolume() {
-        return 0.4f;
+        return getAmbientSound().getDefaultVolume();
     }
 
     public boolean shouldDoorLockFast() {

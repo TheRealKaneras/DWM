@@ -87,7 +87,11 @@ public class TardisTileEntity extends TileEntity implements ITickableTileEntity 
     public void cycleLock() {
         setLocked(!isLocked());
         if (isLocked()) {
-            forceOpen(false);
+            if (getChameleonData().shouldDoorLockFast()) {
+                forceOpen(false);
+            } else {
+                setDoorState(DoorState.CLOSED, false);
+            }
             playSound(getChameleonData().getLockDoorSound(), SoundCategory.BLOCKS, 1.0f);
         } else {
             playSound(getChameleonData().getUnlockDoorSound(), SoundCategory.BLOCKS, 1.0f);
@@ -127,9 +131,9 @@ public class TardisTileEntity extends TileEntity implements ITickableTileEntity 
     public void setDoorState(DoorState doorState, boolean slam) {
             if (getDoorState() != doorState) {
                 if (doorState == DoorState.CLOSED) {
-                    playSound(slam ? getChameleonData().getDoorSlamSound() : getChameleonData().getCloseDoorSound(), SoundCategory.BLOCKS, 0.6f);
+                    playSound(slam ? getChameleonData().getDoorSlamSound() : getChameleonData().getCloseDoorSound(), SoundCategory.BLOCKS, 0.5f);
                 } else {
-                    playSound(getChameleonData().getOpenDoorSound(), SoundCategory.BLOCKS, 0.6f);
+                    playSound(getChameleonData().getOpenDoorSound(), SoundCategory.BLOCKS, 0.5f);
                 }
             }
             createCompoundNBT();

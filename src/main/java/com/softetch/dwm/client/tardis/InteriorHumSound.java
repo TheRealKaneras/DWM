@@ -5,18 +5,20 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 
 public enum InteriorHumSound {
-    MINECRAFT(SoundEvents.BLOCK_BEACON_AMBIENT, 80), TOYOTA(DWMSounds.TOYOTA_HUM, 420);
+    MINECRAFT(SoundEvents.BLOCK_BEACON_AMBIENT, 80, 0.4f), TOYOTA(DWMSounds.TOYOTA_HUM, 60, 0.06f);
 
     private final SoundEvent sound;
     private final int length;
+    private final float defaultVolume;
 
     /**
      * @param sound - SoundEvent to play
      * @param length - length of the sound in ticks. Should ideally be less than 100.
      */
-    InteriorHumSound(SoundEvent sound, int length) {
+    InteriorHumSound(SoundEvent sound, int length, float defaultVolume) {
         this.sound = sound;
         this.length = length;
+        this.defaultVolume = defaultVolume;
     }
 
     public SoundEvent getSound() {
@@ -25,5 +27,9 @@ public enum InteriorHumSound {
 
     public int getLength() {
         return length;
+    }
+
+    public float getDefaultVolume() {
+        return defaultVolume;
     }
 }
