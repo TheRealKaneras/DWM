@@ -8,10 +8,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
+import net.minecraft.item.*;
 
 import javax.annotation.Nullable;
 import java.awt.*;
@@ -19,21 +16,20 @@ import java.awt.*;
 /**
  * Class to contain properties and methods required for hats
  */
-public class FezItem extends ArmorItem {
-    private final Color color;
+public class FezItem extends ArmorItem implements IDyeableArmorItem {
 
     /**
      * Create a new hat item
      */
-    public FezItem(Color color) {
+    public FezItem() {
         super(DWMClothingMaterial.CLOTH, EquipmentSlotType.HEAD, new Item.Properties().group(ItemGroup.MISC));
-        this.color = color;
     }
 
     @Nullable
     @Override
     public <A extends BipedModel<?>> A getArmorModel(LivingEntity entityLiving, ItemStack itemStack, EquipmentSlotType armorSlot, A _default) {
-        BipedModel<PlayerEntity> model = new FezModel(color);
+        BipedModel<PlayerEntity> model = new FezModel(new Color(getColor(itemStack)));
+
         model.isChild = _default.isChild;
         model.isSneak = _default.isSneak;
         model.isSitting = _default.isSitting;

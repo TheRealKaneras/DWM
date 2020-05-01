@@ -1,6 +1,5 @@
 package com.softetch.dwm.client.event;
 
-import com.mojang.blaze3d.platform.GlStateManager;
 import com.softetch.dwm.DWMNBTTags;
 import net.minecraft.entity.LivingEntity;
 import net.minecraftforge.api.distmarker.Dist;
@@ -23,8 +22,8 @@ public class DWMRenderEvent {
     public void onRenderLivingPre(RenderLivingEvent.Pre event) {
         LivingEntity entity = event.getEntity();
         if (entity.getPersistentData().contains(DWMNBTTags.SCALE_2D.getTag())) {
-            GlStateManager.pushMatrix();
-            GlStateManager.scalef(entity.getPersistentData().getFloat(DWMNBTTags.SCALE_2D.getTag()), 1.0f, 1.0f);
+            event.getMatrixStack().push();
+            event.getMatrixStack().scale(entity.getPersistentData().getFloat(DWMNBTTags.SCALE_2D.getTag()), 1.0f, 1.0f);
         }
     }
 
@@ -37,7 +36,7 @@ public class DWMRenderEvent {
     public void onRenderLivingPost(RenderLivingEvent.Post event) {
         LivingEntity entity = event.getEntity();
         if (entity.getPersistentData().contains(DWMNBTTags.SCALE_2D.getTag())) {
-            GlStateManager.popMatrix();
+            event.getMatrixStack().pop();
         }
     }
 }

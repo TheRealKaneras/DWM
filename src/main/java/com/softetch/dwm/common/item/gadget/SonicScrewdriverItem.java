@@ -118,13 +118,13 @@ public class SonicScrewdriverItem extends Item {
     @SuppressWarnings("deprecation")
     @Override
     public boolean itemInteractionForEntity(ItemStack stack, PlayerEntity playerEntity, LivingEntity target, Hand hand) {
-        target.world.playSound(target.posX, target.posY, target.posZ, DWMSounds.SONIC_SCREWDRIVER, SoundCategory.AMBIENT, 1.0f, 1.0f,false);
+        target.world.playSound(target.getPosX(), target.getPosY(), target.getPosZ(), DWMSounds.SONIC_SCREWDRIVER, SoundCategory.AMBIENT, 1.0f, 1.0f,false);
         if (playerEntity.world.isRemote)
             return false;
         // Allow for abilities such as shearing sheep
         if (target instanceof IShearable) {
             IShearable shearableEntity = (IShearable) target;
-            BlockPos pos = new BlockPos(target.posX, target.posY, target.posZ);
+            BlockPos pos = new BlockPos(target.getPosX(), target.getPosY(), target.getPosZ());
             if (shearableEntity.isShearable(stack, target.world, pos)) {
                 List<ItemStack> drops = shearableEntity.onSheared(stack, target.world, pos, EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, stack));
                 drops.forEach(d -> {

@@ -1,6 +1,6 @@
 package com.softetch.dwm.client.gui.element;
 
-import net.minecraftforge.fml.client.config.GuiUtils;
+import net.minecraftforge.fml.client.gui.GuiUtils;
 
 public class DustElement extends AbstractElement {
     private static final int[] DUST_COLOURS = new int[] {

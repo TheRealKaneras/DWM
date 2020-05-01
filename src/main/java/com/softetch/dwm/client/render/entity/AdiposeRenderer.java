@@ -28,7 +28,7 @@ public class AdiposeRenderer extends LivingRenderer<AdiposeEntity, AdiposeModel>
      */
     @Nullable
     @Override
-    protected ResourceLocation getEntityTexture(AdiposeEntity entity) {
+    public ResourceLocation getEntityTexture(AdiposeEntity entity) {
         return new ResourceLocation(DWMMain.MOD_ID, "textures/entity/adipose.png");
     }
 

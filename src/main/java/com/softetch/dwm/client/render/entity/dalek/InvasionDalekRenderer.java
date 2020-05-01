@@ -4,12 +4,12 @@ import com.softetch.dwm.DWMMain;
 import com.softetch.dwm.client.model.entity.dalek.InvasionDalekModel;
 import com.softetch.dwm.common.entity.dalek.InvasionDalekEntity;
 import net.minecraft.client.renderer.entity.EntityRendererManager;
-import net.minecraft.client.renderer.entity.LivingRenderer;
+import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.util.ResourceLocation;
 
 import javax.annotation.Nullable;
 
-public class InvasionDalekRenderer extends LivingRenderer<InvasionDalekEntity, InvasionDalekModel> {
+public class InvasionDalekRenderer extends MobRenderer<InvasionDalekEntity, InvasionDalekModel> {
     /**
      * Set up the properties required to render the entity
      * @param entityRendererManager - the manager class for entity rendering
@@ -25,7 +25,7 @@ public class InvasionDalekRenderer extends LivingRenderer<InvasionDalekEntity, I
      */
     @Nullable
     @Override
-    protected ResourceLocation getEntityTexture(InvasionDalekEntity dalekEntity) {
+    public ResourceLocation getEntityTexture(InvasionDalekEntity dalekEntity) {
         return new ResourceLocation(DWMMain.MOD_ID, "textures/entity/dalek/invasion_dalek.png");
     }
 

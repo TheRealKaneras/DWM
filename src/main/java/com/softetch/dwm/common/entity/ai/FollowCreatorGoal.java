@@ -102,8 +102,8 @@ public class FollowCreatorGoal extends Goal {
             timeToRecalcPath = 10;
             if (!navigator.tryMoveToEntityLiving(creator, followSpeed)) {
                 if (loyalEntity.getDistanceSq(creator) >= 144.0D) {
-                    int i = MathHelper.floor(creator.posX) - 2;
-                    int j = MathHelper.floor(creator.posZ) - 2;
+                    int i = MathHelper.floor(creator.getPosX()) - 2;
+                    int j = MathHelper.floor(creator.getPosZ()) - 2;
                     int k = MathHelper.floor(creator.getBoundingBox().minY);
 
                     for(int l = 0; l <= 4; ++l) {

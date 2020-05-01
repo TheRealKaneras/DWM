@@ -1,7 +1,7 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "dwm:item/cyan_fez",
+		"0": "dwm:item/fez",
 		"particle": "dwm:block/cyan"
 	},
 	"elements": [

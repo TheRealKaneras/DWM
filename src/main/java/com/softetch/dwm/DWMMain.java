@@ -6,7 +6,6 @@ import com.softetch.dwm.client.event.DWMRenderEvent;
 import com.softetch.dwm.client.tardis.ChameleonRegistry;
 import com.softetch.dwm.common.event.DWMEntityEvent;
 import com.softetch.dwm.common.event.DWMItemUseEvent;
-import com.softetch.dwm.network.PacketHandler;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -28,7 +27,6 @@ public class DWMMain {
      * Create a new instance of the mod, set up listeners and event bus.
      */
     public DWMMain() {
-        // Register the methods for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
     }
 
@@ -40,7 +38,6 @@ public class DWMMain {
         MinecraftForge.EVENT_BUS.register(new DWMRenderEvent());
         MinecraftForge.EVENT_BUS.register(new DWMItemUseEvent());
         MinecraftForge.EVENT_BUS.register(new DWMEntityEvent());
-        PacketHandler.register();
     }
 
 }

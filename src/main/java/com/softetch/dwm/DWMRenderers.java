@@ -4,16 +4,8 @@ import com.softetch.dwm.client.render.entity.AdiposeRenderer;
 import com.softetch.dwm.client.render.entity.dalek.GuardDalekRenderer;
 import com.softetch.dwm.client.render.entity.dalek.InvasionDalekRenderer;
 import com.softetch.dwm.client.render.entity.dalek.SkaroDalekRenderer;
-import com.softetch.dwm.client.render.entity.dalek.TimeWarDalekRenderer;
 import com.softetch.dwm.client.render.entity.projectile.LaserRenderer;
 import com.softetch.dwm.client.render.tileentity.TardisExteriorRenderer;
-import com.softetch.dwm.common.entity.AdiposeEntity;
-import com.softetch.dwm.common.entity.TimeWarDalekEntity;
-import com.softetch.dwm.common.entity.dalek.GuardDalekEntity;
-import com.softetch.dwm.common.entity.dalek.InvasionDalekEntity;
-import com.softetch.dwm.common.entity.dalek.SkaroDalekEntity;
-import com.softetch.dwm.common.entity.projectile.LaserEntity;
-import com.softetch.dwm.common.tileentity.TardisTileEntity;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -37,13 +29,12 @@ public class DWMRenderers {
      */
     @SubscribeEvent
     public static void register(final FMLClientSetupEvent event) {
-        RenderingRegistry.registerEntityRenderingHandler(TimeWarDalekEntity.class, TimeWarDalekRenderer::new);
-        RenderingRegistry.registerEntityRenderingHandler(SkaroDalekEntity.class, SkaroDalekRenderer::new);
-        RenderingRegistry.registerEntityRenderingHandler(InvasionDalekEntity.class, InvasionDalekRenderer::new);
-        RenderingRegistry.registerEntityRenderingHandler(GuardDalekEntity.class, GuardDalekRenderer::new);
-        RenderingRegistry.registerEntityRenderingHandler(AdiposeEntity.class, AdiposeRenderer::new);
-        RenderingRegistry.registerEntityRenderingHandler(LaserEntity.class, LaserRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(DWMEntities.SKARO_DALEK, SkaroDalekRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(DWMEntities.INVASION_DALEK, InvasionDalekRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(DWMEntities.GUARD_DALEK, GuardDalekRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(DWMEntities.ADIPOSE, AdiposeRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(DWMEntities.LASER, LaserRenderer::new);
 
-        ClientRegistry.bindTileEntitySpecialRenderer(TardisTileEntity.class, new TardisExteriorRenderer());
+        ClientRegistry.bindTileEntityRenderer(DWMTileEntities.TARDIS, TardisExteriorRenderer::new);
     }
 }

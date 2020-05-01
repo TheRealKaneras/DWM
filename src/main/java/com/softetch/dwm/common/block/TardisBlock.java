@@ -2,6 +2,7 @@ package com.softetch.dwm.common.block;
 
 import com.softetch.dwm.common.tileentity.TardisTileEntity;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.LivingEntity;
@@ -18,6 +19,10 @@ public class TardisBlock extends DWMTileEntityBlock {
     public TardisBlock(String exteriorName) {
         super(Block.Properties.create(Material.WOOD).lightValue(12));
         this.exteriorName = exteriorName;
+    }
+
+    public BlockRenderType getRenderType(BlockState state) {
+        return BlockRenderType.ENTITYBLOCK_ANIMATED;
     }
 
     /**

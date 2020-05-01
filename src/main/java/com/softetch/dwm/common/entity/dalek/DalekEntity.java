@@ -103,10 +103,10 @@ public class DalekEntity extends MonsterEntity implements IRangedAttackMob {
     @Override
     public void attackEntityWithRangedAttack(LivingEntity target, float distanceFactor) {
         LaserEntity laserEntity = new LaserEntity(DWMEntities.LASER, this, world);
-        laserEntity.setPosition(this.posX + this.getWidth() / 4,this.posY + this.getHeight() / 2 + 0.35d, this.posZ);
-        double d0 = target.posX - this.posX;
-        double d1 = target.getBoundingBox().minY + (double)(target.getHeight() / 3.0F) - laserEntity.posY;
-        double d2 = target.posZ - this.posZ;
+        laserEntity.setPosition(this.getPosX() + this.getWidth() / 4,this.getPosY() + this.getHeight() / 2 + 0.35d, this.getPosZ());
+        double d0 = target.getPosX() - this.getPosX();
+        double d1 = target.getBoundingBox().minY + (double)(target.getHeight() / 3.0F) - laserEntity.getPosY();
+        double d2 = target.getPosZ() - this.getPosZ();
         double d3 = MathHelper.sqrt(d0 * d0 + d2 * d2);
         laserEntity.shoot(d0, d1 + d3 * (double)0.2F, d2, 1.6F, (float)(14 - this.world.getDifficulty().getId() * 4));
         if (this.rand.nextInt(4) == 1) {

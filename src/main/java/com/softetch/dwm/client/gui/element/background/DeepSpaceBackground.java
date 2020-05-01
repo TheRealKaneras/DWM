@@ -37,10 +37,10 @@ public class DeepSpaceBackground extends AbstractGui {
                     noiseImage = ImageIO.read(inputStream);
                 }
                 // FIXME: May cause issues on displays with dimensions greater than 2048...
-                int startX = RANDOM.nextInt(noiseImage.getWidth() - Minecraft.getInstance().mainWindow.getScaledWidth());
-                int startY = RANDOM.nextInt(noiseImage.getHeight() - Minecraft.getInstance().mainWindow.getScaledHeight());
-                int finalX = startX + Minecraft.getInstance().mainWindow.getScaledWidth();
-                int finalY = startY + Minecraft.getInstance().mainWindow.getScaledHeight();
+                int startX = RANDOM.nextInt(noiseImage.getWidth() - Minecraft.getInstance().getMainWindow().getScaledWidth());
+                int startY = RANDOM.nextInt(noiseImage.getHeight() - Minecraft.getInstance().getMainWindow().getScaledHeight());
+                int finalX = startX + Minecraft.getInstance().getMainWindow().getScaledWidth();
+                int finalY = startY + Minecraft.getInstance().getMainWindow().getScaledHeight();
                 int count = 0;
                 int sum = 0;
                 for (int x = startX; x < finalX; x++) {
@@ -67,8 +67,8 @@ public class DeepSpaceBackground extends AbstractGui {
     }
 
     public void render() {
-        int width = Minecraft.getInstance().mainWindow.getScaledWidth();
-        int height = Minecraft.getInstance().mainWindow.getScaledHeight();
+        int width = Minecraft.getInstance().getMainWindow().getScaledWidth();
+        int height = Minecraft.getInstance().getMainWindow().getScaledHeight();
         AbstractGui.fill(0, 0, width, height, 0xEE000000);
 
         for (StarElement star : stars) {

@@ -1,24 +1,26 @@
-package com.softetch.dwm.client.model.entity.projectile;// Made with Blockbench
-// Paste this code into your mod.
-// Make sure to generate all required imports
+package com.softetch.dwm.client.model.entity.projectile;
 
-import net.minecraft.client.renderer.entity.model.RendererModel;
+import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.blaze3d.vertex.IVertexBuilder;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.model.Model;
-import net.minecraft.client.renderer.model.ModelBox;
+import net.minecraft.client.renderer.model.ModelRenderer;
 
 public class LaserModel extends Model {
-	private final RendererModel bb_main;
+	private final ModelRenderer bb_main;
 
 	public LaserModel() {
+		super(RenderType::getEntityCutoutNoCull);
 		textureWidth = 16;
 		textureHeight = 16;
 
-		bb_main = new RendererModel(this);
+		bb_main = new ModelRenderer(this);
 		bb_main.setRotationPoint(0.0F, 24.0F, 0.0F);
-		bb_main.cubeList.add(new ModelBox(bb_main, 0, 0, -1.0F, -1.0F, 0.0F, 1, 1, 8, 0.0F, false));
+		bb_main.setTextureOffset(0, 0).addBox(-1.0f, 0.0f, 0.0f, 1, 1, 1);
 	}
 
-	public void renderLaser(float scale) {
-		bb_main.render(scale);
+	@Override
+	public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
+		bb_main.render(matrixStack, buffer, packedLight, packedOverlay);
 	}
 }
