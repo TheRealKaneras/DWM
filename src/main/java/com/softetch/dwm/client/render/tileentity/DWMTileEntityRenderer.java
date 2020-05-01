@@ -29,7 +29,7 @@ public class DWMTileEntityRenderer<T extends TileEntity> extends TileEntityRende
         matrixStack.rotate(Vector3f.YP.rotationDegrees(180.0f));
         matrixStack.rotate(Vector3f.XP.rotationDegrees(180.0f));
         matrixStack.rotate(Vector3f.YP.rotationDegrees(22.5F * tileEntity.getBlockState().get(DWMTileEntityBlock.ROTATION)));
-        IVertexBuilder vertexBuilder = buffer.getBuffer(RenderType.getEntitySolid(getTexture()));
+        IVertexBuilder vertexBuilder = buffer.getBuffer(RenderType.getEntityTranslucent(getTexture()));
         model.render(matrixStack, vertexBuilder, combinedLight, combinedOverlay, 1.0f, 1.0f, 1.0f, 1.0f);
         matrixStack.pop();
     }

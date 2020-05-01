@@ -541,7 +541,7 @@ public class BrachackiBoxAModel extends AbstractTardisExteriorModel {
 
 	@Override
 	public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha){
-		lamp.render(matrixStack, buffer, packedLight, packedOverlay, 2.0f, 2.0f, 2.0f, 0.8f);
+		lamp.render(matrixStack, buffer, packedLight, packedOverlay, 2.0f, 2.0f, 2.0f, 0.5f);
 		box.render(matrixStack, buffer, packedLight, packedOverlay);
 		rightDoor.render(matrixStack, buffer, packedLight, packedOverlay);
 		leftDoor.render(matrixStack, buffer, packedLight, packedOverlay);

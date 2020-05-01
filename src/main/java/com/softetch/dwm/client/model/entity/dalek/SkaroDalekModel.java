@@ -208,7 +208,7 @@ public class SkaroDalekModel extends EntityModel<SkaroDalekEntity> {
 		eyestalk.render(matrixStack, buffer, packedLight, packedOverlay);
 		head.render(matrixStack, buffer, packedLight, packedOverlay);
 		skirt.render(matrixStack, buffer, packedLight, packedOverlay);
-		ears.render(matrixStack, buffer, packedLight, packedOverlay, 2.0f, 2.0f, 2.0f, 0.8f);
+		ears.render(matrixStack, buffer, packedLight, packedOverlay);
 		matrixStack.pop();
 	}
 

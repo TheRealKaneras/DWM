@@ -235,4 +235,5 @@ public class GuardDalekModel extends EntityModel<GuardDalekEntity> {
 		modelRenderer.rotateAngleY = y;
 		modelRenderer.rotateAngleZ = z;
 	}
+
 }
