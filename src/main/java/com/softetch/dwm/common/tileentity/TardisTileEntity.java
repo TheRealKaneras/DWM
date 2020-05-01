@@ -26,6 +26,8 @@ public class TardisTileEntity extends TileEntity implements ITickableTileEntity 
 
     @Override
     public void tick() {
+        if (getChameleonData() == null)
+            return;
         if (!world.isRemote()) {
             if (world.getGameTime() % getChameleonData().getAmbientSound().getLength() == 0) {
                 playSound(getChameleonData().getAmbientSound().getSound(), SoundCategory.AMBIENT, getChameleonData().getAmbientVolume());
@@ -164,6 +166,7 @@ public class TardisTileEntity extends TileEntity implements ITickableTileEntity 
     @Override
     public CompoundNBT write(CompoundNBT compound) {
         super.write(compound);
+        createCompoundNBT();
         compound.put(DWMNBTTags.TARDIS_DATA.getTag(), compoundNBT);
         return compound;
     }

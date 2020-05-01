@@ -14,9 +14,9 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
-public class TardisBlock extends DWMTileEntityBlock {
+public class TardisExteriorBlock extends DWMTileEntityBlock {
     private final String exteriorName;
-    public TardisBlock(String exteriorName) {
+    public TardisExteriorBlock(String exteriorName) {
         super(Block.Properties.create(Material.WOOD).lightValue(12));
         this.exteriorName = exteriorName;
     }

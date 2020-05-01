@@ -16,7 +16,7 @@ public class TardisExteriorRenderer extends DWMTileEntityRenderer<TardisTileEnti
 
     @Override
     public void render(TardisTileEntity tileEntity, float partialTicks, MatrixStack matrixStack, IRenderTypeBuffer buffer, int combinedLight, int combinedOverlay) {
-        if (!chameleonData.getName().equals(tileEntity.getChameleon())) {
+        if (!chameleonData.getName().equals(tileEntity.getChameleon()) && tileEntity.getChameleonData() != null) {
             chameleonData = tileEntity.getChameleonData();
             setModel(chameleonData.getModel());
             setTexture(chameleonData.getTexture());

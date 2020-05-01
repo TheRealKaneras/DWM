@@ -6,6 +6,7 @@ import com.softetch.dwm.client.event.DWMRenderEvent;
 import com.softetch.dwm.client.tardis.ChameleonRegistry;
 import com.softetch.dwm.common.event.DWMEntityEvent;
 import com.softetch.dwm.common.event.DWMItemUseEvent;
+import com.softetch.dwm.common.world.schematic.SchematicLoader;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -38,6 +39,7 @@ public class DWMMain {
         MinecraftForge.EVENT_BUS.register(new DWMRenderEvent());
         MinecraftForge.EVENT_BUS.register(new DWMItemUseEvent());
         MinecraftForge.EVENT_BUS.register(new DWMEntityEvent());
+        SchematicLoader.register();
     }
 
 }
