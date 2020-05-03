@@ -1,11 +1,10 @@
 package com.softetch.dwm.client.tardis.chameleon;
 
 import com.softetch.dwm.DWMMain;
-import com.softetch.dwm.DWMSounds;
 import com.softetch.dwm.client.model.tileentity.tardis.AbstractTardisExteriorModel;
-import com.softetch.dwm.client.tardis.InteriorHumSound;
+import com.softetch.dwm.common.sound.DWMSoundEvent;
+import com.softetch.dwm.common.sound.DWMSoundEvents;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvent;
 
 public abstract class AbstractChameleonData {
     protected AbstractTardisExteriorModel model;
@@ -25,44 +24,36 @@ public abstract class AbstractChameleonData {
         return getTextureResourceLocation(getName());
     }
 
-    public SoundEvent getOpenDoorSound() {
-        return DWMSounds.TARDIS_OPEN;
+    public DWMSoundEvent getOpenDoorSound() {
+        return DWMSoundEvents.TARDIS_OPEN;
     }
 
-    public SoundEvent getCloseDoorSound() {
-        return DWMSounds.TARDIS_CLOSE;
+    public DWMSoundEvent getCloseDoorSound() {
+        return DWMSoundEvents.TARDIS_CLOSE;
     }
 
-    public float getDoorSoundVolume() {
-        return 0.3f;
+    public DWMSoundEvent getLockDoorSound() {
+        return DWMSoundEvents.TARDIS_LOCK;
     }
 
-    public SoundEvent getLockDoorSound() {
-        return DWMSounds.TARDIS_LOCK;
-    }
-
-    public SoundEvent getUnlockDoorSound() {
-        return DWMSounds.TARDIS_UNLOCK;
+    public DWMSoundEvent getUnlockDoorSound() {
+        return DWMSoundEvents.TARDIS_UNLOCK;
     }
 
     /**
      * Called when the door is locked when open
      * @return The SoundEvent to play.
      */
-    public SoundEvent getDoorSlamSound() {
-        return DWMSounds.TARDIS_FAST_CLOSE;
+    public DWMSoundEvent getDoorSlamSound() {
+        return DWMSoundEvents.TARDIS_FAST_CLOSE;
     }
 
-    public SoundEvent getDeadlockDoorSound() {
-        return DWMSounds.TARDIS_DEADLOCK;
+    public DWMSoundEvent getDeadlockDoorSound() {
+        return DWMSoundEvents.TARDIS_DEADLOCK;
     }
 
-    public InteriorHumSound getAmbientSound() {
-        return InteriorHumSound.TOYOTA;
-    }
-
-    public float getAmbientVolume() {
-        return getAmbientSound().getDefaultVolume();
+    public DWMSoundEvent getAmbientSound() {
+        return DWMSoundEvents.TOYOTA_HUM;
     }
 
     /**

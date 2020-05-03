@@ -1,8 +1,8 @@
 package com.softetch.dwm.common.entity.dalek;
 
 import com.softetch.dwm.DWMEntities;
-import com.softetch.dwm.DWMSounds;
 import com.softetch.dwm.common.entity.projectile.LaserEntity;
+import com.softetch.dwm.common.sound.DWMSoundEvents;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.goal.LookAtGoal;
 import net.minecraft.entity.ai.goal.LookRandomlyGoal;
@@ -91,7 +91,7 @@ public class DalekEntity extends MonsterEntity implements IRangedAttackMob {
 
     @Override
     protected SoundEvent getDeathSound() {
-        return DWMSounds.DALEK_SCREAM;
+        return DWMSoundEvents.DALEK_SCREAM;
     }
 
     /**
@@ -110,9 +110,9 @@ public class DalekEntity extends MonsterEntity implements IRangedAttackMob {
         double d3 = MathHelper.sqrt(d0 * d0 + d2 * d2);
         laserEntity.shoot(d0, d1 + d3 * (double)0.2F, d2, 1.6F, (float)(14 - this.world.getDifficulty().getId() * 4));
         if (this.rand.nextInt(4) == 1) {
-            this.playSound(DWMSounds.EXTERMINATE, 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
+            this.playSound(DWMSoundEvents.EXTERMINATE, 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
         }
-        this.playSound(DWMSounds.DALEK_GUN, 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
+        this.playSound(DWMSoundEvents.DALEK_GUN, 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
         this.world.addEntity(laserEntity);
     }
 }

@@ -23,6 +23,14 @@
     "category": "block",
     "sounds": [ "dwm:tardis_close" ]
   },
+  "tardis_chest_open": {
+    "category": "block",
+    "sounds": [ "dwm:tardis_chest_open" ]
+  },
+  "tardis_chest_close": {
+    "category": "block",
+    "sounds": [ "dwm:tardis_chest_close" ]
+  },
   "tardis_fast_open": {
     "category": "block",
     "sounds": [ "dwm:tardis_fast_open" ]
@@ -46,5 +54,9 @@
   "toyota_hum": {
     "category": "ambient",
     "sounds": [ "dwm:toyota_hum" ]
+  },
+  "tardis_mc_hum": {
+    "category": "ambient",
+    "sounds": [ "dwm:tardis_mc_hum" ]
   }
 }

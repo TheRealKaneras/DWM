@@ -1,12 +1,12 @@
 package com.softetch.dwm.common;
 
-import com.softetch.dwm.DWMSounds;
+import com.softetch.dwm.common.sound.DWMSoundEvents;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 
 public enum TardisDoorSound {
-    NORMAL(DWMSounds.TARDIS_OPEN, DWMSounds.TARDIS_CLOSE),
-    FAST(DWMSounds.TARDIS_FAST_OPEN, DWMSounds.TARDIS_FAST_CLOSE),
+    NORMAL(DWMSoundEvents.TARDIS_OPEN, DWMSoundEvents.TARDIS_CLOSE),
+    FAST(DWMSoundEvents.TARDIS_FAST_OPEN, DWMSoundEvents.TARDIS_FAST_CLOSE),
     CHEST(SoundEvents.BLOCK_CHEST_OPEN, SoundEvents.BLOCK_CHEST_CLOSE);
 
     private final SoundEvent openSound;

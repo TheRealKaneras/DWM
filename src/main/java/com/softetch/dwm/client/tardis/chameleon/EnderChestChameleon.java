@@ -1,7 +1,6 @@
 package com.softetch.dwm.client.tardis.chameleon;
 
 import com.softetch.dwm.client.model.tileentity.tardis.ChestModel;
-import com.softetch.dwm.client.tardis.InteriorHumSound;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 

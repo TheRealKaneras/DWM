@@ -1,7 +1,7 @@
 package com.softetch.dwm.common.item.gadget;
 
 import com.google.common.collect.Maps;
-import com.softetch.dwm.DWMSounds;
+import com.softetch.dwm.common.sound.DWMSoundEvents;
 import net.minecraft.block.*;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
@@ -118,7 +118,7 @@ public class SonicScrewdriverItem extends Item {
     @SuppressWarnings("deprecation")
     @Override
     public boolean itemInteractionForEntity(ItemStack stack, PlayerEntity playerEntity, LivingEntity target, Hand hand) {
-        target.world.playSound(target.getPosX(), target.getPosY(), target.getPosZ(), DWMSounds.SONIC_SCREWDRIVER, SoundCategory.AMBIENT, 1.0f, 1.0f,false);
+        target.world.playSound(target.getPosX(), target.getPosY(), target.getPosZ(), DWMSoundEvents.SONIC_SCREWDRIVER, SoundCategory.AMBIENT, 1.0f, 1.0f,false);
         if (playerEntity.world.isRemote)
             return false;
         // Allow for abilities such as shearing sheep
@@ -159,7 +159,7 @@ public class SonicScrewdriverItem extends Item {
     public ActionResultType onItemUse(ItemUseContext context) {
         World world = context.getWorld();
         BlockPos blockPos = context.getPos();
-        world.playSound(context.getPlayer(), blockPos, DWMSounds.SONIC_SCREWDRIVER, SoundCategory.AMBIENT, 1.0f, 1.0f);
+        world.playSound(context.getPlayer(), blockPos, DWMSoundEvents.SONIC_SCREWDRIVER, SoundCategory.AMBIENT, 1.0f, 1.0f);
         if (world.isRemote)
             return super.onItemUse(context);
         if (!world.isAirBlock(blockPos)) {
