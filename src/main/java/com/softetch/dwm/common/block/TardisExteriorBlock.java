@@ -9,6 +9,8 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
@@ -16,9 +18,15 @@ import javax.annotation.Nullable;
 
 public class TardisExteriorBlock extends DWMTileEntityBlock {
     private final String exteriorName;
+
     public TardisExteriorBlock(String exteriorName) {
         super(Block.Properties.create(Material.WOOD).lightValue(12));
         this.exteriorName = exteriorName;
+    }
+
+    @Override
+    public VoxelShape getRenderShape(BlockState state, IBlockReader worldIn, BlockPos pos) {
+        return VoxelShapes.empty();
     }
 
     public BlockRenderType getRenderType(BlockState state) {

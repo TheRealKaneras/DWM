@@ -52,6 +52,11 @@ public class EnderChestChameleon extends AbstractChameleonData {
     }
 
     @Override
+    public ChameleonShape getShape() {
+        return ChameleonShape.CHEST;
+    }
+
+    @Override
     public ChameleonType getType() {
         return ChameleonType.MINECRAFT;
     }

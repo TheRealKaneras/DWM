@@ -81,6 +81,10 @@ public abstract class AbstractChameleonData {
         return 0.05f;
     }
 
+    public ChameleonShape getShape() {
+        return ChameleonShape.POLICE_BOX;
+    }
+
     protected ResourceLocation getTextureResourceLocation(String textureName) {
         return new ResourceLocation(DWMMain.MOD_ID, "textures/tileentity/tardis/" + textureName + ".png");
     }
