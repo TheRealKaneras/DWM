@@ -24,6 +24,10 @@ public class ChameleonRegistry {
         return new BrachackiBoxAChameleon();
     }
 
+    /**
+     * Register a skin to add to available chameleon choices
+     * @param data the data for the chameleon skin
+     */
     private static void registerSkin(AbstractChameleonData data) {
         TARDIS_SKINS.put(data.getName(), data);
     }

@@ -27,6 +27,11 @@ public class EnderChestChameleon extends AbstractChameleonData {
     }
 
     @Override
+    public float getDoorSoundVolume() {
+        return 0.5f;
+    }
+
+    @Override
     public SoundEvent getLockDoorSound() {
         return SoundEvents.BLOCK_CHEST_LOCKED;
     }

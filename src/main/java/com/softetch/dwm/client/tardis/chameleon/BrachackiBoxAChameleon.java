@@ -15,6 +15,6 @@ public class BrachackiBoxAChameleon extends AbstractChameleonData {
 
     @Override
     public ChameleonType getType() {
-        return ChameleonType.BRACHAKI_BOX;
+        return ChameleonType.BRACHACKI_BOX;
     }
 }

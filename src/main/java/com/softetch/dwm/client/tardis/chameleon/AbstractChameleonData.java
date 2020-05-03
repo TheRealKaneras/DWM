@@ -22,7 +22,7 @@ public abstract class AbstractChameleonData {
     }
 
     public ResourceLocation getTexture() {
-        return getTardisResourceLocation(getName());
+        return getTextureResourceLocation(getName());
     }
 
     public SoundEvent getOpenDoorSound() {
@@ -31,6 +31,10 @@ public abstract class AbstractChameleonData {
 
     public SoundEvent getCloseDoorSound() {
         return DWMSounds.TARDIS_CLOSE;
+    }
+
+    public float getDoorSoundVolume() {
+        return 0.3f;
     }
 
     public SoundEvent getLockDoorSound() {
@@ -61,6 +65,10 @@ public abstract class AbstractChameleonData {
         return getAmbientSound().getDefaultVolume();
     }
 
+    /**
+     * Should the door slam shut when it is locked and open
+     * @return whether the door should slam shut on lock
+     */
     public boolean shouldDoorLockFast() {
         return true;
     }
@@ -73,7 +81,7 @@ public abstract class AbstractChameleonData {
         return 0.05f;
     }
 
-    protected ResourceLocation getTardisResourceLocation(String textureName) {
+    protected ResourceLocation getTextureResourceLocation(String textureName) {
         return new ResourceLocation(DWMMain.MOD_ID, "textures/tileentity/tardis/" + textureName + ".png");
     }
 }

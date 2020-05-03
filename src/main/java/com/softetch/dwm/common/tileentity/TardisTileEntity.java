@@ -133,9 +133,9 @@ public class TardisTileEntity extends TileEntity implements ITickableTileEntity 
     public void setDoorState(DoorState doorState, boolean slam) {
             if (getDoorState() != doorState) {
                 if (doorState == DoorState.CLOSED) {
-                    playSound(slam ? getChameleonData().getDoorSlamSound() : getChameleonData().getCloseDoorSound(), SoundCategory.BLOCKS, 0.5f);
+                    playSound(slam ? getChameleonData().getDoorSlamSound() : getChameleonData().getCloseDoorSound(), SoundCategory.BLOCKS, getChameleonData().getDoorSoundVolume());
                 } else {
-                    playSound(getChameleonData().getOpenDoorSound(), SoundCategory.BLOCKS, 0.5f);
+                    playSound(getChameleonData().getOpenDoorSound(), SoundCategory.BLOCKS, getChameleonData().getDoorSoundVolume());
                 }
             }
             createCompoundNBT();
