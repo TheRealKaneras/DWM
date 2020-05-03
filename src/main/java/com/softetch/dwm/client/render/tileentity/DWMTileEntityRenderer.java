@@ -24,6 +24,8 @@ public class DWMTileEntityRenderer<T extends TileEntity> extends TileEntityRende
 
     @Override
     public void render(T tileEntity, float partialTicks, MatrixStack matrixStack, IRenderTypeBuffer buffer, int combinedLight, int combinedOverlay) {
+        if (model == null || texture == null)
+            return;
         matrixStack.push();
         matrixStack.translate(0.5d, 1.5d, 0.5d);
         matrixStack.rotate(Vector3f.YP.rotationDegrees(180.0f));

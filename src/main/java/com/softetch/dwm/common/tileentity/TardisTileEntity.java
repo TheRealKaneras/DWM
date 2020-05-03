@@ -1,6 +1,5 @@
 package com.softetch.dwm.common.tileentity;
 
-import com.softetch.dwm.DWMMain;
 import com.softetch.dwm.DWMNBTTags;
 import com.softetch.dwm.DWMTileEntities;
 import com.softetch.dwm.client.tardis.ChameleonRegistry;
@@ -156,10 +155,13 @@ public class TardisTileEntity extends TileEntity implements ITickableTileEntity 
     }
 
     public String getChameleon() {
-        return compoundNBT != null ? compoundNBT.getString(DWMNBTTags.CHAMELEON.getTag()) : DWMMain.CHAMELEON_REGISTRY.getDefaultSkin().getName();
+        return compoundNBT != null ? compoundNBT.getString(DWMNBTTags.CHAMELEON.getTag()) : null;
     }
 
     public AbstractChameleonData getChameleonData() {
+        if (getChameleon() == null) {
+            return null;
+        }
         return ChameleonRegistry.TARDIS_SKINS.get(getChameleon());
     }
 
