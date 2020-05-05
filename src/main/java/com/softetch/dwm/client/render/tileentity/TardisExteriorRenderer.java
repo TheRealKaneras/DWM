@@ -2,11 +2,11 @@ package com.softetch.dwm.client.render.tileentity;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.softetch.dwm.client.tardis.chameleon.AbstractChameleonData;
-import com.softetch.dwm.common.tileentity.TardisTileEntity;
+import com.softetch.dwm.common.tileentity.TardisExteriorTile;
 import net.minecraft.client.renderer.IRenderTypeBuffer;
 import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
 
-public class TardisExteriorRenderer extends DWMTileEntityRenderer<TardisTileEntity> {
+public class TardisExteriorRenderer extends DWMTileEntityRenderer<TardisExteriorTile> {
     private AbstractChameleonData chameleonData;
 
     public TardisExteriorRenderer(TileEntityRendererDispatcher dispatcher) {
@@ -14,7 +14,7 @@ public class TardisExteriorRenderer extends DWMTileEntityRenderer<TardisTileEnti
     }
 
     @Override
-    public void render(TardisTileEntity tileEntity, float partialTicks, MatrixStack matrixStack, IRenderTypeBuffer buffer, int combinedLight, int combinedOverlay) {
+    public void render(TardisExteriorTile tileEntity, float partialTicks, MatrixStack matrixStack, IRenderTypeBuffer buffer, int combinedLight, int combinedOverlay) {
         if (tileEntity.getChameleonData() != null && (chameleonData == null || !chameleonData.getName().equals(tileEntity.getChameleon()))) {
             chameleonData = tileEntity.getChameleonData();
             setModel(chameleonData.getModel());

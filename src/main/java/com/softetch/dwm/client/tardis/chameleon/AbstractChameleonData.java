@@ -4,7 +4,9 @@ import com.softetch.dwm.DWMMain;
 import com.softetch.dwm.client.model.tileentity.tardis.AbstractTardisExteriorModel;
 import com.softetch.dwm.common.sound.DWMSoundEvent;
 import com.softetch.dwm.common.sound.DWMSoundEvents;
+import net.minecraft.block.Block;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.shapes.VoxelShape;
 
 public abstract class AbstractChameleonData {
     protected AbstractTardisExteriorModel model;
@@ -72,8 +74,8 @@ public abstract class AbstractChameleonData {
         return 0.05f;
     }
 
-    public ChameleonShape getShape() {
-        return ChameleonShape.POLICE_BOX;
+    public VoxelShape getShape() {
+        return Block.makeCuboidShape(-24.0D, 0, -24.0D, 24.0D, 32.0D, 24.0D);
     }
 
     protected ResourceLocation getTextureResourceLocation(String textureName) {

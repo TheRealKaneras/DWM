@@ -15,6 +15,7 @@ public class SchematicFile {
     private final byte[] blockData;
     private final ListNBT tileEntities;
     private final int airValue;
+    private final int[] offset;
 
     public SchematicFile(CompoundNBT tag) {
         this.width = tag.getShort("Width");
@@ -32,6 +33,8 @@ public class SchematicFile {
         } else {
             this.airValue = -1;
         }
+
+        this.offset = tag.getIntArray("Offset");
     }
 
     public short getWidth() {
@@ -56,5 +59,9 @@ public class SchematicFile {
 
     public int getAirValue() {
         return airValue;
+    }
+
+    public int[] getOffset() {
+        return offset;
     }
 }

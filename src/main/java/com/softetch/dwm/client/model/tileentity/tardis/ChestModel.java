@@ -3,7 +3,7 @@ package com.softetch.dwm.client.model.tileentity.tardis;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
-import com.softetch.dwm.common.tileentity.TardisTileEntity;
+import com.softetch.dwm.common.tileentity.TardisExteriorTile;
 import net.minecraft.client.renderer.model.ModelRenderer;
 
 public class ChestModel extends AbstractTardisExteriorModel {
@@ -38,7 +38,7 @@ public class ChestModel extends AbstractTardisExteriorModel {
 	}
 
 	@Override
-	public void doorRotation(TardisTileEntity.DoorState doorState, float progression) {
+	public void doorRotation(TardisExteriorTile.DoorState doorState, float progression) {
 		float angle = progression * 1.35f;
 		this.lid.rotateAngleX = -angle;
 	}

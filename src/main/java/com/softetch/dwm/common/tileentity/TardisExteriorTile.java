@@ -14,13 +14,14 @@ import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
 
 import java.util.List;
 
-public class TardisTileEntity extends TileEntity implements ITickableTileEntity {
+public class TardisExteriorTile extends TileEntity implements ITickableTileEntity {
     private CompoundNBT compoundNBT;
 
-    public TardisTileEntity() {
+    public TardisExteriorTile() {
         super(DWMTileEntities.TARDIS);
     }
 
@@ -171,6 +172,22 @@ public class TardisTileEntity extends TileEntity implements ITickableTileEntity 
             return null;
         }
         return ChameleonRegistry.TARDIS_SKINS.get(getChameleon());
+    }
+
+    public void setInteriorPos(BlockPos pos) {
+        createCompoundNBT();
+        compoundNBT.putIntArray(DWMNBTTags.INTERIOR_POS.getTag(), new int[] {pos.getX(), pos.getY(), pos.getZ()});
+        markDirty();
+        updateClient();
+    }
+
+    public BlockPos getInteriorPos() {
+        if (compoundNBT != null && compoundNBT.getIntArray(DWMNBTTags.INTERIOR_POS.getTag()) != null) {
+            int[] pos = compoundNBT.getIntArray(DWMNBTTags.INTERIOR_POS.getTag());
+            if (pos.length > 0)
+                return new BlockPos(pos[0], pos[1], pos[2]);
+        }
+        return null;
     }
 
     @Override

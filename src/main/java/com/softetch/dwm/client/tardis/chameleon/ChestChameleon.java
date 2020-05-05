@@ -3,6 +3,8 @@ package com.softetch.dwm.client.tardis.chameleon;
 import com.softetch.dwm.client.model.tileentity.tardis.ChestModel;
 import com.softetch.dwm.common.sound.DWMSoundEvent;
 import com.softetch.dwm.common.sound.DWMSoundEvents;
+import net.minecraft.block.Block;
+import net.minecraft.util.math.shapes.VoxelShape;
 
 public class ChestChameleon extends AbstractChameleonData {
 
@@ -41,8 +43,8 @@ public class ChestChameleon extends AbstractChameleonData {
     }
 
     @Override
-    public ChameleonShape getShape() {
-        return ChameleonShape.CHEST;
+    public VoxelShape getShape() {
+        return Block.makeCuboidShape(1.0D, 0.0D, 1.0D, 15.0D, 14.0D, 15.0D);
     }
 
     @Override

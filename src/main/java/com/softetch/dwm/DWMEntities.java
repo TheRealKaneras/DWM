@@ -1,7 +1,6 @@
 package com.softetch.dwm;
 
 import com.softetch.dwm.common.entity.AdiposeEntity;
-import com.softetch.dwm.common.entity.TimeWarDalekEntity;
 import com.softetch.dwm.common.entity.dalek.GuardDalekEntity;
 import com.softetch.dwm.common.entity.dalek.InvasionDalekEntity;
 import com.softetch.dwm.common.entity.dalek.SkaroDalekEntity;
@@ -23,7 +22,6 @@ import java.util.List;
 @Mod.EventBusSubscriber(modid = DWMMain.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class DWMEntities {
     private static final List<EntityType> TYPES = new ArrayList<>();
-    public static final EntityType<TimeWarDalekEntity> TIME_WAR_DALEK;
     public static final EntityType<SkaroDalekEntity> SKARO_DALEK;
     public static final EntityType<InvasionDalekEntity> INVASION_DALEK;
     public static final EntityType<GuardDalekEntity> GUARD_DALEK;
@@ -62,7 +60,6 @@ public class DWMEntities {
      * Build all the entity types
      */
     static {
-        TIME_WAR_DALEK = build("time_war_dalek", EntityType.Builder.create(TimeWarDalekEntity::new, EntityClassification.MONSTER).size(0.9f, 1.8f));
         SKARO_DALEK = build("skaro_dalek", EntityType.Builder.create(SkaroDalekEntity::new, EntityClassification.MONSTER).size(0.9f, 1.85f));
         INVASION_DALEK = build("invasion_dalek", EntityType.Builder.create(InvasionDalekEntity::new, EntityClassification.MONSTER).size(0.9f, 1.85f));
         GUARD_DALEK = build("guard_dalek", EntityType.Builder.create(GuardDalekEntity::new, EntityClassification.MONSTER).size(0.9f, 1.8f));

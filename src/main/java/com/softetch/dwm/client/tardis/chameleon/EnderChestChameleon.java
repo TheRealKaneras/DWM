@@ -1,8 +1,10 @@
 package com.softetch.dwm.client.tardis.chameleon;
 
 import com.softetch.dwm.client.model.tileentity.tardis.ChestModel;
-import net.minecraft.util.SoundEvent;
-import net.minecraft.util.SoundEvents;
+import com.softetch.dwm.common.sound.DWMSoundEvent;
+import com.softetch.dwm.common.sound.DWMSoundEvents;
+import net.minecraft.block.Block;
+import net.minecraft.util.math.shapes.VoxelShape;
 
 public class EnderChestChameleon extends AbstractChameleonData {
 
@@ -16,27 +18,17 @@ public class EnderChestChameleon extends AbstractChameleonData {
     }
 
     @Override
-    public SoundEvent getOpenDoorSound() {
-        return SoundEvents.BLOCK_ENDER_CHEST_OPEN;
+    public DWMSoundEvent getOpenDoorSound() {
+        return DWMSoundEvents.TARDIS_CHEST_OPEN;
     }
 
     @Override
-    public SoundEvent getCloseDoorSound() {
-        return SoundEvents.BLOCK_ENDER_CHEST_CLOSE;
+    public DWMSoundEvent getCloseDoorSound() {
+        return DWMSoundEvents.TARDIS_CHEST_CLOSE;
     }
 
     @Override
-    public float getDoorSoundVolume() {
-        return 0.5f;
-    }
-
-    @Override
-    public SoundEvent getLockDoorSound() {
-        return SoundEvents.BLOCK_CHEST_LOCKED;
-    }
-
-    @Override
-    public SoundEvent getDoorSlamSound() {
+    public DWMSoundEvent getDoorSlamSound() {
         return null;
     }
 
@@ -46,13 +38,13 @@ public class EnderChestChameleon extends AbstractChameleonData {
     }
 
     @Override
-    public InteriorHumSound getAmbientSound() {
-        return InteriorHumSound.MINECRAFT;
+    public DWMSoundEvent getAmbientSound() {
+        return DWMSoundEvents.TARDIS_MC_HUM;
     }
 
     @Override
-    public ChameleonShape getShape() {
-        return ChameleonShape.CHEST;
+    public VoxelShape getShape() {
+        return Block.makeCuboidShape(1.0D, 0.0D, 1.0D, 15.0D, 14.0D, 15.0D);
     }
 
     @Override

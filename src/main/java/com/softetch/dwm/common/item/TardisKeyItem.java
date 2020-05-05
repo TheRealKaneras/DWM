@@ -1,6 +1,6 @@
 package com.softetch.dwm.common.item;
 
-import com.softetch.dwm.common.tileentity.TardisTileEntity;
+import com.softetch.dwm.common.tileentity.TardisExteriorTile;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemUseContext;
@@ -26,8 +26,8 @@ public class TardisKeyItem extends Item {
         if (context.getPlayer() == null)
             return super.onItemUse(context);
         if (!world.isAirBlock(blockPos) && !world.isRemote) {
-            if (world.getTileEntity(blockPos) instanceof TardisTileEntity) {
-                ((TardisTileEntity) world.getTileEntity(blockPos)).cycleLock();
+            if (world.getTileEntity(blockPos) instanceof TardisExteriorTile) {
+                ((TardisExteriorTile) world.getTileEntity(blockPos)).cycleLock();
             }
             return ActionResultType.SUCCESS;
         }

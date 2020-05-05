@@ -1,6 +1,6 @@
 package com.softetch.dwm;
 
-import com.softetch.dwm.common.tileentity.TardisTileEntity;
+import com.softetch.dwm.common.tileentity.TardisExteriorTile;
 import net.minecraft.block.Block;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
@@ -20,7 +20,7 @@ import java.util.function.Supplier;
 @Mod.EventBusSubscriber(modid = DWMMain.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 @ObjectHolder(DWMMain.MOD_ID)
 public class DWMTileEntities {
-    public static final TileEntityType<TardisTileEntity> TARDIS = null;
+    public static final TileEntityType<TardisExteriorTile> TARDIS = null;
 
     private static TileEntityType<?> createTileEntity(Supplier<? extends TileEntity> factoryIn, ResourceLocation registryName, Block... validBlocks) {
         return TileEntityType.Builder.create(factoryIn, validBlocks).build(null).setRegistryName(registryName);
@@ -29,7 +29,7 @@ public class DWMTileEntities {
     @SubscribeEvent
     public static void onTileEntityRegistration(final RegistryEvent.Register<TileEntityType<?>> event) {
         event.getRegistry().registerAll(
-            createTileEntity(TardisTileEntity::new, new ResourceLocation(DWMMain.MOD_ID, "tardis"), DWMItems.tardises.toArray(new Block[DWMItems.tardises.size()]))
+            createTileEntity(TardisExteriorTile::new, new ResourceLocation(DWMMain.MOD_ID, "tardis"), DWMItems.tardises.toArray(new Block[DWMItems.tardises.size()]))
         );
     }
 }

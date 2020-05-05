@@ -11,6 +11,7 @@ import net.minecraft.resources.IResource;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3i;
 import net.minecraft.world.World;
 
 import java.io.IOException;
@@ -18,11 +19,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SchematicLoader {
-    public static SchematicFile test;
+    public static SchematicFile testInterior;
 
     public static void register() {
         try {
-            test = load(new ResourceLocation(DWMMain.MOD_ID, "schematics/test.schem"));
+            testInterior = load(new ResourceLocation(DWMMain.MOD_ID, "schematics/test_interior.schem"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -55,7 +56,8 @@ public class SchematicLoader {
                 x = (i % (schematic.getWidth() * schematic.getLength())) % schematic.getWidth();
                 y = i / (schematic.getWidth() * schematic.getLength());
                 z = (i % (schematic.getWidth() * schematic.getLength())) / schematic.getWidth();
-                BlockPos finalPos = startPos.add(x, y, z);
+                int[] offset = schematic.getOffset();
+                BlockPos finalPos = startPos.add(x, y, z).subtract(new Vec3i(offset[0], offset[1], offset[2]));
                 world.setBlockState(finalPos, blockState);
                 if (interval > 0) {
                     try {
