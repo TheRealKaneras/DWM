@@ -3,6 +3,7 @@ package com.softetch.dwm;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.softetch.dwm.client.event.DWMRenderEvent;
+import com.softetch.dwm.client.tardis.ChameleonRegistry;
 import com.softetch.dwm.common.event.DWMEntityEvent;
 import com.softetch.dwm.common.event.DWMItemUseEvent;
 import com.softetch.dwm.common.world.DWMOreGen;
@@ -22,6 +23,7 @@ public class DWMMain {
     public static final String MOD_ID = "dwm";
     public static final Logger LOGGER = LogManager.getLogger();
     public static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
+    public static final ChameleonRegistry CHAMELEON_REGISTRY = new ChameleonRegistry();
 
     /**
      * Create a new instance of the mod, set up listeners and event bus.
