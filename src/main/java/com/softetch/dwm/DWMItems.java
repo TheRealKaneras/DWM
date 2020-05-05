@@ -2,6 +2,7 @@ package com.softetch.dwm;
 
 import com.softetch.dwm.client.tardis.ChameleonRegistry;
 import com.softetch.dwm.client.tardis.chameleon.AbstractChameleonData;
+import com.softetch.dwm.common.block.DWMOreBlock;
 import com.softetch.dwm.common.block.RoundelBlock;
 import com.softetch.dwm.common.block.RoundelLanternBlock;
 import com.softetch.dwm.common.block.TardisExteriorBlock;
@@ -35,6 +36,7 @@ public class DWMItems {
     public static final Item ADIPOSE_PILL = null;
     public static final Item GELATIN = null;
     public static final Item ADIPOSE_MATERIAL = null;
+    public static final Block PLASTIC_ORE = null;
 
     public static List<Block> tardises = new ArrayList<>();
     private static final HashMap<Block, ItemGroup> blocks = new HashMap<>();
@@ -80,7 +82,9 @@ public class DWMItems {
                 addBlock(new RoundelLanternBlock(),"glowstone_roundel_birch", ItemGroup.DECORATIONS),
                 addBlock(new RoundelLanternBlock(),"glowstone_roundel_jungle", ItemGroup.DECORATIONS),
                 addBlock(new RoundelLanternBlock(),"glowstone_roundel_acacia", ItemGroup.DECORATIONS),
-                addBlock(new RoundelLanternBlock(),"glowstone_roundel_dark_oak", ItemGroup.DECORATIONS)
+                addBlock(new RoundelLanternBlock(),"glowstone_roundel_dark_oak", ItemGroup.DECORATIONS),
+
+                addBlock(new DWMOreBlock(),"plastic_ore", ItemGroup.BUILDING_BLOCKS)
         );
         event.getRegistry().registerAll(tardises.toArray(new Block[tardises.size()]));
     }
