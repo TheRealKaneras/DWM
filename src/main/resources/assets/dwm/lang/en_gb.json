@@ -6,6 +6,23 @@
 
   "item.dwm.cricket_bat": "Cricket Bat",
 
+  "item.dwm.white_plastic": "White Plastic",
+  "item.dwm.orange_plastic": "Orange Plastic",
+  "item.dwm.magenta_plastic": "Magenta Plastic",
+  "item.dwm.light_blue_plastic": "Light Blue Plastic",
+  "item.dwm.yellow_plastic": "Yellow Plastic",
+  "item.dwm.lime_plastic": "Lime Plastic",
+  "item.dwm.pink_plastic": "Pink Plastic",
+  "item.dwm.gray_plastic": "Grey Plastic",
+  "item.dwm.light_gray_plastic": "Light Grey Plastic",
+  "item.dwm.cyan_plastic": "Cyan Plastic",
+  "item.dwm.purple_plastic": "Purple Plastic",
+  "item.dwm.blue_plastic": "Blue Plastic",
+  "item.dwm.brown_plastic": "Brown Plastic",
+  "item.dwm.green_plastic": "Green Plastic",
+  "item.dwm.red_plastic": "Red Plastic",
+  "item.dwm.black_plastic": "Black Plastic",
+
   "item.dwm.tardis_gold_key": "Gold TARDIS Key",
   "item.dwm.two_dis": "2Dis",
   "item.dwm.vortex_manipulator": "Vortex Manipulator",
@@ -15,10 +32,6 @@
   "item.dwm.sonic_lipstick": "Sonic Lipstick",
 
   "item.dwm.fez": "Fez",
-
-  "item.dwm.adipose_spawner": "Spawn Adipose",
-  "item.dwm.time_war_dalek_spawner": "Spawn Time War Dalek",
-  "item.dwm.sixties_dalek_spawner": "Spawn 60s Dalek",
 
   "block.dwm.black_roundel": "Black Roundel",
   "block.dwm.dark_gray_roundel": "Dark Grey Roundel",
@@ -36,8 +49,24 @@
   "block.dwm.gold_roundel": "Gold Roundel",
   "block.dwm.red_roundel": "Red Roundel",
   "block.dwm.dark_red_roundel": "Dark Red Roundel",
+
   "block.dwm.hartnell_roundel": "Hartnell Roundel",
   "block.dwm.hartnell_roundel_split": "Hartnell Roundel",
+
+  "block.dwm.sea_roundel_oak": "Oak Sea Lantern Roundel",
+  "block.dwm.sea_roundel_spruce": "Spruce Sea Lantern Roundel",
+  "block.dwm.sea_roundel_birch": "Birch Sea Lantern Roundel",
+  "block.dwm.sea_roundel_jungle": "Jungle Sea Lantern Roundel",
+  "block.dwm.sea_roundel_acacia": "Acacia Sea Lantern Roundel",
+  "block.dwm.sea_roundel_dark_oak": "Dark Oak Sea Lantern Roundel",
+
+  "block.dwm.glowstone_roundel_oak": "Oak Glowstone Roundel",
+  "block.dwm.glowstone_roundel_spruce": "Spruce Glowstone Roundel",
+  "block.dwm.glowstone_roundel_birch": "Birch Glowstone Roundel",
+  "block.dwm.glowstone_roundel_jungle": "Jungle Glowstone Roundel",
+  "block.dwm.glowstone_roundel_acacia": "Acacia Glowstone Roundel",
+  "block.dwm.glowstone_roundel_dark_oak": "Dark Oak Glowstone Roundel",
+
   "block.dwm.tardis_brachacki_box_a": "TARDIS: Brachacki Box (1963)",
   "block.dwm.tardis_brachacki_box_b": "TARDIS: Brachacki Box (1966)",
   "block.dwm.tardis_brachacki_box_c": "TARDIS: Brachacki Box (1973)",
