@@ -10,6 +10,8 @@ import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.StateContainer;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
 
 import javax.annotation.Nullable;
@@ -23,9 +25,14 @@ public class RoundelBlock extends HorizontalBlock {
      * Set up the roundel block with a default FACING state to NORTH.
      */
     public RoundelBlock(boolean isSplit) {
-        super(Block.Properties.create(Material.WOOD, MaterialColor.BLACK).hardnessAndResistance(1.5f));
+        super(Block.Properties.create(Material.WOOD, MaterialColor.BLACK).hardnessAndResistance(3.5f));
         this.setDefaultState(this.stateContainer.getBaseState().with(HORIZONTAL_FACING, Direction.NORTH));
         this.isSplit = isSplit;
+    }
+
+    @Override
+    public VoxelShape getRenderShape(BlockState state, IBlockReader worldIn, BlockPos pos) {
+        return VoxelShapes.empty();
     }
 
     /**

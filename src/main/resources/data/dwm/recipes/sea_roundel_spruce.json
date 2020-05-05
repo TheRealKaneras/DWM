@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PPP",
+    "PLP",
+    "PPP"
+  ],
+  "key": {
+    "P": {
+      "item": "minecraft:spruce_planks"
+    },
+    "L": {
+      "item": "minecraft:sea_lantern"
+    }
+  },
+  "result": {
+    "item": "dwm:sea_roundel_spruce"
+  }
+}

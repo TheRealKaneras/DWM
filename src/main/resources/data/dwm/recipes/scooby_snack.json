@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " G ",
+    "GAG",
+    " G "
+  ],
+  "key": {
+    "G": {
+      "item": "minecraft:bone"
+    },
+    "A": {
+      "item": "minecraft:cocoa_beans"
+    }
+  },
+  "result": {
+    "item": "dwm:scooby_snack"
+  }
+}

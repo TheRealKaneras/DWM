@@ -1,0 +1,6 @@
+{
+	"parent": "dwm:block/roundel_lamp/sea_roundel_oak",
+	"textures": {
+		"border": "block/spruce_planks"
+	}
+}

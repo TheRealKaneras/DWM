@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "face=floor,facing=east": { "model": "dwm:block/roundel_lamp/glowstone_roundel_dark_oak", "x": 270 },
+    "face=floor,facing=west": { "model": "dwm:block/roundel_lamp/glowstone_roundel_dark_oak", "x": 270 },
+    "face=floor,facing=south": { "model": "dwm:block/roundel_lamp/glowstone_roundel_dark_oak", "x": 270 },
+    "face=floor,facing=north": { "model": "dwm:block/roundel_lamp/glowstone_roundel_dark_oak", "x": 270 },
+
+    "face=wall,facing=east":  { "model": "dwm:block/roundel_lamp/glowstone_roundel_dark_oak", "y": 90 },
+    "face=wall,facing=west":  { "model": "dwm:block/roundel_lamp/glowstone_roundel_dark_oak", "y": 270 },
+    "face=wall,facing=south": { "model": "dwm:block/roundel_lamp/glowstone_roundel_dark_oak", "y": 180 },
+    "face=wall,facing=north": { "model": "dwm:block/roundel_lamp/glowstone_roundel_dark_oak", "y": 0 },
+
+    "face=ceiling,facing=east":  { "model": "dwm:block/roundel_lamp/glowstone_roundel_dark_oak", "x": 90 },
+    "face=ceiling,facing=west":  { "model": "dwm:block/roundel_lamp/glowstone_roundel_dark_oak", "x": 90 },
+    "face=ceiling,facing=south":  { "model": "dwm:block/roundel_lamp/glowstone_roundel_dark_oak", "x": 90 },
+    "face=ceiling,facing=north":  { "model": "dwm:block/roundel_lamp/glowstone_roundel_dark_oak", "x": 90 }
+  }
+}
+
