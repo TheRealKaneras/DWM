@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "dwm:block/brown_plastic_block"
+  }
+}

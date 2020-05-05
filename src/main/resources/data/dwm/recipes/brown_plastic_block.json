@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PPP",
+    "PPP",
+    "PPP"
+  ],
+  "key": {
+    "P": {
+      "item": "dwm:brown_plastic"
+    }
+  },
+  "result": {
+    "item": "dwm:brown_plastic_block"
+  }
+}

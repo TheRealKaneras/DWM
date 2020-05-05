@@ -13,6 +13,7 @@ import com.softetch.dwm.common.item.gadget.SonicScrewdriverItem;
 import com.softetch.dwm.common.item.gadget.TwoDisItem;
 import com.softetch.dwm.common.item.gadget.VortexManipulatorItem;
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.item.*;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
@@ -83,6 +84,23 @@ public class DWMItems {
                 addBlock(new RoundelLanternBlock(),"glowstone_roundel_jungle", ItemGroup.DECORATIONS),
                 addBlock(new RoundelLanternBlock(),"glowstone_roundel_acacia", ItemGroup.DECORATIONS),
                 addBlock(new RoundelLanternBlock(),"glowstone_roundel_dark_oak", ItemGroup.DECORATIONS),
+
+                addBlock(new Block(Block.Properties.create(Material.WOOL, DyeColor.WHITE)),"white_plastic_block", ItemGroup.BUILDING_BLOCKS),
+                addBlock(new Block(Block.Properties.create(Material.WOOL, DyeColor.ORANGE)),"orange_plastic_block", ItemGroup.BUILDING_BLOCKS),
+                addBlock(new Block(Block.Properties.create(Material.WOOL, DyeColor.MAGENTA)),"magenta_plastic_block", ItemGroup.BUILDING_BLOCKS),
+                addBlock(new Block(Block.Properties.create(Material.WOOL, DyeColor.LIGHT_BLUE)),"light_blue_plastic_block", ItemGroup.BUILDING_BLOCKS),
+                addBlock(new Block(Block.Properties.create(Material.WOOL, DyeColor.YELLOW)),"yellow_plastic_block", ItemGroup.BUILDING_BLOCKS),
+                addBlock(new Block(Block.Properties.create(Material.WOOL, DyeColor.LIME)),"lime_plastic_block", ItemGroup.BUILDING_BLOCKS),
+                addBlock(new Block(Block.Properties.create(Material.WOOL, DyeColor.PINK)),"pink_plastic_block", ItemGroup.BUILDING_BLOCKS),
+                addBlock(new Block(Block.Properties.create(Material.WOOL, DyeColor.GRAY)),"gray_plastic_block", ItemGroup.BUILDING_BLOCKS),
+                addBlock(new Block(Block.Properties.create(Material.WOOL, DyeColor.LIGHT_GRAY)),"light_gray_plastic_block", ItemGroup.BUILDING_BLOCKS),
+                addBlock(new Block(Block.Properties.create(Material.WOOL, DyeColor.CYAN)),"cyan_plastic_block", ItemGroup.BUILDING_BLOCKS),
+                addBlock(new Block(Block.Properties.create(Material.WOOL, DyeColor.PURPLE)),"purple_plastic_block", ItemGroup.BUILDING_BLOCKS),
+                addBlock(new Block(Block.Properties.create(Material.WOOL, DyeColor.BLUE)),"blue_plastic_block", ItemGroup.BUILDING_BLOCKS),
+                addBlock(new Block(Block.Properties.create(Material.WOOL, DyeColor.BROWN)),"brown_plastic_block", ItemGroup.BUILDING_BLOCKS),
+                addBlock(new Block(Block.Properties.create(Material.WOOL, DyeColor.GREEN)),"green_plastic_block", ItemGroup.BUILDING_BLOCKS),
+                addBlock(new Block(Block.Properties.create(Material.WOOL, DyeColor.RED)),"red_plastic_block", ItemGroup.BUILDING_BLOCKS),
+                addBlock(new Block(Block.Properties.create(Material.WOOL, DyeColor.BLACK)),"black_plastic_block", ItemGroup.BUILDING_BLOCKS),
 
                 addBlock(new DWMOreBlock(),"plastic_ore", ItemGroup.BUILDING_BLOCKS)
         );

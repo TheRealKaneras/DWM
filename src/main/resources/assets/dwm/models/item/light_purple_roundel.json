@@ -1,9 +1,0 @@
-{
-	"credit": "Made with Blockbench",
-	"texture_size": [32, 32],
-	"parent": "dwm:block/roundel/black_roundel",
-	"textures": {
-		"0": "dwm:block/roundel/light_purple_roundel",
-		"particle": "dwm:block/roundel/light_purple_roundel"
-	}
-}

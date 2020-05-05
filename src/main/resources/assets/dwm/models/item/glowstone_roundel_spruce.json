@@ -1,6 +1,3 @@
 {
-	"parent": "dwm:block/roundel_lamp/glowstone_roundel_oak",
-	"textures": {
-		"border": "block/spruce_planks"
-	}
+	"parent": "dwm:block/roundel_lamp/glowstone_roundel_spruce"
 }
