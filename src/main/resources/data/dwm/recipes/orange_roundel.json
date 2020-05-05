@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBB",
+    "W B",
+    "BBB"
+  ],
+  "key": {
+    "W": {
+      "item": "dwm:white_plastic"
+    },
+    "B": {
+      "item": "dwm:orange_plastic"
+    }
+  },
+  "result": {
+    "item": "dwm:orange_roundel",
+    "count": 3
+  }
+}

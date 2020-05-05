@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "plastic",
+  "ingredients": [
+    {
+      "item": "minecraft:red_dye"
+    },
+    {
+      "item": "dwm:white_plastic"
+    }
+  ],
+  "result": {
+    "item": "dwm:red_plastic"
+  }
+}
