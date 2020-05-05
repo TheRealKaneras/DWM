@@ -76,6 +76,13 @@ public class DWMItems {
                 addBlock(new RoundelBlock(false), "acacia_roundel", ItemGroup.DECORATIONS),
                 addBlock(new RoundelBlock(false), "dark_oak_roundel", ItemGroup.DECORATIONS),
 
+                addBlock(new RoundelBlock(false), "stripped_oak_roundel", ItemGroup.DECORATIONS),
+                addBlock(new RoundelBlock(false), "stripped_spruce_roundel", ItemGroup.DECORATIONS),
+                addBlock(new RoundelBlock(false), "stripped_birch_roundel", ItemGroup.DECORATIONS),
+                addBlock(new RoundelBlock(false), "stripped_jungle_roundel", ItemGroup.DECORATIONS),
+                addBlock(new RoundelBlock(false), "stripped_acacia_roundel", ItemGroup.DECORATIONS),
+                addBlock(new RoundelBlock(false), "stripped_dark_oak_roundel", ItemGroup.DECORATIONS),
+
                 addBlock(new RoundelBlock(false), "hartnell_roundel", ItemGroup.DECORATIONS),
                 addBlock(new RoundelBlock(true), "hartnell_roundel_split", ItemGroup.DECORATIONS),
 

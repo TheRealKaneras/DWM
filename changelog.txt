@@ -26,6 +26,12 @@
 + Jungle Roundel
 + Acacia Roundel
 + Dark Oak Roundel
++ Stripped Oak Roundel
++ Stripped Spruce Roundel
++ Stripped Birch Roundel
++ Stripped Jungle Roundel
++ Stripped Acacia Roundel
++ Stripped Dark Oak Roundel
 + Brachacki Roundels (Split and Full)
 + Oak Sea Lantern Roundels
 + Spruce Sea Lantern Roundels
