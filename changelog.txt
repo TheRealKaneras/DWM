@@ -1,8 +1,39 @@
-1.15.2-2.0.0.0-beta1
+1.15.2-2.0.0.0
 + Skaro Dalek
 + Invasion Dalek
 + Guard Dalek
+
++ Plastic Ore
++ White Plastic Block
++ Orange Plastic Block
++ Magenta Plastic Block
++ Light Blue Plastic Block
++ Yellow Plastic Block
++ Lime Plastic Block
++ Pink Plastic Block
++ Gray Plastic Block
++ Light Gray Plastic Block
++ Cyan Plastic Block
++ Purple Plastic Block
++ Blue Plastic Block
++ Brown Plastic Block
++ Green Plastic Block
++ Red Plastic Block
++ Black Plastic Block
 + Brachacki Roundels (Split and Full)
++ Oak Sea Lantern Roundels
++ Spruce Sea Lantern Roundels
++ Birch Sea Lantern Roundels
++ Acacia Sea Lantern Roundels
++ Jungle Sea Lantern Roundels
++ Dark Oak Sea Lantern Roundels
++ Oak Glowstone Roundels
++ Spruce Glowstone Roundels
++ Birch Glowstone Roundels
++ Acacia Glowstone Roundels
++ Jungle Glowstone Roundels
++ Dark Oak Glowstone Roundels
+
 + Brachacki Box A TARDIS Exterior
 + Brachacki Box B TARDIS Exterior
 + Brachacki Box C TARDIS Exterior
@@ -12,14 +43,35 @@
 + Newbery Box C TARDIS Exterior
 + Chest TARDIS Exterior
 + Ender Chest TARDIS Exterior
+
 + TARDIS Key
 + Scooby snacks
++ White Plastic 
++ Orange Plastic 
++ Magenta Plastic 
++ Light Blue Plastic 
++ Yellow Plastic 
++ Lime Plastic 
++ Pink Plastic 
++ Gray Plastic 
++ Light Gray Plastic 
++ Cyan Plastic 
++ Purple Plastic 
++ Blue Plastic 
++ Brown Plastic 
++ Green Plastic 
++ Red Plastic 
++ Black Plastic 
+
++ Fez crafting recipes
++ Roundel crafting recipes
+
 ~ New fez model and rewritten to use regular dye system
-~ New colourful roundel model with rewritten colour system
+~ Colourful roundels now craftable with dyed plastic with new model
 ~ Updated to MC Version 1.15.2
 - Removed original Dalek entities and spawners
 
-1.14.4-1.0.0.0-beta1
+1.14.4-1.0.0.0
 + Dalek Entity
 + Adipose Entity
 + Adipose Pill
