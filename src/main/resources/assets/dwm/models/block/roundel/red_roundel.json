@@ -4,6 +4,7 @@
 		"border": "dwm:block/red_plastic_block",
 		"interior": "dwm:block/white_plastic_block"
 	},
+	"ambientocclusion": true,
 	"elements": [
 		{
 			"name": "back",
