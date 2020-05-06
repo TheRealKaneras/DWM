@@ -47,6 +47,10 @@
 + Frosted Ice Roundel
 + Blue Ice Roundel
 
++ Netherrack Roundel
++ Nether Bricks Roundel
++ Magma Roundel
+
 + Brachacki Roundels (Split and Full)
 
 + Oak Sea Lantern Roundels

@@ -94,6 +94,10 @@ public class DWMItems {
                 addBlock(new RoundelBlock(false), "frosted_ice_roundel", ItemGroup.DECORATIONS),
                 addBlock(new RoundelBlock(false), "blue_ice_roundel", ItemGroup.DECORATIONS),
 
+                addBlock(new RoundelBlock(false), "netherrack_roundel", ItemGroup.DECORATIONS),
+                addBlock(new RoundelBlock(false), "netherbrick_roundel", ItemGroup.DECORATIONS),
+                addBlock(new RoundelBlock(false), "magma_roundel", ItemGroup.DECORATIONS),
+
                 addBlock(new RoundelBlock(false), "hartnell_roundel", ItemGroup.DECORATIONS),
                 addBlock(new RoundelBlock(true), "hartnell_roundel_split", ItemGroup.DECORATIONS),
 
