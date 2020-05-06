@@ -70,6 +70,11 @@
   "block.dwm.andesite_roundel": "Andesite Roundel",
   "block.dwm.diorite_roundel": "Diorite Roundel",
 
+  "block.dwm.ice_roundel": "Ice Roundel",
+  "block.dwm.packed_ice_roundel": "Packed Ice Roundel",
+  "block.dwm.frosted_ice_roundel": "Frosted Ice Roundel",
+  "block.dwm.blue_ice_roundel": "Blue Ice Roundel",
+
   "block.dwm.hartnell_roundel": "Hartnell Roundel",
   "block.dwm.hartnell_roundel_split": "Hartnell Roundel",
 
