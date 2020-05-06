@@ -79,6 +79,11 @@
   "block.dwm.netherbrick_roundel": "Nether Bricks Roundel",
   "block.dwm.magma_roundel": "Magma Roundel",
 
+  "block.dwm.iron_roundel": "Iron Roundel",
+  "block.dwm.gold_roundel": "Gold Roundel",
+  "block.dwm.diamond_roundel": "Diamond Roundel",
+  "block.dwm.lapis_roundel": "Lapis Lazuli Roundel",
+
   "block.dwm.hartnell_roundel": "Hartnell Roundel",
   "block.dwm.hartnell_roundel_split": "Hartnell Roundel",
 

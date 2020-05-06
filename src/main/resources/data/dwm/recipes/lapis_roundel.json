@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBB",
+    "W B",
+    "BBB"
+  ],
+  "key": {
+    "W": {
+      "item": "dwm:white_plastic"
+    },
+    "B": {
+      "item": "minecraft:lapis_lazuli"
+    }
+  },
+  "result": {
+    "item": "dwm:lapis_roundel",
+    "count": 3
+  }
+}

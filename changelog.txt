@@ -47,6 +47,12 @@
 + Frosted Ice Roundel
 + Blue Ice Roundel
 
++ Iron Roundel
++ Gold Roundel
++ Diamond Roundel
++ Obsidian Roundel
++ Lapis Lazuli Roundel
+
 + Netherrack Roundel
 + Nether Bricks Roundel
 + Magma Roundel
