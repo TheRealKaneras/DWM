@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=south": { "model": "dwm:block/roundel/oak_log_roundel" },
+    "facing=east": { "model": "dwm:block/roundel/oak_log_roundel", "y": 270 },
+    "facing=west": { "model": "dwm:block/roundel/oak_log_roundel", "y": 90 },
+    "facing=north": { "model": "dwm:block/roundel/oak_log_roundel", "y": 180 }
+  }
+}

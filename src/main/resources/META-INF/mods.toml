@@ -26,6 +26,6 @@ description='''The Doctor Who Mod is an open source mod for Minecraft brings cre
 [[dependencies.dwm]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.14.4]"
+    versionRange="[1.15.2]"
     ordering="NONE"
     side="BOTH"

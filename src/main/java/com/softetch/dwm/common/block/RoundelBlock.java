@@ -32,7 +32,7 @@ public class RoundelBlock extends HorizontalBlock {
 
     @Override
     public VoxelShape getRenderShape(BlockState state, IBlockReader worldIn, BlockPos pos) {
-        return VoxelShapes.empty();
+        return isSplit ? VoxelShapes.empty() : VoxelShapes.fullCube();
     }
 
     /**
