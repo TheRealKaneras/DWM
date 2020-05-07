@@ -19,13 +19,18 @@ import javax.annotation.Nullable;
 /**
  * Class containing properties and methods required specifically for a roundel block.
  */
-public class RoundelBlock extends HorizontalBlock {
+public class RoundelSplitBlock extends HorizontalBlock {
     /**
      * Set up the roundel block with a default FACING state to NORTH.
      */
-    public RoundelBlock(boolean isSplit) {
-        super(Block.Properties.create(Material.WOOD, MaterialColor.BLACK).hardnessAndResistance(3.5f));
+    public RoundelSplitBlock() {
+        super(Properties.create(Material.WOOD, MaterialColor.BLACK).hardnessAndResistance(3.5f));
         this.setDefaultState(this.stateContainer.getBaseState().with(HORIZONTAL_FACING, Direction.NORTH));
+    }
+
+    @Override
+    public VoxelShape getRenderShape(BlockState state, IBlockReader worldIn, BlockPos pos) {
+        return VoxelShapes.empty();
     }
 
     /**
@@ -53,4 +58,8 @@ public class RoundelBlock extends HorizontalBlock {
         return BlockRenderType.MODEL;
     }
 
+    @Override
+    public boolean isNormalCube(BlockState state, IBlockReader worldIn, BlockPos pos) {
+        return false;
+    }
 }
