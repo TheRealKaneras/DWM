@@ -1,0 +1,7 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "dwm:block/roundel/redstone_lamp/red_roundel_redlamp_on",
+	"textures": {
+		"border": "dwm:block/light_blue_plastic_block"
+	}
+}

@@ -1,0 +1,7 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "dwm:block/roundel/split/red_roundel_split",
+	"textures": {
+		"border": "block/stripped_spruce_log"
+	}
+}

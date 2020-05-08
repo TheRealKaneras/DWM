@@ -1,0 +1,7 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "dwm:block/roundel/glowstone_lamp/red_roundel_glowlamp",
+	"textures": {
+		"border": "block/jungle_log"
+	}
+}

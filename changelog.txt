@@ -57,6 +57,111 @@
 + Nether Bricks Roundel
 + Magma Roundel
 
++ Oak Split Roundel
++ Spruce Split Roundel
++ Birch Split Roundel
++ Jungle Split Roundel
++ Acacia Split Roundel
++ Dark Oak Split Roundel
+
++ Stripped Oak Split Roundel
++ Stripped Spruce Split Roundel
++ Stripped Birch Split Roundel
++ Stripped Jungle Split Roundel
++ Stripped Acacia Split Roundel
++ Stripped Dark Oak Split Roundel
+
++ Stone Split Roundel
++ Smooth Stone Split Roundel
++ Granite Split Roundel
++ Andesite Split Roundel
++ Diorite Split Roundel
+
++ Ice Split Roundel
++ Packed Ice Split Roundel
++ Frosted Ice Split Roundel
++ Blue Ice Split Roundel
+
++ Iron Split Roundel
++ Gold Split Roundel
++ Diamond Split Roundel
++ Obsidian Split Roundel
++ Lapis Lazuli Split Roundel
+
++ Netherrack Split Roundel
++ Nether Bricks Split Roundel
++ Magma Split Roundel
+
++ Oak Glowstone Roundel
++ Spruce Glowstone Roundel
++ Birch Glowstone Roundel
++ Jungle Glowstone Roundel
++ Acacia Glowstone Roundel
++ Dark Oak Glowstone Roundel
+
++ Stripped Oak Glowstone Roundel
++ Stripped Spruce Glowstone Roundel
++ Stripped Birch Glowstone Roundel
++ Stripped Jungle Glowstone Roundel
++ Stripped Acacia Glowstone Roundel
++ Stripped Dark Oak Glowstone Roundel
+
++ Stone Glowstone Roundel
++ Smooth Stone Glowstone Roundel
++ Granite Glowstone Roundel
++ Andesite Glowstone Roundel
++ Diorite Glowstone Roundel
+
++ Ice Glowstone Roundel
++ Packed Ice Glowstone Roundel
++ Frosted Ice Glowstone Roundel
++ Blue Ice Glowstone Roundel
+
++ Iron Glowstone Roundel
++ Gold Glowstone Roundel
++ Diamond Glowstone Roundel
++ Obsidian Glowstone Roundel
++ Lapis Lazuli Glowstone Roundel
+
++ Netherrack Glowstone Roundel
++ Nether Bricks Glowstone Roundel
++ Magma Glowstone Roundel
+
++ Oak Redstone Lamp Roundel
++ Spruce Redstone Lamp Roundel
++ Birch Redstone Lamp Roundel
++ Jungle Redstone Lamp Roundel
++ Acacia Redstone Lamp Roundel
++ Dark Oak Redstone Lamp Roundel
+
++ Stripped Oak Redstone Lamp Roundel
++ Stripped Spruce Redstone Lamp Roundel
++ Stripped Birch Redstone Lamp Roundel
++ Stripped Jungle Redstone Lamp Roundel
++ Stripped Acacia Redstone Lamp Roundel
++ Stripped Dark Oak Redstone Lamp Roundel
+
++ Stone Redstone Lamp Roundel
++ Smooth Stone Redstone Lamp Roundel
++ Granite Redstone Lamp Roundel
++ Andesite Redstone Lamp Roundel
++ Diorite Redstone Lamp Roundel
+
++ Ice Redstone Lamp Roundel
++ Packed Ice Redstone Lamp Roundel
++ Frosted Ice Redstone Lamp Roundel
++ Blue Ice Redstone Lamp Roundel
+
++ Iron Redstone Lamp Roundel
++ Gold Redstone Lamp Roundel
++ Diamond Redstone Lamp Roundel
++ Obsidian Redstone Lamp Roundel
++ Lapis Lazuli Redstone Lamp Roundel
+
++ Netherrack Redstone Lamp Roundel
++ Nether Bricks Redstone Lamp Roundel
++ Magma Redstone Lamp Roundel
+
 + Brachacki Roundels (Split and Full)
 
 + Oak Sea Lantern Roundels

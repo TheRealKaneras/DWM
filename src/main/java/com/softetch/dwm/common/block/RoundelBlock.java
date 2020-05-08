@@ -23,7 +23,7 @@ public class RoundelBlock extends HorizontalBlock {
     /**
      * Set up the roundel block with a default FACING state to NORTH.
      */
-    public RoundelBlock(boolean isSplit) {
+    public RoundelBlock() {
         super(Block.Properties.create(Material.WOOD, MaterialColor.BLACK).hardnessAndResistance(3.5f));
         this.setDefaultState(this.stateContainer.getBaseState().with(HORIZONTAL_FACING, Direction.NORTH));
     }

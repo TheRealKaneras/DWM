@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=south": { "model": "dwm:block/roundel/split/gray_roundel_split" },
+    "facing=east": { "model": "dwm:block/roundel/split/gray_roundel_split", "y": 270 },
+    "facing=west": { "model": "dwm:block/roundel/split/gray_roundel_split", "y": 90 },
+    "facing=north": { "model": "dwm:block/roundel/split/gray_roundel_split", "y": 180 }
+  }
+}
