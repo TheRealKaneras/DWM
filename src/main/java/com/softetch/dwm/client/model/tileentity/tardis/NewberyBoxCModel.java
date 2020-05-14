@@ -173,7 +173,6 @@ public class NewberyBoxCModel extends AbstractTardisExteriorModel {
 		windowsBack = new ModelRenderer(this);
 		windowsBack.setRotationPoint(0.0F, -25.0F, 9.0F);
 		box.addChild(windowsBack);
-		
 
 		bone = new ModelRenderer(this);
 		bone.setRotationPoint(0.0F, 0.0F, 0.0F);

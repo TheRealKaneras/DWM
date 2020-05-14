@@ -57,7 +57,7 @@ public class SchematicLoader {
                 y = i / (schematic.getWidth() * schematic.getLength());
                 z = (i % (schematic.getWidth() * schematic.getLength())) / schematic.getWidth();
                 int[] offset = schematic.getOffset();
-                BlockPos finalPos = startPos.add(x, y, z).subtract(new Vec3i(offset[0], offset[1], offset[2]));
+                BlockPos finalPos = startPos.add(x, y, z).add(new Vec3i(offset[0], offset[1], offset[2]));
                 world.setBlockState(finalPos, blockState);
                 if (interval > 0) {
                     try {

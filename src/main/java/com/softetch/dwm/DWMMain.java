@@ -3,17 +3,21 @@ package com.softetch.dwm;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.softetch.dwm.client.event.DWMRenderEvent;
+import com.softetch.dwm.client.model.smdl.SMDLModelLoader;
 import com.softetch.dwm.client.tardis.ChameleonRegistry;
 import com.softetch.dwm.common.event.DWMEntityEvent;
 import com.softetch.dwm.common.event.DWMItemUseEvent;
 import com.softetch.dwm.common.world.DWMOreGen;
 import com.softetch.dwm.common.world.schematic.SchematicLoader;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.io.IOException;
 
 /**
  * The main class for the DWM
@@ -43,6 +47,7 @@ public class DWMMain {
         MinecraftForge.EVENT_BUS.register(new DWMEntityEvent());
         SchematicLoader.register();
         DWMOreGen.init();
+
     }
 
 }

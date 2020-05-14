@@ -1,10 +1,18 @@
 package com.softetch.dwm.client.model.tileentity.tardis;
 
-import com.softetch.dwm.client.model.tileentity.TileEntityModel;
 import com.softetch.dwm.common.tileentity.TardisExteriorTile;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.model.Model;
 import net.minecraft.client.renderer.model.ModelRenderer;
+import net.minecraft.util.ResourceLocation;
 
-public abstract class AbstractTardisExteriorModel extends TileEntityModel {
+import java.util.function.Function;
+
+public abstract class AbstractTardisExteriorModel extends Model {
+    public AbstractTardisExteriorModel() {
+        super(RenderType::getEntityCutoutNoCull);
+    }
+
     public void doorRotation(TardisExteriorTile.DoorState doorState, float progression) {
         if (getLeftDoor() != null && getRightDoor() != null) {
             float angle = progression * 1.35f;

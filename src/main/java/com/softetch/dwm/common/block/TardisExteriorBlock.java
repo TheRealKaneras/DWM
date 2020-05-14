@@ -82,18 +82,18 @@ public class TardisExteriorBlock extends DWMTileEntityBlock {
 
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        if (!world.isRemote() && world.getTileEntity(pos) instanceof TardisExteriorTile) {
-            TardisExteriorTile tardis = (TardisExteriorTile) world.getTileEntity(pos);
-            if (tardis.getInteriorPos() != null) {
-                if (entity instanceof ServerPlayerEntity) {
-                    ServerPlayerEntity player = (ServerPlayerEntity) entity;
-                    ServerWorld nextWorld = player.getServer().getWorld(DWMDimensions.TARDIS.getDimensionType());
-                    nextWorld.getChunk(tardis.getInteriorPos());    // make sure the chunk is loaded
-                    BlockPos dest = tardis.getInteriorPos();
-                    player.teleport(nextWorld, dest.getX(), dest.getY(), dest.getZ(), player.getPitchYaw().y, player.getPitchYaw().x);
-                }
-            }
-        }
+//        if (!world.isRemote() && world.getTileEntity(pos) instanceof TardisExteriorTile) {
+//            TardisExteriorTile tardis = (TardisExteriorTile) world.getTileEntity(pos);
+//            if (tardis.getInteriorPos() != null) {
+//                if (entity instanceof ServerPlayerEntity) {
+//                    ServerPlayerEntity player = (ServerPlayerEntity) entity;
+//                    ServerWorld nextWorld = player.getServer().getWorld(DWMDimensions.TARDIS.getDimensionType());
+//                    nextWorld.getChunk(tardis.getInteriorPos());    // make sure the chunk is loaded
+//                    BlockPos dest = tardis.getInteriorPos();
+//                    player.teleport(nextWorld, dest.getX(), dest.getY(), dest.getZ(), player.getPitchYaw().y, player.getPitchYaw().x);
+//                }
+//            }
+//        }
     }
 
     @Override

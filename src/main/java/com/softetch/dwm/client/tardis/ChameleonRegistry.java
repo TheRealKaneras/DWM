@@ -21,7 +21,7 @@ public class ChameleonRegistry {
     }
 
     public AbstractChameleonData getDefaultSkin() {
-        return new BrachackiBoxAChameleon();
+        return new NewberyBoxCChameleon();
     }
 
     /**

@@ -75,7 +75,7 @@ public abstract class AbstractChameleonData {
     }
 
     public VoxelShape getShape() {
-        return Block.makeCuboidShape(-24.0D, 0, -24.0D, 24.0D, 32.0D, 24.0D);
+        return Block.makeCuboidShape(-4.0D, 0.0D, -4.0D, 20.0D, 45.0D, 20.0D);
     }
 
     protected ResourceLocation getTextureResourceLocation(String textureName) {
