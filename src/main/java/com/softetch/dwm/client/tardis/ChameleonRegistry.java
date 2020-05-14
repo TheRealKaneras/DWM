@@ -24,6 +24,14 @@ public class ChameleonRegistry {
         registerSkin(new EnderChestChameleon());
     }
 
+    /**
+     * SHOULD ONLY BE USED FOR DEBUGGING!!!!
+     * @return a default tardis skin
+     */
+    public BaseChameleonData getDefaultSkin() {
+        return TARDIS_SKINS.get("brachacki_box_a");
+    }
+
     private void registerSkin(String name, ChameleonType type, AbstractTardisExteriorModel model) {
         registerSkin(new BaseChameleonData(name, type, model));
     }

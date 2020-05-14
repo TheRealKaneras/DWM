@@ -1,20 +1,15 @@
 package com.softetch.dwm.client.render.tileentity;
 
-import com.mojang.blaze3d.matrix.MatrixStack;
 import com.softetch.dwm.DWMMain;
-import com.softetch.dwm.client.model.smdl.SMDLModel;
 import com.softetch.dwm.client.model.smdl.SMDLModelLoader;
-import com.softetch.dwm.client.tardis.ChameleonRegistry;
-import com.softetch.dwm.client.tardis.chameleon.AbstractChameleonData;
+import com.softetch.dwm.client.tardis.chameleon.BaseChameleonData;
 import com.softetch.dwm.common.tileentity.TardisExteriorTile;
-import net.minecraft.client.renderer.IRenderTypeBuffer;
 import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
-import net.minecraft.util.ResourceLocation;
 
 import java.io.IOException;
 
 public class TardisExteriorRenderer extends DWMTileEntityRenderer<TardisExteriorTile> {
-    private AbstractChameleonData chameleonData;
+    private BaseChameleonData chameleonData;
 
     public TardisExteriorRenderer(TileEntityRendererDispatcher dispatcher) {
         super(dispatcher, null, DWMMain.CHAMELEON_REGISTRY.getDefaultSkin().getTexture());
