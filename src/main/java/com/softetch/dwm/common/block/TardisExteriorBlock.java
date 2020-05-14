@@ -56,7 +56,7 @@ public class TardisExteriorBlock extends DWMTileEntityBlock {
         if (!worldIn.isRemote) {
             TardisExteriorTile tileEntity = (TardisExteriorTile) worldIn.getTileEntity(pos);
             if (tileEntity != null) {
-                tileEntity.setOwnerUuid(placer.getUniqueID().toString());
+                tileEntity.setOwnerUUID(placer.getUniqueID().toString());
                 tileEntity.setChameleon(exteriorName);
                 tileEntity.setInteriorPos(new BlockPos(0,20,0));
                 World interiorWorld = DimensionManager.getWorld(Minecraft.getInstance().getIntegratedServer(), DWMDimensions.TARDIS.getDimensionType(), false, true);

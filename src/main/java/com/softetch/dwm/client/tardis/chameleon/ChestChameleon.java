@@ -6,15 +6,10 @@ import com.softetch.dwm.common.sound.DWMSoundEvents;
 import net.minecraft.block.Block;
 import net.minecraft.util.math.shapes.VoxelShape;
 
-public class ChestChameleon extends AbstractChameleonData {
+public class ChestChameleon extends BaseChameleonData {
 
     public ChestChameleon() {
-        super(new ChestModel());
-    }
-
-    @Override
-    public String getName() {
-        return "chest";
+        super("chest", ChameleonType.MINECRAFT, new ChestModel());
     }
 
     @Override
@@ -47,8 +42,4 @@ public class ChestChameleon extends AbstractChameleonData {
         return Block.makeCuboidShape(1.0D, 0.0D, 1.0D, 15.0D, 14.0D, 15.0D);
     }
 
-    @Override
-    public ChameleonType getType() {
-        return ChameleonType.MINECRAFT;
-    }
 }

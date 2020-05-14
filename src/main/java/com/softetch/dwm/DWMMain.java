@@ -7,6 +7,7 @@ import com.softetch.dwm.client.model.smdl.SMDLModelLoader;
 import com.softetch.dwm.client.tardis.ChameleonRegistry;
 import com.softetch.dwm.common.event.DWMEntityEvent;
 import com.softetch.dwm.common.event.DWMItemUseEvent;
+import com.softetch.dwm.common.item.gadget.SonicActions;
 import com.softetch.dwm.common.world.DWMOreGen;
 import com.softetch.dwm.common.world.schematic.SchematicLoader;
 import net.minecraft.util.ResourceLocation;
@@ -28,6 +29,7 @@ public class DWMMain {
     public static final Logger LOGGER = LogManager.getLogger();
     public static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
     public static final ChameleonRegistry CHAMELEON_REGISTRY = new ChameleonRegistry();
+    public static final SonicActions SONIC_ACTIONS = new SonicActions();
 
     /**
      * Create a new instance of the mod, set up listeners and event bus.

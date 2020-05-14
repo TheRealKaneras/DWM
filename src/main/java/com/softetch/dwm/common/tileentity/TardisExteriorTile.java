@@ -1,9 +1,9 @@
 package com.softetch.dwm.common.tileentity;
 
+import com.softetch.dwm.DWMMain;
 import com.softetch.dwm.DWMNBTTags;
 import com.softetch.dwm.DWMTileEntities;
-import com.softetch.dwm.client.tardis.ChameleonRegistry;
-import com.softetch.dwm.client.tardis.chameleon.AbstractChameleonData;
+import com.softetch.dwm.client.tardis.chameleon.BaseChameleonData;
 import com.softetch.dwm.common.sound.DWMSoundEvent;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
@@ -17,19 +17,21 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.List;
+import java.util.UUID;
 
 public class TardisExteriorTile extends TileEntity implements ITickableTileEntity {
     private CompoundNBT compoundNBT;
 
     public TardisExteriorTile() {
         super(DWMTileEntities.TARDIS);
+        createUuid();
     }
 
     @Override
     public void tick() {
         if (getChameleonData() == null)
             return;
-        if (!world.isRemote()) {
+        if (world != null && !world.isRemote()) {
             if (world.getGameTime() % getChameleonData().getAmbientSound().getDuration() == 0) {
                 playSound(getChameleonData().getAmbientSound(), SoundCategory.AMBIENT);
             }
@@ -54,13 +56,13 @@ public class TardisExteriorTile extends TileEntity implements ITickableTileEntit
 
     public void updateDoorProgression(float doorProgression) {
         createCompoundNBT();
-        compoundNBT.putFloat(DWMNBTTags.DOOR_PROGRESSION.getTag(), doorProgression);
+        compoundNBT.putFloat(DWMNBTTags.DOOR_PROGRESSION, doorProgression);
         markDirty();
         updateClient();
     }
 
     public float getDoorProgression() {
-        return compoundNBT != null ? compoundNBT.getFloat(DWMNBTTags.DOOR_PROGRESSION.getTag()) : 0.0f;
+        return compoundNBT != null ? compoundNBT.getFloat(DWMNBTTags.DOOR_PROGRESSION) : 0.0f;
     }
 
     private void createCompoundNBT() {
@@ -69,12 +71,12 @@ public class TardisExteriorTile extends TileEntity implements ITickableTileEntit
     }
 
     public boolean isLocked() {
-        return compoundNBT != null && compoundNBT.getBoolean(DWMNBTTags.LOCKED.getTag());
+        return compoundNBT != null && compoundNBT.getBoolean(DWMNBTTags.LOCKED);
     }
 
     public void setLocked(boolean locked) {
         createCompoundNBT();
-        compoundNBT.putBoolean(DWMNBTTags.LOCKED.getTag(), locked);
+        compoundNBT.putBoolean(DWMNBTTags.LOCKED, locked);
     }
 
     public void forceOpen(boolean open) {
@@ -103,19 +105,19 @@ public class TardisExteriorTile extends TileEntity implements ITickableTileEntit
         updateClient();
     }
 
-    public String getOwnerUuid() {
-        return compoundNBT != null ? compoundNBT.getString(DWMNBTTags.TARDIS_OWNER.getTag()) : null;
+    public String getOwnerUUID() {
+        return compoundNBT != null ? compoundNBT.getString(DWMNBTTags.TARDIS_OWNER) : null;
     }
 
-    public void setOwnerUuid(String ownerUuid) {
+    public void setOwnerUUID(String ownerUUID) {
         createCompoundNBT();
-        compoundNBT.putString(DWMNBTTags.TARDIS_OWNER.getTag(), ownerUuid);
+        compoundNBT.putString(DWMNBTTags.TARDIS_OWNER, ownerUUID);
         markDirty();
         updateClient();
     }
 
     public boolean isOwner(PlayerEntity player) {
-        return compoundNBT != null && player.getUniqueID().toString().equals(getOwnerUuid());
+        return compoundNBT != null && player.getUniqueID().toString().equals(getOwnerUUID());
     }
 
     public boolean isOwnerNearby() {
@@ -145,63 +147,74 @@ public class TardisExteriorTile extends TileEntity implements ITickableTileEntit
                 }
             }
             createCompoundNBT();
-            compoundNBT.putInt(DWMNBTTags.DOOR_STATE.getTag(), doorState.getId());
+            compoundNBT.putInt(DWMNBTTags.DOOR_STATE, doorState.getId());
             markDirty();
             updateClient();
     }
 
     public DoorState getDoorState() {
         if (compoundNBT != null)
-            return DoorState.fromId(compoundNBT.getInt(DWMNBTTags.DOOR_STATE.getTag()));
+            return DoorState.fromId(compoundNBT.getInt(DWMNBTTags.DOOR_STATE));
         return DoorState.CLOSED;
     }
 
     public void setChameleon(String chameleon) {
         createCompoundNBT();
-        compoundNBT.putString(DWMNBTTags.CHAMELEON.getTag(), chameleon);
+        compoundNBT.putString(DWMNBTTags.CHAMELEON, chameleon);
         markDirty();
         updateClient();
     }
 
     public String getChameleon() {
-        return compoundNBT != null ? compoundNBT.getString(DWMNBTTags.CHAMELEON.getTag()) : null;
+        return compoundNBT != null ? compoundNBT.getString(DWMNBTTags.CHAMELEON) : null;
     }
 
-    public AbstractChameleonData getChameleonData() {
+    public BaseChameleonData getChameleonData() {
         if (getChameleon() == null) {
             return null;
         }
-        return ChameleonRegistry.TARDIS_SKINS.get(getChameleon());
+        return DWMMain.CHAMELEON_REGISTRY.TARDIS_SKINS.get(getChameleon());
     }
 
     public void setInteriorPos(BlockPos pos) {
         createCompoundNBT();
-        compoundNBT.putIntArray(DWMNBTTags.INTERIOR_POS.getTag(), new int[] {pos.getX(), pos.getY(), pos.getZ()});
+        compoundNBT.putIntArray(DWMNBTTags.INTERIOR_POS, new int[] {pos.getX(), pos.getY(), pos.getZ()});
         markDirty();
         updateClient();
     }
 
     public BlockPos getInteriorPos() {
-        if (compoundNBT != null && compoundNBT.getIntArray(DWMNBTTags.INTERIOR_POS.getTag()) != null) {
-            int[] pos = compoundNBT.getIntArray(DWMNBTTags.INTERIOR_POS.getTag());
+        if (compoundNBT != null && compoundNBT.getIntArray(DWMNBTTags.INTERIOR_POS) != null) {
+            int[] pos = compoundNBT.getIntArray(DWMNBTTags.INTERIOR_POS);
             if (pos.length > 0)
                 return new BlockPos(pos[0], pos[1], pos[2]);
         }
         return null;
     }
 
+    private void createUuid() {
+        createCompoundNBT();
+        compoundNBT.putUniqueId(DWMNBTTags.UUID, UUID.randomUUID());
+        markDirty();
+        updateClient();
+    }
+
+    public UUID getUUID() {
+        return compoundNBT.getUniqueId(DWMNBTTags.UUID);
+    }
+
     @Override
     public CompoundNBT write(CompoundNBT compound) {
         super.write(compound);
         createCompoundNBT();
-        compound.put(DWMNBTTags.TARDIS_DATA.getTag(), compoundNBT);
+        compound.put(DWMNBTTags.TARDIS_DATA, compoundNBT);
         return compound;
     }
 
     @Override
     public void read(CompoundNBT compound) {
         super.read(compound);
-        compoundNBT = (CompoundNBT) compound.get(DWMNBTTags.TARDIS_DATA.getTag());
+        compoundNBT = (CompoundNBT) compound.get(DWMNBTTags.TARDIS_DATA);
     }
 
     @Override

@@ -1,7 +1,5 @@
 package com.softetch.dwm;
 
-import com.softetch.dwm.client.tardis.ChameleonRegistry;
-import com.softetch.dwm.client.tardis.chameleon.AbstractChameleonData;
 import com.softetch.dwm.common.block.*;
 import com.softetch.dwm.common.item.DWMSpawnerItem;
 import com.softetch.dwm.common.item.TardisKeyItem;
@@ -21,7 +19,6 @@ import net.minecraftforge.registries.ObjectHolder;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * This class has the register event handler for all custom items
@@ -46,9 +43,9 @@ public class DWMItems {
      */
     @SubscribeEvent(priority = EventPriority.HIGH)
     public static void registerBlocks(RegistryEvent.Register<Block> event){
-        for (AbstractChameleonData tardis : ChameleonRegistry.TARDIS_SKINS.values()) {
-            tardises.add(new TardisExteriorBlock(tardis.getName()).setRegistryName(DWMMain.MOD_ID, "tardis_" + tardis.getName()));
-        }
+        DWMMain.CHAMELEON_REGISTRY.TARDIS_SKINS.values().forEach(tardis ->
+                event.getRegistry().register(addBlock(new TardisExteriorBlock(tardis.getName()), "tardis_" + tardis.getName(), ItemGroup.TRANSPORTATION))
+        );
         event.getRegistry().registerAll(
                 // Regular Roundels
                 addBlock(new RoundelBlock(), "white_roundel", DWMItemGroups.ROUNDELS),
@@ -330,7 +327,6 @@ public class DWMItems {
 
                 addBlock(new DWMOreBlock(),"plastic_ore", ItemGroup.BUILDING_BLOCKS)
         );
-        event.getRegistry().registerAll(tardises.toArray(new Block[tardises.size()]));
     }
 
     private static Block addBlock(Block block, String registryName, ItemGroup itemGroup) {
@@ -380,12 +376,9 @@ public class DWMItems {
                 new Item(new Item.Properties()).setRegistryName(DWMMain.MOD_ID, "laser"),
                 new DWMSpawnerItem(DWMEntities.ADIPOSE)
         );
-        for (Map.Entry<Block, ItemGroup> block : blocks.entrySet()) {
-            event.getRegistry().register(new BlockItem(block.getKey(), new Item.Properties().group(block.getValue())).setRegistryName(block.getKey().getRegistryName()));
-        }
-        for (Block tardis : tardises) {
-            event.getRegistry().register(new BlockItem(tardis, new Item.Properties().group(ItemGroup.TRANSPORTATION).maxStackSize(1)).setRegistryName(tardis.getRegistryName()));
-        }
+        blocks.entrySet().parallelStream().forEach(block ->
+                event.getRegistry().register(new BlockItem(block.getKey(), new Item.Properties().group(block.getValue())).setRegistryName(block.getKey().getRegistryName()))
+        );
     }
 
 }

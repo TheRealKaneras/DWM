@@ -3,23 +3,19 @@ package com.softetch.dwm;
 /**
  * Enum to contain all the NBT Tags used in the project
  */
-public enum DWMNBTTags {
-    SCALE_2D("scale_2d"),
-    TARDIS_DATA("tardis_data"),
-    CHAMELEON("chameleon"),
-    DOOR_STATE("door_state"),
-    DOOR_PROGRESSION("door_progression"),
-    TARDIS_OWNER("tardis_owner"),
-    LOCKED("locked"),
-    INTERIOR_POS("interior_pos");
+public class DWMNBTTags {
+    public static final String SCALE_2D = createTag("scale_2d");
+    public static final String TARDIS_DATA = createTag("tardis_data");
+    public static final String CHAMELEON = createTag("chameleon");
+    public static final String DOOR_STATE = createTag("door_state");
+    public static final String DOOR_PROGRESSION = createTag("door_progression");
+    public static final String TARDIS_OWNER = createTag("tardis_owner");
+    public static final String LOCKED = createTag("locked");
+    public static final String INTERIOR_POS = createTag("interior_pos");
+    public static final String UUID = createTag("uuid");
 
-    private final String tag;
-
-    DWMNBTTags(String tag) {
-        this.tag = DWMMain.MOD_ID + "_" + tag;
+    private static String createTag(String key) {
+        return DWMMain.MOD_ID + "_" + key;
     }
 
-    public String getTag() {
-        return tag;
-    }
 }

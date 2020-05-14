@@ -1,6 +1,6 @@
 package com.softetch.dwm.client.event;
 
-import com.softetch.dwm.DWMNBTTags;
+import com.softetch.dwm.common.entity.EntityUtils;
 import net.minecraft.entity.LivingEntity;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -21,10 +21,10 @@ public class DWMRenderEvent {
     @OnlyIn(Dist.CLIENT)
     public void onRenderLivingPre(RenderLivingEvent.Pre event) {
         LivingEntity entity = event.getEntity();
-        if (entity.getPersistentData().contains(DWMNBTTags.SCALE_2D.getTag())) {
-            event.getMatrixStack().push();
-            event.getMatrixStack().scale(entity.getPersistentData().getFloat(DWMNBTTags.SCALE_2D.getTag()), 1.0f, 1.0f);
-        }
+        if (EntityUtils.getEntityFlatness(entity) == 1.0f)
+            return;
+        event.getMatrixStack().push();
+        event.getMatrixStack().scale(EntityUtils.getEntityFlatness(entity), 1.0f, 1.0f);
     }
 
     /**
@@ -35,8 +35,8 @@ public class DWMRenderEvent {
     @OnlyIn(Dist.CLIENT)
     public void onRenderLivingPost(RenderLivingEvent.Post event) {
         LivingEntity entity = event.getEntity();
-        if (entity.getPersistentData().contains(DWMNBTTags.SCALE_2D.getTag())) {
-            event.getMatrixStack().pop();
-        }
+        if (EntityUtils.getEntityFlatness(entity) == 1.0f)
+            return;
+        event.getMatrixStack().pop();
     }
 }

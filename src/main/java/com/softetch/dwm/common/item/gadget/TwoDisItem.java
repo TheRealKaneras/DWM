@@ -1,6 +1,6 @@
 package com.softetch.dwm.common.item.gadget;
 
-import com.softetch.dwm.DWMNBTTags;
+import com.softetch.dwm.common.entity.EntityUtils;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -31,15 +31,12 @@ public class TwoDisItem extends Item {
      */
     @Override
     public boolean itemInteractionForEntity(ItemStack stack, PlayerEntity player, LivingEntity target, Hand hand) {
-        if (target.getPersistentData().contains(DWMNBTTags.SCALE_2D.getTag())) {
-            if (target.getPersistentData().getFloat(DWMNBTTags.SCALE_2D.getTag()) <= 0.05f) {
-                target.getPersistentData().putFloat(DWMNBTTags.SCALE_2D.getTag(), 1.0f);
-            } else {
-                target.getPersistentData().putFloat(DWMNBTTags.SCALE_2D.getTag(), target.getPersistentData().getFloat(DWMNBTTags.SCALE_2D.getTag()) - 0.05f);
-            }
+        if (EntityUtils.getEntityFlatness(target) <= 0.05f) {
+            EntityUtils.setEntityFlatness(target, 1.0f);
         } else {
-            target.getPersistentData().putFloat(DWMNBTTags.SCALE_2D.getTag(), 0.95f);
+            EntityUtils.setEntityFlatness(target, EntityUtils.getEntityFlatness(target) - 0.05f);
         }
         return true;
     }
+
 }
