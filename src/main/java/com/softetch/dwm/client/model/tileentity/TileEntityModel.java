@@ -6,7 +6,7 @@ import net.minecraft.client.renderer.model.Model;
 public abstract class TileEntityModel extends Model {
 
     public TileEntityModel() {
-        super(RenderType::getEntityCutoutNoCull);
+        super(RenderType::getEntityCutout);
     }
 
 }

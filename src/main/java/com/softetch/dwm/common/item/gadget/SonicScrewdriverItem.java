@@ -1,8 +1,11 @@
 package com.softetch.dwm.common.item.gadget;
 
 import com.google.common.collect.Maps;
+import com.softetch.dwm.DWMMain;
 import com.softetch.dwm.common.sound.DWMSoundEvents;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.OreBlock;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.LivingEntity;
@@ -10,7 +13,6 @@ import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.monster.SlimeEntity;
 import net.minecraft.entity.passive.ChickenEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.fluid.Fluids;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.*;
@@ -45,46 +47,16 @@ public class SonicScrewdriverItem extends Item {
      * @param blockPos - the block pos of the block that has been interacted with
      */
     private void handleBlockInteraction(World world, PlayerEntity playerEntity, BlockState blockState, BlockPos blockPos) {
-        // Open/close iron door
-        if (blockState.getBlock() == Blocks.IRON_DOOR) {
-            ((DoorBlock) blockState.getBlock()).toggleDoor(world, blockPos, !blockState.get(DoorBlock.OPEN));
-        }
-        // Open/close iron trapdoor
-        if (blockState.getBlock() == Blocks.IRON_TRAPDOOR) {
-            BlockState newBlockState = blockState.cycle(TrapDoorBlock.OPEN);
-            world.setBlockState(blockPos, newBlockState, 2);
-            if (newBlockState.get(TrapDoorBlock.WATERLOGGED)) {
-                world.getPendingFluidTicks().scheduleTick(blockPos, Fluids.WATER, Fluids.WATER.getTickRate(world));
-            }
-            SoundEvent soundEvent = newBlockState.get(TrapDoorBlock.OPEN) ? SoundEvents.BLOCK_IRON_TRAPDOOR_OPEN : SoundEvents.BLOCK_IRON_TRAPDOOR_CLOSE;
-            world.playSound(blockPos.getX(), blockPos.getY(), blockPos.getZ(), soundEvent, SoundCategory.BLOCKS, 1.0f, 1.0f,false);
-        }
-        // Ignite TNT
-        if (blockState.getBlock() == Blocks.TNT) {
-            blockState.getBlock().catchFire(blockState, world, blockPos, Direction.UP, playerEntity);
-            world.destroyBlock(blockPos, false);
-        }
-        // Toggle redstone lamp being lit
-        if (blockState.getBlock() == Blocks.REDSTONE_LAMP) {
-            BlockState newBlockState = blockState.cycle(RedstoneLampBlock.LIT);
-            world.setBlockState(blockPos, newBlockState, 2);
-        }
-        // Smelt ores
         if (blockState.getBlock() instanceof OreBlock) {
             Item item = getSmeltingResult(world, blockState.getBlock());
             if (item != null) {
                 InventoryHelper.spawnItemStack(world, blockPos.getX(), blockPos.getY(), blockPos.getZ(), new ItemStack(item));
                 world.destroyBlock(blockPos, false);
             }
+        } else {
+            DWMMain.SONIC_ACTIONS.tryPerformAction(world, blockPos, blockState, playerEntity);
         }
-        // Ignite netherrack
-        if (blockState.getBlock() == Blocks.NETHERRACK) {
-            blockState.getBlock().catchFire(blockState, world, blockPos, Direction.UP, playerEntity);
-        }
-        // Destroy snow
-        if (blockState.getBlock() == Blocks.SNOW || blockState.getBlock() == Blocks.SNOW_BLOCK) {
-            world.destroyBlock(blockPos, true);
-        }
+
     }
 
     /**

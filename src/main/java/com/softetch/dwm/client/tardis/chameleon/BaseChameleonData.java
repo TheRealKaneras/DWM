@@ -8,15 +8,23 @@ import net.minecraft.block.Block;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.shapes.VoxelShape;
 
-public abstract class AbstractChameleonData {
+public class BaseChameleonData {
+    protected String name;
+    protected ChameleonType type;
     protected AbstractTardisExteriorModel model;
 
-    public AbstractChameleonData(AbstractTardisExteriorModel model) {
+    public BaseChameleonData(String name, ChameleonType type, AbstractTardisExteriorModel model) {
+        this.name = name;
+        this.type = type;
         this.model = model;
     }
 
-    public abstract String getName();
-    public abstract ChameleonType getType();
+    public String getName() {
+        return name;
+    }
+    public ChameleonType getType() {
+        return type;
+    }
 
     public AbstractTardisExteriorModel getModel() {
         return model;

@@ -1,6 +1,5 @@
 package com.softetch.dwm;
 
-import com.google.common.eventbus.Subscribe;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.eventbus.api.SubscribeEvent;

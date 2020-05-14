@@ -36,9 +36,7 @@ public class DWMEntities {
      */
     @SubscribeEvent
     public static void registerEntities(final RegistryEvent.Register<EntityType<?>> event) {
-        for (EntityType type : TYPES) {
-            event.getRegistry().register(type);
-        }
+        TYPES.forEach(type -> event.getRegistry().register(type));
     }
 
     /**
