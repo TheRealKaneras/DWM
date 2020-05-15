@@ -1,19 +1,22 @@
-package com.softetch.dwm.client.model.smdl;
+package com.softetch.dwm.client.model.smdl.model;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
-import net.minecraft.client.Minecraft;
+import com.softetch.dwm.client.model.smdl.animation.Animation;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.model.Model;
 import net.minecraft.client.renderer.model.ModelRenderer;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 public class SMDLModel extends Model {
     private int texture_width;
     private int texture_height;
     private Group[] groups;
+    private final List<Animation> animations = new ArrayList<>();
 
     private HashMap<String, ModelRenderer> modelRenderers;
 
@@ -46,7 +49,6 @@ public class SMDLModel extends Model {
         modelRenderers.put(group.getName(), renderer);
         if (group.getChildren() != null && group.getChildren().length > 0) {
             for (Group child : group.getChildren()) {
-//                renderer.addChild(createModelRenderer(child));
                 createModelRenderer(child, group);
             }
         }
@@ -72,7 +74,12 @@ public class SMDLModel extends Model {
         if (modelRenderers == null) {
             init();
         }
+        //TODO: Play animations
         Arrays.stream(groups).filter(Group::shouldRender).forEach(group -> modelRenderers.get(group.getName()).render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha));
+    }
+
+    public void playAnimation(Animation animation) {
+        animations.add(animation);
     }
 
     @Override

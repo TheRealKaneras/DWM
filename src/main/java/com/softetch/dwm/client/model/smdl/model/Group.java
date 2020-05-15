@@ -1,4 +1,4 @@
-package com.softetch.dwm.client.model.smdl;
+package com.softetch.dwm.client.model.smdl.model;
 
 import java.util.Arrays;
 

@@ -5,7 +5,6 @@ import com.mojang.blaze3d.vertex.IVertexBuilder;
 import com.softetch.dwm.DWMMain;
 import com.softetch.dwm.common.block.DWMTileEntityBlock;
 import net.minecraft.client.renderer.IRenderTypeBuffer;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.client.renderer.model.Model;
 import net.minecraft.client.renderer.tileentity.TileEntityRenderer;
@@ -38,7 +37,7 @@ public class DWMTileEntityRenderer<T extends TileEntity> extends TileEntityRende
         matrixStack.rotate(Vector3f.YP.rotationDegrees(180.0f));
         matrixStack.rotate(Vector3f.XP.rotationDegrees(180.0f));
         matrixStack.rotate(Vector3f.YP.rotationDegrees(22.5F * tileEntity.getBlockState().get(DWMTileEntityBlock.ROTATION)));
-        IVertexBuilder vertexBuilder = buffer.getBuffer(RenderType.getEntityTranslucent(getTexture()));
+        IVertexBuilder vertexBuilder = buffer.getBuffer(model.getRenderType(texture));
         model.render(matrixStack, vertexBuilder, combinedLight, combinedOverlay, 1.0f, 1.0f, 1.0f, 1.0f);
         matrixStack.pop();
     }
@@ -49,13 +48,5 @@ public class DWMTileEntityRenderer<T extends TileEntity> extends TileEntityRende
 
     public void setTexture(ResourceLocation texture) {
         this.texture = texture;
-    }
-
-    public Model getModel() {
-        return model;
-    }
-
-    public ResourceLocation getTexture() {
-        return texture;
     }
 }

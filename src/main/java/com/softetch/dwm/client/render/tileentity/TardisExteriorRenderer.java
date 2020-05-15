@@ -14,7 +14,7 @@ public class TardisExteriorRenderer extends DWMTileEntityRenderer<TardisExterior
     public TardisExteriorRenderer(TileEntityRendererDispatcher dispatcher) {
         super(dispatcher, null, DWMMain.CHAMELEON_REGISTRY.getDefaultSkin().getTexture());
         try {
-            this.setModel(SMDLModelLoader.loadModel(DWMMain.MOD_ID, "newbery_box_c"));
+            this.setModel(SMDLModelLoader.loadModel(DWMMain.MOD_ID, "newbery_box_c").getModel());
         } catch (IOException e) {
             e.printStackTrace();
         }
