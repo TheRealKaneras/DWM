@@ -3,6 +3,7 @@ package com.softetch.dwm.client.model.smdl.model;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 import com.softetch.dwm.client.model.smdl.animation.Animation;
+import com.softetch.dwm.client.model.smdl.animation.EntityAnimation;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.model.Model;
 import net.minecraft.client.renderer.model.ModelRenderer;
@@ -22,6 +23,14 @@ public class SMDLModel extends Model {
 
     public SMDLModel() {
         super(RenderType::getEntitySolid);
+    }
+
+    public void init() {
+        textureWidth = texture_width;
+        textureHeight = texture_height;
+        modelRenderers = new HashMap<>();
+
+        Arrays.stream(groups).forEach(this::initGroup);
     }
 
     private void initGroup(Group group) {
@@ -62,18 +71,9 @@ public class SMDLModel extends Model {
         renderer.setTextureOffset(texCoord[0], texCoord[1]).addBox(pos[0], pos[1], pos[2], size[0], size[1], size[2], cube.getInflate(), cube.shouldMirror());
     }
 
-    public void init() {
-        textureWidth = texture_width;
-        textureHeight = texture_height;
-        modelRenderers = new HashMap<>();
 
-        Arrays.stream(groups).forEach(this::initGroup);
-    }
 
     public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
-        if (modelRenderers == null) {
-            init();
-        }
         //TODO: Play animations
         Arrays.stream(groups).filter(Group::shouldRender).forEach(group -> modelRenderers.get(group.getName()).render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha));
     }

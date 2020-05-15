@@ -28,6 +28,7 @@ public class DWMTileEntities {
 
     @SubscribeEvent
     public static void onTileEntityRegistration(final RegistryEvent.Register<TileEntityType<?>> event) {
+        DWMMain.LOGGER.info("Registering DWM tile entities");
         event.getRegistry().registerAll(
             createTileEntity(TardisExteriorTile::new, new ResourceLocation(DWMMain.MOD_ID, "tardis"), DWMItems.tardises.toArray(new Block[DWMItems.tardises.size()]))
         );

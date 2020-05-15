@@ -233,7 +233,7 @@ public class TardisExteriorTile extends TileEntity implements ITickableTileEntit
     }
 
     private void updateClient() {
-        if (!world.isRemote) {
+        if (world != null && !world.isRemote) {
             BlockState blockState = getWorld().getBlockState(getPos());
             world.notifyBlockUpdate(getPos(), blockState, blockState, 3);
         }

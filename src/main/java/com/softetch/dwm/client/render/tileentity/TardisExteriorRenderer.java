@@ -8,16 +8,11 @@ import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
 
 import java.io.IOException;
 
-public class TardisExteriorRenderer extends DWMTileEntityRenderer<TardisExteriorTile> {
+public class TardisExteriorRenderer extends SMDLTileEntityRenderer<TardisExteriorTile> {
     private BaseChameleonData chameleonData;
 
     public TardisExteriorRenderer(TileEntityRendererDispatcher dispatcher) {
-        super(dispatcher, null, DWMMain.CHAMELEON_REGISTRY.getDefaultSkin().getTexture());
-        try {
-            this.setModel(SMDLModelLoader.loadModel(DWMMain.MOD_ID, "newbery_box_c").getModel());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        super(dispatcher, SMDLModelLoader.loadModelEnvironment(DWMMain.MOD_ID, "newbery_box_c"));
     }
 
 //    @Override

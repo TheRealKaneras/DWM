@@ -331,6 +331,9 @@ public class DWMItems {
 
     private static Block addBlock(Block block, String registryName, ItemGroup itemGroup) {
         block.setRegistryName(DWMMain.MOD_ID, registryName);
+        if (block instanceof TardisExteriorBlock) {
+            tardises.add(block);
+        }
         blocks.put(block, itemGroup);
         return block;
     }
@@ -376,7 +379,7 @@ public class DWMItems {
                 new Item(new Item.Properties()).setRegistryName(DWMMain.MOD_ID, "laser"),
                 new DWMSpawnerItem(DWMEntities.ADIPOSE)
         );
-        blocks.entrySet().parallelStream().forEach(block ->
+        blocks.entrySet().forEach(block ->
                 event.getRegistry().register(new BlockItem(block.getKey(), new Item.Properties().group(block.getValue())).setRegistryName(block.getKey().getRegistryName()))
         );
     }
