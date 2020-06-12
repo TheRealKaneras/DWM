@@ -53,16 +53,16 @@ public class TardisExteriorBlock extends DWMTileEntityBlock {
     @Override
     public void onBlockPlacedBy(World worldIn, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
         super.onBlockPlacedBy(worldIn, pos, state, placer, stack);
-//        if (!worldIn.isRemote) {
-//            TardisExteriorTile tileEntity = (TardisExteriorTile) worldIn.getTileEntity(pos);
-//            if (tileEntity != null) {
-//                tileEntity.setOwnerUUID(placer.getUniqueID().toString());
-//                tileEntity.setChameleon(exteriorName);
-//                tileEntity.setInteriorPos(new BlockPos(0,20,0));
-//                World interiorWorld = DimensionManager.getWorld(Minecraft.getInstance().getIntegratedServer(), DWMDimensions.TARDIS.getDimensionType(), false, true);
-//                SchematicLoader.generateSchematic(SchematicLoader.testInterior, interiorWorld, new BlockPos(0, 20, 0), 0L, false);
-//            }
-//        }
+        if (!worldIn.isRemote) {
+            TardisExteriorTile tileEntity = (TardisExteriorTile) worldIn.getTileEntity(pos);
+            if (tileEntity != null) {
+                tileEntity.setOwnerUUID(placer.getUniqueID().toString());
+                tileEntity.setChameleon(exteriorName);
+                tileEntity.setInteriorPos(new BlockPos(0,20,0));
+                World interiorWorld = DimensionManager.getWorld(Minecraft.getInstance().getIntegratedServer(), DWMDimensions.TARDIS.getDimensionType(), false, true);
+                SchematicLoader.generateSchematic(SchematicLoader.testInterior, interiorWorld, new BlockPos(0, 20, 0), 0L, false);
+            }
+        }
     }
 
     /**
