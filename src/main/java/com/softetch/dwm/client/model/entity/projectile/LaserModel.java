@@ -16,7 +16,7 @@ public class LaserModel extends Model {
 
 		bb_main = new ModelRenderer(this);
 		bb_main.setRotationPoint(0.0F, 24.0F, 0.0F);
-		bb_main.setTextureOffset(0, 0).addBox(-1.0f, 0.0f, 0.0f, 1, 1, 1);
+		bb_main.setTextureOffset(0, 0).addBox(-1.0f, 0.0f, 0.0f, 5, 1, 1);
 	}
 
 	@Override

@@ -44,7 +44,7 @@ public class DalekEntity extends MonsterEntity implements IRangedAttackMob {
     protected void registerGoals() {
         this.targetSelector.addGoal(0, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, true));
         this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, AnimalEntity.class, true));
-        this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.0D, 40, 20.0F));
+        this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.0D, 20, 20.0F));
         this.goalSelector.addGoal(2, new LookAtGoal(this, PlayerEntity.class, 10.0F));
         this.goalSelector.addGoal(3, new LookAtGoal(this, LivingEntity.class, 10.0F));
         this.goalSelector.addGoal(4, new LookRandomlyGoal(this));

@@ -16,7 +16,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.network.NetworkHooks;
 
 public class LaserEntity extends ThrowableEntity {
-    private static final float DAMAGE_AMOUNT = 3.0f;
+    private static final float DAMAGE_AMOUNT = 6.0f;
 
     public LaserEntity(EntityType<? extends ThrowableEntity> type, World worldIn) {
         super(type, worldIn);

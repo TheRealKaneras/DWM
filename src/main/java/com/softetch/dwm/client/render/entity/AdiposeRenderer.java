@@ -13,6 +13,7 @@ import javax.annotation.Nullable;
  * Holds all the render properties for adipose
  */
 public class AdiposeRenderer extends LivingRenderer<AdiposeEntity, AdiposeModel> {
+    private static final ResourceLocation TEXTURE = new ResourceLocation(DWMMain.MOD_ID, "textures/entity/adipose.png");
 
     /**
      * Set up the properties required to render the entity
@@ -29,7 +30,7 @@ public class AdiposeRenderer extends LivingRenderer<AdiposeEntity, AdiposeModel>
     @Nullable
     @Override
     public ResourceLocation getEntityTexture(AdiposeEntity entity) {
-        return new ResourceLocation(DWMMain.MOD_ID, "textures/entity/adipose.png");
+        return TEXTURE;
     }
 
 }

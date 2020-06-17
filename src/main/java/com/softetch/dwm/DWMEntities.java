@@ -1,6 +1,7 @@
 package com.softetch.dwm;
 
 import com.softetch.dwm.common.entity.AdiposeEntity;
+import com.softetch.dwm.common.entity.TellerEntity;
 import com.softetch.dwm.common.entity.dalek.GuardDalekEntity;
 import com.softetch.dwm.common.entity.dalek.InvasionDalekEntity;
 import com.softetch.dwm.common.entity.dalek.SkaroDalekEntity;
@@ -27,6 +28,7 @@ public class DWMEntities {
     public static final EntityType<GuardDalekEntity> GUARD_DALEK;
     public static final EntityType<AdiposeEntity> ADIPOSE;
     public static final EntityType<LaserEntity> LASER;
+    public static final EntityType<TellerEntity> TELLER;
 
     private DWMEntities() {}
 
@@ -63,6 +65,7 @@ public class DWMEntities {
         GUARD_DALEK = build("guard_dalek", EntityType.Builder.create(GuardDalekEntity::new, EntityClassification.MONSTER).size(0.9f, 1.8f));
         ADIPOSE = build("adipose", EntityType.Builder.create(AdiposeEntity::new, EntityClassification.CREATURE).size(0.3f, 0.4f));
         LASER = build("laser", EntityType.Builder.<LaserEntity>create(LaserEntity::new, EntityClassification.MISC).size(0.5f, 0.5f));
+        TELLER = build("teller", EntityType.Builder.create(TellerEntity::new, EntityClassification.CREATURE).size(0.6F, 1.8F));
     }
 
 }
