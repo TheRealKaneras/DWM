@@ -56,7 +56,7 @@ public class DWMEntities {
         return entityType;
     }
 
-    /**
+    /**w
      * Build all the entity types
      */
     static {

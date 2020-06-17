@@ -32,14 +32,12 @@ public class DWMTileEntityRenderer<T extends TileEntity> extends TileEntityRende
             DWMMain.LOGGER.error("Texture is null. Will use missing texture.");
             texture = new ResourceLocation("MISSINGNO");
         }
-        matrixStack.push();
         matrixStack.translate(0.5d, 1.5d, 0.5d);
         matrixStack.rotate(Vector3f.YP.rotationDegrees(180.0f));
         matrixStack.rotate(Vector3f.XP.rotationDegrees(180.0f));
         matrixStack.rotate(Vector3f.YP.rotationDegrees(22.5F * tileEntity.getBlockState().get(DWMTileEntityBlock.ROTATION)));
         IVertexBuilder vertexBuilder = buffer.getBuffer(model.getRenderType(texture));
         model.render(matrixStack, vertexBuilder, combinedLight, combinedOverlay, 1.0f, 1.0f, 1.0f, 1.0f);
-        matrixStack.pop();
     }
 
     public void setModel(Model model) {

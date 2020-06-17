@@ -35,6 +35,7 @@ public class DalekEntity extends MonsterEntity implements IRangedAttackMob {
      */
     public DalekEntity(EntityType<? extends DalekEntity> type, World world) {
         super(type, world);
+        this.setCustomNameVisible(this.hasCustomName());
     }
 
     /**
