@@ -1,6 +1,6 @@
-package com.softetch.dwm.common.world.dimension;
+package com.softetch.dwm.common.world.gen.dimension;
 
-import com.softetch.dwm.common.world.dimension.gen.TardisChunkGenerator;
+import com.softetch.dwm.common.world.gen.dimension.gen.TardisChunkGenerator;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.Vec3d;

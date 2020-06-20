@@ -1,8 +1,8 @@
 package com.softetch.dwm.common.block;
 
 import com.softetch.dwm.common.tileentity.TardisExteriorTile;
-import com.softetch.dwm.common.world.dimension.DWMDimensions;
-import com.softetch.dwm.common.world.schematic.SchematicLoader;
+import com.softetch.dwm.common.world.gen.dimension.DWMDimensions;
+import com.softetch.dwm.common.world.gen.schematic.SchematicLoader;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
@@ -10,7 +10,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.pathfinding.PathType;
 import net.minecraft.tileentity.TileEntity;
@@ -19,7 +18,6 @@ import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
-import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.common.DimensionManager;
 
 import javax.annotation.Nullable;

@@ -1,4 +1,4 @@
-package com.softetch.dwm.common.world.dimension.gen;
+package com.softetch.dwm.common.world.gen.dimension.gen;
 
 import net.minecraft.world.IWorld;
 import net.minecraft.world.biome.provider.BiomeProvider;

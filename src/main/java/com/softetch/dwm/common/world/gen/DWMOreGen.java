@@ -1,4 +1,4 @@
-package com.softetch.dwm.common.world;
+package com.softetch.dwm.common.world.gen;
 
 import com.softetch.dwm.DWMItems;
 import net.minecraft.world.gen.GenerationStage;

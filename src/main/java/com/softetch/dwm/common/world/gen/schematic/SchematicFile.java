@@ -1,4 +1,4 @@
-package com.softetch.dwm.common.world.schematic;
+package com.softetch.dwm.common.world.gen.schematic;
 
 import com.google.gson.reflect.TypeToken;
 import com.softetch.dwm.DWMMain;

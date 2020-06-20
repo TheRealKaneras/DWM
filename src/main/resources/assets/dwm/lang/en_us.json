@@ -310,6 +310,7 @@
   "block.dwm.tardis_newbery_box_c": "TARDIS: Newbery Box (1980)",
   "block.dwm.tardis_chest": "TARDIS: Chest",
   "block.dwm.tardis_ender_chest": "TARDIS: Ender Chest",
+  "block.dwm.tardis_wyn_jones_box": "TARDIS: Wyn Jones Box (2018)",
 
   "entity.dwm.time_war_dalek": "Time War Dalek",
   "entity.dwm.skaro_dalek": "Skaro Dalek",
@@ -330,5 +331,7 @@
   "tardis.newbery_box_b.name": "Newbery Box (1976)",
   "tardis.newbery_box_c.name": "Newbery Box (1980)",
   "tardis.chest.name": "Chest",
-  "tardis.ender_chest.name": "Ender Chest"
+  "tardis.ender_chest.name": "Ender Chest",
+  "tardis.thomas_box.name": "2005 TARDIS"
+  "tardis.wyn_jones_box.name": "Wyn Jones Box (2018)"
 }

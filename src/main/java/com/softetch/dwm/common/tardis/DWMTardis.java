@@ -1,9 +1,9 @@
 package com.softetch.dwm.common.tardis;
 
 import com.softetch.dwm.common.tileentity.TardisExteriorTile;
-import com.softetch.dwm.common.world.dimension.DWMDimensions;
-import com.softetch.dwm.common.world.schematic.SchematicFile;
-import com.softetch.dwm.common.world.schematic.SchematicLoader;
+import com.softetch.dwm.common.world.gen.dimension.DWMDimensions;
+import com.softetch.dwm.common.world.gen.schematic.SchematicFile;
+import com.softetch.dwm.common.world.gen.schematic.SchematicLoader;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;

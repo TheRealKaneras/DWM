@@ -1,4 +1,4 @@
-package com.softetch.dwm.common.world.dimension;
+package com.softetch.dwm.common.world.gen.dimension;
 
 import com.softetch.dwm.DWMMain;
 import net.minecraft.util.ResourceLocation;

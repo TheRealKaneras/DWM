@@ -22,6 +22,7 @@ public class ChameleonRegistry {
         registerSkin("newbery_box_c", ChameleonType.NEWBERY_BOX, new NewberyBoxCModel());
         registerSkin(new ChestChameleon());
         registerSkin(new EnderChestChameleon());
+        registerSkin("wyn_jones_box", ChameleonType.WYN_JONES_BOX, new WynJonesBoxModel());
     }
 
     /**

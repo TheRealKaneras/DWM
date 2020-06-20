@@ -1,4 +1,4 @@
-package com.softetch.dwm.common.world.schematic;
+package com.softetch.dwm.common.world.gen.schematic;
 
 import com.softetch.dwm.DWMMain;
 import net.minecraft.block.BlockState;

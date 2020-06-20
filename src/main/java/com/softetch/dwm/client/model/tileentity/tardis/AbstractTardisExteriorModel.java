@@ -4,18 +4,15 @@ import com.softetch.dwm.common.tileentity.TardisExteriorTile;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.model.Model;
 import net.minecraft.client.renderer.model.ModelRenderer;
-import net.minecraft.util.ResourceLocation;
-
-import java.util.function.Function;
 
 public abstract class AbstractTardisExteriorModel extends Model {
     public AbstractTardisExteriorModel() {
-        super(RenderType::getEntityCutoutNoCull);
+        super(RenderType::getEntityTranslucentCull);
     }
 
     public void doorRotation(TardisExteriorTile.DoorState doorState, float progression) {
         if (getLeftDoor() != null && getRightDoor() != null) {
-            float angle = progression * 1.35f;
+            float angle = progression * getMaximumAngle();
             if (doorState == TardisExteriorTile.DoorState.SINGLE) {
                 getLeftDoor().rotateAngleY = angle;
             } else if (doorState == TardisExteriorTile.DoorState.BOTH) {
@@ -39,5 +36,11 @@ public abstract class AbstractTardisExteriorModel extends Model {
     protected ModelRenderer getRightDoor() {
         return null;
     }
+
+    /**
+     * Get the maximum angle to rotate the doors by
+     * @return The maximum door rotation in radians
+     */
+    protected float getMaximumAngle() { return 1.35f; }
 
 }
