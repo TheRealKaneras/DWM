@@ -1,6 +1,5 @@
 package com.softetch.dwm.client.model.tileentity.tardis;
 
-
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 import net.minecraft.client.renderer.model.ModelRenderer;
@@ -261,10 +260,10 @@ public class WynJonesBoxModel extends AbstractTardisExteriorModel {
 
 		leftDoor = new ModelRenderer(this);
 		leftDoor.setRotationPoint(8.0F, 21.0F, -9.0F);
-		leftDoor.setTextureOffset(0, 24).addBox(-8.0F, -26.6F, 0.5F, 7.0F, 25.0F, 1.0F, 0.0F, false);
+		leftDoor.setTextureOffset(0, 24).addBox(-7.0F, -26.6F, 0.5F, 6.0F, 25.0F, 1.0F, 0.0F, false);
 		leftDoor.setTextureOffset(15, 66).addBox(-6.5F, -14.6F, 0.2F, 5.0F, 1.0F, 1.0F, 0.0F, false);
 		leftDoor.setTextureOffset(15, 71).addBox(-6.5F, -8.1F, 0.2F, 5.0F, 1.0F, 1.0F, 0.0F, false);
-		leftDoor.setTextureOffset(17, 76).addBox(-8.5F, -1.6F, 0.2F, 9.0F, 3.0F, 1.0F, 0.0F, false);
+		leftDoor.setTextureOffset(17, 76).addBox(-7.5F, -1.6F, 0.2F, 8.0F, 3.0F, 1.0F, 0.0F, false);
 		leftDoor.setTextureOffset(24, 52).addBox(-1.5F, -27.6F, 0.2F, 2.0F, 26.0F, 1.0F, 0.0F, false);
 		leftDoor.setTextureOffset(66, 8).addBox(-6.5F, -21.1F, 0.2F, 5.0F, 1.0F, 1.0F, 0.0F, false);
 		leftDoor.setTextureOffset(19, 50).addBox(-7.5F, -27.6F, 0.2F, 1.0F, 26.0F, 1.0F, 0.0F, false);
@@ -304,8 +303,9 @@ public class WynJonesBoxModel extends AbstractTardisExteriorModel {
 
 		rightDoor = new ModelRenderer(this);
 		rightDoor.setRotationPoint(-8.0F, 21.0F, -9.0F);
+		setRotationAngle(rightDoor, 0.0F, -0.9599F, 0.0F);
 		rightDoor.setTextureOffset(0, 24).addBox(0.0F, -26.6F, 0.5F, 7.0F, 6.0F, 1.0F, 0.0F, false);
-		rightDoor.setTextureOffset(96, 106).addBox(0.0F, -20.6F, 0.7F, 7.0F, 6.0F, 1.0F, 0.0F, false);
+		rightDoor.setTextureOffset(96, 106).addBox(1.553F, -20.6F, 0.782F, 6.0F, 6.0F, 1.0F, 0.0F, false);
 		rightDoor.setTextureOffset(0, 42).addBox(0.0F, -13.6F, 0.5F, 7.0F, 12.0F, 1.0F, 0.0F, false);
 		rightDoor.setTextureOffset(15, 66).addBox(1.5F, -14.6F, 0.2F, 5.0F, 1.0F, 1.0F, 0.0F, false);
 		rightDoor.setTextureOffset(15, 71).addBox(1.5F, -8.1F, 0.2F, 5.0F, 1.0F, 1.0F, 0.0F, false);
@@ -339,12 +339,12 @@ public class WynJonesBoxModel extends AbstractTardisExteriorModel {
 		bone15.setRotationPoint(5.0F, -22.8F, 1.3F);
 		rightDoor.addChild(bone15);
 		setRotationAngle(bone15, -0.7854F, 0.0F, 0.0F);
-		bone15.setTextureOffset(8, 104).addBox(-4.0F, -1.1364F, -1.4364F, 6.0F, 1.0F, 1.0F, 0.0F, false);
-		bone15.setTextureOffset(0, 95).addBox(-4.0F, -3.1163F, -3.4163F, 6.0F, 1.0F, 1.0F, 0.0F, false);
+		bone15.setTextureOffset(8, 104).addBox(-3.6518F, -1.093F, -1.4798F, 6.0F, 1.0F, 1.0F, 0.0F, false);
+		bone15.setTextureOffset(0, 95).addBox(-3.6518F, -3.0729F, -3.4597F, 6.0F, 1.0F, 1.0F, 0.0F, false);
 		bone15.setTextureOffset(62, 60).addBox(-4.0F, 1.6213F, 1.3213F, 6.0F, 1.0F, 1.0F, 0.0F, false);
 		bone15.setTextureOffset(62, 56).addBox(-4.0F, 6.1468F, 5.8468F, 6.0F, 1.0F, 1.0F, 0.0F, false);
 		bone15.setTextureOffset(56, 52).addBox(-4.0F, 10.743F, 10.443F, 6.0F, 1.0F, 1.0F, 0.0F, false);
-		bone15.setTextureOffset(0, 95).addBox(-4.0F, 0.8435F, 0.5435F, 6.0F, 1.0F, 1.0F, 0.0F, false);
+		bone15.setTextureOffset(0, 95).addBox(-3.6518F, 0.8869F, 0.5001F, 6.0F, 1.0F, 1.0F, 0.0F, false);
 		bone15.setTextureOffset(65, 48).addBox(-4.0F, 5.369F, 5.069F, 6.0F, 1.0F, 1.0F, 0.0F, false);
 		bone15.setTextureOffset(62, 58).addBox(-4.0F, 10.0359F, 9.7359F, 6.0F, 1.0F, 1.0F, 0.0F, false);
 		bone15.setTextureOffset(56, 54).addBox(-4.0F, 14.6321F, 14.3321F, 6.0F, 1.0F, 1.0F, 0.0F, false);
@@ -447,18 +447,6 @@ public class WynJonesBoxModel extends AbstractTardisExteriorModel {
 	}
 
 	@Override
-	public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha){
-		BaseRoof.render(matrixStack, buffer, packedLight, packedOverlay);
-		bb_main.render(matrixStack, buffer, packedLight, packedOverlay);
-		bb_main2.render(matrixStack, buffer, packedLight, packedOverlay);
-		bb_main3.render(matrixStack, buffer, packedLight, packedOverlay);
-		bb_main4.render(matrixStack, buffer, packedLight, packedOverlay);
-		leftDoor.render(matrixStack, buffer, packedLight, packedOverlay);
-		rightDoor.render(matrixStack, buffer, packedLight, packedOverlay);
-		Posts.render(matrixStack, buffer, packedLight, packedOverlay);
-	}
-
-	@Override
 	public ModelRenderer getLeftDoor() {
 		return leftDoor;
 	}
@@ -471,6 +459,18 @@ public class WynJonesBoxModel extends AbstractTardisExteriorModel {
 	@Override
 	protected float getMaximumAngle() {
 		return 0.95f;
+	}
+
+	@Override
+	public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha){
+		BaseRoof.render(matrixStack, buffer, packedLight, packedOverlay);
+		bb_main.render(matrixStack, buffer, packedLight, packedOverlay);
+		bb_main2.render(matrixStack, buffer, packedLight, packedOverlay);
+		bb_main3.render(matrixStack, buffer, packedLight, packedOverlay);
+		bb_main4.render(matrixStack, buffer, packedLight, packedOverlay);
+		leftDoor.render(matrixStack, buffer, packedLight, packedOverlay);
+		rightDoor.render(matrixStack, buffer, packedLight, packedOverlay);
+		Posts.render(matrixStack, buffer, packedLight, packedOverlay);
 	}
 
 	public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {

@@ -8,6 +8,7 @@ import com.softetch.dwm.common.event.DWMEntityEvent;
 import com.softetch.dwm.common.event.DWMItemUseEvent;
 import com.softetch.dwm.common.item.gadget.SonicActions;
 import com.softetch.dwm.common.world.gen.DWMOreGen;
+import com.softetch.dwm.common.world.gen.biome.DWMBiomes;
 import com.softetch.dwm.common.world.gen.schematic.SchematicLoader;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
@@ -33,6 +34,8 @@ public class DWMMain {
     public DWMMain() {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         MinecraftForge.EVENT_BUS.register(this);
+
+        DWMBiomes.BIOMES.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
 
     /**

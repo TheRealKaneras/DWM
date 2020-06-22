@@ -8,7 +8,10 @@ import com.softetch.dwm.common.item.gadget.SonicScrewdriverItem;
 import com.softetch.dwm.common.item.gadget.TwoDisItem;
 import com.softetch.dwm.common.item.gadget.VortexManipulatorItem;
 import net.minecraft.block.Block;
+import net.minecraft.block.LogBlock;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.*;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
@@ -47,6 +50,7 @@ public class DWMItems {
                 event.getRegistry().register(addBlock(new TardisExteriorBlock(tardis.getName()), "tardis_" + tardis.getName(), ItemGroup.TRANSPORTATION))
         );
         event.getRegistry().registerAll(
+                addBlock(new LogBlock(MaterialColor.SAND, Block.Properties.create(Material.WOOD, MaterialColor.QUARTZ).hardnessAndResistance(2.0F).sound(SoundType.WOOD)), "ash_log", ItemGroup.BUILDING_BLOCKS),
                 // Regular Roundels
                 addBlock(new RoundelBlock(), "white_roundel", DWMItemGroups.ROUNDELS),
                 addBlock(new RoundelBlock(), "orange_roundel", DWMItemGroups.ROUNDELS),

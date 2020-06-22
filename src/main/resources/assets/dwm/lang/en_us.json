@@ -33,6 +33,8 @@
 
   "item.dwm.fez": "Fez",
 
+  "block.dwm.ash_log": "Ash Log",
+
   "block.dwm.white_roundel": "White Roundel",
   "block.dwm.orange_roundel": "Orange Roundel",
   "block.dwm.magenta_roundel": "Magenta Roundel",
@@ -332,6 +334,6 @@
   "tardis.newbery_box_c.name": "Newbery Box (1980)",
   "tardis.chest.name": "Chest",
   "tardis.ender_chest.name": "Ender Chest",
-  "tardis.thomas_box.name": "2005 TARDIS"
+  "tardis.thomas_box.name": "2005 TARDIS",
   "tardis.wyn_jones_box.name": "Wyn Jones Box (2018)"
 }

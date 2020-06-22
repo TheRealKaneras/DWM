@@ -1,13 +1,10 @@
 package com.softetch.dwm.common.block;
 
 import com.softetch.dwm.common.tileentity.TardisExteriorTile;
-import com.softetch.dwm.common.world.gen.dimension.DWMDimensions;
-import com.softetch.dwm.common.world.gen.schematic.SchematicLoader;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
@@ -18,7 +15,6 @@ import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
-import net.minecraftforge.common.DimensionManager;
 
 import javax.annotation.Nullable;
 
@@ -56,9 +52,9 @@ public class TardisExteriorBlock extends DWMTileEntityBlock {
             if (tileEntity != null) {
                 tileEntity.setOwnerUUID(placer.getUniqueID().toString());
                 tileEntity.setChameleon(exteriorName);
-                tileEntity.setInteriorPos(new BlockPos(0,20,0));
-                World interiorWorld = DimensionManager.getWorld(Minecraft.getInstance().getIntegratedServer(), DWMDimensions.TARDIS.getDimensionType(), false, true);
-                SchematicLoader.generateSchematic(SchematicLoader.testInterior, interiorWorld, new BlockPos(0, 20, 0), 0L, false);
+//                tileEntity.setInteriorPos(new BlockPos(0,20,0));
+//                World interiorWorld = DimensionManager.getWorld(Minecraft.getInstance().getIntegratedServer(), DWMDimensions.TARDIS.getDimensionType(), false, true);
+//                SchematicLoader.generateSchematic(SchematicLoader.testInterior, interiorWorld, new BlockPos(0, 20, 0), 0L, false);
             }
         }
     }
