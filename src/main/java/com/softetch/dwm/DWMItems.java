@@ -51,6 +51,7 @@ public class DWMItems {
         );
         event.getRegistry().registerAll(
                 addBlock(new LogBlock(MaterialColor.SAND, Block.Properties.create(Material.WOOD, MaterialColor.QUARTZ).hardnessAndResistance(2.0F).sound(SoundType.WOOD)), "ash_log", ItemGroup.BUILDING_BLOCKS),
+                addBlock(new Block(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)), "ash_planks", ItemGroup.BUILDING_BLOCKS),
                 // Regular Roundels
                 addBlock(new RoundelBlock(), "white_roundel", DWMItemGroups.ROUNDELS),
                 addBlock(new RoundelBlock(), "orange_roundel", DWMItemGroups.ROUNDELS),
