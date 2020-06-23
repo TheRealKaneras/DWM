@@ -19,6 +19,7 @@ public class BasicTreeFeatureConfig extends TreeFeatureConfig {
 
     protected BasicTreeFeatureConfig(BlockStateProvider trunkProviderIn, BlockStateProvider leavesProviderIn, FoliagePlacer foliagePlacerIn, List<TreeDecorator> decoratorsIn, int baseHeightIn, int heightRandAIn, int heightRandBIn, int trunkHeightIn, int trunkHeightRandomIn, int trunkTopOffsetIn, int trunkTopOffsetRandomIn, int foliageHeightIn, int foliageHeightRandomIn, int maxWaterDepthIn, boolean ignoreVinesIn) {
         super(trunkProviderIn, leavesProviderIn, foliagePlacerIn, decoratorsIn, baseHeightIn, heightRandAIn, heightRandBIn, trunkHeightIn, trunkHeightRandomIn, trunkTopOffsetIn, trunkTopOffsetRandomIn, foliageHeightIn, foliageHeightRandomIn, maxWaterDepthIn, ignoreVinesIn);
+
     }
 
     protected BasicTreeFeatureConfig setTreeSapling(IPlantable value) {
