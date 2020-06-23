@@ -1,6 +1,7 @@
 package com.softetch.dwm;
 
 import com.softetch.dwm.common.block.*;
+import com.softetch.dwm.common.block.trees.AshTree;
 import com.softetch.dwm.common.item.DWMSpawnerItem;
 import com.softetch.dwm.common.item.TardisKeyItem;
 import com.softetch.dwm.common.item.clothing.FezItem;
@@ -8,7 +9,6 @@ import com.softetch.dwm.common.item.gadget.SonicScrewdriverItem;
 import com.softetch.dwm.common.item.gadget.TwoDisItem;
 import com.softetch.dwm.common.item.gadget.VortexManipulatorItem;
 import net.minecraft.block.Block;
-import net.minecraft.block.LogBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
@@ -37,6 +37,10 @@ public class DWMItems {
     public static final Block PLASTIC_ORE = null;
     public static final Block STONE_ROUNDEL = null;
 
+    public static final Block ASH_LOG = null;
+    public static final Block ASH_LEAVES = null;
+    public static final Block ASH_SAPLING = null;
+
     public static List<Block> tardises = new ArrayList<>();
     private static final HashMap<Block, ItemGroup> blocks = new HashMap<>();
 
@@ -50,8 +54,11 @@ public class DWMItems {
                 event.getRegistry().register(addBlock(new TardisExteriorBlock(tardis.getName()), "tardis_" + tardis.getName(), ItemGroup.TRANSPORTATION))
         );
         event.getRegistry().registerAll(
-                addBlock(new LogBlock(MaterialColor.SAND, Block.Properties.create(Material.WOOD, MaterialColor.QUARTZ).hardnessAndResistance(2.0F).sound(SoundType.WOOD)), "ash_log", ItemGroup.BUILDING_BLOCKS),
+                addBlock(new DWMLogBlock(MaterialColor.SAND, Block.Properties.create(Material.WOOD, MaterialColor.QUARTZ).hardnessAndResistance(2.0F).sound(SoundType.WOOD)), "ash_log", ItemGroup.BUILDING_BLOCKS),
                 addBlock(new Block(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)), "ash_planks", ItemGroup.BUILDING_BLOCKS),
+                addBlock(new DWMLeavesBlock(), "ash_leaves", ItemGroup.DECORATIONS),
+                addBlock(new DWMSaplingBlock(new AshTree()), "ash_sapling", ItemGroup.DECORATIONS),
+
                 // Regular Roundels
                 addBlock(new RoundelBlock(), "white_roundel", DWMItemGroups.ROUNDELS),
                 addBlock(new RoundelBlock(), "orange_roundel", DWMItemGroups.ROUNDELS),
