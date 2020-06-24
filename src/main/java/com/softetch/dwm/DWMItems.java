@@ -45,7 +45,7 @@ public class DWMItems {
     public static final Block GALLIFREY_COARSE_DIRT = null;
 
     public static List<Block> tardises = new ArrayList<>();
-    private static final HashMap<Block, ItemGroup> blocks = new HashMap<>();
+    private static final HashMap<Block, ItemGroup> blocksWithItems = new HashMap<>();
 
     /**
      * The actual event handler that registers the custom blocks
@@ -54,70 +54,77 @@ public class DWMItems {
     @SubscribeEvent(priority = EventPriority.HIGH)
     public static void registerBlocks(RegistryEvent.Register<Block> event){
         DWMMain.CHAMELEON_REGISTRY.TARDIS_SKINS.values().forEach(tardis ->
-                event.getRegistry().register(addBlock(new TardisExteriorBlock(tardis.getName()), "tardis_" + tardis.getName(), ItemGroup.TRANSPORTATION))
+                event.getRegistry().register(addBlock("tardis_" + tardis.getName(), new TardisExteriorBlock(tardis.getName()), ItemGroup.TRANSPORTATION))
         );
         event.getRegistry().registerAll(
                 // Gallifrey Update
-                addBlock(new DWMLogBlock(MaterialColor.SAND, Block.Properties.create(Material.WOOD, MaterialColor.QUARTZ).hardnessAndResistance(2.0F).sound(SoundType.WOOD)), "ash_log", ItemGroup.BUILDING_BLOCKS),
-                addBlock(new Block(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)), "ash_planks", ItemGroup.BUILDING_BLOCKS),
-                addBlock(new SlabBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)), "ash_slab", ItemGroup.BUILDING_BLOCKS),
-                addBlock(new DWMLeavesBlock(), "ash_leaves", ItemGroup.DECORATIONS),
-                addBlock(new DWMSaplingBlock(new AshTree()), "ash_sapling", ItemGroup.DECORATIONS),
-                addBlock(new DWMTrapDoorBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()), "ash_trapdoor", ItemGroup.REDSTONE),
-                addBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 3.0F)), "azbantium_ore", ItemGroup.BUILDING_BLOCKS),
-                addBlock(new Block(Block.Properties.create(Material.ROCK, MaterialColor.IRON).hardnessAndResistance(60.0F, 1300.0F)), "azbantium_block", ItemGroup.BUILDING_BLOCKS),
-                addBlock(new Block(Block.Properties.create(Material.IRON, MaterialColor.IRON).hardnessAndResistance(5.0F).sound(SoundType.METAL)), "citadel_block_a", ItemGroup.BUILDING_BLOCKS),
-                addBlock(new Block(Block.Properties.create(Material.IRON, MaterialColor.IRON).hardnessAndResistance(5.0F).sound(SoundType.METAL)), "citadel_block_b", ItemGroup.BUILDING_BLOCKS),
-                addBlock(new Block(Block.Properties.create(Material.IRON, MaterialColor.IRON).hardnessAndResistance(5.0F).sound(SoundType.METAL)), "citadel_block_c", ItemGroup.BUILDING_BLOCKS),
-                addBlock(new GlassBlock(Block.Properties.create(Material.GLASS).hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid()), "citadel_glass", ItemGroup.BUILDING_BLOCKS),
-                addBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.5F, 6.0F)), "gallifrey_stone", ItemGroup.BUILDING_BLOCKS),
-                addBlock(new SlabBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.5F, 6.0F)), "gallifrey_stone_slab", ItemGroup.BUILDING_BLOCKS),
-                addBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.5F, 6.0F)), "gallifrey_stone_bricks", ItemGroup.BUILDING_BLOCKS),
-                addBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.5F, 6.0F)), "gallifrey_cracked_stone_bricks", ItemGroup.BUILDING_BLOCKS),
-                addBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 3.0F)), "dwarf_star_alloy_ore", ItemGroup.BUILDING_BLOCKS),
-                addBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F, 6.0F)), "dwarf_star_alloy_block", ItemGroup.BUILDING_BLOCKS),
-                addBlock(new Block(Block.Properties.create(Material.EARTH, MaterialColor.DIRT).hardnessAndResistance(0.5F).sound(SoundType.GROUND)), "gallifrey_dirt", ItemGroup.BUILDING_BLOCKS),
-                addBlock(new GallifreyFarmlandBlock(), "gallifrey_farmland", null),
-                addBlock(new Block(Block.Properties.create(Material.ROCK, MaterialColor.SAND).hardnessAndResistance(2.0F, 6.0F)), "gallifrey_sandstone", ItemGroup.BUILDING_BLOCKS),
-                addBlock(new SlabBlock(Block.Properties.create(Material.ROCK, MaterialColor.SAND).hardnessAndResistance(2.0F, 6.0F)), "gallifrey_sandstone_slab", ItemGroup.BUILDING_BLOCKS),
-                addBlock(new Block(Block.Properties.create(Material.ROCK, MaterialColor.SAND).hardnessAndResistance(2.0F, 6.0F)), "gallifrey_chiseled_sandstone", ItemGroup.BUILDING_BLOCKS),
-                addBlock(new Block(Block.Properties.create(Material.ROCK, MaterialColor.SAND).hardnessAndResistance(2.0F, 6.0F)), "gallifrey_cut_sandstone", ItemGroup.BUILDING_BLOCKS),
-                addBlock(new SlabBlock(Block.Properties.create(Material.ROCK, MaterialColor.SAND).hardnessAndResistance(2.0F, 6.0F)), "gallifrey_cut_sandstone_slab", ItemGroup.BUILDING_BLOCKS),
-                addBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 3.0F)), "gallifrey_coal_ore", ItemGroup.BUILDING_BLOCKS),
-                addBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 3.0F)), "gallifrey_iron_ore", ItemGroup.BUILDING_BLOCKS),
-                addBlock(new Block(Block.Properties.create(Material.EARTH, MaterialColor.DIRT).hardnessAndResistance(0.5F).sound(SoundType.GROUND)), "gallifrey_coarse_dirt", ItemGroup.BUILDING_BLOCKS),
-                addBlock(new SandBlock(0xba3c3c, Block.Properties.create(Material.SAND, MaterialColor.SAND).hardnessAndResistance(0.5F).sound(SoundType.SAND)), "gallifrey_sand", ItemGroup.BUILDING_BLOCKS),
+                addBlock("ash_log", new DWMLogBlock(MaterialColor.SAND, Block.Properties.create(Material.WOOD, MaterialColor.QUARTZ).hardnessAndResistance(2.0F).sound(SoundType.WOOD)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("ash_planks", new Block(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("ash_slab", new SlabBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("ash_leaves", new DWMLeavesBlock(), ItemGroup.DECORATIONS),
+                addBlock("ash_sapling", new DWMSaplingBlock(new AshTree()), ItemGroup.DECORATIONS),
+                addBlock("ash_trapdoor", new DWMTrapDoorBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()), ItemGroup.REDSTONE),
+                addBlock("azbantium_ore", new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 3.0F)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("azbantium_block", new Block(Block.Properties.create(Material.ROCK, MaterialColor.IRON).hardnessAndResistance(60.0F, 1300.0F)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("citadel_block_a", new Block(Block.Properties.create(Material.IRON, MaterialColor.IRON).hardnessAndResistance(5.0F).sound(SoundType.METAL)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("citadel_block_b", new Block(Block.Properties.create(Material.IRON, MaterialColor.IRON).hardnessAndResistance(5.0F).sound(SoundType.METAL)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("citadel_block_c", new Block(Block.Properties.create(Material.IRON, MaterialColor.IRON).hardnessAndResistance(5.0F).sound(SoundType.METAL)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("citadel_glass", new GlassBlock(Block.Properties.create(Material.GLASS).hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid()), ItemGroup.BUILDING_BLOCKS),
+                addBlock("gallifrey_stone", new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.5F, 6.0F)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("gallifrey_stone_slab", new SlabBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.5F, 6.0F)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("gallifrey_stone_bricks", new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.5F, 6.0F)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("gallifrey_cracked_stone_bricks", new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.5F, 6.0F)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("dwarf_star_alloy_ore", new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 3.0F)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("dwarf_star_alloy_block", new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F, 6.0F)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("gallifrey_dirt", new Block(Block.Properties.create(Material.EARTH, MaterialColor.DIRT).hardnessAndResistance(0.5F).sound(SoundType.GROUND)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("gallifrey_farmland", new GallifreyFarmlandBlock(), null),
+                addBlock("gallifrey_sandstone", new Block(Block.Properties.create(Material.ROCK, MaterialColor.SAND).hardnessAndResistance(2.0F, 6.0F)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("gallifrey_sandstone_slab", new SlabBlock(Block.Properties.create(Material.ROCK, MaterialColor.SAND).hardnessAndResistance(2.0F, 6.0F)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("gallifrey_chiseled_sandstone", new Block(Block.Properties.create(Material.ROCK, MaterialColor.SAND).hardnessAndResistance(2.0F, 6.0F)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("gallifrey_cut_sandstone", new Block(Block.Properties.create(Material.ROCK, MaterialColor.SAND).hardnessAndResistance(2.0F, 6.0F)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("gallifrey_cut_sandstone_slab", new SlabBlock(Block.Properties.create(Material.ROCK, MaterialColor.SAND).hardnessAndResistance(2.0F, 6.0F)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("gallifrey_coal_ore", new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 3.0F)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("gallifrey_iron_ore", new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 3.0F)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("gallifrey_coarse_dirt", new Block(Block.Properties.create(Material.EARTH, MaterialColor.DIRT).hardnessAndResistance(0.5F).sound(SoundType.GROUND)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("gallifrey_sand", new SandBlock(0xba3c3c, Block.Properties.create(Material.SAND, MaterialColor.SAND).hardnessAndResistance(0.5F).sound(SoundType.SAND)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("plutarch", new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F)), ItemGroup.BUILDING_BLOCKS),
 
                 // Plastic Blocks
 
-                addBlock(new Block(Block.Properties.create(Material.WOOL, DyeColor.WHITE)),"white_plastic_block", ItemGroup.BUILDING_BLOCKS),
-                addBlock(new Block(Block.Properties.create(Material.WOOL, DyeColor.ORANGE)),"orange_plastic_block", ItemGroup.BUILDING_BLOCKS),
-                addBlock(new Block(Block.Properties.create(Material.WOOL, DyeColor.MAGENTA)),"magenta_plastic_block", ItemGroup.BUILDING_BLOCKS),
-                addBlock(new Block(Block.Properties.create(Material.WOOL, DyeColor.LIGHT_BLUE)),"light_blue_plastic_block", ItemGroup.BUILDING_BLOCKS),
-                addBlock(new Block(Block.Properties.create(Material.WOOL, DyeColor.YELLOW)),"yellow_plastic_block", ItemGroup.BUILDING_BLOCKS),
-                addBlock(new Block(Block.Properties.create(Material.WOOL, DyeColor.LIME)),"lime_plastic_block", ItemGroup.BUILDING_BLOCKS),
-                addBlock(new Block(Block.Properties.create(Material.WOOL, DyeColor.PINK)),"pink_plastic_block", ItemGroup.BUILDING_BLOCKS),
-                addBlock(new Block(Block.Properties.create(Material.WOOL, DyeColor.GRAY)),"gray_plastic_block", ItemGroup.BUILDING_BLOCKS),
-                addBlock(new Block(Block.Properties.create(Material.WOOL, DyeColor.LIGHT_GRAY)),"light_gray_plastic_block", ItemGroup.BUILDING_BLOCKS),
-                addBlock(new Block(Block.Properties.create(Material.WOOL, DyeColor.CYAN)),"cyan_plastic_block", ItemGroup.BUILDING_BLOCKS),
-                addBlock(new Block(Block.Properties.create(Material.WOOL, DyeColor.PURPLE)),"purple_plastic_block", ItemGroup.BUILDING_BLOCKS),
-                addBlock(new Block(Block.Properties.create(Material.WOOL, DyeColor.BLUE)),"blue_plastic_block", ItemGroup.BUILDING_BLOCKS),
-                addBlock(new Block(Block.Properties.create(Material.WOOL, DyeColor.BROWN)),"brown_plastic_block", ItemGroup.BUILDING_BLOCKS),
-                addBlock(new Block(Block.Properties.create(Material.WOOL, DyeColor.GREEN)),"green_plastic_block", ItemGroup.BUILDING_BLOCKS),
-                addBlock(new Block(Block.Properties.create(Material.WOOL, DyeColor.RED)),"red_plastic_block", ItemGroup.BUILDING_BLOCKS),
-                addBlock(new Block(Block.Properties.create(Material.WOOL, DyeColor.BLACK)),"black_plastic_block", ItemGroup.BUILDING_BLOCKS),
+                addBlock("white_plastic_block",new Block(Block.Properties.create(Material.WOOL, DyeColor.WHITE)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("orange_plastic_block",new Block(Block.Properties.create(Material.WOOL, DyeColor.ORANGE)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("magenta_plastic_block",new Block(Block.Properties.create(Material.WOOL, DyeColor.MAGENTA)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("light_blue_plastic_block",new Block(Block.Properties.create(Material.WOOL, DyeColor.LIGHT_BLUE)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("yellow_plastic_block",new Block(Block.Properties.create(Material.WOOL, DyeColor.YELLOW)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("lime_plastic_block",new Block(Block.Properties.create(Material.WOOL, DyeColor.LIME)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("pink_plastic_block",new Block(Block.Properties.create(Material.WOOL, DyeColor.PINK)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("gray_plastic_block",new Block(Block.Properties.create(Material.WOOL, DyeColor.GRAY)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("light_gray_plastic_block",new Block(Block.Properties.create(Material.WOOL, DyeColor.LIGHT_GRAY)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("cyan_plastic_block",new Block(Block.Properties.create(Material.WOOL, DyeColor.CYAN)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("purple_plastic_block",new Block(Block.Properties.create(Material.WOOL, DyeColor.PURPLE)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("blue_plastic_block",new Block(Block.Properties.create(Material.WOOL, DyeColor.BLUE)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("brown_plastic_block",new Block(Block.Properties.create(Material.WOOL, DyeColor.BROWN)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("green_plastic_block",new Block(Block.Properties.create(Material.WOOL, DyeColor.GREEN)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("red_plastic_block",new Block(Block.Properties.create(Material.WOOL, DyeColor.RED)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("black_plastic_block",new Block(Block.Properties.create(Material.WOOL, DyeColor.BLACK)), ItemGroup.BUILDING_BLOCKS),
 
-                addBlock(new DWMOreBlock(),"plastic_ore", ItemGroup.BUILDING_BLOCKS)
+                addBlock("plastic_ore",new DWMOreBlock(), ItemGroup.BUILDING_BLOCKS)
         );
     }
 
-    private static Block addBlock(Block block, String registryName, ItemGroup itemGroup) {
+    private static Block addBlock(String registryName, Block block, ItemGroup itemGroup, boolean createItem) {
         block.setRegistryName(DWMMain.MOD_ID, registryName);
         if (block instanceof TardisExteriorBlock) {
             tardises.add(block);
         }
-        blocks.put(block, itemGroup);
+        if (createItem) {
+            blocksWithItems.put(block, itemGroup);
+        }
         return block;
+    }
+
+    private static Block addBlock(String registryName, Block block, ItemGroup itemGroup) {
+        return addBlock(registryName, block, itemGroup, true);
     }
 
     /**
@@ -161,7 +168,7 @@ public class DWMItems {
                 new Item(new Item.Properties()).setRegistryName(DWMMain.MOD_ID, "laser"),
                 new DWMSpawnerItem(DWMEntities.ADIPOSE)
         );
-        blocks.entrySet().forEach(block ->
+        blocksWithItems.entrySet().forEach(block ->
                 event.getRegistry().register(new BlockItem(block.getKey(), new Item.Properties().group(block.getValue())).setRegistryName(block.getKey().getRegistryName()))
         );
     }
