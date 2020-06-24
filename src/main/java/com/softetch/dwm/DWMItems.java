@@ -45,6 +45,7 @@ public class DWMItems {
 
     public static final Block GALLIFREY_DIRT = null;
     public static final Block GALLIFREY_FARMLAND = null;
+    public static final Block GALLIFREY_COARSE_DIRT = null;
 
     public static List<Block> tardises = new ArrayList<>();
     private static final HashMap<Block, ItemGroup> blocks = new HashMap<>();
@@ -87,6 +88,7 @@ public class DWMItems {
                 addBlock(new SlabBlock(Block.Properties.create(Material.ROCK, MaterialColor.SAND).hardnessAndResistance(2.0F, 6.0F)), "gallifrey_cut_sandstone_slab", ItemGroup.BUILDING_BLOCKS),
                 addBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 3.0F)), "gallifrey_coal_ore", ItemGroup.BUILDING_BLOCKS),
                 addBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 3.0F)), "gallifrey_iron_ore", ItemGroup.BUILDING_BLOCKS),
+                addBlock(new Block(Block.Properties.create(Material.EARTH, MaterialColor.DIRT).hardnessAndResistance(0.5F).sound(SoundType.GROUND)), "gallifrey_coarse_dirt", ItemGroup.BUILDING_BLOCKS),
 
                 // Regular Roundels
                 addBlock(new RoundelBlock(), "white_roundel", DWMItemGroups.ROUNDELS),

@@ -44,7 +44,10 @@ public class DWMItemUseEvent {
         }
     }
 
-    protected static final Map<Block, BlockState> MODDED_HOE_LOOKUP = Maps.newHashMap(ImmutableMap.of(DWMItems.GALLIFREY_DIRT, DWMItems.GALLIFREY_FARMLAND.getDefaultState()));
+    protected static final Map<Block, BlockState> MODDED_HOE_LOOKUP = Maps.newHashMap(ImmutableMap.of(
+            DWMItems.GALLIFREY_DIRT, DWMItems.GALLIFREY_FARMLAND.getDefaultState(),
+            DWMItems.GALLIFREY_COARSE_DIRT, DWMItems.GALLIFREY_DIRT.getDefaultState()
+    ));
 
     private void onHoeUse(ItemStack stack, Hand hand, World world, BlockPos pos, PlayerEntity player) {
         BlockState blockState = MODDED_HOE_LOOKUP.get(world.getBlockState(pos).getBlock());
