@@ -55,6 +55,7 @@ public class DWMItems {
                 event.getRegistry().register(addBlock(new TardisExteriorBlock(tardis.getName()), "tardis_" + tardis.getName(), ItemGroup.TRANSPORTATION))
         );
         event.getRegistry().registerAll(
+                // Gallifrey Update
                 addBlock(new DWMLogBlock(MaterialColor.SAND, Block.Properties.create(Material.WOOD, MaterialColor.QUARTZ).hardnessAndResistance(2.0F).sound(SoundType.WOOD)), "ash_log", ItemGroup.BUILDING_BLOCKS),
                 addBlock(new Block(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)), "ash_planks", ItemGroup.BUILDING_BLOCKS),
                 addBlock(new DWMLeavesBlock(), "ash_leaves", ItemGroup.DECORATIONS),
@@ -69,6 +70,8 @@ public class DWMItems {
                 addBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.5F, 6.0F)), "gallifrey_stone", ItemGroup.BUILDING_BLOCKS),
                 addBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.5F, 6.0F)), "gallifrey_stone_bricks", ItemGroup.BUILDING_BLOCKS),
                 addBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.5F, 6.0F)), "gallifrey_cracked_stone_bricks", ItemGroup.BUILDING_BLOCKS),
+                addBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 3.0F)), "dwarf_star_alloy_ore", ItemGroup.BUILDING_BLOCKS),
+                addBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F, 6.0F)), "dwarf_star_alloy_block", ItemGroup.BUILDING_BLOCKS),
 
                 // Regular Roundels
                 addBlock(new RoundelBlock(), "white_roundel", DWMItemGroups.ROUNDELS),
