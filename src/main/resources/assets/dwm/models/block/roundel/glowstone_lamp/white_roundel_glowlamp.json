@@ -1,8 +1,0 @@
-{
-	"credit": "Made with Blockbench",
-	"parent": "dwm:block/roundel/glowstone_lamp/red_roundel_glowlamp",
-	"textures": {
-		"border": "dwm:block/white_plastic_block",
-		"interior": "dwm:block/black_plastic_block"
-	}
-}

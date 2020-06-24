@@ -1,8 +1,0 @@
-{
-  "variants": {
-    "facing=south": { "model": "dwm:block/roundel/glowstone_lamp/jungle_log_roundel_glowlamp" },
-    "facing=east": { "model": "dwm:block/roundel/glowstone_lamp/jungle_log_roundel_glowlamp", "y": 270 },
-    "facing=west": { "model": "dwm:block/roundel/glowstone_lamp/jungle_log_roundel_glowlamp", "y": 90 },
-    "facing=north": { "model": "dwm:block/roundel/glowstone_lamp/jungle_log_roundel_glowlamp", "y": 180 }
-  }
-}

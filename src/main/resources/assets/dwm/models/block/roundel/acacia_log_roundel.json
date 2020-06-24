@@ -1,7 +1,0 @@
-{
-	"credit": "Made with Blockbench",
-	"parent": "dwm:block/roundel/red_roundel",
-	"textures": {
-		"border": "block/acacia_log"
-	}
-}

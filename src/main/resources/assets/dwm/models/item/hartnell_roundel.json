@@ -1,9 +1,0 @@
-{
-	"credit": "Made with Blockbench",
-	"texture_size": [32, 32],
-	"parent": "dwm:block/roundel/chunky_roundel",
-	"textures": {
-		"0": "dwm:block/roundel/hartnell_roundel",
-		"particle": "dwm:block/roundel/hartnell_roundel"
-	}
-}
