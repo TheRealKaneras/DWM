@@ -62,6 +62,7 @@ public class DWMItems {
                 // Gallifrey Update
                 addBlock(new DWMLogBlock(MaterialColor.SAND, Block.Properties.create(Material.WOOD, MaterialColor.QUARTZ).hardnessAndResistance(2.0F).sound(SoundType.WOOD)), "ash_log", ItemGroup.BUILDING_BLOCKS),
                 addBlock(new Block(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)), "ash_planks", ItemGroup.BUILDING_BLOCKS),
+                addBlock(new SlabBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)), "ash_slab", ItemGroup.BUILDING_BLOCKS),
                 addBlock(new DWMLeavesBlock(), "ash_leaves", ItemGroup.DECORATIONS),
                 addBlock(new DWMSaplingBlock(new AshTree()), "ash_sapling", ItemGroup.DECORATIONS),
                 addBlock(new DWMTrapDoorBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()), "ash_trapdoor", ItemGroup.REDSTONE),
@@ -72,6 +73,7 @@ public class DWMItems {
                 addBlock(new Block(Block.Properties.create(Material.IRON, MaterialColor.IRON).hardnessAndResistance(5.0F).sound(SoundType.METAL)), "citadel_block_c", ItemGroup.BUILDING_BLOCKS),
                 addBlock(new GlassBlock(Block.Properties.create(Material.GLASS).hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid()), "citadel_glass", ItemGroup.BUILDING_BLOCKS),
                 addBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.5F, 6.0F)), "gallifrey_stone", ItemGroup.BUILDING_BLOCKS),
+                addBlock(new SlabBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.5F, 6.0F)), "gallifrey_stone_slab", ItemGroup.BUILDING_BLOCKS),
                 addBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.5F, 6.0F)), "gallifrey_stone_bricks", ItemGroup.BUILDING_BLOCKS),
                 addBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.5F, 6.0F)), "gallifrey_cracked_stone_bricks", ItemGroup.BUILDING_BLOCKS),
                 addBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 3.0F)), "dwarf_star_alloy_ore", ItemGroup.BUILDING_BLOCKS),
@@ -82,6 +84,7 @@ public class DWMItems {
                 addBlock(new SlabBlock(Block.Properties.create(Material.ROCK, MaterialColor.SAND).hardnessAndResistance(2.0F, 6.0F)), "gallifrey_sandstone_slab", ItemGroup.BUILDING_BLOCKS),
                 addBlock(new Block(Block.Properties.create(Material.ROCK, MaterialColor.SAND).hardnessAndResistance(2.0F, 6.0F)), "gallifrey_chiseled_sandstone", ItemGroup.BUILDING_BLOCKS),
                 addBlock(new Block(Block.Properties.create(Material.ROCK, MaterialColor.SAND).hardnessAndResistance(2.0F, 6.0F)), "gallifrey_cut_sandstone", ItemGroup.BUILDING_BLOCKS),
+                addBlock(new SlabBlock(Block.Properties.create(Material.ROCK, MaterialColor.SAND).hardnessAndResistance(2.0F, 6.0F)), "gallifrey_cut_sandstone_slab", ItemGroup.BUILDING_BLOCKS),
 
                 // Regular Roundels
                 addBlock(new RoundelBlock(), "white_roundel", DWMItemGroups.ROUNDELS),

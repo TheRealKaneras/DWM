@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+        "item": "dwm:gallifrey_stone"
+      }
+  },
+  "result": {
+    "item": "dwm:gallifrey_stone_slab",
+    "count": 6
+  }
+}

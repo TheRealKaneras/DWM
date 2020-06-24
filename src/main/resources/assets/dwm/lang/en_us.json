@@ -35,6 +35,7 @@
 
   "block.dwm.ash_log": "Ash Log",
   "block.dwm.ash_planks": "Ash Planks",
+  "block.dwm.ash_slab": "Ash Slab",
   "block.dwm.ash_leaves": "Ash Leaves",
   "block.dwm.ash_sapling": "Ash Sapling",
   "block.dwm.ash_trapdoor": "Ash Trapdoor",
@@ -45,6 +46,7 @@
   "block.dwm.citadel_block_c": "Citadel Block C",
   "block.dwm.citadel_glass": "Citadel Glass",
   "block.dwm.gallifrey_stone": "Gallifreyan Stone",
+  "block.dwm.gallifrey_stone_slab": "Gallifreyan Stone Slab",
   "block.dwm.gallifrey_stone_bricks": "Gallifreyan Stone Bricks",
   "block.dwm.gallifrey_cracked_stone_bricks": "Gallifreyan Cracked Stone Bricks",
   "block.dwm.dwarf_star_alloy_ore": "Dwarf Star Alloy Ore",
@@ -55,6 +57,7 @@
   "block.dwm.gallifrey_sandstone_slab": "Gallifreyan Sandstone Slab",
   "block.dwm.gallifrey_chiseled_sandstone": "Chiseled Gallifreyan Sandstone",
   "block.dwm.gallifrey_cut_sandstone": "Cut Gallifreyan Sandstone",
+  "block.dwm.gallifrey_cut_sandstone_slab": "Cut Gallifreyan Sandstone Slab",
 
   "block.dwm.white_roundel": "White Roundel",
   "block.dwm.orange_roundel": "Orange Roundel",

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": [
+      {
+        "item": "dwm:gallifrey_sandstone"
+      },
+      {
+        "item": "dwm:gallifrey_chiseled_sandstone"
+      }
+    ]
+  },
+  "result": {
+    "item": "dwm:gallifrey_sandstone_slab",
+    "count": 6
+  }
+}

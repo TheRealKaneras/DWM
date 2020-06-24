@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "type=bottom": { "model": "dwm:block/ash_slab" },
+    "type=top": { "model": "dwm:block/ash_slab_top" },
+    "type=double": { "model": "dwm:block/ash_planks" }
+  }
+}

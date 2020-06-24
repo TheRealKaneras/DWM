@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab_top",
+  "textures": {
+    "bottom": "dwm:block/gallifrey_stone",
+    "top": "dwm:block/gallifrey_stone",
+    "side": "dwm:block/gallifrey_stone"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab",
+  "textures": {
+    "bottom": "dwm:block/ash_planks",
+    "top": "dwm:block/ash_planks",
+    "side": "dwm:block/ash_planks"
+  }
+}

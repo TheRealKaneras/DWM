@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "type=bottom": { "model": "dwm:block/gallifrey_cut_sandstone_slab" },
+    "type=top": { "model": "dwm:block/gallifrey_cut_sandstone_slab_top" },
+    "type=double": { "model": "dwm:block/gallifrey_cut_sandstone" }
+  }
+}
