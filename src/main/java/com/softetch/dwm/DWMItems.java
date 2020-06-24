@@ -8,10 +8,7 @@ import com.softetch.dwm.common.item.clothing.FezItem;
 import com.softetch.dwm.common.item.gadget.SonicScrewdriverItem;
 import com.softetch.dwm.common.item.gadget.TwoDisItem;
 import com.softetch.dwm.common.item.gadget.VortexManipulatorItem;
-import net.minecraft.block.Block;
-import net.minecraft.block.GlassBlock;
-import net.minecraft.block.SlabBlock;
-import net.minecraft.block.SoundType;
+import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.*;
@@ -89,6 +86,7 @@ public class DWMItems {
                 addBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 3.0F)), "gallifrey_coal_ore", ItemGroup.BUILDING_BLOCKS),
                 addBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 3.0F)), "gallifrey_iron_ore", ItemGroup.BUILDING_BLOCKS),
                 addBlock(new Block(Block.Properties.create(Material.EARTH, MaterialColor.DIRT).hardnessAndResistance(0.5F).sound(SoundType.GROUND)), "gallifrey_coarse_dirt", ItemGroup.BUILDING_BLOCKS),
+                addBlock(new SandBlock(0xba3c3c, Block.Properties.create(Material.SAND, MaterialColor.SAND).hardnessAndResistance(0.5F).sound(SoundType.SAND)), "gallifrey_sand", ItemGroup.BUILDING_BLOCKS),
 
                 // Regular Roundels
                 addBlock(new RoundelBlock(), "white_roundel", DWMItemGroups.ROUNDELS),
