@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "moisture=0": { "model": "dwm:block/gallifrey_farmland" },
+    "moisture=1": { "model": "dwm:block/gallifrey_farmland" },
+    "moisture=2": { "model": "dwm:block/gallifrey_farmland" },
+    "moisture=3": { "model": "dwm:block/gallifrey_farmland" },
+    "moisture=4": { "model": "dwm:block/gallifrey_farmland" },
+    "moisture=5": { "model": "dwm:block/gallifrey_farmland" },
+    "moisture=6": { "model": "dwm:block/gallifrey_farmland" },
+    "moisture=7": { "model": "dwm:block/gallifrey_farmland_moist" }
+  }
+}
