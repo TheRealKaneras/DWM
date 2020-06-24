@@ -66,6 +66,9 @@ public class DWMItems {
                 addBlock(new Block(Block.Properties.create(Material.IRON, MaterialColor.IRON).hardnessAndResistance(5.0F).sound(SoundType.METAL)), "citadel_block_b", ItemGroup.BUILDING_BLOCKS),
                 addBlock(new Block(Block.Properties.create(Material.IRON, MaterialColor.IRON).hardnessAndResistance(5.0F).sound(SoundType.METAL)), "citadel_block_c", ItemGroup.BUILDING_BLOCKS),
                 addBlock(new GlassBlock(Block.Properties.create(Material.GLASS).hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid()), "citadel_glass", ItemGroup.BUILDING_BLOCKS),
+                addBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.5F, 6.0F)), "gallifrey_stone", ItemGroup.BUILDING_BLOCKS),
+                addBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.5F, 6.0F)), "gallifrey_stone_bricks", ItemGroup.BUILDING_BLOCKS),
+                addBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.5F, 6.0F)), "gallifrey_cracked_stone_bricks", ItemGroup.BUILDING_BLOCKS),
 
                 // Regular Roundels
                 addBlock(new RoundelBlock(), "white_roundel", DWMItemGroups.ROUNDELS),
