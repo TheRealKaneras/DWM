@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "dwm:block/gallifrey_sandstone_top",
+    "side": "dwm:block/gallifrey_cut_sandstone"
+  }
+}

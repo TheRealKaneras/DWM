@@ -51,6 +51,10 @@
   "block.dwm.dwarf_star_alloy_block": "Block of Dwarf Star Alloy",
   "block.dwm.gallifrey_dirt": "Gallifreyan Dirt",
   "block.dwm.gallifrey_farmland": "Gallifreyan Farmland",
+  "block.dwm.gallifrey_sandstone": "Gallifreyan Sandstone",
+  "block.dwm.gallifrey_sandstone_slab": "Gallifreyan Sandstone Slab",
+  "block.dwm.gallifrey_chiseled_sandstone": "Chiselled Gallifreyan Sandstone",
+  "block.dwm.gallifrey_cut_sandstone": "Cut Gallifreyan Sandstone",
 
   "block.dwm.white_roundel": "White Roundel",
   "block.dwm.orange_roundel": "Orange Roundel",
