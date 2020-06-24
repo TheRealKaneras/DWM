@@ -58,6 +58,7 @@ public class DWMItems {
                 addBlock(new Block(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)), "ash_planks", ItemGroup.BUILDING_BLOCKS),
                 addBlock(new DWMLeavesBlock(), "ash_leaves", ItemGroup.DECORATIONS),
                 addBlock(new DWMSaplingBlock(new AshTree()), "ash_sapling", ItemGroup.DECORATIONS),
+                addBlock(new DWMTrapDoorBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()), "ash_trapdoor", ItemGroup.REDSTONE),
 
                 // Regular Roundels
                 addBlock(new RoundelBlock(), "white_roundel", DWMItemGroups.ROUNDELS),
