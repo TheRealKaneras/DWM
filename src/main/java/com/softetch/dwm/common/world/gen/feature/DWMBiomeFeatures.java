@@ -9,6 +9,6 @@ public class DWMBiomeFeatures {
     public static final BasicTreeFeatureConfig ASH_TREE_CONFIG = new BasicTreeFeatureConfig.Builder(
             new SimpleBlockStateProvider(DWMItems.ASH_LOG.getDefaultState()),
             new SimpleBlockStateProvider(DWMItems.ASH_LEAVES.getDefaultState()),
-            new BlobFoliagePlacer(2, 0)).baseHeight(4).heightRandA(2).foliageHeight(3).ignoreVines().setSapling((IPlantable) DWMItems.ASH_SAPLING).build();
+            new BlobFoliagePlacer(2, 0)).baseHeight(5).trunkHeight(2).trunkTopOffsetRandom(2).heightRandA(2).foliageHeight(3).ignoreVines().setSapling((IPlantable) DWMItems.ASH_SAPLING).build();
 
 }

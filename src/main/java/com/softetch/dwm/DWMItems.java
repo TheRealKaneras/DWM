@@ -37,12 +37,15 @@ public class DWMItems {
     public static final Block STONE_ROUNDEL = null;
 
     public static final Block ASH_LOG = null;
+    public static final Block ASH_PLANKS = null;
     public static final Block ASH_LEAVES = null;
     public static final Block ASH_SAPLING = null;
 
     public static final Block GALLIFREY_DIRT = null;
     public static final Block GALLIFREY_FARMLAND = null;
     public static final Block GALLIFREY_COARSE_DIRT = null;
+    public static final Block GALLIFREY_GRASS_BLOCK = null;
+    public static final Block GALLIFREY_GRASS_PATH = null;
 
     public static List<Block> tardises = new ArrayList<>();
     private static final HashMap<Block, ItemGroup> blocksWithItems = new HashMap<>();
@@ -57,7 +60,7 @@ public class DWMItems {
                 event.getRegistry().register(addBlock("tardis_" + tardis.getName(), new TardisExteriorBlock(tardis.getName()), ItemGroup.TRANSPORTATION))
         );
         event.getRegistry().registerAll(
-                // Gallifrey Update
+                // Gallifrey
                 addBlock("ash_log", new DWMLogBlock(MaterialColor.SAND, Block.Properties.create(Material.WOOD, MaterialColor.QUARTZ).hardnessAndResistance(2.0F).sound(SoundType.WOOD)), ItemGroup.BUILDING_BLOCKS),
                 addBlock("ash_planks", new Block(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)), ItemGroup.BUILDING_BLOCKS),
                 addBlock("ash_slab", new SlabBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)), ItemGroup.BUILDING_BLOCKS),
@@ -88,9 +91,10 @@ public class DWMItems {
                 addBlock("gallifrey_coarse_dirt", new Block(Block.Properties.create(Material.EARTH, MaterialColor.DIRT).hardnessAndResistance(0.5F).sound(SoundType.GROUND)), ItemGroup.BUILDING_BLOCKS),
                 addBlock("gallifrey_sand", new SandBlock(0xba3c3c, Block.Properties.create(Material.SAND, MaterialColor.SAND).hardnessAndResistance(0.5F).sound(SoundType.SAND)), ItemGroup.BUILDING_BLOCKS),
                 addBlock("plutarch", new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("gallifrey_grass_block", new DWMGrassBlock(Block.Properties.create(Material.ORGANIC).tickRandomly().hardnessAndResistance(0.6F).sound(SoundType.PLANT)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("gallifrey_grass_path", new DWMGrassPathBlock(Block.Properties.create(Material.EARTH).hardnessAndResistance(0.65F).sound(SoundType.PLANT)), null),
 
                 // Plastic Blocks
-
                 addBlock("white_plastic_block",new Block(Block.Properties.create(Material.WOOL, DyeColor.WHITE)), ItemGroup.BUILDING_BLOCKS),
                 addBlock("orange_plastic_block",new Block(Block.Properties.create(Material.WOOL, DyeColor.ORANGE)), ItemGroup.BUILDING_BLOCKS),
                 addBlock("magenta_plastic_block",new Block(Block.Properties.create(Material.WOOL, DyeColor.MAGENTA)), ItemGroup.BUILDING_BLOCKS),
@@ -110,6 +114,12 @@ public class DWMItems {
 
                 addBlock("plastic_ore",new DWMOreBlock(), ItemGroup.BUILDING_BLOCKS)
         );
+
+        registerBlockProperties();
+    }
+
+    private static void registerBlockProperties() {
+        ((FireBlock)Blocks.FIRE).setFireInfo(ASH_PLANKS, 5, 20);
     }
 
     private static Block addBlock(String registryName, Block block, ItemGroup itemGroup, boolean createItem) {

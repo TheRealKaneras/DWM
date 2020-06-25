@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "bottom": "dwm:block/gallifrey_dirt",
+    "top": "dwm:block/gallifrey_grass_block_top",
+    "side": "dwm:block/gallifrey_grass_block_snow"
+  }
+}

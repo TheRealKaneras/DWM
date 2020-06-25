@@ -1,0 +1,9 @@
+{
+  "parent": "block/grass_path",
+  "textures": {
+    "particle": "dwm:block/gallifrey_dirt",
+    "top": "dwm:block/gallifrey_grass_path_top",
+    "side": "dwm:block/gallifrey_grass_path_side",
+    "bottom": "dwm:block/gallifrey_dirt"
+  }
+}

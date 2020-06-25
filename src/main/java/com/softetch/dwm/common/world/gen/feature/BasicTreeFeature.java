@@ -16,18 +16,18 @@ public class BasicTreeFeature extends AbstractSmallTreeFeature<BasicTreeFeatureC
         super(data);
     }
 
-    public boolean func_225557_a_(IWorldGenerationReader p_225557_1_, Random p_225557_2_, BlockPos p_225557_3_, Set<BlockPos> p_225557_4_, Set<BlockPos> p_225557_5_, MutableBoundingBox p_225557_6_, BasicTreeFeatureConfig p_225557_7_) {
-        int i = p_225557_7_.baseHeight + p_225557_2_.nextInt(p_225557_7_.heightRandA + 1) + p_225557_2_.nextInt(p_225557_7_.heightRandB + 1);
-        int j = p_225557_7_.trunkHeight >= 0 ? p_225557_7_.trunkHeight + p_225557_2_.nextInt(p_225557_7_.trunkHeightRandom + 1) : i - (p_225557_7_.foliageHeight + p_225557_2_.nextInt(p_225557_7_.foliageHeightRandom + 1));
-        int k = p_225557_7_.foliagePlacer.func_225573_a_(p_225557_2_, j, i, p_225557_7_);
-        Optional<BlockPos> optional = this.func_227212_a_(p_225557_1_, i, j, k, p_225557_3_, p_225557_7_);
+    public boolean func_225557_a_(IWorldGenerationReader world, Random random, BlockPos pos, Set<BlockPos> logs, Set<BlockPos> leaves, MutableBoundingBox bounds, BasicTreeFeatureConfig config) {
+        int i = config.baseHeight + random.nextInt(config.heightRandA + 1) + random.nextInt(config.heightRandB + 1);
+        int j = config.trunkHeight >= 0 ? config.trunkHeight + random.nextInt(config.trunkHeightRandom + 1) : i - (config.foliageHeight + random.nextInt(config.foliageHeightRandom + 1));
+        int k = config.foliagePlacer.func_225573_a_(random, j, i, config);
+        Optional<BlockPos> optional = this.func_227212_a_(world, i, j, k, pos, config);
         if (!optional.isPresent()) {
             return false;
         } else {
             BlockPos blockpos = optional.get();
-            this.setDirtAt(p_225557_1_, blockpos.down(), blockpos);
-            p_225557_7_.foliagePlacer.func_225571_a_(p_225557_1_, p_225557_2_, p_225557_7_, i, j, k, blockpos, p_225557_5_);
-            this.func_227213_a_(p_225557_1_, p_225557_2_, i, blockpos, p_225557_7_.trunkTopOffset + p_225557_2_.nextInt(p_225557_7_.trunkTopOffsetRandom + 1), p_225557_4_, p_225557_6_, p_225557_7_);
+            this.setDirtAt(world, blockpos.down(), blockpos);
+            config.foliagePlacer.func_225571_a_(world, random, config, i, j, k, blockpos, leaves);
+            this.func_227213_a_(world, random, i, blockpos, config.trunkTopOffset + random.nextInt(config.trunkTopOffsetRandom + 1), logs, bounds, config);
             return true;
         }
     }

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "": [
+      { "model": "dwm:block/gallifrey_grass_path" },
+      { "model": "dwm:block/gallifrey_grass_path", "y": 90 },
+      { "model": "dwm:block/gallifrey_grass_path", "y": 180 },
+      { "model": "dwm:block/gallifrey_grass_path", "y": 270 }
+    ]
+  }
+}

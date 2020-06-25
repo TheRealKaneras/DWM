@@ -1,13 +1,8 @@
 package com.softetch.dwm.common.block;
 
-import com.softetch.dwm.common.tags.DWMBlockTags;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.LeavesBlock;
-import net.minecraft.block.SoundType;
+import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItemUseContext;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;
@@ -69,7 +64,7 @@ public class DWMLeavesBlock extends LeavesBlock {
     }
 
     private static int getDistance(BlockState neighbor) {
-        if (BlockTags.LOGS.contains(neighbor.getBlock()) || DWMBlockTags.LOGS.contains(neighbor.getBlock())) {
+        if (neighbor.getBlock() instanceof LogBlock) {
             return 0;
         } else {
             return neighbor.getBlock() instanceof LeavesBlock ? neighbor.get(DISTANCE) : 7;
