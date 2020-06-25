@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "dwm:block/dark_ash_log_top",
+    "side": "dwm:block/dark_ash_log"
+  }
+}

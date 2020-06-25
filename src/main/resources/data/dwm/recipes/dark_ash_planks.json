@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "dwm:dark_ash_log"
+    }
+  ],
+  "result": {
+    "item": "dwm:dark_ash_planks",
+    "count": 4
+  }
+}

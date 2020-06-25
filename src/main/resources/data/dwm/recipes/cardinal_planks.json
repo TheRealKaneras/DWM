@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "dwm:cardinal_log"
+    }
+  ],
+  "result": {
+    "item": "dwm:cardinal_log",
+    "count": 4
+  }
+}

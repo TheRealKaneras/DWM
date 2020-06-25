@@ -34,10 +34,13 @@
   "item.dwm.fez": "Fez",
 
   "block.dwm.ash_log": "Ash Log",
+  "block.dwm.dark_ash_log": "Dark Ash Log",
   "block.dwm.cardinal_log": "Cardinal Log",
   "block.dwm.ash_planks": "Ash Planks",
+  "block.dwm.dark_ash_planks": "Dark Ash Planks",
   "block.dwm.cardinal_planks": "Cardinal Planks",
   "block.dwm.ash_slab": "Ash Slab",
+  "block.dwm.dark_ash_slab": "Dark Ash Slab",
   "block.dwm.cardinal_slab": "Cardinal Slab",
   "block.dwm.ash_leaves": "Ash Leaves",
   "block.dwm.ash_sapling": "Ash Sapling",
