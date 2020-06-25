@@ -157,6 +157,8 @@ public class DWMItems {
                 addItem("adipose_material", ItemGroup.MATERIALS),
                 addItem("gelatin", ItemGroup.MATERIALS),
                 addItem("white_point_star", ItemGroup.MATERIALS),
+                addItem("dwarf_star_alloy_ingot", ItemGroup.MATERIALS),
+                addItem("dwarf_star_alloy_nugget", ItemGroup.MATERIALS),
 
                 addItem("white_plastic", ItemGroup.MATERIALS),
                 addItem("orange_plastic", ItemGroup.MATERIALS),

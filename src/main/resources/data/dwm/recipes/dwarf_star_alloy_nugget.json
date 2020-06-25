@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "dwm:dwarf_star_alloy_ingot"
+    }
+  ],
+  "result": {
+    "item": "dwm:dwarf_star_alloy_nugget",
+    "count": 9
+  }
+}

@@ -20,10 +20,12 @@ import java.util.Random;
 
 public class DWMGrassBlock extends Block {
     public static final BooleanProperty SNOWY = BlockStateProperties.SNOWY;
+    private final Block dirtBlock;
 
-    public DWMGrassBlock(Properties properties) {
+    public DWMGrassBlock(Properties properties, Block dirtBlock) {
         super(properties);
         this.setDefaultState(this.stateContainer.getBaseState().with(SNOWY, Boolean.valueOf(false)));
+        this.dirtBlock = dirtBlock;
     }
 
     private static boolean func_220257_b(BlockState p_220257_0_, IWorldReader p_220257_1_, BlockPos p_220257_2_) {
@@ -45,14 +47,14 @@ public class DWMGrassBlock extends Block {
     public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random rand) {
         if (!func_220257_b(state, worldIn, pos)) {
             if (!worldIn.isAreaLoaded(pos, 3)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light and spreading
-            worldIn.setBlockState(pos, Blocks.DIRT.getDefaultState());
+            worldIn.setBlockState(pos, this.dirtBlock.getDefaultState());
         } else {
             if (worldIn.getLight(pos.up()) >= 9) {
                 BlockState blockstate = this.getDefaultState();
 
                 for(int i = 0; i < 4; ++i) {
                     BlockPos blockpos = pos.add(rand.nextInt(3) - 1, rand.nextInt(5) - 3, rand.nextInt(3) - 1);
-                    if (worldIn.getBlockState(blockpos).getBlock() == Blocks.DIRT && func_220256_c(blockstate, worldIn, blockpos)) {
+                    if (worldIn.getBlockState(blockpos).getBlock() == this.dirtBlock && func_220256_c(blockstate, worldIn, blockpos)) {
                         worldIn.setBlockState(blockpos, blockstate.with(SNOWY, Boolean.valueOf(worldIn.getBlockState(blockpos.up()).getBlock() == Blocks.SNOW)));
                     }
                 }

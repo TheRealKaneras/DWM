@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "dwm:dwarf_star_alloy_ore"
+  },
+  "result": "dwm:dwarf_star_alloy_ingot",
+  "experience": 1.3,
+  "cookingtime": 200
+}
