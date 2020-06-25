@@ -62,8 +62,11 @@ public class DWMItems {
         event.getRegistry().registerAll(
                 // Gallifrey
                 addBlock("ash_log", new DWMLogBlock(MaterialColor.SAND, Block.Properties.create(Material.WOOD, MaterialColor.QUARTZ).hardnessAndResistance(2.0F).sound(SoundType.WOOD)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("cardinal_log", new DWMLogBlock(MaterialColor.BROWN, Block.Properties.create(Material.WOOD, MaterialColor.BROWN).hardnessAndResistance(2.0f).sound(SoundType.WOOD)), ItemGroup.BUILDING_BLOCKS),
                 addBlock("ash_planks", new Block(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("cardinal_planks", new Block(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)), ItemGroup.BUILDING_BLOCKS),
                 addBlock("ash_slab", new SlabBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("cardinal_slab", new SlabBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)), ItemGroup.BUILDING_BLOCKS),
                 addBlock("ash_leaves", new DWMLeavesBlock(), ItemGroup.DECORATIONS),
                 addBlock("ash_sapling", new DWMSaplingBlock(new AshTree()), ItemGroup.DECORATIONS),
                 addBlock("ash_trapdoor", new DWMTrapDoorBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()), ItemGroup.REDSTONE),

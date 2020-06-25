@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "type=bottom": { "model": "dwm:block/cardinal_slab" },
+    "type=top": { "model": "dwm:block/cardinal_slab_top" },
+    "type=double": { "model": "dwm:block/cardinal_planks" }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "dwm:block/cardinal_log_top",
+    "side": "dwm:block/cardinal_log"
+  }
+}
