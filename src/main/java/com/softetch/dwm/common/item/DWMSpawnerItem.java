@@ -24,7 +24,6 @@ public class DWMSpawnerItem extends Item {
     public DWMSpawnerItem(EntityType<?> type) {
         super(new Item.Properties().group(ItemGroup.MISC));
         this.type = type;
-        this.setRegistryName(DWMMain.MOD_ID, this.type.getRegistryName().getPath() + "_spawner");
     }
 
     /**

@@ -1,10 +1,10 @@
 {
   "item.dwm.adipose_pill": "Adipose Pill",
   "item.dwm.scooby_snack": "Scooby Snack",
+
   "item.dwm.gelatin": "Gelatin",
   "item.dwm.adipose_material": "Adipose Material",
-
-  "item.dwm.cricket_bat": "Cricket Bat",
+  "item.dwm.white_point_star": "White Point Star",
 
   "item.dwm.white_plastic": "White Plastic",
   "item.dwm.orange_plastic": "Orange Plastic",
@@ -23,6 +23,7 @@
   "item.dwm.red_plastic": "Red Plastic",
   "item.dwm.black_plastic": "Black Plastic",
 
+  "item.dwm.cricket_bat": "Cricket Bat",
   "item.dwm.tardis_gold_key": "Gold TARDIS Key",
   "item.dwm.two_dis": "2Dis",
   "item.dwm.vortex_manipulator": "Vortex Manipulator",
@@ -45,18 +46,10 @@
   "block.dwm.ash_leaves": "Ash Leaves",
   "block.dwm.ash_sapling": "Ash Sapling",
   "block.dwm.ash_trapdoor": "Ash Trapdoor",
-  "block.dwm.azbantium_ore": "Azbantium Ore",
-  "block.dwm.azbantium_block": "Block of Azbantium",
-  "block.dwm.citadel_block_a": "Citadel Block A",
-  "block.dwm.citadel_block_b": "Citadel Block B",
-  "block.dwm.citadel_block_c": "Citadel Block C",
-  "block.dwm.citadel_glass": "Citadel Glass",
   "block.dwm.gallifrey_stone": "Gallifreyan Stone",
   "block.dwm.gallifrey_stone_slab": "Gallifreyan Stone Slab",
   "block.dwm.gallifrey_stone_bricks": "Gallifreyan Stone Bricks",
   "block.dwm.gallifrey_cracked_stone_bricks": "Gallifreyan Cracked Stone Bricks",
-  "block.dwm.dwarf_star_alloy_ore": "Dwarf Star Alloy Ore",
-  "block.dwm.dwarf_star_alloy_block": "Block of Dwarf Star Alloy",
   "block.dwm.gallifrey_dirt": "Gallifreyan Dirt",
   "block.dwm.gallifrey_farmland": "Gallifreyan Farmland",
   "block.dwm.gallifrey_sandstone": "Gallifreyan Sandstone",
@@ -64,14 +57,26 @@
   "block.dwm.gallifrey_chiseled_sandstone": "Chiseled Gallifreyan Sandstone",
   "block.dwm.gallifrey_cut_sandstone": "Cut Gallifreyan Sandstone",
   "block.dwm.gallifrey_cut_sandstone_slab": "Cut Gallifreyan Sandstone Slab",
-  "block.dwm.gallifrey_coal_ore": "Coal Ore",
-  "block.dwm.gallifrey_iron_ore": "Iron Ore",
   "block.dwm.gallifrey_coarse_dirt": "Gallifreyan Coarse Dirt",
   "block.dwm.gallifrey_sand": "Gallifreyan Sand",
-  "block.dwm.plutarch": "Plutarch",
   "block.dwm.gallifrey_grass_block": "Gallifreyan Grass",
   "block.dwm.gallifrey_grass_path": "Gallifreyan Grass Path",
+  "block.dwm.plutarch": "Plutarch",
 
+  "block.dwm.citadel_block_a": "Citadel Block A",
+  "block.dwm.citadel_block_b": "Citadel Block B",
+  "block.dwm.citadel_block_c": "Citadel Block C",
+  "block.dwm.citadel_glass": "Citadel Glass",
+
+  "block.dwm.gallifrey_coal_ore": "Coal Ore",
+  "block.dwm.gallifrey_iron_ore": "Iron Ore",
+  "block.dwm.dwarf_star_alloy_ore": "Dwarf Star Alloy Ore",
+  "block.dwm.plastic_ore": "Plastic Ore",
+  "block.dwm.white_point_star_ore": "White Point Star Ore",
+  "block.dwm.azbantium_ore": "Azbantium Ore",
+
+  "block.dwm.dwarf_star_alloy_block": "Block of Dwarf Star Alloy",
+  "block.dwm.azbantium_block": "Block of Azbantium",
   "block.dwm.white_plastic_block": "White Plastic Block",
   "block.dwm.orange_plastic_block": "Orange Plastic Block",
   "block.dwm.magenta_plastic_block": "Magenta Plastic Block",
@@ -88,8 +93,6 @@
   "block.dwm.green_plastic_block": "Green Plastic Block",
   "block.dwm.red_plastic_block": "Red Plastic Block",
   "block.dwm.black_plastic_block": "Black Plastic Block",
-
-  "block.dwm.plastic_ore": "Plastic Ore",
 
   "block.dwm.tardis_brachacki_box_a": "TARDIS: Brachacki Box (1963)",
   "block.dwm.tardis_brachacki_box_b": "TARDIS: Brachacki Box (1966)",

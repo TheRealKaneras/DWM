@@ -1,4 +1,4 @@
-1.15.2-2.0.0.0
+1.15.2-1.0.0.0
 + Skaro Dalek
 + Invasion Dalek
 + Guard Dalek
@@ -49,17 +49,8 @@
 + Brown Plastic 
 + Green Plastic 
 + Red Plastic 
-+ Black Plastic 
++ Black Plastic
 
-+ Fez crafting recipes
-+ Roundel crafting recipes
-
-~ New fez model and rewritten to use regular dye system
-~ Updated to MC Version 1.15.2
-- Removed original Dalek entities and spawners
-- Removed all roundels
-
-1.14.4-1.0.0.0
 + Dalek Entity
 + Adipose Entity
 + Adipose Pill
