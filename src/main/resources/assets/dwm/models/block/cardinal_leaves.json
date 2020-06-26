@@ -1,0 +1,6 @@
+{
+  "parent": "block/leaves",
+  "textures": {
+    "all": "dwm:block/cardinal_leaves"
+  }
+}

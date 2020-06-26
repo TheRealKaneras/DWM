@@ -9,7 +9,9 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class DWMFeature {
     public static final DeferredRegister<Feature<?>> FEATURES = new DeferredRegister<>(ForgeRegistries.FEATURES, DWMMain.MOD_ID);
 
-    public static final RegistryObject<BasicTreeFeature> ASH_TREE = FEATURES.register("ash_tree", () -> new BasicTreeFeature(BasicTreeFeatureConfig::deserialize));
+    public static final RegistryObject<BasicTreeFeature> ASH_TREE = FEATURES.register("ash_tree", () -> new BasicTreeFeature(BasicTreeFeatureConfig::deserializeAsh));
+    public static final RegistryObject<BasicTreeFeature> DARK_ASH_TREE = FEATURES.register("dark_ash_tree", () -> new BasicTreeFeature(BasicTreeFeatureConfig::deserializeAsh));
+    public static final RegistryObject<BasicTreeFeature> CARDINAL_TREE = FEATURES.register("cardinal_tree", () -> new BasicTreeFeature(BasicTreeFeatureConfig::deserializeCardinal));
 
 
 }

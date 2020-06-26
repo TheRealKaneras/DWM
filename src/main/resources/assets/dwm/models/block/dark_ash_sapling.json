@@ -1,0 +1,6 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "dwm:block/dark_ash_sapling"
+  }
+}

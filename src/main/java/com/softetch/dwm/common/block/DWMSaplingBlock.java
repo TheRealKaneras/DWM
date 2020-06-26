@@ -1,6 +1,7 @@
 package com.softetch.dwm.common.block;
 
 import com.softetch.dwm.common.block.trees.DWMTree;
+import com.softetch.dwm.common.tags.DWMBlockTags;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.state.IntegerProperty;
@@ -12,6 +13,7 @@ import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
+import net.minecraftforge.event.ForgeEventFactory;
 
 import java.util.Random;
 
@@ -23,6 +25,10 @@ public class DWMSaplingBlock extends BushBlock implements IGrowable {
     public DWMSaplingBlock(DWMTree tree) {
         super(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(0,0).sound(SoundType.PLANT));
         this.tree = tree;
+    }
+
+    protected boolean isValidGround(BlockState state, IBlockReader worldIn, BlockPos pos) {
+        return state.isIn(DWMBlockTags.TREE_GROUND);
     }
 
     public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
@@ -42,7 +48,9 @@ public class DWMSaplingBlock extends BushBlock implements IGrowable {
         if (sapling.get(STAGE) == 0) {
             world.setBlockState(pos, sapling.cycle(STAGE), 4);
         } else {
-            if (!net.minecraftforge.event.ForgeEventFactory.saplingGrowTree(world, random, pos)) return;
+            if (!ForgeEventFactory.saplingGrowTree(world, random, pos))
+                return;
+
             this.tree.func_225545_a_(world, world.getChunkProvider().getChunkGenerator(), pos, sapling, random);
         }
 

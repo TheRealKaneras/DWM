@@ -52,6 +52,8 @@ public class DWMItemUseEvent {
 
     protected static final Map<Block, BlockState> MODDED_HOE_LOOKUP = Maps.newHashMap(ImmutableMap.of(
             DWMItems.GALLIFREY_DIRT, DWMItems.GALLIFREY_FARMLAND.getDefaultState(),
+            DWMItems.GALLIFREY_GRASS_BLOCK, DWMItems.GALLIFREY_FARMLAND.getDefaultState(),
+            DWMItems.GALLIFREY_GRASS_PATH, DWMItems.GALLIFREY_FARMLAND.getDefaultState(),
             DWMItems.GALLIFREY_COARSE_DIRT, DWMItems.GALLIFREY_DIRT.getDefaultState()
     ));
 

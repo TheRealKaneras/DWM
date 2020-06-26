@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:grass_block",
+    "minecraft:dirt",
+    "minecraft:coarse_dirt",
+    "minecraft:podzol",
+    "minecraft:farmland",
+    "dwm:gallifrey_dirt",
+    "dwm:gallifrey_coarse_dirt",
+    "dwm:gallifrey_farmland",
+    "dwm:gallifrey_grass_block"
+  ]
+}

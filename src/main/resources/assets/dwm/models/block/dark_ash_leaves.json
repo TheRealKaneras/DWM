@@ -1,0 +1,6 @@
+{
+  "parent": "block/leaves",
+  "textures": {
+    "all": "dwm:block/dark_ash_leaves"
+  }
+}
