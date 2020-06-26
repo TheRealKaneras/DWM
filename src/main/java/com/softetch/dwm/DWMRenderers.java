@@ -1,6 +1,7 @@
 package com.softetch.dwm;
 
 import com.softetch.dwm.client.render.entity.AdiposeRenderer;
+import com.softetch.dwm.client.render.entity.ClassicSilurianRenderer;
 import com.softetch.dwm.client.render.entity.TellerRenderer;
 import com.softetch.dwm.client.render.entity.dalek.GuardDalekRenderer;
 import com.softetch.dwm.client.render.entity.dalek.InvasionDalekRenderer;
@@ -36,6 +37,7 @@ public class DWMRenderers {
         RenderingRegistry.registerEntityRenderingHandler(DWMEntities.ADIPOSE, AdiposeRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(DWMEntities.LASER, LaserRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(DWMEntities.TELLER, TellerRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(DWMEntities.CLASSIC_SILURIAN, ClassicSilurianRenderer::new);
 
         ClientRegistry.bindTileEntityRenderer(DWMTileEntities.TARDIS, TardisExteriorRenderer::new);
     }
