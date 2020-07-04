@@ -51,11 +51,19 @@ public class DWMItems {
     public static final Block DARK_ASH_SAPLING = null;
     public static final Block CARDINAL_SAPLING = null;
 
+    public static final Block GALLIFREY_STONE = null;
     public static final Block GALLIFREY_DIRT = null;
     public static final Block GALLIFREY_FARMLAND = null;
     public static final Block GALLIFREY_COARSE_DIRT = null;
     public static final Block GALLIFREY_GRASS_BLOCK = null;
     public static final Block GALLIFREY_GRASS_PATH = null;
+    public static final Block GALLIFREY_SAND = null;
+
+    public static final Block GALLIFREY_COAL_ORE = null;
+    public static final Block GALLIFREY_IRON_ORE = null;
+    public static final Block DWARF_STAR_ALLOY_ORE = null;
+    public static final Block WHITE_POINT_STAR_ORE = null;
+    public static final Block AZBANTIUM_ORE = null;
 
     public static List<Block> tardises = new ArrayList<>();
     private static final HashMap<Block, ItemGroup> blocksWithItems = new HashMap<>();
