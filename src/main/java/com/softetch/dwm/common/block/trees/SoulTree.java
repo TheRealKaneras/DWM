@@ -8,7 +8,7 @@ import net.minecraft.world.gen.feature.ConfiguredFeature;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class AshTree extends DWMTree {
+public class SoulTree extends DWMTree {
     /**
      * Get a {@link ConfiguredFeature} of tree
      *
@@ -18,6 +18,6 @@ public class AshTree extends DWMTree {
     @Nullable
     @Override
     protected ConfiguredFeature<BasicTreeFeatureConfig, ?> getTreeFeature(Random randomIn, boolean p_225546_2_) {
-        return DWMFeature.ASH_TREE.withConfiguration(DWMBiomeFeatures.ASH_TREE_CONFIG);
+        return DWMFeature.SOUL_TREE.withConfiguration(DWMBiomeFeatures.SOUL_TREE_CONFIG);
     }
 }

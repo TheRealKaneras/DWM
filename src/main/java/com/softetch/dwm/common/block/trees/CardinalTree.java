@@ -18,6 +18,6 @@ public class CardinalTree extends DWMTree {
     @Nullable
     @Override
     protected ConfiguredFeature<BasicTreeFeatureConfig, ?> getTreeFeature(Random randomIn, boolean p_225546_2_) {
-        return DWMFeature.CARDINAL_TREE.get().withConfiguration(DWMBiomeFeatures.CARDINAL_TREE_CONFIG);
+        return DWMFeature.CARDINAL_TREE.withConfiguration(DWMBiomeFeatures.CARDINAL_TREE_CONFIG);
     }
 }

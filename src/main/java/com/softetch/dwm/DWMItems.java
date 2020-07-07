@@ -4,6 +4,7 @@ import com.softetch.dwm.common.block.*;
 import com.softetch.dwm.common.block.trees.AshTree;
 import com.softetch.dwm.common.block.trees.CardinalTree;
 import com.softetch.dwm.common.block.trees.DarkAshTree;
+import com.softetch.dwm.common.block.trees.SoulTree;
 import com.softetch.dwm.common.item.DWMSpawnerItem;
 import com.softetch.dwm.common.item.TardisKeyItem;
 import com.softetch.dwm.common.item.clothing.FezItem;
@@ -41,15 +42,18 @@ public class DWMItems {
     public static final Block ASH_LOG = null;
     public static final Block DARK_ASH_LOG = null;
     public static final Block CARDINAL_LOG = null;
+    public static final Block SOUL_LOG = null;
     public static final Block ASH_PLANKS = null;
     public static final Block DARK_ASH_PLANKS = null;
     public static final Block CARDINAL_PLANKS = null;
     public static final Block ASH_LEAVES = null;
     public static final Block DARK_ASH_LEAVES = null;
     public static final Block CARDINAL_LEAVES = null;
+    public static final Block SOUL_LEAVES = null;
     public static final Block ASH_SAPLING = null;
     public static final Block DARK_ASH_SAPLING = null;
     public static final Block CARDINAL_SAPLING = null;
+    public static final Block SOUL_SAPLING = null;
 
     public static final Block GALLIFREY_STONE = null;
     public static final Block GALLIFREY_DIRT = null;
@@ -81,18 +85,21 @@ public class DWMItems {
                 addBlock("ash_log", new DWMLogBlock(MaterialColor.SAND, Block.Properties.create(Material.WOOD, MaterialColor.QUARTZ).hardnessAndResistance(2.0F).sound(SoundType.WOOD)), ItemGroup.BUILDING_BLOCKS),
                 addBlock("dark_ash_log", new DWMLogBlock(MaterialColor.GRAY, Block.Properties.create(Material.WOOD, MaterialColor.GRAY).hardnessAndResistance(2.0F).sound(SoundType.WOOD)), ItemGroup.BUILDING_BLOCKS),
                 addBlock("cardinal_log", new DWMLogBlock(MaterialColor.BROWN, Block.Properties.create(Material.WOOD, MaterialColor.BROWN).hardnessAndResistance(2.0f).sound(SoundType.WOOD)), ItemGroup.BUILDING_BLOCKS),
+                addBlock("soul_log", new DWMLogBlock(MaterialColor.GRAY, Block.Properties.create(Material.WOOD, MaterialColor.GRAY).hardnessAndResistance(2.0f).sound(SoundType.WOOD)), ItemGroup.BUILDING_BLOCKS),
                 addBlock("ash_planks", new Block(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)), ItemGroup.BUILDING_BLOCKS),
                 addBlock("dark_ash_planks", new Block(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)), ItemGroup.BUILDING_BLOCKS),
                 addBlock("cardinal_planks", new Block(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)), ItemGroup.BUILDING_BLOCKS),
                 addBlock("ash_slab", new SlabBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)), ItemGroup.BUILDING_BLOCKS),
                 addBlock("dark_ash_slab", new SlabBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)), ItemGroup.BUILDING_BLOCKS),
                 addBlock("cardinal_slab", new SlabBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)), ItemGroup.BUILDING_BLOCKS),
-                addBlock("ash_leaves", new DWMLeavesBlock(), ItemGroup.DECORATIONS),
-                addBlock("dark_ash_leaves", new DWMLeavesBlock(), ItemGroup.DECORATIONS),
-                addBlock("cardinal_leaves", new DWMLeavesBlock(), ItemGroup.DECORATIONS),
+                addBlock("ash_leaves", new DWMLeavesBlock(false), ItemGroup.DECORATIONS),
+                addBlock("dark_ash_leaves", new DWMLeavesBlock(false), ItemGroup.DECORATIONS),
+                addBlock("cardinal_leaves", new DWMLeavesBlock(false), ItemGroup.DECORATIONS),
+                addBlock("soul_leaves", new DWMLeavesBlock(true), ItemGroup.DECORATIONS),
                 addBlock("ash_sapling", new DWMSaplingBlock(new AshTree()), ItemGroup.DECORATIONS),
                 addBlock("dark_ash_sapling", new DWMSaplingBlock(new DarkAshTree()), ItemGroup.DECORATIONS),
                 addBlock("cardinal_sapling", new DWMSaplingBlock(new CardinalTree()), ItemGroup.DECORATIONS),
+                addBlock("soul_sapling", new DWMSaplingBlock(new SoulTree()), ItemGroup.DECORATIONS),
                 addBlock("ash_trapdoor", new DWMTrapDoorBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()), ItemGroup.REDSTONE),
                 addBlock("gallifrey_stone", new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.5F, 6.0F)), ItemGroup.BUILDING_BLOCKS),
                 addBlock("gallifrey_stone_slab", new SlabBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.5F, 6.0F)), ItemGroup.BUILDING_BLOCKS),
@@ -107,7 +114,7 @@ public class DWMItems {
                 addBlock("gallifrey_cut_sandstone_slab", new SlabBlock(Block.Properties.create(Material.ROCK, MaterialColor.SAND).hardnessAndResistance(2.0F, 6.0F)), ItemGroup.BUILDING_BLOCKS),
                 addBlock("gallifrey_coarse_dirt", new Block(Block.Properties.create(Material.EARTH, MaterialColor.DIRT).hardnessAndResistance(0.5F).sound(SoundType.GROUND)), ItemGroup.BUILDING_BLOCKS),
                 addBlock("gallifrey_sand", new SandBlock(0xba3c3c, Block.Properties.create(Material.SAND, MaterialColor.SAND).hardnessAndResistance(0.5F).sound(SoundType.SAND)), ItemGroup.BUILDING_BLOCKS),
-                addBlock("gallifrey_grass_block", new DWMGrassBlock(Block.Properties.create(Material.ORGANIC).tickRandomly().hardnessAndResistance(0.6F).sound(SoundType.PLANT), GALLIFREY_DIRT), ItemGroup.BUILDING_BLOCKS),
+                addBlock("gallifrey_grass_block", new DWMGrassBlock(Block.Properties.create(Material.ORGANIC).tickRandomly().hardnessAndResistance(0.6F).sound(SoundType.PLANT)), ItemGroup.BUILDING_BLOCKS),
                 addBlock("gallifrey_grass_path", new DWMGrassPathBlock(Block.Properties.create(Material.EARTH).hardnessAndResistance(0.65F).sound(SoundType.PLANT)), null),
                 addBlock("plutarch", new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F)), ItemGroup.BUILDING_BLOCKS),
 

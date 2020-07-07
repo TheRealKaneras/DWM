@@ -21,4 +21,9 @@ public class DWMBiomeFeatures {
             new SimpleBlockStateProvider(DWMItems.CARDINAL_LEAVES.getDefaultState()),
             new BlobFoliagePlacer(2, 0)).baseHeight(5).trunkHeight(3).trunkTopOffsetRandom(2).heightRandA(2).foliageHeight(3).ignoreVines().setSapling((IPlantable) DWMItems.CARDINAL_SAPLING).build();
 
+    public static final BasicTreeFeatureConfig SOUL_TREE_CONFIG = new BasicTreeFeatureConfig.Builder(
+            new SimpleBlockStateProvider(DWMItems.SOUL_LOG.getDefaultState()),
+            new SimpleBlockStateProvider(DWMItems.SOUL_LEAVES.getDefaultState()),
+            new BlobFoliagePlacer(2, 0)).baseHeight(5).trunkHeight(3).trunkTopOffsetRandom(2).heightRandA(2).foliageHeight(3).ignoreVines().setSapling((IPlantable) DWMItems.ASH_SAPLING).build();
+
 }

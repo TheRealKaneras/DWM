@@ -45,6 +45,10 @@ public class BasicTreeFeatureConfig extends TreeFeatureConfig {
         return deserialize(data).setTreeSapling((IPlantable) DWMItems.CARDINAL_SAPLING);
     }
 
+    public static <T> BasicTreeFeatureConfig deserializeSoul(Dynamic<T> data) {
+        return deserialize(data).setTreeSapling((IPlantable) DWMItems.SOUL_SAPLING);
+    }
+
     public static class Builder extends BaseTreeFeatureConfig.Builder {
         private final FoliagePlacer foliagePlacer;
         private List<TreeDecorator> decorators = ImmutableList.of();

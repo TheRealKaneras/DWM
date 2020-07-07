@@ -36,8 +36,7 @@ public class DWMMain {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         MinecraftForge.EVENT_BUS.register(this);
 
-        DWMBiomes.BIOMES.register(FMLJavaModLoadingContext.get().getModEventBus());
-        DWMFeature.FEATURES.register(FMLJavaModLoadingContext.get().getModEventBus());
+        DWMDimensions.DIMENSIONS.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
 
     /**

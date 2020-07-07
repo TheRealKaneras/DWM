@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
-    "dwm:ash_leaves"
+    "dwm:ash_leaves",
+    "dwm:dark_ash_leaves",
+    "dwm:cardinal_leaves",
+    "dwm:soul_leaves"
   ]
 }

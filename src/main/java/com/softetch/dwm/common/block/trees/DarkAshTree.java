@@ -18,6 +18,6 @@ public class DarkAshTree extends DWMTree {
     @Nullable
     @Override
     protected ConfiguredFeature<BasicTreeFeatureConfig, ?> getTreeFeature(Random randomIn, boolean p_225546_2_) {
-        return DWMFeature.DARK_ASH_TREE.get().withConfiguration(DWMBiomeFeatures.DARK_ASH_TREE_CONFIG);
+        return DWMFeature.DARK_ASH_TREE.withConfiguration(DWMBiomeFeatures.DARK_ASH_TREE_CONFIG);
     }
 }

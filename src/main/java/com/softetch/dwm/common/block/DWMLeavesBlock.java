@@ -3,22 +3,41 @@ package com.softetch.dwm.common.block;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.particles.ParticleTypes;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
+import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 import java.util.Random;
 
 public class DWMLeavesBlock extends LeavesBlock {
-    public DWMLeavesBlock() {
+    private static boolean smoke;
+    public DWMLeavesBlock(boolean smoke) {
         super(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.2F).tickRandomly().sound(SoundType.PLANT).notSolid());
+        this.smoke = smoke;
     }
 
     @Override
     public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random rand) {
         worldIn.setBlockState(pos, updateDistance(state, worldIn, pos), 3);
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    public void animateTick(BlockState stateIn, World worldIn, BlockPos pos, Random rand) {
+        if (!smoke)
+            return;
+        double d0 = (double)pos.getX() + (double)rand.nextFloat();
+        double d1 = (double)pos.getY() + 0.8D;
+        double d2 = (double)pos.getZ() + (double)rand.nextFloat();
+        double d3 = 0.0D;
+        double d4 = 0.0D;
+        double d5 = 0.0D;
+        worldIn.addParticle(ParticleTypes.SMOKE, d0, d1, d2, 0.0D, 0.0D, 0.0D);
     }
 
     /**

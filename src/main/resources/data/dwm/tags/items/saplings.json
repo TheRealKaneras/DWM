@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
-    "dwm:ash_sapling"
+    "dwm:ash_sapling",
+    "dwm:dark_ash_sapling",
+    "dwm:cardinal_sapling",
+    "dwm:soul_sapling"
   ]
 }
