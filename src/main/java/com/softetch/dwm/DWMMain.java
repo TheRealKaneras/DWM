@@ -11,8 +11,11 @@ import com.softetch.dwm.common.world.gen.DWMOreGen;
 import com.softetch.dwm.common.world.gen.biome.DWMBiomes;
 import com.softetch.dwm.common.world.gen.feature.DWMFeature;
 import com.softetch.dwm.common.world.gen.schematic.SchematicLoader;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
@@ -34,9 +37,20 @@ public class DWMMain {
      */
     public DWMMain() {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setupClient);
         MinecraftForge.EVENT_BUS.register(this);
 
         DWMDimensions.DIMENSIONS.register(FMLJavaModLoadingContext.get().getModEventBus());
+    }
+
+    private void setupClient(final FMLClientSetupEvent event) {
+        MinecraftForge.EVENT_BUS.register(new DWMRenderEvent());
+
+        RenderTypeLookup.setRenderLayer(DWMItems.ASH_SAPLING, RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(DWMItems.DARK_ASH_SAPLING, RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(DWMItems.CARDINAL_SAPLING, RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(DWMItems.SOUL_SAPLING, RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(DWMItems.CITADEL_GLASS, RenderType.getCutout());
     }
 
     /**
@@ -44,7 +58,6 @@ public class DWMMain {
      * @param event the forge common setup event.
      */
     private void setup(final FMLCommonSetupEvent event) {
-        MinecraftForge.EVENT_BUS.register(new DWMRenderEvent());
         MinecraftForge.EVENT_BUS.register(new DWMItemUseEvent());
         MinecraftForge.EVENT_BUS.register(new DWMEntityEvent());
         SchematicLoader.register();

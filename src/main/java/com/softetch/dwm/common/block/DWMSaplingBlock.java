@@ -74,4 +74,5 @@ public class DWMSaplingBlock extends BushBlock implements IGrowable {
     protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
         builder.add(STAGE);
     }
+
 }

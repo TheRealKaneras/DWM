@@ -9,7 +9,7 @@ issueTrackerURL="https://github.com/TheRealKaneras/DWM/issues"
 # The modid of the mod
 modId="dwm" #mandatory
 # The version number of the mod - there's a few well known ${} variables useable here or just hardcode it
-version="1.15.2-2.0.0.0-beta1" #mandatory
+version="1.15.2-1.0.0.0-beta2" #mandatory
  # A display name for the mod
 displayName="The Doctor Who Mod" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification <here>

@@ -63,6 +63,8 @@ public class DWMItems {
     public static final Block GALLIFREY_GRASS_PATH = null;
     public static final Block GALLIFREY_SAND = null;
 
+    public static final Block CITADEL_GLASS = null;
+
     public static final Block GALLIFREY_COAL_ORE = null;
     public static final Block GALLIFREY_IRON_ORE = null;
     public static final Block DWARF_STAR_ALLOY_ORE = null;
