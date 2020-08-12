@@ -1,9 +1,6 @@
 package com.softetch.dwm;
 
-import com.softetch.dwm.common.entity.AdiposeEntity;
-import com.softetch.dwm.common.entity.BroakirEntity;
-import com.softetch.dwm.common.entity.ClassicSilurianEntity;
-import com.softetch.dwm.common.entity.TellerEntity;
+import com.softetch.dwm.common.entity.*;
 import com.softetch.dwm.common.entity.dalek.GuardDalekEntity;
 import com.softetch.dwm.common.entity.dalek.InvasionDalekEntity;
 import com.softetch.dwm.common.entity.dalek.SkaroDalekEntity;
@@ -33,6 +30,7 @@ public class DWMEntities {
     public static final EntityType<TellerEntity> TELLER;
     public static final EntityType<ClassicSilurianEntity> CLASSIC_SILURIAN;
     public static final EntityType<BroakirEntity> BROAKIR;
+    public static final EntityType<FlutterwingEntity> FLUTTERWING;
 
     private DWMEntities() {}
 
@@ -60,7 +58,7 @@ public class DWMEntities {
         return entityType;
     }
 
-    /**w
+    /**
      * Build all the entity types
      */
     static {
@@ -72,6 +70,7 @@ public class DWMEntities {
         TELLER = build("teller", EntityType.Builder.create(TellerEntity::new, EntityClassification.CREATURE).size(0.6F, 1.8F));
         CLASSIC_SILURIAN = build("classic_silurian", EntityType.Builder.create(ClassicSilurianEntity::new, EntityClassification.MONSTER).size(0.6F, 1.8F));
         BROAKIR = build("broakir", EntityType.Builder.create(BroakirEntity::new, EntityClassification.CREATURE).size(1.3964844F, 1.6F));
+        FLUTTERWING = build("flutterwing", EntityType.Builder.create(FlutterwingEntity::new, EntityClassification.CREATURE).size(0.9F, 0.5F));
     }
 
 }
