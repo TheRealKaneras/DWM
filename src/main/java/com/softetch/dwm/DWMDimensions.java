@@ -1,6 +1,5 @@
 package com.softetch.dwm;
 
-import com.softetch.dwm.common.world.dimension.GallifreyDimension;
 import com.softetch.dwm.common.world.dimension.GallifreyModDimension;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.dimension.DimensionType;
