@@ -1,10 +1,11 @@
-package com.softetch.dwm.client.model.tileentity.tardis;
+package com.softetch.dwm.client.model.tileentity.tardis.box;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
+import com.softetch.dwm.client.model.tileentity.tardis.AbstractTardisExteriorModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
 
-public class WynJonesBoxModel extends AbstractTardisExteriorModel {
+public class ThirteenthDoctorBoxModel extends AbstractTardisExteriorModel {
 	private final ModelRenderer BaseRoof;
 	private final ModelRenderer bone16;
 	private final ModelRenderer bone17;
@@ -37,7 +38,7 @@ public class WynJonesBoxModel extends AbstractTardisExteriorModel {
 	private final ModelRenderer Post3;
 	private final ModelRenderer Post4;
 
-	public WynJonesBoxModel() {
+	public ThirteenthDoctorBoxModel() {
 		textureWidth = 128;
 		textureHeight = 128;
 
@@ -463,6 +464,7 @@ public class WynJonesBoxModel extends AbstractTardisExteriorModel {
 
 	@Override
 	public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha){
+		super.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
 		BaseRoof.render(matrixStack, buffer, packedLight, packedOverlay);
 		bb_main.render(matrixStack, buffer, packedLight, packedOverlay);
 		bb_main2.render(matrixStack, buffer, packedLight, packedOverlay);

@@ -7,6 +7,7 @@ import com.softetch.dwm.common.sound.DWMSoundEvents;
 import net.minecraft.block.Block;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.shapes.VoxelShape;
+import org.apache.logging.log4j.util.Strings;
 
 public class BaseChameleonData {
     protected String name;
@@ -87,6 +88,10 @@ public class BaseChameleonData {
     }
 
     protected ResourceLocation getTextureResourceLocation(String textureName) {
-        return new ResourceLocation(DWMMain.MOD_ID, "textures/tileentity/tardis/" + textureName + ".png");
+        if (Strings.isEmpty(type.getTexturePath())) {
+            return new ResourceLocation(DWMMain.MOD_ID, "textures/tileentity/tardis/" + textureName + ".png");
+        } else {
+            return new ResourceLocation(DWMMain.MOD_ID, "textures/tileentity/tardis/" + type.getTexturePath() + "/" + textureName + ".png");
+        }
     }
 }

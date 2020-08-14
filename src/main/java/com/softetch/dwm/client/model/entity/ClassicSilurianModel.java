@@ -1,6 +1,4 @@
-package com.softetch.dwm.client.model.entity;// Made with Blockbench 3.5.4
-// Exported for Minecraft version 1.15
-// Paste this class into your mod and generate all required imports
+package com.softetch.dwm.client.model.entity;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;

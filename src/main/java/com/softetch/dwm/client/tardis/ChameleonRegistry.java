@@ -1,6 +1,7 @@
 package com.softetch.dwm.client.tardis;
 
-import com.softetch.dwm.client.model.tileentity.tardis.*;
+import com.softetch.dwm.client.model.tileentity.tardis.AbstractTardisExteriorModel;
+import com.softetch.dwm.client.model.tileentity.tardis.box.*;
 import com.softetch.dwm.client.tardis.chameleon.BaseChameleonData;
 import com.softetch.dwm.client.tardis.chameleon.ChameleonType;
 import com.softetch.dwm.client.tardis.chameleon.ChestChameleon;
@@ -13,16 +14,28 @@ public class ChameleonRegistry {
     public final Map<String, BaseChameleonData> TARDIS_SKINS = new HashMap<>();
 
     public ChameleonRegistry() {
-        registerSkin("brachacki_box_a", ChameleonType.BRACHACKI_BOX, new BrachackiBoxAModel());
-        registerSkin("brachacki_box_b", ChameleonType.BRACHACKI_BOX, new BrachackiBoxBModel());
-        registerSkin("brachacki_box_c", ChameleonType.BRACHACKI_BOX, new BrachackiBoxCModel());
-        registerSkin("brachacki_box_d", ChameleonType.BRACHACKI_BOX, new BrachackiBoxDModel());
-        registerSkin("newbery_box_a", ChameleonType.NEWBERY_BOX, new NewberyBoxAModel());
-        registerSkin("newbery_box_b", ChameleonType.NEWBERY_BOX, new NewberyBoxBModel());
-        registerSkin("newbery_box_c", ChameleonType.NEWBERY_BOX, new NewberyBoxCModel());
         registerSkin(new ChestChameleon());
         registerSkin(new EnderChestChameleon());
-        registerSkin("wyn_jones_box", ChameleonType.WYN_JONES_BOX, new WynJonesBoxModel());
+        registerSkin("jalm_box", ChameleonType.POLICE_BOX, new JalmBoxModel());
+        registerSkin("first_doctor_box", ChameleonType.POLICE_BOX, new FirstDoctorBoxModel());
+        registerSkin("first_doctor_box_pilot", ChameleonType.POLICE_BOX, new FirstDoctorBoxModel());
+        registerSkin("first_doctor_box_damaged", ChameleonType.POLICE_BOX, new FirstDoctorBoxDamageModel());
+        registerSkin("second_doctor_box", ChameleonType.POLICE_BOX, new SecondDoctorBoxModel());
+        registerSkin("second_doctor_box_clean", ChameleonType.POLICE_BOX, new SecondDoctorBoxModel());
+        registerSkin("third_doctor_box_a", ChameleonType.POLICE_BOX, new FifthDoctorBoxModel());
+        registerSkin("third_doctor_box_b", ChameleonType.POLICE_BOX, new FifthDoctorBoxModel());
+        registerSkin("third_doctor_box_c", ChameleonType.POLICE_BOX, new FifthDoctorBoxModel());
+        registerSkin("fourth_doctor_box_a", ChameleonType.POLICE_BOX, new FourthDoctorBoxAModel());
+        registerSkin("fourth_doctor_box_b", ChameleonType.POLICE_BOX, new FourthDoctorBoxBModel());
+        registerSkin("fourth_doctor_box_c", ChameleonType.POLICE_BOX, new FourthDoctorBoxCModel());
+        registerSkin("fifth_doctor_box", ChameleonType.POLICE_BOX, new FifthDoctorBoxModel());
+        registerSkin("sixth_doctor_box_a", ChameleonType.POLICE_BOX, new SixthDoctorBoxModel());
+        registerSkin("sixth_doctor_box_b", ChameleonType.POLICE_BOX, new SixthDoctorBoxModel());
+        registerSkin("seventh_doctor_box_a", ChameleonType.POLICE_BOX, new SeventhDoctorBoxModel());
+        registerSkin("seventh_doctor_box_b", ChameleonType.POLICE_BOX, new SeventhDoctorBoxModel());
+        registerSkin("seventh_doctor_box_c", ChameleonType.POLICE_BOX, new SeventhDoctorBoxModel());
+        registerSkin("seventh_doctor_box_d", ChameleonType.POLICE_BOX, new SeventhDoctorBoxHPModel());
+//        registerSkin("thirteenth_doctor_box", ChameleonType.POLICE_BOX, new ThirteenthDoctorBoxModel());
     }
 
     /**
@@ -30,7 +43,7 @@ public class ChameleonRegistry {
      * @return a default tardis skin
      */
     public BaseChameleonData getDefaultSkin() {
-        return TARDIS_SKINS.get("brachacki_box_a");
+        return TARDIS_SKINS.get("fifth_doctor_box");
     }
 
     private void registerSkin(String name, ChameleonType type, AbstractTardisExteriorModel model) {
