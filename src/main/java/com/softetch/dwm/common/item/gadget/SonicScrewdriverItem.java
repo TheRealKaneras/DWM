@@ -36,7 +36,7 @@ public class SonicScrewdriverItem extends Item {
      * Creates a new sonic screwdriver
      */
     public SonicScrewdriverItem() {
-        super(new Item.Properties().group(ItemGroup.TOOLS));
+        super(new Item.Properties().group(ItemGroup.TOOLS).maxStackSize(1));
     }
 
     /**
