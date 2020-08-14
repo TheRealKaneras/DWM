@@ -35,9 +35,7 @@ public class TardisExteriorTile extends TileEntity implements ITickableTileEntit
             if (world.getGameTime() % getChameleonData().getAmbientSound().getDuration() == 0) {
                 playSound(getChameleonData().getAmbientSound(), SoundCategory.AMBIENT);
             }
-            if (isOwnerNearby() && !isOpen() && !isLocked()) {
-                setDoorState(DoorState.BOTH, false);
-            } else if (!isOwnerNearby() && isOpen() || isLocked()) {
+            if (!isOwnerNearby() && isOpen() || isLocked()) {
                 setDoorState(DoorState.CLOSED, false);
             }
 
@@ -51,6 +49,14 @@ public class TardisExteriorTile extends TileEntity implements ITickableTileEntit
             } else if (getDoorProgression() < 0.0f) {
                 updateDoorProgression(0.0f);
             }
+        }
+    }
+
+    public void toggleDoor() {
+        if (getDoorState() != DoorState.CLOSED) {
+            setDoorState(DoorState.CLOSED, false);
+        } else {
+            setDoorState(DoorState.BOTH, false);
         }
     }
 
