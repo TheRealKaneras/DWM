@@ -38,6 +38,7 @@ public class DWMRenderers {
         RenderingRegistry.registerEntityRenderingHandler(DWMEntities.CLASSIC_SILURIAN, ClassicSilurianRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(DWMEntities.BROAKIR, BroakirRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(DWMEntities.FLUTTERWING, FlutterwingRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(DWMEntities.MEWING_DOG, MewingDogRenderer::new);
 
         ClientRegistry.bindTileEntityRenderer(DWMTileEntities.TARDIS, TardisExteriorRenderer::new);
     }

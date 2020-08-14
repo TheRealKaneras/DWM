@@ -31,6 +31,7 @@ public class DWMEntities {
     public static final EntityType<ClassicSilurianEntity> CLASSIC_SILURIAN;
     public static final EntityType<BroakirEntity> BROAKIR;
     public static final EntityType<FlutterwingEntity> FLUTTERWING;
+    public static final EntityType<MewingDogEntity> MEWING_DOG;
 
     private DWMEntities() {}
 
@@ -71,6 +72,7 @@ public class DWMEntities {
         CLASSIC_SILURIAN = build("classic_silurian", EntityType.Builder.create(ClassicSilurianEntity::new, EntityClassification.MONSTER).size(0.6F, 1.8F));
         BROAKIR = build("broakir", EntityType.Builder.create(BroakirEntity::new, EntityClassification.CREATURE).size(1.3964844F, 1.6F));
         FLUTTERWING = build("flutterwing", EntityType.Builder.create(FlutterwingEntity::new, EntityClassification.CREATURE).size(0.9F, 0.5F));
+        MEWING_DOG = build("mewing_dog", EntityType.Builder.create(MewingDogEntity::new, EntityClassification.CREATURE).size(0.6F, 0.85F));
     }
 
 }
