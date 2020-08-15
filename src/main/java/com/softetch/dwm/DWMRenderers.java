@@ -1,9 +1,6 @@
 package com.softetch.dwm;
 
 import com.softetch.dwm.client.render.entity.*;
-import com.softetch.dwm.client.render.entity.dalek.GuardDalekRenderer;
-import com.softetch.dwm.client.render.entity.dalek.InvasionDalekRenderer;
-import com.softetch.dwm.client.render.entity.dalek.SkaroDalekRenderer;
 import com.softetch.dwm.client.render.entity.projectile.LaserRenderer;
 import com.softetch.dwm.client.render.tileentity.TardisExteriorRenderer;
 import net.minecraftforge.api.distmarker.Dist;
@@ -29,9 +26,6 @@ public class DWMRenderers {
      */
     @SubscribeEvent
     public static void register(final FMLClientSetupEvent event) {
-        RenderingRegistry.registerEntityRenderingHandler(DWMEntities.SKARO_DALEK, SkaroDalekRenderer::new);
-        RenderingRegistry.registerEntityRenderingHandler(DWMEntities.INVASION_DALEK, InvasionDalekRenderer::new);
-        RenderingRegistry.registerEntityRenderingHandler(DWMEntities.GUARD_DALEK, GuardDalekRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(DWMEntities.ADIPOSE, AdiposeRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(DWMEntities.LASER, LaserRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(DWMEntities.TELLER, TellerRenderer::new);
