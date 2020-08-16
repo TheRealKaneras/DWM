@@ -33,6 +33,7 @@ public class DWMRenderers {
         RenderingRegistry.registerEntityRenderingHandler(DWMEntities.BROAKIR, BroakirRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(DWMEntities.FLUTTERWING, FlutterwingRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(DWMEntities.MEWING_DOG, MewingDogRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(DWMEntities.PLUNGBOLL, PlungbollRenderer::new);
 
         ClientRegistry.bindTileEntityRenderer(DWMTileEntities.TARDIS, TardisExteriorRenderer::new);
     }
