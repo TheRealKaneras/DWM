@@ -3,9 +3,8 @@ package com.softetch.dwm.common.entity;
 import com.softetch.dwm.DWMNBTTags;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
-import net.minecraft.entity.ai.goal.Goal;
-import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
-import net.minecraft.entity.monster.IMob;
+import net.minecraft.entity.ai.goal.*;
+import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
@@ -23,30 +22,12 @@ import javax.annotation.Nullable;
 import java.util.EnumSet;
 import java.util.List;
 
-public class PlungbollEntity extends MobEntity implements IMob {
+public class PlungbollEntity extends MonsterEntity {
     private static final DataParameter<Integer> PLUNGBOLL_SIZE = EntityDataManager.createKey(PlungbollEntity.class, DataSerializers.VARINT);
     private static final DataParameter<Integer> PLUNGBOLL_COLOR = EntityDataManager.createKey(PlungbollEntity.class, DataSerializers.VARINT);
-    private static final int[] AVAILABLE_COLORS = new int[] {
-            0xB02E26,
-            0xF9801D,
-            0xFED83D,
-            0x80C71F,
-            0x5E7C16,
-            0x3AB3DA,
-            0x169C9C,
-            0x3C44AA,
-            0x8932B8,
-            0xC74EBD,
-            0xF38BAA,
-            0xF9FFFE,
-            0x9D9D97,
-            0x474F52,
-            0x1D1D21,
-            0x835432
-    };
     public PlungbollEntity congregateTarget;
 
-    public PlungbollEntity(EntityType<? extends MobEntity> type, World worldIn) {
+    public PlungbollEntity(EntityType<? extends MonsterEntity> type, World worldIn) {
         super(type, worldIn);
     }
 
@@ -54,6 +35,10 @@ public class PlungbollEntity extends MobEntity implements IMob {
     protected void registerGoals() {
         this.goalSelector.addGoal(1, new PlungbollEntity.CongregateGoal(this));
         this.goalSelector.addGoal(2, new PlungbollEntity.AttackGoal(this, PlayerEntity.class, true));
+
+        this.goalSelector.addGoal(4, new WaterAvoidingRandomWalkingGoal(this, 1.0D));
+        this.goalSelector.addGoal(5, new LookAtGoal(this, PlayerEntity.class, 8.0F));
+        this.goalSelector.addGoal(5, new LookRandomlyGoal(this));
     }
 
     public void setCongregateTarget(PlungbollEntity congregateTarget) {
@@ -72,7 +57,9 @@ public class PlungbollEntity extends MobEntity implements IMob {
 
     protected void registerAttributes() {
         super.registerAttributes();
-        this.getAttributes().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
+        this.getAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(35.0D);
+        this.getAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(1.0D);
+        this.getAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(1.0D);
     }
 
     protected void setPlungbollSize(int size, boolean resetHealth) {
@@ -156,14 +143,7 @@ public class PlungbollEntity extends MobEntity implements IMob {
     }
 
     private int getCombinedColor(int colorA, int colorB) {
-        int red = (((colorA >> 16) & 0xFF) + ((colorB >> 16) & 0xFF)) / 2;
-        int green = (((colorA >> 8) & 0xFF) + ((colorB >> 8) & 0xFF)) / 2;
-        int blue = ((colorA & 0xFF) + (colorB & 0xFF)) / 2;
-
-        int rgb = red;
-        rgb = (rgb << 8) + green;
-        rgb = (rgb << 8) + blue;
-        return rgb;
+        return (colorA + colorB) / 2;
     }
 
     @Override
@@ -171,7 +151,7 @@ public class PlungbollEntity extends MobEntity implements IMob {
         super.applyEntityCollision(entityIn);
         if (entityIn instanceof PlungbollEntity) {
             PlungbollEntity plungboll = (PlungbollEntity) entityIn;
-            if (plungboll.getCongregateTarget() == this) {
+            if ((plungboll.getCongregateTarget() == this)) {
                 this.setPlungbollColor(getCombinedColor(this.getPlungbollColor(), plungboll.getPlungbollColor()));
                 plungboll.remove();
             }
@@ -181,7 +161,7 @@ public class PlungbollEntity extends MobEntity implements IMob {
     @Nullable
     @Override
     public ILivingEntityData onInitialSpawn(IWorld worldIn, DifficultyInstance difficultyIn, SpawnReason reason, @Nullable ILivingEntityData spawnDataIn, @Nullable CompoundNBT dataTag) {
-        this.setPlungbollColor(AVAILABLE_COLORS[worldIn.getRandom().nextInt(AVAILABLE_COLORS.length)]);
+        this.setPlungbollColor(worldIn.getRandom().nextInt(16));
         this.setPlungbollSize(worldIn.getRandom().nextInt(3), true);
         return super.onInitialSpawn(worldIn, difficultyIn, reason, spawnDataIn, dataTag);
     }
@@ -223,7 +203,7 @@ public class PlungbollEntity extends MobEntity implements IMob {
         }
 
         protected double getPursueSpeed() {
-            return this.goalOwner.getAttribute(SharedMonsterAttributes.ATTACK_SPEED).getValue();
+            return this.goalOwner.getAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).getValue() * 1.025D;
         }
 
         protected AxisAlignedBB getTargetableArea(double targetDistance) {
