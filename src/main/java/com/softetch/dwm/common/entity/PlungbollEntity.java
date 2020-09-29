@@ -34,8 +34,7 @@ public class PlungbollEntity extends MonsterEntity {
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(1, new PlungbollEntity.CongregateGoal(this));
-        this.goalSelector.addGoal(2, new PlungbollEntity.AttackGoal(this, PlayerEntity.class, true));
-
+        this.goalSelector.addGoal(2, new PlungbollEntity.AttackGoal<>(this, PlayerEntity.class, true));
         this.goalSelector.addGoal(4, new WaterAvoidingRandomWalkingGoal(this, 1.0D));
         this.goalSelector.addGoal(5, new LookAtGoal(this, PlayerEntity.class, 8.0F));
         this.goalSelector.addGoal(5, new LookRandomlyGoal(this));
@@ -94,6 +93,7 @@ public class PlungbollEntity extends MonsterEntity {
     public void writeAdditional(CompoundNBT compound) {
         super.writeAdditional(compound);
         compound.putInt(DWMNBTTags.SIZE, this.getPlungbollSize() - 1);
+        compound.putInt(DWMNBTTags.COLOR, this.getPlungbollColor());
     }
 
     public void readAdditional(CompoundNBT compound) {
@@ -103,6 +103,7 @@ public class PlungbollEntity extends MonsterEntity {
         }
 
         this.setPlungbollSize(i + 1, false);
+        this.setPlungbollColor(compound.getInt(DWMNBTTags.COLOR));
         super.readAdditional(compound);
     }
 
@@ -146,6 +147,10 @@ public class PlungbollEntity extends MonsterEntity {
         return (colorA + colorB) / 2;
     }
 
+    public void combineHealth(float additionalHealth) {
+        this.setHealth(this.getHealth() + additionalHealth);
+    }
+
     @Override
     public void applyEntityCollision(Entity entityIn) {
         super.applyEntityCollision(entityIn);
@@ -153,6 +158,8 @@ public class PlungbollEntity extends MonsterEntity {
             PlungbollEntity plungboll = (PlungbollEntity) entityIn;
             if ((plungboll.getCongregateTarget() == this)) {
                 this.setPlungbollColor(getCombinedColor(this.getPlungbollColor(), plungboll.getPlungbollColor()));
+                this.setPlungbollSize(plungboll.getPlungbollSize() + this.getPlungbollSize(), false);
+                this.combineHealth(plungboll.getHealth());
                 plungboll.remove();
             }
         }
@@ -166,9 +173,10 @@ public class PlungbollEntity extends MonsterEntity {
         return super.onInitialSpawn(worldIn, difficultyIn, reason, spawnDataIn, dataTag);
     }
 
-    static class AttackGoal extends NearestAttackableTargetGoal {
 
-        public AttackGoal(PlungbollEntity goalOwnerIn, Class targetClassIn, boolean checkSight) {
+    static class AttackGoal<T extends LivingEntity> extends NearestAttackableTargetGoal<T> {
+
+        public AttackGoal(PlungbollEntity goalOwnerIn, Class<T> targetClassIn, boolean checkSight) {
             super(goalOwnerIn, targetClassIn, checkSight);
         }
 

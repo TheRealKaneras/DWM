@@ -14,6 +14,7 @@ public class DWMNBTTags {
     public static final String INTERIOR_POS = createTag("interior_pos");
     public static final String UUID = createTag("uuid");
     public static final String SIZE = createTag("size");
+    public static final String COLOR = createTag("color");
 
     private static String createTag(String key) {
         return DWMMain.MOD_ID + "_" + key;

@@ -12,7 +12,6 @@ public class TellerRenderer extends MobRenderer<TellerEntity, TellerModel> {
 
     public TellerRenderer(EntityRendererManager rendererManager) {
         super(rendererManager, new TellerModel(), 0.6f);
-
     }
 
     /**
