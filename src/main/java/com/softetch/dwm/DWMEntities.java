@@ -27,6 +27,7 @@ public class DWMEntities {
     public static final EntityType<FlutterwingEntity> FLUTTERWING;
     public static final EntityType<MewingDogEntity> MEWING_DOG;
     public static final EntityType<PlungbollEntity> PLUNGBOLL;
+    public static final EntityType<ConsoleEntity> CONSOLE;
 
     private DWMEntities() {}
 
@@ -66,7 +67,7 @@ public class DWMEntities {
         FLUTTERWING = build("flutterwing", EntityType.Builder.create(FlutterwingEntity::new, EntityClassification.CREATURE).size(0.9F, 0.5F));
         MEWING_DOG = build("mewing_dog", EntityType.Builder.create(MewingDogEntity::new, EntityClassification.CREATURE).size(0.6F, 0.85F));
         PLUNGBOLL = build("plungboll", EntityType.Builder.create(PlungbollEntity::new, EntityClassification.MONSTER).size(2.04F, 2.04F));
-
+        CONSOLE = build("console", EntityType.Builder.create(ConsoleEntity::new, EntityClassification.MONSTER).size(2.0f, 2.0f));
     }
 
 }

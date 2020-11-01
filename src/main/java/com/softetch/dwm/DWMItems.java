@@ -36,6 +36,49 @@ public class DWMItems {
     public static final Item ADIPOSE_PILL = null;
     public static final Item GELATIN = null;
     public static final Item ADIPOSE_MATERIAL = null;
+
+    // Console Communications
+    public static final Item MONITOR_SWITCH = null;
+    public static final Item DISTRESS_CALL_RECEIVER = null;
+    public static final Item TELEPATHIC_CIRCUIT = null;
+
+    // Console Fabrication
+    public static final Item SHIELDS_LEVER = null;
+    public static final Item CLOAK_LEVER = null;
+    public static final Item DOOR_LOCK = null;
+    public static final Item DOOR_SWITCH = null;
+    public static final Item CHAMELEON_CIRCUIT_BUTTON = null;
+
+    // Console Helm
+    public static final Item FAST_RETURN = null;
+    public static final Item MATERIALISATION_LEVER = null;
+    public static final Item STABILISER_BUTTON = null;
+
+    // Console Navigation
+    public static final Item BIOME_SELECTOR = null;
+    public static final Item COORDINATE_LOCK = null;
+    public static final Item PLANET_LOCATOR = null;
+    public static final Item PLAYER_LOCATOR = null;
+    public static final Item WAYPOINT_SELECTOR = null;
+
+    // Console Environmental Instruments
+    public static final Item DIAGNOSTIC_SCAN_LEVER = null;
+    public static final Item PREFERENCES_BUTTON = null;
+    public static final Item OXYGEN_READER = null;
+    public static final Item PRESSURE_READER = null;
+    public static final Item RADIATION_LEVER = null;
+    public static final Item REFUELER = null;
+    public static final Item TEMPERATURE_READER = null;
+
+    // Console Misc
+    public static final Item LIGHT_SWITCH = null;
+    public static final Item MISC_LEVER = null;
+    public static final Item DISPLAY = null;
+
+    // Console Top Parts
+    public static final Item PANEL_COVER = null;
+    public static final Item TOP_VENT = null;
+
     public static final Block PLASTIC_ORE = null;
     public static final Block STONE_ROUNDEL = null;
 

@@ -34,6 +34,7 @@ public class DWMRenderers {
         RenderingRegistry.registerEntityRenderingHandler(DWMEntities.FLUTTERWING, FlutterwingRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(DWMEntities.MEWING_DOG, MewingDogRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(DWMEntities.PLUNGBOLL, PlungbollRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(DWMEntities.CONSOLE, ConsoleRenderer::new);
 
         ClientRegistry.bindTileEntityRenderer(DWMTileEntities.TARDIS, TardisExteriorRenderer::new);
     }
