@@ -5,6 +5,7 @@ package com.softetch.dwm;
  */
 public class DWMNBTTags {
     public static final String SCALE_2D = createTag("scale_2d");
+    public static final String DOOR_DATA = createTag("door_data");
     public static final String TARDIS_DATA = createTag("tardis_data");
     public static final String CHAMELEON = createTag("chameleon");
     public static final String DOOR_STATE = createTag("door_state");

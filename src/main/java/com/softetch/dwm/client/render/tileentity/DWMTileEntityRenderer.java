@@ -44,6 +44,10 @@ public class DWMTileEntityRenderer<T extends TileEntity> extends TileEntityRende
         this.model = model;
     }
 
+    public Model getModel() {
+        return model;
+    }
+
     public void setTexture(ResourceLocation texture) {
         this.texture = texture;
     }

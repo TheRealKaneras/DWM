@@ -2,6 +2,7 @@ package com.softetch.dwm.client.render.tileentity;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.softetch.dwm.client.tardis.chameleon.BaseChameleonData;
+import com.softetch.dwm.common.tileentity.DoorTypeTile;
 import com.softetch.dwm.common.tileentity.TardisExteriorTile;
 import net.minecraft.client.renderer.IRenderTypeBuffer;
 import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
@@ -14,15 +15,25 @@ public class TardisExteriorRenderer extends DWMTileEntityRenderer<TardisExterior
     }
 
     @Override
-    public void render(TardisExteriorTile tileEntity, float partialTicks, MatrixStack matrixStack, IRenderTypeBuffer buffer, int combinedLight, int combinedOverlay) {
-        if (tileEntity.getChameleonData() != null && (chameleonData == null || !chameleonData.getName().equals(tileEntity.getChameleon()))) {
-            chameleonData = tileEntity.getChameleonData();
-            setModel(chameleonData.getModel());
-            setTexture(chameleonData.getTexture());
-        } else if (tileEntity.getChameleonData() == null) {
+    public void render(TardisExteriorTile tile, float partialTicks, MatrixStack matrixStack, IRenderTypeBuffer buffer, int combinedLight, int combinedOverlay) {
+        if (tile.getChameleonData() == null)
             return;
+
+        if (chameleonData == null || !chameleonData.getName().equals(tile.getChameleon())) {
+            changeModelAndTexture(tile.getChameleonData());
         }
-        chameleonData.getModel().doorRotation(tileEntity.getDoorState(), tileEntity.getDoorProgression());
-        super.render(tileEntity, partialTicks, matrixStack, buffer, combinedLight, combinedOverlay);
+
+        doDoorRotation(tile.getDoorState(), tile.getDoorProgression());
+        super.render(tile, partialTicks, matrixStack, buffer, combinedLight, combinedOverlay);
+    }
+
+    private void changeModelAndTexture(BaseChameleonData chameleon) {
+        chameleonData = chameleon;
+        setModel(chameleon.getModel());
+        setTexture(chameleon.getTexture());
+    }
+
+    private void doDoorRotation(DoorTypeTile.DoorState doorState, float progression) {
+        chameleonData.getModel().doorRotation(doorState, progression);
     }
 }
