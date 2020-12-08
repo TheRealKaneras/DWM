@@ -7,14 +7,10 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.pathfinding.PathType;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
@@ -22,7 +18,7 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
-public class TardisExteriorBlock extends DWMTileEntityBlock {
+public class TardisExteriorBlock extends SmartDoorBlock {
     private final String exteriorName;
 
     public TardisExteriorBlock(String exteriorName) {
@@ -92,15 +88,6 @@ public class TardisExteriorBlock extends DWMTileEntityBlock {
 //                }
 //            }
 //        }
-    }
-
-    @Override
-    public ActionResultType onBlockActivated(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockRayTraceResult p_225533_6_) {
-        if (!world.isRemote() && world.getTileEntity(pos) instanceof TardisExteriorTile && hand == Hand.MAIN_HAND) {
-            ((TardisExteriorTile) world.getTileEntity(pos)).toggleDoor();
-            return ActionResultType.SUCCESS;
-        }
-        return super.onBlockActivated(state, world, pos, player, hand, p_225533_6_);
     }
 
     @Override

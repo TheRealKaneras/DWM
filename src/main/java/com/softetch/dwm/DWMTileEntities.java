@@ -1,5 +1,6 @@
 package com.softetch.dwm;
 
+import com.softetch.dwm.common.tileentity.ClassicDoorsTile;
 import com.softetch.dwm.common.tileentity.TardisExteriorTile;
 import net.minecraft.block.Block;
 import net.minecraft.tileentity.TileEntity;
@@ -20,6 +21,7 @@ import java.util.function.Supplier;
 @ObjectHolder(DWMMain.MOD_ID)
 public class DWMTileEntities {
     public static final TileEntityType<TardisExteriorTile> TARDIS = null;
+    public static final TileEntityType<ClassicDoorsTile> CLASSIC_DOORS = null;
 
     private static TileEntityType<?> createTileEntity(Supplier<? extends TileEntity> factoryIn, String name, Block... validBlocks) {
         return TileEntityType.Builder.create(factoryIn, validBlocks).build(null).setRegistryName(DWMMain.MOD_ID, name);
@@ -29,7 +31,8 @@ public class DWMTileEntities {
     public static void onTileEntityRegistration(final RegistryEvent.Register<TileEntityType<?>> event) {
         DWMMain.LOGGER.info("Registering DWM tile entities");
         event.getRegistry().registerAll(
-            createTileEntity(TardisExteriorTile::new, "tardis", DWMItems.tardises.toArray(new Block[DWMItems.tardises.size()]))
+            createTileEntity(TardisExteriorTile::new, "tardis", DWMItems.tardises.toArray(new Block[DWMItems.tardises.size()])),
+            createTileEntity(ClassicDoorsTile::new, "classic_doors", DWMItems.CLASSIC_DOORS)
         );
     }
 }

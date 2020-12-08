@@ -12,10 +12,10 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.SoundCategory;
 
-public class DoorTypeTile extends TileEntity implements ITickableTileEntity {
+public abstract class DoorTypeTile extends TileEntity implements ITickableTileEntity {
     private CompoundNBT compoundNBT;
 
-    public DoorTypeTile(TileEntityType<?> tileEntityTypeIn) {
+    protected DoorTypeTile(TileEntityType<?> tileEntityTypeIn) {
         super(tileEntityTypeIn);
     }
 

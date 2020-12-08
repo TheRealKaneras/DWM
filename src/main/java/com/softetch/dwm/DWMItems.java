@@ -79,9 +79,9 @@ public class DWMItems {
     public static final Item PANEL_COVER = null;
     public static final Item TOP_VENT = null;
 
-    public static final Block PLASTIC_ORE = null;
     public static final Block STONE_ROUNDEL = null;
 
+    // Tree stuff
     public static final Block ASH_LOG = null;
     public static final Block DARK_ASH_LOG = null;
     public static final Block CARDINAL_LOG = null;
@@ -98,6 +98,7 @@ public class DWMItems {
     public static final Block CARDINAL_SAPLING = null;
     public static final Block SOUL_SAPLING = null;
 
+    // Environment
     public static final Block GALLIFREY_STONE = null;
     public static final Block GALLIFREY_DIRT = null;
     public static final Block GALLIFREY_FARMLAND = null;
@@ -108,11 +109,16 @@ public class DWMItems {
 
     public static final Block CITADEL_GLASS = null;
 
+    // Ores
     public static final Block GALLIFREY_COAL_ORE = null;
     public static final Block GALLIFREY_IRON_ORE = null;
     public static final Block DWARF_STAR_ALLOY_ORE = null;
     public static final Block WHITE_POINT_STAR_ORE = null;
     public static final Block AZBANTIUM_ORE = null;
+    public static final Block PLASTIC_ORE = null;
+
+    // Special Blocks
+    public static final Block CLASSIC_DOORS = null;
 
     public static List<Block> tardises = new ArrayList<>();
     private static final HashMap<Block, ItemGroup> blocksWithItems = new HashMap<>();
@@ -192,8 +198,9 @@ public class DWMItems {
                 addBlock("brown_plastic_block",new Block(Block.Properties.create(Material.WOOL, DyeColor.BROWN)), ItemGroup.BUILDING_BLOCKS),
                 addBlock("green_plastic_block",new Block(Block.Properties.create(Material.WOOL, DyeColor.GREEN)), ItemGroup.BUILDING_BLOCKS),
                 addBlock("red_plastic_block",new Block(Block.Properties.create(Material.WOOL, DyeColor.RED)), ItemGroup.BUILDING_BLOCKS),
-                addBlock("black_plastic_block",new Block(Block.Properties.create(Material.WOOL, DyeColor.BLACK)), ItemGroup.BUILDING_BLOCKS)
+                addBlock("black_plastic_block",new Block(Block.Properties.create(Material.WOOL, DyeColor.BLACK)), ItemGroup.BUILDING_BLOCKS),
 
+                addBlock("classic_doors", new ClassicDoorsBlock(), ItemGroup.BUILDING_BLOCKS)
         );
 
         registerFireInfo();
