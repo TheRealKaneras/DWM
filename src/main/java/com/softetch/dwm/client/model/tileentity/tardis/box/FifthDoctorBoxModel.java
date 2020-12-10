@@ -615,8 +615,7 @@ public class FifthDoctorBoxModel extends AbstractTardisExteriorModel {
 
 	@Override
 	public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha){
-		matrixStack.translate(0.0D, -0.75D, 0.0D);
-		matrixStack.scale(1.5f, 1.5f, 1.5f);
+		super.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
 		leftDoor.render(matrixStack, buffer, packedLight, packedOverlay);
 		rightDoor.render(matrixStack, buffer, packedLight, packedOverlay);
 		lamp.render(matrixStack, buffer, packedLight, packedOverlay);
@@ -645,6 +644,11 @@ public class FifthDoctorBoxModel extends AbstractTardisExteriorModel {
 	@Override
 	public ModelRenderer getRightDoor() {
 		return rightDoor;
+	}
+
+	@Override
+	protected float getScale() {
+		return 1.5f;
 	}
 
 	public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {

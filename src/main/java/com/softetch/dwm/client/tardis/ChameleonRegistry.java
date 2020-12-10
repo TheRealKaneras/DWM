@@ -42,6 +42,7 @@ public class ChameleonRegistry {
      * SHOULD ONLY BE USED FOR DEBUGGING!!!!
      * @return a default tardis skin
      */
+    @Deprecated
     public BaseChameleonData getDefaultSkin() {
         return TARDIS_SKINS.get("fifth_doctor_box");
     }

@@ -630,7 +630,7 @@ public class FirstDoctorBoxModel extends AbstractTardisExteriorModel {
 
 	@Override
 	protected float getScale() {
-		return 1.4f;
+		return 1.5f;
 	}
 
 	public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {
