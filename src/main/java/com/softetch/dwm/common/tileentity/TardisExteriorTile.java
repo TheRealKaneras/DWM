@@ -78,7 +78,7 @@ public class TardisExteriorTile extends DoorTypeTile {
     }
 
     public boolean isOwnerNearby() {
-        AxisAlignedBB searchBounds = new AxisAlignedBB(getPos()).grow(2, 1.5, 2);
+        AxisAlignedBB searchBounds = new AxisAlignedBB(getPos()).grow(5, 3, 5);
         List<PlayerEntity> list = getWorld().getEntitiesWithinAABB(PlayerEntity.class, searchBounds);
         for (PlayerEntity player : list) {
             if (isOwner(player))

@@ -1,7 +1,4 @@
-package com.softetch.dwm.client.model.tileentity.tardis.box;// Made with Blockbench 3.7.2
-// Exported for Minecraft version 1.15
-// Paste this class into your mod and generate all required imports
-
+package com.softetch.dwm.client.model.tileentity.tardis.box;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
@@ -618,7 +615,7 @@ public class FifthDoctorBoxModel extends AbstractTardisExteriorModel {
 
 	@Override
 	public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha){
-		matrixStack.translate(0.0D, -1.0D, 0.0D);
+		matrixStack.translate(0.0D, -0.75D, 0.0D);
 		matrixStack.scale(1.5f, 1.5f, 1.5f);
 		leftDoor.render(matrixStack, buffer, packedLight, packedOverlay);
 		rightDoor.render(matrixStack, buffer, packedLight, packedOverlay);
