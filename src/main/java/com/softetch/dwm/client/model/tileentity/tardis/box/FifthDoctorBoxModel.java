@@ -1,4 +1,7 @@
-package com.softetch.dwm.client.model.tileentity.tardis.box;
+package com.softetch.dwm.client.model.tileentity.tardis.box;// Made with Blockbench 3.7.2
+// Exported for Minecraft version 1.15
+// Paste this class into your mod and generate all required imports
+
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
@@ -74,17 +77,14 @@ public class FifthDoctorBoxModel extends AbstractTardisExteriorModel {
 		leftDoor.setTextureOffset(0, 0).addBox(-4.0F, 4.0F, 0.0F, 4.0F, 4.0F, 1.0F, 0.0F, false);
 		leftDoor.setTextureOffset(3, 15).addBox(-5.0F, 8.0F, -0.3F, 5.0F, 1.0F, 1.0F, 0.0F, false);
 		leftDoor.setTextureOffset(7, 6).addBox(-5.0F, 4.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
-		leftDoor.setTextureOffset(0, 10).addBox(-0.7F, 4.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
-		leftDoor.setTextureOffset(20, 7).addBox(-0.7F, -1.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
+		leftDoor.setTextureOffset(0, 0).addBox(-0.7F, -12.0F, -0.3F, 1.0F, 21.0F, 1.0F, 0.0F, false);
 		leftDoor.setTextureOffset(0, 8).addBox(-5.0F, 3.0F, -0.3F, 5.0F, 1.0F, 1.0F, 0.0F, false);
 		leftDoor.setTextureOffset(0, 10).addBox(-5.0F, -1.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
 		leftDoor.setTextureOffset(7, 14).addBox(-4.0F, -1.0F, 0.0F, 4.0F, 4.0F, 1.0F, 0.0F, true);
-		leftDoor.setTextureOffset(6, 6).addBox(-5.0F, -2.0F, -0.3F, 5.0F, 1.0F, 1.0F, 0.0F, false);
+		leftDoor.setTextureOffset(0, 9).addBox(-5.0F, -2.0F, -0.3F, 5.0F, 1.0F, 1.0F, 0.0F, false);
 		leftDoor.setTextureOffset(0, 0).addBox(-4.0F, -6.0F, 0.0F, 4.0F, 4.0F, 1.0F, 0.0F, false);
 		leftDoor.setTextureOffset(0, 8).addBox(-5.0F, -6.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
-		leftDoor.setTextureOffset(0, 8).addBox(-0.7F, -6.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
-		leftDoor.setTextureOffset(0, 5).addBox(-5.0F, -7.0F, -0.3F, 5.0F, 1.0F, 1.0F, 0.0F, false);
-		leftDoor.setTextureOffset(0, 0).addBox(-0.7F, -11.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
+		leftDoor.setTextureOffset(0, 5).addBox(-5.0F, -7.0F, -0.3F, 5.0F, 1.0F, 1.0F, 0.0F, true);
 		leftDoor.setTextureOffset(0, 0).addBox(-5.0F, -11.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
 		leftDoor.setTextureOffset(20, 0).addBox(-5.0F, -12.0F, -0.3F, 5.0F, 1.0F, 1.0F, 0.0F, false);
 		leftDoor.setTextureOffset(22, 15).addBox(-4.775F, -11.1F, -0.08F, 4.0F, 4.0F, 1.0F, 0.0F, false);
@@ -115,7 +115,7 @@ public class FifthDoctorBoxModel extends AbstractTardisExteriorModel {
 		bone18 = new ModelRenderer(this);
 		bone18.setRotationPoint(-5.7F, -1.6F, 0.3F);
 		leftDoor.addChild(bone18);
-		bone18.setTextureOffset(10, 24).addBox(0.6964F, -0.3876F, -0.64F, 1.0F, 1.0F, 1.0F, 0.0F, false);
+		bone18.setTextureOffset(10, 24).addBox(0.8964F, -0.4376F, -0.94F, 1.0F, 1.0F, 1.0F, -0.2F, false);
 
 		bone3 = new ModelRenderer(this);
 		bone3.setRotationPoint(-4.75F, -2.1F, 0.7F);
@@ -133,21 +133,18 @@ public class FifthDoctorBoxModel extends AbstractTardisExteriorModel {
 		rightDoor.setRotationPoint(-5.0F, 14.0F, -6.0F);
 		rightDoor.setTextureOffset(0, 5).addBox(0.0F, -7.0F, -0.3F, 5.0F, 1.0F, 1.0F, 0.0F, false);
 		rightDoor.setTextureOffset(10, 27).addBox(0.1F, -6.0F, 0.0F, 4.0F, 4.0F, 1.0F, 0.0F, false);
-		rightDoor.setTextureOffset(0, 8).addBox(-0.3F, -6.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
 		rightDoor.setTextureOffset(0, 8).addBox(4.0F, -6.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
 		rightDoor.setTextureOffset(0, 0).addBox(4.0F, -11.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
 		rightDoor.setTextureOffset(20, 0).addBox(0.0F, -12.0F, -0.3F, 5.0F, 1.0F, 1.0F, 0.0F, false);
-		rightDoor.setTextureOffset(0, 0).addBox(-0.3F, -11.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
 		rightDoor.setTextureOffset(22, 15).addBox(-0.075F, -11.1F, -0.08F, 4.0F, 4.0F, 1.0F, 0.0F, false);
 		rightDoor.setTextureOffset(8, 7).addBox(0.0F, -1.0F, 0.0F, 4.0F, 4.0F, 1.0F, 0.0F, false);
-		rightDoor.setTextureOffset(0, 15).addBox(0.0F, -2.0F, -0.3F, 5.0F, 1.0F, 1.0F, 0.0F, false);
+		rightDoor.setTextureOffset(0, 9).addBox(0.0F, -2.0F, -0.3F, 5.0F, 1.0F, 1.0F, 0.0F, false);
 		rightDoor.setTextureOffset(5, 10).addBox(4.0F, -1.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
 		rightDoor.setTextureOffset(5, 8).addBox(4.0F, 4.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
 		rightDoor.setTextureOffset(0, 15).addBox(0.0F, 3.0F, -0.3F, 5.0F, 1.0F, 1.0F, 0.0F, false);
 		rightDoor.setTextureOffset(2, 12).addBox(0.0F, 8.0F, -0.3F, 5.0F, 1.0F, 1.0F, 0.0F, false);
 		rightDoor.setTextureOffset(7, 15).addBox(0.0F, 4.0F, 0.0F, 4.0F, 4.0F, 1.0F, 0.0F, false);
-		rightDoor.setTextureOffset(0, 10).addBox(-0.3F, 4.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
-		rightDoor.setTextureOffset(2, 7).addBox(-0.3F, -1.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
+		rightDoor.setTextureOffset(0, 0).addBox(-0.3F, -12.0F, -0.3F, 1.0F, 21.0F, 1.0F, 0.0F, false);
 		rightDoor.setTextureOffset(0, 0).addBox(3.75F, -5.775F, -0.2F, 1.0F, 4.0F, 1.0F, 0.0F, false);
 		rightDoor.setTextureOffset(0, 3).addBox(-0.25F, -2.275F, -0.2F, 4.0F, 1.0F, 1.0F, 0.0F, false);
 		rightDoor.setTextureOffset(0, 0).addBox(-0.05F, -6.275F, -0.2F, 1.0F, 4.0F, 1.0F, 0.0F, false);
@@ -621,7 +618,8 @@ public class FifthDoctorBoxModel extends AbstractTardisExteriorModel {
 
 	@Override
 	public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha){
-		super.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
+		matrixStack.translate(0.0D, -1.0D, 0.0D);
+		matrixStack.scale(1.5f, 1.5f, 1.5f);
 		leftDoor.render(matrixStack, buffer, packedLight, packedOverlay);
 		rightDoor.render(matrixStack, buffer, packedLight, packedOverlay);
 		lamp.render(matrixStack, buffer, packedLight, packedOverlay);
@@ -650,11 +648,6 @@ public class FifthDoctorBoxModel extends AbstractTardisExteriorModel {
 	@Override
 	public ModelRenderer getRightDoor() {
 		return rightDoor;
-	}
-
-	@Override
-	protected float getScale() {
-		return 1.5f;
 	}
 
 	public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {
