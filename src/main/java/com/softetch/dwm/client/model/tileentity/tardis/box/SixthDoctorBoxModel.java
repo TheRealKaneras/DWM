@@ -6,7 +6,6 @@ import com.softetch.dwm.client.model.tileentity.tardis.AbstractTardisExteriorMod
 import net.minecraft.client.renderer.model.ModelRenderer;
 
 public class SixthDoctorBoxModel extends AbstractTardisExteriorModel {
-	private final ModelRenderer Main;
 	private final ModelRenderer leftDoor;
 	private final ModelRenderer window3_1;
 	private final ModelRenderer window2_1;
@@ -19,6 +18,7 @@ public class SixthDoctorBoxModel extends AbstractTardisExteriorModel {
 	private final ModelRenderer window3_2;
 	private final ModelRenderer bone19;
 	private final ModelRenderer bone40;
+	private final ModelRenderer Main;
 	private final ModelRenderer bone16;
 	private final ModelRenderer bone17;
 	private final ModelRenderer bone20;
@@ -70,21 +70,8 @@ public class SixthDoctorBoxModel extends AbstractTardisExteriorModel {
 		textureWidth = 32;
 		textureHeight = 32;
 
-		Main = new ModelRenderer(this);
-		Main.setRotationPoint(-4.0F, 6.9F, -5.7F);
-		Main.setTextureOffset(6, 20).addBox(-2.0F, -6.9F, -1.5F, 12.0F, 1.0F, 1.0F, 0.0F, false);
-		Main.setTextureOffset(6, 13).addBox(-1.5F, -7.4F, -1.2F, 11.0F, 1.0F, 1.0F, 0.0F, false);
-		Main.setTextureOffset(0, 0).addBox(10.0F, -7.4F, 0.2F, 1.0F, 1.0F, 11.0F, 0.0F, false);
-		Main.setTextureOffset(0, 0).addBox(-3.0F, -7.4F, 0.2F, 1.0F, 1.0F, 11.0F, 0.0F, false);
-		Main.setTextureOffset(0, 0).addBox(-1.5F, -7.4F, 11.6F, 11.0F, 1.0F, 1.0F, 0.0F, false);
-		Main.setTextureOffset(0, 0).addBox(-2.5F, -8.25F, -0.9F, 13.0F, 2.0F, 1.0F, 0.0F, false);
-		Main.setTextureOffset(0, 0).addBox(-1.5F, -6.35F, -1.1F, 11.0F, 1.0F, 1.0F, 0.0F, false);
-		Main.setTextureOffset(0, 0).addBox(-1.5F, -6.05F, -0.9F, 11.0F, 1.0F, 1.0F, 0.0F, false);
-		Main.setTextureOffset(0, 0).addBox(-1.5F, -5.65F, -0.8F, 11.0F, 1.0F, 1.0F, 0.0F, false);
-
 		leftDoor = new ModelRenderer(this);
-		leftDoor.setRotationPoint(9.0F, 7.1F, -0.3F);
-		Main.addChild(leftDoor);
+		leftDoor.setRotationPoint(5.0F, 14.0F, -6.0F);
 		leftDoor.setTextureOffset(0, 0).addBox(-4.0F, 4.0F, 0.0F, 4.0F, 4.0F, 1.0F, 0.0F, false);
 		leftDoor.setTextureOffset(3, 15).addBox(-5.0F, 8.0F, -0.3F, 5.0F, 1.0F, 1.0F, 0.0F, false);
 		leftDoor.setTextureOffset(7, 6).addBox(-5.0F, 4.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
@@ -132,8 +119,7 @@ public class SixthDoctorBoxModel extends AbstractTardisExteriorModel {
 		bone18.setTextureOffset(10, 24).addBox(0.6964F, -0.3876F, -0.64F, 1.0F, 1.0F, 1.0F, 0.0F, false);
 
 		rightDoor = new ModelRenderer(this);
-		rightDoor.setRotationPoint(-1.0F, 7.1F, -0.3F);
-		Main.addChild(rightDoor);
+		rightDoor.setRotationPoint(-5.0F, 14.0F, -6.0F);
 		rightDoor.setTextureOffset(0, 5).addBox(0.0F, -7.0F, -0.3F, 5.0F, 1.0F, 1.0F, 0.0F, false);
 		rightDoor.setTextureOffset(0, 0).addBox(0.95F, -6.8F, -0.2F, 3.0F, 1.0F, 1.0F, 0.0F, false);
 		rightDoor.setTextureOffset(0, 0).addBox(-0.05F, -6.3F, -0.2F, 1.0F, 4.0F, 1.0F, 0.0F, false);
@@ -204,6 +190,18 @@ public class SixthDoctorBoxModel extends AbstractTardisExteriorModel {
 		rightDoor.addChild(bone40);
 		setRotationAngle(bone40, 0.0F, 0.7854F, 0.0F);
 		bone40.setTextureOffset(6, 29).addBox(-0.1818F, -1.0124F, -0.8889F, 1.0F, 2.0F, 1.0F, 0.0F, false);
+
+		Main = new ModelRenderer(this);
+		Main.setRotationPoint(-4.0F, 6.9F, -5.7F);
+		Main.setTextureOffset(6, 20).addBox(-2.0F, -6.9F, -1.5F, 12.0F, 1.0F, 1.0F, 0.0F, false);
+		Main.setTextureOffset(6, 13).addBox(-1.5F, -7.4F, -1.2F, 11.0F, 1.0F, 1.0F, 0.0F, false);
+		Main.setTextureOffset(0, 0).addBox(10.0F, -7.4F, 0.2F, 1.0F, 1.0F, 11.0F, 0.0F, false);
+		Main.setTextureOffset(0, 0).addBox(-3.0F, -7.4F, 0.2F, 1.0F, 1.0F, 11.0F, 0.0F, false);
+		Main.setTextureOffset(0, 0).addBox(-1.5F, -7.4F, 11.6F, 11.0F, 1.0F, 1.0F, 0.0F, false);
+		Main.setTextureOffset(0, 0).addBox(-2.5F, -8.25F, -0.9F, 13.0F, 2.0F, 1.0F, 0.0F, false);
+		Main.setTextureOffset(0, 0).addBox(-1.5F, -6.35F, -1.1F, 11.0F, 1.0F, 1.0F, 0.0F, false);
+		Main.setTextureOffset(0, 0).addBox(-1.5F, -6.05F, -0.9F, 11.0F, 1.0F, 1.0F, 0.0F, false);
+		Main.setTextureOffset(0, 0).addBox(-1.5F, -5.65F, -0.8F, 11.0F, 1.0F, 1.0F, 0.0F, false);
 
 		bone16 = new ModelRenderer(this);
 		bone16.setRotationPoint(4.0F, -7.7F, -0.9F);
@@ -630,6 +628,9 @@ public class SixthDoctorBoxModel extends AbstractTardisExteriorModel {
 
 	@Override
 	public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha){
+		super.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
+		leftDoor.render(matrixStack, buffer, packedLight, packedOverlay);
+		rightDoor.render(matrixStack, buffer, packedLight, packedOverlay);
 		Main.render(matrixStack, buffer, packedLight, packedOverlay);
 		bone9.render(matrixStack, buffer, packedLight, packedOverlay);
 		bone10.render(matrixStack, buffer, packedLight, packedOverlay);
@@ -659,12 +660,6 @@ public class SixthDoctorBoxModel extends AbstractTardisExteriorModel {
 
 	@Override
 	protected float getScale() {
-		return 1.4f;
-	}
-
-	public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {
-		modelRenderer.rotateAngleX = x;
-		modelRenderer.rotateAngleY = y;
-		modelRenderer.rotateAngleZ = z;
+		return 1.5f;
 	}
 }

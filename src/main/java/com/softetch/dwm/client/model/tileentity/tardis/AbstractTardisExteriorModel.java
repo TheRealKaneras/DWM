@@ -33,4 +33,10 @@ public abstract class AbstractTardisExteriorModel extends DoorModel {
      */
     protected float getMaximumAngle() { return (float) Math.toRadians(80.0D); }
 
+    public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {
+        modelRenderer.rotateAngleX = x;
+        modelRenderer.rotateAngleY = y;
+        modelRenderer.rotateAngleZ = z;
+    }
+
 }

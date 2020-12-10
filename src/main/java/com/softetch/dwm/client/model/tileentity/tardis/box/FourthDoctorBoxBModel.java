@@ -6,7 +6,6 @@ import com.softetch.dwm.client.model.tileentity.tardis.AbstractTardisExteriorMod
 import net.minecraft.client.renderer.model.ModelRenderer;
 
 public class FourthDoctorBoxBModel extends AbstractTardisExteriorModel {
-	private final ModelRenderer Main;
 	private final ModelRenderer leftDoor;
 	private final ModelRenderer upslant1;
 	private final ModelRenderer slant1;
@@ -14,6 +13,7 @@ public class FourthDoctorBoxBModel extends AbstractTardisExteriorModel {
 	private final ModelRenderer bone33;
 	private final ModelRenderer slant2;
 	private final ModelRenderer upslant2;
+	private final ModelRenderer Main;
 	private final ModelRenderer bone34;
 	private final ModelRenderer bone35;
 	private final ModelRenderer bone36;
@@ -63,24 +63,8 @@ public class FourthDoctorBoxBModel extends AbstractTardisExteriorModel {
 		textureWidth = 32;
 		textureHeight = 32;
 
-		Main = new ModelRenderer(this);
-		Main.setRotationPoint(0.0F, 24.0F, 0.0F);
-		Main.setTextureOffset(0, 0).addBox(-5.5F, -22.8F, -6.3F, 11.0F, 1.0F, 1.0F, 0.0F, false);
-		Main.setTextureOffset(0, 0).addBox(-5.5F, -23.1F, -6.7F, 11.0F, 1.0F, 1.0F, 0.0F, false);
-		Main.setTextureOffset(7, 20).addBox(0.0F, -23.5F, -7.5F, 5.0F, 1.0F, 1.0F, 0.0F, true);
-		Main.setTextureOffset(7, 20).addBox(-5.0F, -23.5F, -7.5F, 5.0F, 1.0F, 1.0F, 0.0F, false);
-		Main.setTextureOffset(0, 14).addBox(-6.0F, -23.7F, -7.4F, 12.0F, 1.0F, 1.0F, 0.0F, false);
-		Main.setTextureOffset(0, 14).addBox(-6.0F, -23.3F, -7.4F, 12.0F, 1.0F, 1.0F, 0.0F, false);
-		Main.setTextureOffset(0, 0).addBox(5.0F, -23.7F, -7.55F, 1.0F, 1.0F, 1.0F, 0.0F, false);
-		Main.setTextureOffset(0, 2).addBox(5.0F, -23.3F, -7.55F, 1.0F, 1.0F, 1.0F, 0.0F, false);
-		Main.setTextureOffset(0, 0).addBox(-6.0F, -23.7F, -7.55F, 1.0F, 1.0F, 1.0F, 0.0F, false);
-		Main.setTextureOffset(0, 2).addBox(-6.0F, -23.3F, -7.55F, 1.0F, 1.0F, 1.0F, 0.0F, false);
-		Main.setTextureOffset(0, 14).addBox(-5.0F, -22.3F, -7.55F, 10.0F, 0.0F, 1.0F, 0.0F, false);
-		Main.setTextureOffset(0, 14).addBox(-5.0F, -23.7F, -7.55F, 10.0F, 0.0F, 1.0F, 0.0F, false);
-
 		leftDoor = new ModelRenderer(this);
-		leftDoor.setRotationPoint(5.1F, -12.0F, -5.8F);
-		Main.addChild(leftDoor);
+		leftDoor.setRotationPoint(5.1F, 12.0F, -5.8F);
 		leftDoor.setTextureOffset(11, 6).addBox(-0.9F, 5.9F, -0.1F, 1.0F, 4.0F, 1.0F, 0.0F, false);
 		leftDoor.setTextureOffset(7, 10).addBox(-5.1F, 9.9F, -0.1F, 6.0F, 1.0F, 1.0F, 0.0F, false);
 		leftDoor.setTextureOffset(9, 6).addBox(-5.1F, 5.9F, -0.1F, 1.0F, 4.0F, 1.0F, 0.0F, false);
@@ -130,8 +114,7 @@ public class FourthDoctorBoxBModel extends AbstractTardisExteriorModel {
 		slant1.setTextureOffset(0, 0).addBox(4.7F, -1.255F, 1.1494F, 4.0F, 1.0F, 1.0F, 0.0F, false);
 
 		rightDoor = new ModelRenderer(this);
-		rightDoor.setRotationPoint(-5.1F, -12.0F, -5.7F);
-		Main.addChild(rightDoor);
+		rightDoor.setRotationPoint(-5.1F, 12.0F, -5.7F);
 		rightDoor.setTextureOffset(17, 6).addBox(-0.6F, 9.9F, -0.2F, 6.0F, 1.0F, 1.0F, 0.0F, false);
 		rightDoor.setTextureOffset(19, 0).addBox(4.1F, 5.9F, -0.2F, 1.0F, 4.0F, 1.0F, 0.0F, false);
 		rightDoor.setTextureOffset(14, 0).addBox(-0.6F, 4.9F, -0.2F, 6.0F, 1.0F, 1.0F, 0.0F, false);
@@ -192,6 +175,21 @@ public class FourthDoctorBoxBModel extends AbstractTardisExteriorModel {
 		upslant2.setTextureOffset(0, 0).addBox(-6.1392F, 2.5F, 5.316F, 1.0F, 4.0F, 1.0F, 0.0F, false);
 		upslant2.setTextureOffset(0, 0).addBox(-6.369F, 7.5F, 5.5104F, 1.0F, 4.0F, 1.0F, 0.0F, false);
 		upslant2.setTextureOffset(0, 0).addBox(-6.369F, 12.5F, 5.5104F, 1.0F, 4.0F, 1.0F, 0.0F, false);
+
+		Main = new ModelRenderer(this);
+		Main.setRotationPoint(0.0F, 24.0F, 0.0F);
+		Main.setTextureOffset(0, 0).addBox(-5.5F, -22.8F, -6.3F, 11.0F, 1.0F, 1.0F, 0.0F, false);
+		Main.setTextureOffset(0, 0).addBox(-5.5F, -23.1F, -6.7F, 11.0F, 1.0F, 1.0F, 0.0F, false);
+		Main.setTextureOffset(7, 20).addBox(0.0F, -23.5F, -7.5F, 5.0F, 1.0F, 1.0F, 0.0F, true);
+		Main.setTextureOffset(7, 20).addBox(-5.0F, -23.5F, -7.5F, 5.0F, 1.0F, 1.0F, 0.0F, false);
+		Main.setTextureOffset(0, 14).addBox(-6.0F, -23.7F, -7.4F, 12.0F, 1.0F, 1.0F, 0.0F, false);
+		Main.setTextureOffset(0, 14).addBox(-6.0F, -23.3F, -7.4F, 12.0F, 1.0F, 1.0F, 0.0F, false);
+		Main.setTextureOffset(0, 0).addBox(5.0F, -23.7F, -7.55F, 1.0F, 1.0F, 1.0F, 0.0F, false);
+		Main.setTextureOffset(0, 2).addBox(5.0F, -23.3F, -7.55F, 1.0F, 1.0F, 1.0F, 0.0F, false);
+		Main.setTextureOffset(0, 0).addBox(-6.0F, -23.7F, -7.55F, 1.0F, 1.0F, 1.0F, 0.0F, false);
+		Main.setTextureOffset(0, 2).addBox(-6.0F, -23.3F, -7.55F, 1.0F, 1.0F, 1.0F, 0.0F, false);
+		Main.setTextureOffset(0, 14).addBox(-5.0F, -22.3F, -7.55F, 10.0F, 0.0F, 1.0F, 0.0F, false);
+		Main.setTextureOffset(0, 14).addBox(-5.0F, -23.7F, -7.55F, 10.0F, 0.0F, 1.0F, 0.0F, false);
 
 		bone34 = new ModelRenderer(this);
 		bone34.setRotationPoint(0.0F, -24.8F, -6.6F);
@@ -695,6 +693,8 @@ public class FourthDoctorBoxBModel extends AbstractTardisExteriorModel {
 	@Override
 	public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha){
 		super.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
+		leftDoor.render(matrixStack, buffer, packedLight, packedOverlay);
+		rightDoor.render(matrixStack, buffer, packedLight, packedOverlay);
 		Main.render(matrixStack, buffer, packedLight, packedOverlay);
 		Main2.render(matrixStack, buffer, packedLight, packedOverlay);
 		Main3.render(matrixStack, buffer, packedLight, packedOverlay);
@@ -725,12 +725,6 @@ public class FourthDoctorBoxBModel extends AbstractTardisExteriorModel {
 
 	@Override
 	protected float getScale() {
-		return 1.4f;
-	}
-
-	public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {
-		modelRenderer.rotateAngleX = x;
-		modelRenderer.rotateAngleY = y;
-		modelRenderer.rotateAngleZ = z;
+		return 1.5f;
 	}
 }

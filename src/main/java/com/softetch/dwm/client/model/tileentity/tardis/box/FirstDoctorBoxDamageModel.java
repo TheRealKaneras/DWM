@@ -1,6 +1,5 @@
 package com.softetch.dwm.client.model.tileentity.tardis.box;
 
-
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 import com.softetch.dwm.client.model.tileentity.tardis.AbstractTardisExteriorModel;
@@ -25,7 +24,6 @@ public class FirstDoctorBoxDamageModel extends AbstractTardisExteriorModel {
 	private final ModelRenderer post4;
 	private final ModelRenderer bone8;
 	private final ModelRenderer bone15;
-	private final ModelRenderer Main;
 	private final ModelRenderer leftDoor;
 	private final ModelRenderer window3_1;
 	private final ModelRenderer window2_1;
@@ -36,6 +34,7 @@ public class FirstDoctorBoxDamageModel extends AbstractTardisExteriorModel {
 	private final ModelRenderer window2_2;
 	private final ModelRenderer window3_2;
 	private final ModelRenderer bone18;
+	private final ModelRenderer Main;
 	private final ModelRenderer bone16;
 	private final ModelRenderer bone17;
 	private final ModelRenderer Main2;
@@ -178,21 +177,8 @@ public class FirstDoctorBoxDamageModel extends AbstractTardisExteriorModel {
 		setRotationAngle(bone15, 0.0F, 0.7854F, 0.0F);
 		
 
-		Main = new ModelRenderer(this);
-		Main.setRotationPoint(-4.0F, 6.9F, -5.7F);
-		Main.setTextureOffset(59, 94).addBox(-2.0F, -6.0F, -1.5F, 12.0F, 1.0F, 1.0F, 0.0F, false);
-		Main.setTextureOffset(0, 0).addBox(8.0F, -6.0F, -1.6F, 2.0F, 1.0F, 1.0F, 0.0F, false);
-		Main.setTextureOffset(0, 0).addBox(-2.5F, -8.25F, -0.9F, 13.0F, 1.0F, 3.0F, 0.0F, true);
-		Main.setTextureOffset(0, 0).addBox(4.0F, -7.25F, -0.5F, 6.0F, 1.0F, 1.0F, 0.0F, false);
-		Main.setTextureOffset(0, 0).addBox(-2.0F, -7.25F, -0.6F, 6.0F, 1.0F, 1.0F, 0.0F, false);
-		Main.setTextureOffset(0, 0).addBox(-1.0F, -5.35F, -0.7F, 10.0F, 1.0F, 1.0F, 0.0F, false);
-		Main.setTextureOffset(0, 0).addBox(-1.0F, -5.05F, -0.6F, 10.0F, 1.0F, 1.0F, 0.0F, false);
-		Main.setTextureOffset(0, 0).addBox(-1.0F, -4.65F, -0.5F, 10.0F, 1.0F, 1.0F, 0.0F, false);
-		Main.setTextureOffset(0, 0).addBox(-2.0F, -6.0F, -1.6F, 2.0F, 1.0F, 1.0F, 0.0F, false);
-
 		leftDoor = new ModelRenderer(this);
-		leftDoor.setRotationPoint(9.0F, 7.1F, -0.3F);
-		Main.addChild(leftDoor);
+		leftDoor.setRotationPoint(5.0F, 14.0F, -6.0F);
 		leftDoor.setTextureOffset(0, 0).addBox(-4.0F, 4.9F, 0.3F, 4.0F, 4.0F, 1.0F, 0.0F, false);
 		leftDoor.setTextureOffset(0, 0).addBox(-5.0F, 8.9F, 0.0F, 5.0F, 1.0F, 1.0F, 0.0F, false);
 		leftDoor.setTextureOffset(0, 0).addBox(-5.0F, 4.9F, 0.0F, 1.0F, 4.0F, 1.0F, 0.0F, false);
@@ -236,8 +222,7 @@ public class FirstDoctorBoxDamageModel extends AbstractTardisExteriorModel {
 		Window1_1.setTextureOffset(38, 48).addBox(4.7F, -0.8307F, 0.3716F, 4.0F, 1.0F, 1.0F, 0.0F, false);
 
 		rightDoor = new ModelRenderer(this);
-		rightDoor.setRotationPoint(-1.0F, 7.1F, -0.3F);
-		Main.addChild(rightDoor);
+		rightDoor.setRotationPoint(-5.0F, 14.0F, -6.0F);
 		rightDoor.setTextureOffset(0, 0).addBox(0.0F, -6.1F, 0.0F, 5.0F, 1.0F, 1.0F, 0.0F, false);
 		rightDoor.setTextureOffset(83, 44).addBox(0.1F, -5.0F, 0.35F, 4.0F, 4.0F, 1.0F, 0.0F, false);
 		rightDoor.setTextureOffset(0, 0).addBox(-0.3F, -5.1F, 0.0F, 1.0F, 4.0F, 1.0F, 0.0F, false);
@@ -294,6 +279,18 @@ public class FirstDoctorBoxDamageModel extends AbstractTardisExteriorModel {
 		bone18.setRotationPoint(4.3F, -1.6F, 0.3F);
 		rightDoor.addChild(bone18);
 		bone18.setTextureOffset(91, 28).addBox(-0.6036F, 0.4124F, -0.34F, 1.0F, 1.0F, 1.0F, 0.0F, false);
+
+		Main = new ModelRenderer(this);
+		Main.setRotationPoint(-4.0F, 6.9F, -5.7F);
+		Main.setTextureOffset(59, 94).addBox(-2.0F, -6.0F, -1.5F, 12.0F, 1.0F, 1.0F, 0.0F, false);
+		Main.setTextureOffset(0, 0).addBox(8.0F, -6.0F, -1.6F, 2.0F, 1.0F, 1.0F, 0.0F, false);
+		Main.setTextureOffset(0, 0).addBox(-2.5F, -8.25F, -0.9F, 13.0F, 1.0F, 3.0F, 0.0F, true);
+		Main.setTextureOffset(0, 0).addBox(4.0F, -7.25F, -0.5F, 6.0F, 1.0F, 1.0F, 0.0F, false);
+		Main.setTextureOffset(0, 0).addBox(-2.0F, -7.25F, -0.6F, 6.0F, 1.0F, 1.0F, 0.0F, false);
+		Main.setTextureOffset(0, 0).addBox(-1.0F, -5.35F, -0.7F, 10.0F, 1.0F, 1.0F, 0.0F, false);
+		Main.setTextureOffset(0, 0).addBox(-1.0F, -5.05F, -0.6F, 10.0F, 1.0F, 1.0F, 0.0F, false);
+		Main.setTextureOffset(0, 0).addBox(-1.0F, -4.65F, -0.5F, 10.0F, 1.0F, 1.0F, 0.0F, false);
+		Main.setTextureOffset(0, 0).addBox(-2.0F, -6.0F, -1.6F, 2.0F, 1.0F, 1.0F, 0.0F, false);
 
 		bone16 = new ModelRenderer(this);
 		bone16.setRotationPoint(4.0F, -7.7F, -0.9F);
@@ -557,6 +554,7 @@ public class FirstDoctorBoxDamageModel extends AbstractTardisExteriorModel {
 		bb_main.setTextureOffset(0, 0).addBox(-6.0F, -0.1F, -5.5F, 12.0F, 1.0F, 11.0F, 0.0F, false);
 	}
 
+
 	@Override
 	public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha){
 		super.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
@@ -570,6 +568,8 @@ public class FirstDoctorBoxDamageModel extends AbstractTardisExteriorModel {
 		post2.render(matrixStack, buffer, packedLight, packedOverlay);
 		post3.render(matrixStack, buffer, packedLight, packedOverlay);
 		post4.render(matrixStack, buffer, packedLight, packedOverlay);
+		leftDoor.render(matrixStack, buffer, packedLight, packedOverlay);
+		rightDoor.render(matrixStack, buffer, packedLight, packedOverlay);
 		Main.render(matrixStack, buffer, packedLight, packedOverlay);
 		Main2.render(matrixStack, buffer, packedLight, packedOverlay);
 		Main3.render(matrixStack, buffer, packedLight, packedOverlay);
@@ -592,12 +592,7 @@ public class FirstDoctorBoxDamageModel extends AbstractTardisExteriorModel {
 
 	@Override
 	protected float getScale() {
-		return 1.4f;
+		return 1.5f;
 	}
 
-	public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {
-		modelRenderer.rotateAngleX = x;
-		modelRenderer.rotateAngleY = y;
-		modelRenderer.rotateAngleZ = z;
-	}
 }

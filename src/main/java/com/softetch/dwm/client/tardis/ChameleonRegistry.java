@@ -21,10 +21,10 @@ public class ChameleonRegistry {
         registerSkin("first_doctor_box_pilot", ChameleonType.POLICE_BOX, new FirstDoctorBoxModel());
         registerSkin("first_doctor_box_damaged", ChameleonType.POLICE_BOX, new FirstDoctorBoxDamageModel());
         registerSkin("second_doctor_box", ChameleonType.POLICE_BOX, new SecondDoctorBoxModel());
-        registerSkin("second_doctor_box_clean", ChameleonType.POLICE_BOX, new SecondDoctorBoxModel());
-        registerSkin("third_doctor_box_a", ChameleonType.POLICE_BOX, new FifthDoctorBoxModel());
-        registerSkin("third_doctor_box_b", ChameleonType.POLICE_BOX, new FifthDoctorBoxModel());
-        registerSkin("third_doctor_box_c", ChameleonType.POLICE_BOX, new FifthDoctorBoxModel());
+        registerSkin("second_doctor_box_clean", ChameleonType.POLICE_BOX, new SecondDoctorBoxCleanModel());
+        registerSkin("third_doctor_box_a", ChameleonType.POLICE_BOX, new ThirdDoctorBoxModel());
+        registerSkin("third_doctor_box_b", ChameleonType.POLICE_BOX, new ThirdDoctorBoxModel());
+        registerSkin("third_doctor_box_c", ChameleonType.POLICE_BOX, new ThirdDoctorBoxModel());
         registerSkin("fourth_doctor_box_a", ChameleonType.POLICE_BOX, new FourthDoctorBoxAModel());
         registerSkin("fourth_doctor_box_b", ChameleonType.POLICE_BOX, new FourthDoctorBoxBModel());
         registerSkin("fourth_doctor_box_c", ChameleonType.POLICE_BOX, new FourthDoctorBoxCModel());
@@ -33,8 +33,10 @@ public class ChameleonRegistry {
         registerSkin("sixth_doctor_box_b", ChameleonType.POLICE_BOX, new SixthDoctorBoxModel());
         registerSkin("seventh_doctor_box_a", ChameleonType.POLICE_BOX, new SeventhDoctorBoxModel());
         registerSkin("seventh_doctor_box_b", ChameleonType.POLICE_BOX, new SeventhDoctorBoxModel());
-        registerSkin("seventh_doctor_box_c", ChameleonType.POLICE_BOX, new SeventhDoctorBoxModel());
-        registerSkin("seventh_doctor_box_d", ChameleonType.POLICE_BOX, new SeventhDoctorBoxHPModel());
+        registerSkin("seventh_doctor_box_hp_a", ChameleonType.POLICE_BOX, new SeventhDoctorBoxHPModel());
+        registerSkin("seventh_doctor_box_hp_b", ChameleonType.POLICE_BOX, new SeventhDoctorBoxHPModel());
+        registerSkin("seventh_doctor_box_hp_c", ChameleonType.POLICE_BOX, new SeventhDoctorBoxHPModel());
+        registerSkin("seventh_doctor_box_hp_d", ChameleonType.POLICE_BOX, new SeventhDoctorBoxHPModel());
 //        registerSkin("thirteenth_doctor_box", ChameleonType.POLICE_BOX, new ThirteenthDoctorBoxModel());
     }
 

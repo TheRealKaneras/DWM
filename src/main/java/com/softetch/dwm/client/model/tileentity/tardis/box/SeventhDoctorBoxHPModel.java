@@ -6,19 +6,19 @@ import com.softetch.dwm.client.model.tileentity.tardis.AbstractTardisExteriorMod
 import net.minecraft.client.renderer.model.ModelRenderer;
 
 public class SeventhDoctorBoxHPModel extends AbstractTardisExteriorModel {
-	private final ModelRenderer Main;
-	private final ModelRenderer Door1;
+	private final ModelRenderer leftDoor;
 	private final ModelRenderer window3_1;
 	private final ModelRenderer window2_1;
 	private final ModelRenderer Window1_1;
 	private final ModelRenderer bone18;
 	private final ModelRenderer bone40;
-	private final ModelRenderer Door2;
+	private final ModelRenderer rightDoor;
 	private final ModelRenderer bone3;
 	private final ModelRenderer Window1_2;
 	private final ModelRenderer window2_2;
 	private final ModelRenderer window3_2;
 	private final ModelRenderer bone19;
+	private final ModelRenderer Main;
 	private final ModelRenderer bone16;
 	private final ModelRenderer bone17;
 	private final ModelRenderer bone20;
@@ -63,7 +63,6 @@ public class SeventhDoctorBoxHPModel extends AbstractTardisExteriorModel {
 	private final ModelRenderer bone37;
 	private final ModelRenderer bone38;
 	private final ModelRenderer bone41;
-	private final ModelRenderer bone44;
 	private final ModelRenderer bone42;
 	private final ModelRenderer bone43;
 
@@ -71,10 +70,127 @@ public class SeventhDoctorBoxHPModel extends AbstractTardisExteriorModel {
 		textureWidth = 32;
 		textureHeight = 32;
 
+		leftDoor = new ModelRenderer(this);
+		leftDoor.setRotationPoint(5.0F, 14.0F, -6.0F);
+		leftDoor.setTextureOffset(18, 5).addBox(-4.0F, 4.0F, 0.0F, 4.0F, 4.0F, 1.0F, 0.0F, false);
+		leftDoor.setTextureOffset(18, 5).addBox(-5.0F, 8.0F, -0.3F, 5.0F, 1.0F, 1.0F, 0.0F, false);
+		leftDoor.setTextureOffset(18, 5).addBox(-5.0F, 4.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
+		leftDoor.setTextureOffset(18, 5).addBox(-0.7F, 4.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
+		leftDoor.setTextureOffset(18, 5).addBox(-0.7F, -1.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
+		leftDoor.setTextureOffset(18, 5).addBox(-5.0F, 3.0F, -0.3F, 5.0F, 1.0F, 1.0F, 0.0F, false);
+		leftDoor.setTextureOffset(18, 5).addBox(-5.0F, -1.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
+		leftDoor.setTextureOffset(18, 5).addBox(-4.0F, -1.0F, 0.0F, 4.0F, 4.0F, 1.0F, 0.0F, true);
+		leftDoor.setTextureOffset(18, 5).addBox(-5.0F, -2.0F, -0.3F, 5.0F, 1.0F, 1.0F, 0.0F, false);
+		leftDoor.setTextureOffset(22, 8).addBox(-4.0F, -6.0F, 0.0F, 4.0F, 4.0F, 1.0F, 0.0F, false);
+		leftDoor.setTextureOffset(18, 5).addBox(-5.0F, -6.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
+		leftDoor.setTextureOffset(18, 5).addBox(-0.7F, -6.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
+		leftDoor.setTextureOffset(18, 5).addBox(-5.0F, -7.0F, -0.3F, 5.0F, 1.0F, 1.0F, 0.0F, false);
+		leftDoor.setTextureOffset(18, 5).addBox(-0.7F, -11.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
+		leftDoor.setTextureOffset(18, 5).addBox(-5.0F, -11.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
+		leftDoor.setTextureOffset(18, 5).addBox(-5.0F, -12.0F, -0.3F, 5.0F, 1.0F, 1.0F, 0.0F, false);
+		leftDoor.setTextureOffset(22, 15).addBox(-4.775F, -11.1F, -0.08F, 4.0F, 4.0F, 1.0F, 0.0F, false);
+
+		window3_1 = new ModelRenderer(this);
+		window3_1.setRotationPoint(-9.0F, -7.1F, 0.3F);
+		leftDoor.addChild(window3_1);
+		setRotationAngle(window3_1, 0.3491F, 0.0F, 0.0F);
+		
+
+		window2_1 = new ModelRenderer(this);
+		window2_1.setRotationPoint(-0.8F, -8.6357F, 0.7766F);
+		leftDoor.addChild(window2_1);
+		setRotationAngle(window2_1, 0.0F, -0.7854F, 0.0F);
+		window2_1.setTextureOffset(18, 5).addBox(-0.6414F, -2.4F, -0.7828F, 1.0F, 4.0F, 1.0F, 0.0F, false);
+		window2_1.setTextureOffset(18, 5).addBox(-2.9749F, -2.4F, 1.5506F, 1.0F, 4.0F, 1.0F, 0.0F, false);
+		window2_1.setTextureOffset(18, 5).addBox(-2.1971F, -2.4F, 0.7728F, 1.0F, 4.0F, 1.0F, 0.0F, false);
+		window2_1.setTextureOffset(18, 5).addBox(-1.4192F, -2.4F, -0.005F, 1.0F, 4.0F, 1.0F, 0.0F, false);
+
+		Window1_1 = new ModelRenderer(this);
+		Window1_1.setRotationPoint(-9.0F, -7.4F, 0.4F);
+		leftDoor.addChild(Window1_1);
+		setRotationAngle(Window1_1, 0.7854F, 0.0F, 0.0F);
+		Window1_1.setTextureOffset(18, 5).addBox(4.7F, -0.1943F, -0.6891F, 4.0F, 1.0F, 1.0F, 0.0F, false);
+		Window1_1.setTextureOffset(18, 5).addBox(4.7F, -2.952F, 2.0686F, 4.0F, 1.0F, 1.0F, 0.0F, false);
+		Window1_1.setTextureOffset(18, 5).addBox(4.7F, -1.5378F, 0.6544F, 4.0F, 1.0F, 1.0F, 0.0F, false);
+
+		bone18 = new ModelRenderer(this);
+		bone18.setRotationPoint(-5.7F, -1.6F, 0.3F);
+		leftDoor.addChild(bone18);
+		bone18.setTextureOffset(11, 29).addBox(0.7964F, -3.3876F, -0.94F, 1.0F, 1.0F, 1.0F, -0.2F, false);
+
+		bone40 = new ModelRenderer(this);
+		bone40.setRotationPoint(-4.8786F, -3.6876F, 0.485F);
+		leftDoor.addChild(bone40);
+		setRotationAngle(bone40, 0.0F, 0.7854F, 0.0F);
+		bone40.setTextureOffset(11, 29).addBox(-0.0581F, 0.0876F, -0.3409F, 1.0F, 2.0F, 1.0F, 0.0F, false);
+
+		rightDoor = new ModelRenderer(this);
+		rightDoor.setRotationPoint(-5.0F, 14.0F, -6.0F);
+		rightDoor.setTextureOffset(28, 2).addBox(0.0F, -7.0F, -0.3F, 5.0F, 1.0F, 1.0F, 0.0F, false);
+		rightDoor.setTextureOffset(10, 27).addBox(0.1F, -6.0F, 0.0F, 4.0F, 4.0F, 1.0F, 0.0F, false);
+		rightDoor.setTextureOffset(28, 2).addBox(-0.3F, -6.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
+		rightDoor.setTextureOffset(28, 2).addBox(4.0F, -6.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
+		rightDoor.setTextureOffset(28, 2).addBox(4.0F, -11.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
+		rightDoor.setTextureOffset(28, 2).addBox(0.0F, -12.0F, -0.3F, 5.0F, 1.0F, 1.0F, 0.0F, false);
+		rightDoor.setTextureOffset(28, 2).addBox(-0.3F, -11.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
+		rightDoor.setTextureOffset(22, 15).addBox(-0.075F, -11.1F, -0.08F, 4.0F, 4.0F, 1.0F, 0.0F, false);
+		rightDoor.setTextureOffset(28, 2).addBox(0.0F, -1.0F, 0.0F, 4.0F, 4.0F, 1.0F, 0.0F, false);
+		rightDoor.setTextureOffset(28, 2).addBox(0.0F, -2.0F, -0.3F, 5.0F, 1.0F, 1.0F, 0.0F, false);
+		rightDoor.setTextureOffset(28, 2).addBox(4.0F, -1.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
+		rightDoor.setTextureOffset(28, 2).addBox(4.0F, 4.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
+		rightDoor.setTextureOffset(28, 2).addBox(0.0F, 3.0F, -0.3F, 5.0F, 1.0F, 1.0F, 0.0F, false);
+		rightDoor.setTextureOffset(28, 2).addBox(0.0F, 8.0F, -0.3F, 5.0F, 1.0F, 1.0F, 0.0F, false);
+		rightDoor.setTextureOffset(28, 2).addBox(0.0F, 4.0F, 0.0F, 4.0F, 4.0F, 1.0F, 0.0F, false);
+		rightDoor.setTextureOffset(28, 2).addBox(-0.3F, 4.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
+		rightDoor.setTextureOffset(28, 2).addBox(-0.3F, -1.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
+		rightDoor.setTextureOffset(28, 2).addBox(-0.35F, -2.4F, -0.2F, 4.0F, 1.0F, 1.0F, 0.0F, false);
+		rightDoor.setTextureOffset(28, 2).addBox(0.05F, -6.3F, -0.2F, 1.0F, 4.0F, 1.0F, 0.0F, false);
+		rightDoor.setTextureOffset(28, 2).addBox(1.05F, -6.7F, -0.2F, 3.0F, 1.0F, 1.0F, 0.0F, false);
+		rightDoor.setTextureOffset(28, 2).addBox(3.65F, -5.7F, -0.2F, 1.0F, 4.0F, 1.0F, 0.0F, false);
+
+		bone3 = new ModelRenderer(this);
+		bone3.setRotationPoint(5.25F, -2.1F, 0.7F);
+		rightDoor.addChild(bone3);
+		setRotationAngle(bone3, 0.0F, -0.7854F, 0.0F);
+		bone3.setTextureOffset(28, 2).addBox(-1.1036F, -9.9F, -0.8536F, 1.0F, 21.0F, 1.0F, 0.0F, false);
+
+		Window1_2 = new ModelRenderer(this);
+		Window1_2.setRotationPoint(1.0F, -7.4F, 0.4F);
+		rightDoor.addChild(Window1_2);
+		setRotationAngle(Window1_2, 0.7854F, 0.0F, 0.0F);
+		Window1_2.setTextureOffset(28, 2).addBox(-0.3F, -0.1943F, -0.6891F, 4.0F, 1.0F, 1.0F, 0.0F, false);
+		Window1_2.setTextureOffset(28, 2).addBox(-0.3F, 3.3766F, -4.26F, 4.0F, 1.0F, 1.0F, 0.0F, false);
+		Window1_2.setTextureOffset(28, 2).addBox(-0.3F, -2.952F, 2.0686F, 4.0F, 1.0F, 1.0F, 0.0F, false);
+		Window1_2.setTextureOffset(28, 2).addBox(-0.3F, 0.5482F, -1.4315F, 4.0F, 1.0F, 1.0F, 0.0F, false);
+		Window1_2.setTextureOffset(28, 2).addBox(-0.3F, -1.5378F, 0.6544F, 4.0F, 1.0F, 1.0F, 0.0F, false);
+
+		window2_2 = new ModelRenderer(this);
+		window2_2.setRotationPoint(9.2F, -8.6357F, 0.7766F);
+		rightDoor.addChild(window2_2);
+		setRotationAngle(window2_2, 0.0F, -0.7854F, 0.0F);
+		window2_2.setTextureOffset(28, 2).addBox(-4.3891F, -2.4F, 2.9648F, 1.0F, 4.0F, 1.0F, 0.0F, false);
+		window2_2.setTextureOffset(28, 2).addBox(-4.3891F, 2.6F, 2.9648F, 1.0F, 4.0F, 1.0F, 0.0F, false);
+		window2_2.setTextureOffset(28, 2).addBox(-5.9447F, -2.4F, 4.5205F, 1.0F, 4.0F, 1.0F, 0.0F, false);
+		window2_2.setTextureOffset(28, 2).addBox(-5.1669F, -2.4F, 3.7426F, 1.0F, 4.0F, 1.0F, 0.0F, false);
+		window2_2.setTextureOffset(28, 2).addBox(-6.7225F, -2.4F, 5.2983F, 1.0F, 4.0F, 1.0F, 0.0F, false);
+		window2_2.setTextureOffset(28, 2).addBox(-6.7225F, 2.6F, 5.2983F, 1.0F, 4.0F, 1.0F, 0.0F, false);
+
+		window3_2 = new ModelRenderer(this);
+		window3_2.setRotationPoint(1.0F, -7.1F, 0.3F);
+		rightDoor.addChild(window3_2);
+		setRotationAngle(window3_2, 0.3491F, 0.0F, 0.0F);
+		
+
+		bone19 = new ModelRenderer(this);
+		bone19.setRotationPoint(3.2214F, -4.2876F, 0.685F);
+		rightDoor.addChild(bone19);
+		setRotationAngle(bone19, 0.0F, 0.7854F, 0.0F);
+		bone19.setTextureOffset(28, 2).addBox(0.0834F, -0.1124F, -0.1995F, 1.0F, 1.0F, 1.0F, 0.0F, false);
+
 		Main = new ModelRenderer(this);
 		Main.setRotationPoint(-4.0F, 6.9F, -5.7F);
 		Main.setTextureOffset(6, 20).addBox(-2.0F, -6.9F, -1.6F, 12.0F, 1.0F, 1.0F, 0.0F, false);
-		Main.setTextureOffset(8, 19).addBox(-1.5F, -7.4F, -1.2F, 11.0F, 1.0F, 1.0F, 0.0F, false);
+		Main.setTextureOffset(0, 0).addBox(-1.5F, -7.4F, -1.2F, 11.0F, 1.0F, 1.0F, 0.0F, false);
 		Main.setTextureOffset(8, 12).addBox(10.0F, -7.4F, 0.2F, 1.0F, 1.0F, 11.0F, 0.0F, true);
 		Main.setTextureOffset(0, 3).addBox(-3.0F, -7.4F, 0.2F, 1.0F, 1.0F, 11.0F, 0.0F, false);
 		Main.setTextureOffset(0, 0).addBox(-1.5F, -7.4F, 11.6F, 11.0F, 1.0F, 1.0F, 0.0F, true);
@@ -86,125 +202,6 @@ public class SeventhDoctorBoxHPModel extends AbstractTardisExteriorModel {
 		Main.setTextureOffset(17, 10).addBox(-1.5F, -5.95F, -1.0F, 5.0F, 1.0F, 1.0F, 0.0F, false);
 		Main.setTextureOffset(17, 10).addBox(3.5F, -5.55F, -0.9F, 6.0F, 1.0F, 1.0F, 0.0F, false);
 		Main.setTextureOffset(17, 10).addBox(-1.5F, -5.55F, -0.9F, 5.0F, 1.0F, 1.0F, 0.0F, false);
-
-		Door1 = new ModelRenderer(this);
-		Door1.setRotationPoint(9.0F, 7.1F, -0.3F);
-		Main.addChild(Door1);
-		Door1.setTextureOffset(18, 5).addBox(-4.0F, 4.0F, 0.0F, 4.0F, 4.0F, 1.0F, 0.0F, false);
-		Door1.setTextureOffset(18, 5).addBox(-5.0F, 8.0F, -0.3F, 5.0F, 1.0F, 1.0F, 0.0F, false);
-		Door1.setTextureOffset(18, 5).addBox(-5.0F, 4.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
-		Door1.setTextureOffset(18, 5).addBox(-0.7F, 4.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
-		Door1.setTextureOffset(18, 5).addBox(-0.7F, -1.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
-		Door1.setTextureOffset(18, 5).addBox(-5.0F, 3.0F, -0.3F, 5.0F, 1.0F, 1.0F, 0.0F, false);
-		Door1.setTextureOffset(18, 5).addBox(-5.0F, -1.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
-		Door1.setTextureOffset(18, 5).addBox(-4.0F, -1.0F, 0.0F, 4.0F, 4.0F, 1.0F, 0.0F, true);
-		Door1.setTextureOffset(18, 5).addBox(-5.0F, -2.0F, -0.3F, 5.0F, 1.0F, 1.0F, 0.0F, false);
-		Door1.setTextureOffset(22, 8).addBox(-4.0F, -6.0F, 0.0F, 4.0F, 4.0F, 1.0F, 0.0F, false);
-		Door1.setTextureOffset(18, 5).addBox(-5.0F, -6.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
-		Door1.setTextureOffset(18, 5).addBox(-0.7F, -6.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
-		Door1.setTextureOffset(18, 5).addBox(-5.0F, -7.0F, -0.3F, 5.0F, 1.0F, 1.0F, 0.0F, false);
-		Door1.setTextureOffset(18, 5).addBox(-0.7F, -11.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
-		Door1.setTextureOffset(18, 5).addBox(-5.0F, -11.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
-		Door1.setTextureOffset(18, 5).addBox(-5.0F, -12.0F, -0.3F, 5.0F, 1.0F, 1.0F, 0.0F, false);
-		Door1.setTextureOffset(22, 15).addBox(-4.775F, -11.1F, -0.08F, 4.0F, 4.0F, 1.0F, 0.0F, false);
-
-		window3_1 = new ModelRenderer(this);
-		window3_1.setRotationPoint(-9.0F, -7.1F, 0.3F);
-		Door1.addChild(window3_1);
-		setRotationAngle(window3_1, 0.3491F, 0.0F, 0.0F);
-		
-
-		window2_1 = new ModelRenderer(this);
-		window2_1.setRotationPoint(-0.8F, -8.6357F, 0.7766F);
-		Door1.addChild(window2_1);
-		setRotationAngle(window2_1, 0.0F, -0.7854F, 0.0F);
-		window2_1.setTextureOffset(18, 5).addBox(-0.6414F, -2.4F, -0.7828F, 1.0F, 4.0F, 1.0F, 0.0F, false);
-		window2_1.setTextureOffset(18, 5).addBox(-2.9749F, -2.4F, 1.5506F, 1.0F, 4.0F, 1.0F, 0.0F, false);
-		window2_1.setTextureOffset(18, 5).addBox(-2.1971F, -2.4F, 0.7728F, 1.0F, 4.0F, 1.0F, 0.0F, false);
-		window2_1.setTextureOffset(18, 5).addBox(-1.4192F, -2.4F, -0.005F, 1.0F, 4.0F, 1.0F, 0.0F, false);
-
-		Window1_1 = new ModelRenderer(this);
-		Window1_1.setRotationPoint(-9.0F, -7.4F, 0.4F);
-		Door1.addChild(Window1_1);
-		setRotationAngle(Window1_1, 0.7854F, 0.0F, 0.0F);
-		Window1_1.setTextureOffset(18, 5).addBox(4.7F, -0.1943F, -0.6891F, 4.0F, 1.0F, 1.0F, 0.0F, false);
-		Window1_1.setTextureOffset(18, 5).addBox(4.7F, -2.952F, 2.0686F, 4.0F, 1.0F, 1.0F, 0.0F, false);
-		Window1_1.setTextureOffset(18, 5).addBox(4.7F, -1.5378F, 0.6544F, 4.0F, 1.0F, 1.0F, 0.0F, false);
-
-		bone18 = new ModelRenderer(this);
-		bone18.setRotationPoint(-5.7F, -1.6F, 0.3F);
-		Door1.addChild(bone18);
-		bone18.setTextureOffset(11, 29).addBox(0.7964F, -3.3876F, -0.94F, 1.0F, 1.0F, 1.0F, -0.2F, false);
-
-		bone40 = new ModelRenderer(this);
-		bone40.setRotationPoint(-4.8786F, -3.6876F, 0.485F);
-		Door1.addChild(bone40);
-		setRotationAngle(bone40, 0.0F, 0.7854F, 0.0F);
-		bone40.setTextureOffset(11, 29).addBox(-0.0581F, 0.0876F, -0.3409F, 1.0F, 2.0F, 1.0F, 0.0F, false);
-
-		Door2 = new ModelRenderer(this);
-		Door2.setRotationPoint(-1.0F, 7.1F, -0.3F);
-		Main.addChild(Door2);
-		Door2.setTextureOffset(28, 2).addBox(0.0F, -7.0F, -0.3F, 5.0F, 1.0F, 1.0F, 0.0F, false);
-		Door2.setTextureOffset(10, 27).addBox(0.1F, -6.0F, 0.0F, 4.0F, 4.0F, 1.0F, 0.0F, false);
-		Door2.setTextureOffset(28, 2).addBox(-0.3F, -6.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
-		Door2.setTextureOffset(28, 2).addBox(4.0F, -6.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
-		Door2.setTextureOffset(28, 2).addBox(4.0F, -11.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
-		Door2.setTextureOffset(28, 2).addBox(0.0F, -12.0F, -0.3F, 5.0F, 1.0F, 1.0F, 0.0F, false);
-		Door2.setTextureOffset(28, 2).addBox(-0.3F, -11.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
-		Door2.setTextureOffset(22, 15).addBox(-0.075F, -11.1F, -0.08F, 4.0F, 4.0F, 1.0F, 0.0F, false);
-		Door2.setTextureOffset(28, 2).addBox(0.0F, -1.0F, 0.0F, 4.0F, 4.0F, 1.0F, 0.0F, false);
-		Door2.setTextureOffset(28, 2).addBox(0.0F, -2.0F, -0.3F, 5.0F, 1.0F, 1.0F, 0.0F, false);
-		Door2.setTextureOffset(28, 2).addBox(4.0F, -1.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
-		Door2.setTextureOffset(28, 2).addBox(4.0F, 4.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
-		Door2.setTextureOffset(28, 2).addBox(0.0F, 3.0F, -0.3F, 5.0F, 1.0F, 1.0F, 0.0F, false);
-		Door2.setTextureOffset(28, 2).addBox(0.0F, 8.0F, -0.3F, 5.0F, 1.0F, 1.0F, 0.0F, false);
-		Door2.setTextureOffset(28, 2).addBox(0.0F, 4.0F, 0.0F, 4.0F, 4.0F, 1.0F, 0.0F, false);
-		Door2.setTextureOffset(28, 2).addBox(-0.3F, 4.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
-		Door2.setTextureOffset(28, 2).addBox(-0.3F, -1.0F, -0.3F, 1.0F, 4.0F, 1.0F, 0.0F, false);
-		Door2.setTextureOffset(28, 2).addBox(-0.35F, -2.4F, -0.2F, 4.0F, 1.0F, 1.0F, 0.0F, false);
-		Door2.setTextureOffset(28, 2).addBox(0.05F, -6.3F, -0.2F, 1.0F, 4.0F, 1.0F, 0.0F, false);
-		Door2.setTextureOffset(28, 2).addBox(1.05F, -6.7F, -0.2F, 3.0F, 1.0F, 1.0F, 0.0F, false);
-		Door2.setTextureOffset(28, 2).addBox(3.65F, -5.7F, -0.2F, 1.0F, 4.0F, 1.0F, 0.0F, false);
-
-		bone3 = new ModelRenderer(this);
-		bone3.setRotationPoint(5.25F, -2.1F, 0.7F);
-		Door2.addChild(bone3);
-		setRotationAngle(bone3, 0.0F, -0.7854F, 0.0F);
-		bone3.setTextureOffset(28, 2).addBox(-1.1036F, -9.9F, -0.8536F, 1.0F, 21.0F, 1.0F, 0.0F, false);
-
-		Window1_2 = new ModelRenderer(this);
-		Window1_2.setRotationPoint(1.0F, -7.4F, 0.4F);
-		Door2.addChild(Window1_2);
-		setRotationAngle(Window1_2, 0.7854F, 0.0F, 0.0F);
-		Window1_2.setTextureOffset(28, 2).addBox(-0.3F, -0.1943F, -0.6891F, 4.0F, 1.0F, 1.0F, 0.0F, false);
-		Window1_2.setTextureOffset(28, 2).addBox(-0.3F, 3.3766F, -4.26F, 4.0F, 1.0F, 1.0F, 0.0F, false);
-		Window1_2.setTextureOffset(28, 2).addBox(-0.3F, -2.952F, 2.0686F, 4.0F, 1.0F, 1.0F, 0.0F, false);
-		Window1_2.setTextureOffset(28, 2).addBox(-0.3F, 0.5482F, -1.4315F, 4.0F, 1.0F, 1.0F, 0.0F, false);
-		Window1_2.setTextureOffset(28, 2).addBox(-0.3F, -1.5378F, 0.6544F, 4.0F, 1.0F, 1.0F, 0.0F, false);
-
-		window2_2 = new ModelRenderer(this);
-		window2_2.setRotationPoint(9.2F, -8.6357F, 0.7766F);
-		Door2.addChild(window2_2);
-		setRotationAngle(window2_2, 0.0F, -0.7854F, 0.0F);
-		window2_2.setTextureOffset(28, 2).addBox(-4.3891F, -2.4F, 2.9648F, 1.0F, 4.0F, 1.0F, 0.0F, false);
-		window2_2.setTextureOffset(28, 2).addBox(-4.3891F, 2.6F, 2.9648F, 1.0F, 4.0F, 1.0F, 0.0F, false);
-		window2_2.setTextureOffset(28, 2).addBox(-5.9447F, -2.4F, 4.5205F, 1.0F, 4.0F, 1.0F, 0.0F, false);
-		window2_2.setTextureOffset(28, 2).addBox(-5.1669F, -2.4F, 3.7426F, 1.0F, 4.0F, 1.0F, 0.0F, false);
-		window2_2.setTextureOffset(28, 2).addBox(-6.7225F, -2.4F, 5.2983F, 1.0F, 4.0F, 1.0F, 0.0F, false);
-		window2_2.setTextureOffset(28, 2).addBox(-6.7225F, 2.6F, 5.2983F, 1.0F, 4.0F, 1.0F, 0.0F, false);
-
-		window3_2 = new ModelRenderer(this);
-		window3_2.setRotationPoint(1.0F, -7.1F, 0.3F);
-		Door2.addChild(window3_2);
-		setRotationAngle(window3_2, 0.3491F, 0.0F, 0.0F);
-		
-
-		bone19 = new ModelRenderer(this);
-		bone19.setRotationPoint(3.2214F, -4.2876F, 0.685F);
-		Door2.addChild(bone19);
-		setRotationAngle(bone19, 0.0F, 0.7854F, 0.0F);
-		bone19.setTextureOffset(28, 2).addBox(0.0834F, -0.1124F, -0.1995F, 1.0F, 1.0F, 1.0F, 0.0F, false);
 
 		bone16 = new ModelRenderer(this);
 		bone16.setRotationPoint(4.0F, -7.7F, -0.9F);
@@ -608,42 +605,37 @@ public class SeventhDoctorBoxHPModel extends AbstractTardisExteriorModel {
 		setRotationAngle(bone41, 0.0F, 3.1416F, 0.0F);
 		bone41.setTextureOffset(16, 3).addBox(0.4583F, 17.775F, -7.5F, 7.0F, 1.0F, 15.0F, 0.0F, false);
 		bone41.setTextureOffset(16, 3).addBox(-7.5417F, 17.775F, -7.5F, 8.0F, 1.0F, 15.0F, 0.0F, true);
-		bone41.setTextureOffset(0, 0).addBox(-6.0417F, -7.625F, -3.0F, 12.0F, 3.0F, 8.0F, 0.0F, true);
-		bone41.setTextureOffset(8, 24).addBox(-5.0417F, -7.625F, 5.0F, 10.0F, 3.0F, 1.0F, 0.0F, true);
-		bone41.setTextureOffset(10, 0).addBox(4.9583F, -7.625F, 5.0F, 1.0F, 3.0F, 1.0F, 0.0F, true);
-		bone41.setTextureOffset(2, 6).addBox(-6.0417F, -7.625F, -6.0F, 12.0F, 3.0F, 3.0F, 0.0F, true);
-		bone41.setTextureOffset(0, 0).addBox(-5.5417F, -7.725F, -5.5F, 11.0F, 3.0F, 11.0F, 0.0F, true);
-		bone41.setTextureOffset(0, 0).addBox(-5.0417F, -7.825F, -5.0F, 10.0F, 3.0F, 10.0F, 0.0F, true);
-		bone41.setTextureOffset(0, 0).addBox(-4.5417F, -7.925F, -4.5F, 9.0F, 3.0F, 9.0F, 0.0F, true);
-		bone41.setTextureOffset(0, 0).addBox(-4.0417F, -8.025F, -4.0F, 8.0F, 3.0F, 8.0F, 0.0F, true);
-		bone41.setTextureOffset(0, 0).addBox(-3.5417F, -8.125F, -3.5F, 7.0F, 3.0F, 7.0F, 0.0F, true);
-		bone41.setTextureOffset(2, 0).addBox(-3.0417F, -8.225F, -3.0F, 6.0F, 3.0F, 6.0F, 0.0F, true);
-		bone41.setTextureOffset(4, 1).addBox(-2.5417F, -8.325F, -2.5F, 5.0F, 3.0F, 5.0F, 0.0F, true);
-		bone41.setTextureOffset(0, 0).addBox(-2.0417F, -8.625F, -2.0F, 4.0F, 3.0F, 4.0F, 0.0F, true);
-
-		bone44 = new ModelRenderer(this);
-		bone44.setRotationPoint(-5.5417F, -6.725F, 5.5F);
-		bone41.addChild(bone44);
-		setRotationAngle(bone44, 0.0F, -1.5708F, 0.0F);
-		bone44.setTextureOffset(12, 3).addBox(-0.5F, -0.9F, -0.5F, 1.0F, 1.0F, 1.0F, 0.0F, false);
+		bone41.setTextureOffset(0, 0).addBox(-6.0417F, -7.225F, 0.0F, 12.0F, 3.0F, 6.0F, 0.0F, true);
+		bone41.setTextureOffset(0, 7).addBox(-6.0417F, -7.225F, -6.0F, 12.0F, 3.0F, 3.0F, 0.0F, true);
+		bone41.setTextureOffset(0, 4).addBox(-6.0417F, -7.225F, -3.0F, 12.0F, 3.0F, 3.0F, 0.0F, true);
+		bone41.setTextureOffset(0, 0).addBox(-5.5417F, -7.325F, -5.5F, 11.0F, 3.0F, 11.0F, 0.0F, true);
+		bone41.setTextureOffset(0, 0).addBox(-5.0417F, -7.425F, -5.0F, 10.0F, 3.0F, 10.0F, 0.0F, true);
+		bone41.setTextureOffset(0, 0).addBox(-4.5417F, -7.525F, -4.5F, 9.0F, 3.0F, 9.0F, 0.0F, true);
+		bone41.setTextureOffset(0, 0).addBox(-4.0417F, -7.625F, -4.0F, 8.0F, 3.0F, 8.0F, 0.0F, true);
+		bone41.setTextureOffset(0, 0).addBox(-3.5417F, -7.725F, -3.5F, 7.0F, 3.0F, 7.0F, 0.0F, true);
+		bone41.setTextureOffset(2, 0).addBox(-3.0417F, -7.825F, -3.0F, 6.0F, 3.0F, 6.0F, 0.0F, true);
+		bone41.setTextureOffset(4, 1).addBox(-2.5417F, -7.925F, -2.5F, 5.0F, 3.0F, 5.0F, 0.0F, true);
+		bone41.setTextureOffset(6, 8).addBox(-2.0417F, -8.225F, -2.0F, 4.0F, 3.0F, 4.0F, 0.0F, true);
 
 		bone42 = new ModelRenderer(this);
 		bone42.setRotationPoint(-0.0417F, -8.8583F, 0.0F);
 		bone41.addChild(bone42);
 		setRotationAngle(bone42, 0.0F, 0.7854F, 0.0F);
-		bone42.setTextureOffset(24, 28).addBox(-1.0F, -1.6167F, -1.0F, 2.0F, 2.0F, 2.0F, 0.225F, true);
+		bone42.setTextureOffset(24, 28).addBox(-1.0F, -1.2167F, -1.0F, 2.0F, 2.0F, 2.0F, 0.225F, true);
 
 		bone43 = new ModelRenderer(this);
 		bone43.setRotationPoint(0.0F, 0.1083F, 0.0F);
 		bone42.addChild(bone43);
 		setRotationAngle(bone43, 0.0F, 0.7854F, 0.0F);
-		bone43.setTextureOffset(28, 26).addBox(-0.5F, -1.85F, -0.5F, 1.0F, 1.0F, 1.0F, 0.2F, true);
-		bone43.setTextureOffset(20, 29).addBox(-0.5F, -0.45F, -0.5F, 1.0F, 2.0F, 1.0F, 0.2F, true);
+		bone43.setTextureOffset(28, 26).addBox(-0.5F, -1.45F, -0.5F, 1.0F, 1.0F, 1.0F, 0.2F, true);
+		bone43.setTextureOffset(20, 29).addBox(-0.5F, -0.05F, -0.5F, 1.0F, 2.0F, 1.0F, 0.2F, true);
 	}
 
 	@Override
 	public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha){
 		super.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
+		leftDoor.render(matrixStack, buffer, packedLight, packedOverlay);
+		rightDoor.render(matrixStack, buffer, packedLight, packedOverlay);
 		Main.render(matrixStack, buffer, packedLight, packedOverlay);
 		bone9.render(matrixStack, buffer, packedLight, packedOverlay);
 		bone10.render(matrixStack, buffer, packedLight, packedOverlay);
@@ -662,23 +654,17 @@ public class SeventhDoctorBoxHPModel extends AbstractTardisExteriorModel {
 	}
 
 	@Override
-	protected ModelRenderer getLeftDoor() {
-		return Door1;
+	public ModelRenderer getLeftDoor() {
+		return leftDoor;
 	}
 
 	@Override
-	protected ModelRenderer getRightDoor() {
-		return Door2;
+	public ModelRenderer getRightDoor() {
+		return rightDoor;
 	}
 
 	@Override
 	protected float getScale() {
-		return 1.4f;
-	}
-
-	public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {
-		modelRenderer.rotateAngleX = x;
-		modelRenderer.rotateAngleY = y;
-		modelRenderer.rotateAngleZ = z;
+		return 1.5f;
 	}
 }
